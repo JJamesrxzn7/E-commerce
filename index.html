@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Encuentra equipamiento, calzado y ropa para entrenar y competir.">
+  <title>Apex Sports | Deporte para todos los días</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <a class="salto" href="#contenido">Saltar al contenido</a>
+  <header class="encabezado">
+    <div class="barra-superior barra-con-busqueda">
+      <a class="marca" href="index.html" aria-label="Apex Sports, inicio">
+        <span class="marca-icono" aria-hidden="true">A</span>
+        <span>APEX <strong>SPORTS</strong></span>
+      </a>
+      <form class="busqueda" action="index.html" method="get" role="search">
+        <label class="solo-lectores" for="buscar">Buscar productos</label>
+        <input id="buscar" type="search" name="q" placeholder="Busca tu próximo entrenamiento">
+        <button type="submit" aria-label="Buscar">Buscar</button>
+      </form>
+      <a class="enlace-carrito" href="carrito.html" aria-label="Ver carrito, 1 artículo">
+        <svg class="icono-carrito" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M2.5 3.5h2l2.1 11.1a2 2 0 0 0 2 1.6h8.7a2 2 0 0 0 1.9-1.4l2-7.3H6"></path>
+          <circle cx="9" cy="20" r="1.4"></circle><circle cx="18" cy="20" r="1.4"></circle>
+        </svg>
+        <span class="texto-carrito">Carrito</span><span class="contador">1</span>
+      </a>
+      <a class="enlace-favoritos" href="#favoritos" aria-label="Ver favoritos, 0 artículos">
+        <svg class="icono-favorito" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.8 8.7c0 5.1-8.8 11-8.8 11s-8.8-5.9-8.8-11A4.7 4.7 0 0 1 12 6a4.7 4.7 0 0 1 8.8 2.7Z"></path></svg>
+        <span class="texto-favoritos">Favoritos</span><span class="contador contador-favoritos">0</span>
+      </a>
+      <span class="solo-lectores" id="estado-favoritos-global" role="status" aria-live="polite"></span>
+    </div>
+    <nav class="navegacion" aria-label="Categorías principales">
+      <a href="#futbol">Fútbol</a>
+      <a href="#basketball">Basketball</a>
+      <a href="#tennis">Tennis</a>
+      <a href="#mma">Artes marciales</a>
+      <a href="#volleyball">Volleyball</a>
+      <a href="#ropa">Ropa y calzado</a>
+      <a href="#running">Running</a>
+      <a href="#fitness">Fitness</a>
+      <a href="#outdoor">Outdoor</a>
+    </nav>
+  </header>
+
+  <main id="contenido">
+    <section class="hero">
+      <div class="hero-contenido">
+        <p class="sobrelinea">EQUIPO PARA MOVERTE</p>
+        <h1>Tu próximo<br>gran juego empieza aquí.</h1>
+        <p>Encuentra lo que necesitas para entrenar, competir y disfrutar el deporte que te mueve.</p>
+        <a class="boton boton-claro" href="#productos">Explorar productos</a>
+      </div>
+      <div class="hero-ilustracion" aria-hidden="true">
+        <span class="pelota pelota-grande"></span>
+        <span class="pelota pelota-pequena"></span>
+        <span class="hero-etiqueta">MUÉVETE<br>A TU MANERA</span>
+      </div>
+    </section>
+
+    <section class="beneficios" aria-label="Beneficios de compra">
+      <div><span aria-hidden="true">01</span><p><strong>Envío a domicilio</strong><br>Seguimiento de tu pedido</p></div>
+      <div><span aria-hidden="true">02</span><p><strong>Pago flexible</strong><br>Tarjeta o transferencia</p></div>
+      <div><span aria-hidden="true">03</span><p><strong>Compra sencilla</strong><br>Todo tu equipo en un lugar</p></div>
+    </section>
+
+    <section class="seccion-catalogo productos-seccion seccion-favoritos" id="favoritos">
+      <div class="titulo-seccion">
+        <div><p class="sobrelinea">GUARDA PARA DESPUÉS</p><h2 tabindex="-1">Mis favoritos</h2></div>
+        <a class="enlace-texto" href="#productos">← Volver al catálogo</a>
+      </div>
+      <p class="nota-favoritos">Se guardan en este navegador. Para tenerlos en otros dispositivos, Apex Sports necesitaría una cuenta y sincronización.</p>
+      <p class="estado-favoritos" aria-hidden="true"></p>
+      <div class="productos lista-favoritos"></div>
+      <div class="favoritos-vacios">
+        <p>Aún no guardaste productos.</p>
+        <a class="boton" href="#productos">Explorar productos</a>
+      </div>
+      <noscript><p class="aviso aviso-seguridad">Activa JavaScript para guardar y consultar tu lista de favoritos.</p></noscript>
+    </section>
+
+    <section class="seccion-catalogo" id="productos">
+      <div class="titulo-seccion">
+        <div>
+          <p class="sobrelinea">EQUÍPATE PARA LO QUE VIENE</p>
+          <h2>Explora por deporte</h2>
+        </div>
+        <a class="enlace-texto" href="#productos">Ver categorías <span aria-hidden="true">→</span></a>
+      </div>
+      <div class="categorias">
+        <a href="#futbol"><svg class="categoria-icono" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="18"></circle><path d="m24 14 7 5-3 8h-8l-3-8 7-5Zm0 0V6m7 13 8-3m-11 11 3 9m-15-9-7 5m10-16-8-3m6 27-3-9m15 0 8 3"></path></svg><span>Fútbol</span></a>
+        <a href="#basketball"><svg class="categoria-icono" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="18"></circle><path d="M6 24h36M24 6v36M11 11c9 7 17 19 26 26M37 11C28 18 20 30 11 37"></path></svg><span>Basketball</span></a>
+        <a href="#tennis"><svg class="categoria-icono" viewBox="0 0 48 48" aria-hidden="true"><ellipse cx="21" cy="18" rx="12" ry="16" transform="rotate(35 21 18)"></ellipse><path d="m29 29 12 12M12 10l18 17m-9-25L9 26m2-11 17 8m-11-15 17 8"></path></svg><span>Tennis</span></a>
+        <a href="#mma"><svg class="categoria-icono" viewBox="0 0 48 48" aria-hidden="true"><path d="M15 24v-9a3 3 0 0 1 6 0v5-9a3 3 0 0 1 6 0v9-7a3 3 0 0 1 6 0v9l2-4a3 3 0 0 1 5 3l-5 14a8 8 0 0 1-8 5h-5a9 9 0 0 1-8-5l-6-9a3 3 0 0 1 5-4l2 3Z"></path><path d="M17 34h15"></path></svg><span>Artes marciales</span></a>
+        <a href="#volleyball"><svg class="categoria-icono" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="18"></circle><path d="M13 9c8 6 13 17 13 33M39 15c-10 1-20 7-29 17m30-1c-8-6-20-8-33-5"></path></svg><span>Volleyball</span></a>
+        <a href="#ropa"><svg class="categoria-icono" viewBox="0 0 48 48" aria-hidden="true"><path d="m16 8 8 4 8-4 12 7-6 10-6-3v20H16V22l-6 3-6-10 12-7Z"></path><path d="M18 9a6 6 0 0 0 12 0"></path></svg><span>Ropa deportiva</span></a>
+        <a href="#running"><svg class="categoria-icono" viewBox="0 0 48 48" aria-hidden="true"><path d="M6 31c7 0 11-4 15-13l5 3 7 8 9 3a4 4 0 0 1-1 8H9a5 5 0 0 1-3-9Z"></path><path d="m20 22 7 4m-12 11h25"></path></svg><span>Running</span></a>
+        <a href="#ciclismo"><svg class="categoria-icono" viewBox="0 0 48 48" aria-hidden="true"><circle cx="11" cy="33" r="8"></circle><circle cx="37" cy="33" r="8"></circle><path d="m11 33 9-15 8 15H11Zm9-15h9m-1 0 9 15M17 15h6"></path></svg><span>Ciclismo</span></a>
+        <a href="#fitness"><svg class="categoria-icono" viewBox="0 0 48 48" aria-hidden="true"><path d="M18 17v14m12-14v14M12 20v8m24-8v8M18 24h12M8 20v8m32-8v8"></path></svg><span>Fitness</span></a>
+        <a href="#natacion"><svg class="categoria-icono" viewBox="0 0 48 48" aria-hidden="true"><path d="M5 17h12l4 4h6l4-4h12v9H30l-3 4h-6l-4-4H5v-9Zm-1 19c4-4 8 4 12 0s8 4 12 0 8 4 12 0"></path><circle cx="12" cy="21" r="3"></circle><circle cx="36" cy="21" r="3"></circle></svg><span>Natación</span></a>
+        <a href="#outdoor"><svg class="categoria-icono" viewBox="0 0 48 48" aria-hidden="true"><path d="m4 39 15-26 9 15 5-8 11 19H4Z"></path><path d="m15 20 4 4 4-2m5 6 4 2 3-2"></path></svg><span>Outdoor</span></a>
+        <a href="#accesorios"><svg class="categoria-icono" viewBox="0 0 48 48" aria-hidden="true"><path d="M13 9c0 10 22 20 22 30M35 9C35 19 13 29 13 39"></path><circle cx="13" cy="9" r="3"></circle><circle cx="35" cy="9" r="3"></circle><circle cx="13" cy="39" r="3"></circle><circle cx="35" cy="39" r="3"></circle></svg><span>Accesorios</span></a>
+      </div>
+    </section>
+
+    <section class="seccion-catalogo productos-seccion" id="futbol">
+      <div class="titulo-seccion">
+        <div><p class="sobrelinea">EQUÍPATE PARA EL PARTIDO</p><h2>Fútbol</h2></div>
+        <a class="enlace-texto" href="#productos">↑ Volver a categorías</a>
+      </div>
+      <div class="productos">
+        <article class="producto">
+          <div class="producto-imagen imagen-balon">
+            <span class="etiqueta-producto">FÚTBOL</span><span class="balon-dibujo" aria-hidden="true">●</span>
+          </div>
+          <div class="producto-info"><p class="producto-categoria">Fútbol · Balones</p><h3>Balón Pro Match</h3><p class="precio">$34,90</p><a class="boton boton-ancho" href="carrito.html">Añadir al carrito</a></div>
+        </article>
+        <article class="producto">
+          <div class="producto-imagen imagen-balon"><span class="etiqueta-producto">FÚTBOL</span><span class="balon-basket" aria-hidden="true">◉</span></div>
+          <div class="producto-info"><p class="producto-categoria">Fútbol · Entrenamiento</p><h3>Conos de agilidad (10)</h3><p class="precio">$16,50</p><a class="boton boton-ancho" href="carrito.html">Añadir al carrito</a></div>
+        </article>
+        <article class="producto">
+          <div class="producto-imagen imagen-balon"><span class="etiqueta-producto">FÚTBOL</span><span class="camiseta" aria-hidden="true">10</span></div>
+          <div class="producto-info"><p class="producto-categoria">Fútbol · Entrenamiento</p><h3>Petos de entrenamiento (5)</h3><p class="precio">$22,00</p><a class="boton boton-ancho" href="carrito.html">Añadir al carrito</a></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="seccion-catalogo productos-seccion" id="basketball">
+      <div class="titulo-seccion"><div><p class="sobrelinea">DOMINA LA CANCHA</p><h2>Basketball</h2></div><a class="enlace-texto" href="#productos">↑ Volver a categorías</a></div>
+      <div class="productos">
+        <article class="producto">
+          <div class="producto-imagen imagen-basket">
+            <span class="etiqueta-producto">BASKETBALL</span><span class="balon-basket" aria-hidden="true">◉</span>
+          </div>
+          <div class="producto-info"><p class="producto-categoria">Basketball · Balones</p><h3>Balón Court One</h3><p class="precio">$29,50</p><a class="boton boton-ancho" href="carrito.html">Añadir al carrito</a></div>
+        </article>
+        <article class="producto">
+          <div class="producto-imagen imagen-basket"><span class="etiqueta-producto">BASKETBALL</span><span class="balon-basket" aria-hidden="true">◉</span></div>
+          <div class="producto-info"><p class="producto-categoria">Basketball · Accesorios</p><h3>Muñequera Court</h3><p class="precio">$9,90</p><a class="boton boton-ancho" href="carrito.html">Añadir al carrito</a></div>
+        </article>
+        <article class="producto">
+          <div class="producto-imagen imagen-basket"><span class="etiqueta-producto">BASKETBALL</span><span class="balon-basket" aria-hidden="true">◉</span></div>
+          <div class="producto-info"><p class="producto-categoria">Basketball · Entrenamiento</p><h3>Red de aro reforzada</h3><p class="precio">$12,50</p><a class="boton boton-ancho" href="carrito.html">Añadir al carrito</a></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="seccion-catalogo productos-seccion" id="tennis">
+      <div class="titulo-seccion"><div><p class="sobrelinea">JUEGA CADA PUNTO</p><h2>Tennis</h2></div><a class="enlace-texto" href="#productos">↑ Volver a categorías</a></div>
+      <div class="productos">
+        <article class="producto">
+          <div class="producto-imagen imagen-tennis">
+            <span class="etiqueta-producto">TENNIS</span><span class="raqueta" aria-hidden="true"></span>
+          </div>
+          <div class="producto-info"><p class="producto-categoria">Tennis · Raquetas</p><h3>Raqueta Ace 100</h3><p class="precio">$68,00</p><a class="boton boton-ancho" href="carrito.html">Añadir al carrito</a></div>
+        </article>
+        <article class="producto">
+          <div class="producto-imagen imagen-tennis"><span class="etiqueta-producto">TENNIS</span><span class="raqueta" aria-hidden="true"></span></div>
+          <div class="producto-info"><p class="producto-categoria">Tennis · Accesorios</p><h3>Pelotas de tennis (3)</h3><p class="precio">$12,25</p><a class="boton boton-ancho" href="carrito.html">Añadir al carrito</a></div>
+        </article>
+        <article class="producto">
+          <div class="producto-imagen imagen-tennis"><span class="etiqueta-producto">TENNIS</span><span class="raqueta" aria-hidden="true"></span></div>
+          <div class="producto-info"><p class="producto-categoria">Tennis · Accesorios</p><h3>Overgrip Comfort (3)</h3><p class="precio">$8,50</p><a class="boton boton-ancho" href="carrito.html">Añadir al carrito</a></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="seccion-catalogo productos-seccion" id="mma">
+      <div class="titulo-seccion"><div><p class="sobrelinea">ENTRENA CON PROTECCIÓN</p><h2>Artes marciales</h2></div><a class="enlace-texto" href="#productos">↑ Volver a categorías</a></div>
+      <div class="productos">
+        <article class="producto">
+          <div class="producto-imagen imagen-mma">
+            <span class="etiqueta-producto">MMA</span><span class="guante" aria-hidden="true">✦</span>
+          </div>
+          <div class="producto-info"><p class="producto-categoria">Artes marciales · Guantes</p><h3>Guantes de entrenamiento</h3><p class="precio">$42,00</p><a class="boton boton-ancho" href="carrito.html">Añadir al carrito</a></div>
+        </article>
+        <article class="producto">
+          <div class="producto-imagen imagen-mma"><span class="etiqueta-producto">ARTES MARCIALES</span><span class="guante" aria-hidden="true">✦</span></div>
+          <div class="producto-info"><p class="producto-categoria">Artes marciales · Protección</p><h3>Vendas para boxeo</h3><p class="precio">$14,00</p><a class="boton boton-ancho" href="carrito.html">Añadir al carrito</a></div>
+        </article>
+        <article class="producto">
+          <div class="producto-imagen imagen-mma"><span class="etiqueta-producto">ARTES MARCIALES</span><span class="guante" aria-hidden="true">✦</span></div>
+          <div class="producto-info"><p class="producto-categoria">Artes marciales · Protección</p><h3>Protector bucal</h3><p class="precio">$11,90</p><a class="boton boton-ancho" href="carrito.html">Añadir al carrito</a></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="seccion-catalogo productos-seccion" id="volleyball">
+      <div class="titulo-seccion"><div><p class="sobrelinea">EQUIPO PARA LA RED</p><h2>Volleyball</h2></div><a class="enlace-texto" href="#productos">↑ Volver a categorías</a></div>
+      <div class="productos">
+        <article class="producto">
+          <div class="producto-imagen imagen-volley">
+            <span class="etiqueta-producto">VOLLEYBALL</span><span class="balon-volley" aria-hidden="true">◌</span>
+          </div>
+          <div class="producto-info"><p class="producto-categoria">Volleyball · Balones</p><h3>Balón Set Point</h3><p class="precio">$26,75</p><a class="boton boton-ancho" href="carrito.html">Añadir al carrito</a></div>
+        </article>
+        <article class="producto">
+          <div class="producto-imagen imagen-volley"><span class="etiqueta-producto">VOLLEYBALL</span><span class="balon-volley" aria-hidden="true">◌</span></div>
+          <div class="producto-info"><p class="producto-categoria">Volleyball · Protección</p><h3>Rodilleras Flex</h3><p class="precio">$19,75</p><a class="boton boton-ancho" href="carrito.html">Añadir al carrito</a></div>
+        </article>
+        <article class="producto">
+          <div class="producto-imagen imagen-volley"><span class="etiqueta-producto">VOLLEYBALL</span><span class="balon-volley" aria-hidden="true">◌</span></div>
+          <div class="producto-info"><p class="producto-categoria">Volleyball · Accesorios</p><h3>Muñequeras de soporte</h3><p class="precio">$10,50</p><a class="boton boton-ancho" href="carrito.html">Añadir al carrito</a></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="seccion-catalogo productos-seccion" id="ropa">
+      <div class="titulo-seccion"><div><p class="sobrelinea">VÍSTETE PARA MOVERTE</p><h2>Ropa deportiva</h2></div><a class="enlace-texto" href="#productos">↑ Volver a categorías</a></div>
+      <div class="productos">
+        <article class="producto">
+          <div class="producto-imagen imagen-ropa">
+            <span class="etiqueta-producto">ROPA</span><span class="camiseta" aria-hidden="true">M</span>
+          </div>
+          <div class="producto-info"><p class="producto-categoria">Ropa deportiva · Camisetas</p><h3>Camiseta Move</h3><p class="precio">$24,00</p><a class="boton boton-ancho" href="carrito.html">Añadir al carrito</a></div>
+        </article>
+        <article class="producto">
+          <div class="producto-imagen imagen-ropa"><span class="etiqueta-producto">ROPA</span><span class="camiseta" aria-hidden="true">M</span></div>
+          <div class="producto-info"><p class="producto-categoria">Ropa deportiva · Capas</p><h3>Sudadera Warm Up</h3><p class="precio">$39,90</p><a class="boton boton-ancho" href="carrito.html">Añadir al carrito</a></div>
+        </article>
+        <article class="producto">
+          <div class="producto-imagen imagen-ropa"><span class="etiqueta-producto">ROPA</span><span class="camiseta" aria-hidden="true">M</span></div>
+          <div class="producto-info"><p class="producto-categoria">Ropa deportiva · Pantalones</p><h3>Pantalón Training Flex</h3><p class="precio">$31,50</p><a class="boton boton-ancho" href="carrito.html">Añadir al carrito</a></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="seccion-catalogo productos-seccion" id="running">
+      <div class="titulo-seccion"><div><p class="sobrelinea">SAL A TU RITMO</p><h2>Running</h2></div><a class="enlace-texto" href="#productos">↑ Volver a categorías</a></div>
+      <div class="productos">
+        <article class="producto">
+          <div class="producto-imagen imagen-running"><span class="etiqueta-producto">RUNNING</span><span class="icono-zapatilla" aria-hidden="true">↗</span></div>
+          <div class="producto-info"><p class="producto-categoria">Running · Calzado</p><h3>Zapatillas Pace Run</h3><p class="precio">$74,90</p><a class="boton boton-ancho" href="carrito.html">Añadir al carrito</a></div>
+        </article>
+        <article class="producto">
+          <div class="producto-imagen imagen-running"><span class="etiqueta-producto">RUNNING</span><span class="icono-zapatilla" aria-hidden="true">◉</span></div>
+          <div class="producto-info"><p class="producto-categoria">Running · Accesorios</p><h3>Botella Trail 600 ml</h3><p class="precio">$13,50</p><a class="boton boton-ancho" href="carrito.html">Añadir al carrito</a></div>
+        </article>
+        <article class="producto">
+          <div class="producto-imagen imagen-running"><span class="etiqueta-producto">RUNNING</span><span class="icono-zapatilla" aria-hidden="true">↗</span></div>
+          <div class="producto-info"><p class="producto-categoria">Running · Accesorios</p><h3>Cinturón para correr</h3><p class="precio">$17,00</p><a class="boton boton-ancho" href="carrito.html">Añadir al carrito</a></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="seccion-catalogo productos-seccion" id="ciclismo">
+      <div class="titulo-seccion"><div><p class="sobrelinea">LISTO PARA RODAR</p><h2>Ciclismo</h2></div><a class="enlace-texto" href="#productos">↑ Volver a categorías</a></div>
+      <div class="productos">
+        <article class="producto">
+          <div class="producto-imagen imagen-ciclismo"><span class="etiqueta-producto">CICLISMO</span><span class="icono-bici" aria-hidden="true">◉</span></div>
+          <div class="producto-info"><p class="producto-categoria">Ciclismo · Accesorios</p><h3>Casco Urban Ride</h3><p class="precio">$49,00</p><a class="boton boton-ancho" href="carrito.html">Añadir al carrito</a></div>
+        </article>
+        <article class="producto">
+          <div class="producto-imagen imagen-ciclismo"><span class="etiqueta-producto">CICLISMO</span><span class="icono-bici" aria-hidden="true">◉</span></div>
+          <div class="producto-info"><p class="producto-categoria">Ciclismo · Hidratación</p><h3>Portabotella Road</h3><p class="precio">$12,00</p><a class="boton boton-ancho" href="carrito.html">Añadir al carrito</a></div>
+        </article>
+        <article class="producto">
+          <div class="producto-imagen imagen-ciclismo"><span class="etiqueta-producto">CICLISMO</span><span class="icono-bici" aria-hidden="true">◉</span></div>
+          <div class="producto-info"><p class="producto-categoria">Ciclismo · Seguridad</p><h3>Luces recargables (2)</h3><p class="precio">$23,90</p><a class="boton boton-ancho" href="carrito.html">Añadir al carrito</a></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="seccion-catalogo productos-seccion" id="fitness">
+      <div class="titulo-seccion"><div><p class="sobrelinea">FUERZA Y MOVIMIENTO</p><h2>Fitness</h2></div><a class="enlace-texto" href="#productos">↑ Volver a categorías</a></div>
+      <div class="productos">
+        <article class="producto">
+          <div class="producto-imagen imagen-fitness"><span class="etiqueta-producto">FITNESS</span><span class="icono-pesa" aria-hidden="true">╋</span></div>
+          <div class="producto-info"><p class="producto-categoria">Fitness · Fuerza</p><h3>Mancuernas (2 × 3 kg)</h3><p class="precio">$32,00</p><a class="boton boton-ancho" href="carrito.html">Añadir al carrito</a></div>
+        </article>
+        <article class="producto">
+          <div class="producto-imagen imagen-fitness"><span class="etiqueta-producto">FITNESS</span><span class="icono-pesa" aria-hidden="true">○</span></div>
+          <div class="producto-info"><p class="producto-categoria">Fitness · Entrenamiento</p><h3>Mat de yoga Comfort</h3><p class="precio">$27,50</p><a class="boton boton-ancho" href="carrito.html">Añadir al carrito</a></div>
+        </article>
+        <article class="producto">
+          <div class="producto-imagen imagen-fitness"><span class="etiqueta-producto">FITNESS</span><span class="icono-pesa" aria-hidden="true">╋</span></div>
+          <div class="producto-info"><p class="producto-categoria">Fitness · Resistencia</p><h3>Bandas elásticas (3)</h3><p class="precio">$15,90</p><a class="boton boton-ancho" href="carrito.html">Añadir al carrito</a></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="seccion-catalogo productos-seccion" id="natacion">
+      <div class="titulo-seccion"><div><p class="sobrelinea">ENTRENA EN EL AGUA</p><h2>Natación</h2></div><a class="enlace-texto" href="#productos">↑ Volver a categorías</a></div>
+      <div class="productos">
+        <article class="producto">
+          <div class="producto-imagen imagen-natacion"><span class="etiqueta-producto">NATACIÓN</span><span class="icono-agua" aria-hidden="true">≈</span></div>
+          <div class="producto-info"><p class="producto-categoria">Natación · Accesorios</p><h3>Gafas Aqua Fit</h3><p class="precio">$18,90</p><a class="boton boton-ancho" href="carrito.html">Añadir al carrito</a></div>
+        </article>
+        <article class="producto">
+          <div class="producto-imagen imagen-natacion"><span class="etiqueta-producto">NATACIÓN</span><span class="icono-agua" aria-hidden="true">≈</span></div>
+          <div class="producto-info"><p class="producto-categoria">Natación · Entrenamiento</p><h3>Gorro de natación</h3><p class="precio">$8,75</p><a class="boton boton-ancho" href="carrito.html">Añadir al carrito</a></div>
+        </article>
+        <article class="producto">
+          <div class="producto-imagen imagen-natacion"><span class="etiqueta-producto">NATACIÓN</span><span class="icono-agua" aria-hidden="true">≈</span></div>
+          <div class="producto-info"><p class="producto-categoria">Natación · Entrenamiento</p><h3>Pull buoy de entrenamiento</h3><p class="precio">$16,00</p><a class="boton boton-ancho" href="carrito.html">Añadir al carrito</a></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="seccion-catalogo productos-seccion" id="outdoor">
+      <div class="titulo-seccion"><div><p class="sobrelinea">EXPLORA MÁS LEJOS</p><h2>Outdoor</h2></div><a class="enlace-texto" href="#productos">↑ Volver a categorías</a></div>
+      <div class="productos">
+        <article class="producto">
+          <div class="producto-imagen imagen-outdoor"><span class="etiqueta-producto">OUTDOOR</span><span class="icono-montana" aria-hidden="true">△</span></div>
+          <div class="producto-info"><p class="producto-categoria">Outdoor · Senderismo</p><h3>Mochila Summit 20 L</h3><p class="precio">$58,00</p><a class="boton boton-ancho" href="carrito.html">Añadir al carrito</a></div>
+        </article>
+        <article class="producto">
+          <div class="producto-imagen imagen-outdoor"><span class="etiqueta-producto">OUTDOOR</span><span class="icono-montana" aria-hidden="true">△</span></div>
+          <div class="producto-info"><p class="producto-categoria">Outdoor · Hidratación</p><h3>Linterna Trail Mini</h3><p class="precio">$21,90</p><a class="boton boton-ancho" href="carrito.html">Añadir al carrito</a></div>
+        </article>
+        <article class="producto">
+          <div class="producto-imagen imagen-outdoor"><span class="etiqueta-producto">OUTDOOR</span><span class="icono-montana" aria-hidden="true">△</span></div>
+          <div class="producto-info"><p class="producto-categoria">Outdoor · Hidratación</p><h3>Botella térmica Trek</h3><p class="precio">$19,50</p><a class="boton boton-ancho" href="carrito.html">Añadir al carrito</a></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="seccion-catalogo productos-seccion" id="accesorios">
+      <div class="titulo-seccion"><div><p class="sobrelinea">DETALLES QUE SUMAN</p><h2>Accesorios</h2></div><a class="enlace-texto" href="#productos">↑ Volver a categorías</a></div>
+      <div class="productos">
+        <article class="producto">
+          <div class="producto-imagen imagen-accesorios"><span class="etiqueta-producto">ACCESORIOS</span><span class="icono-pesa" aria-hidden="true">＋</span></div>
+          <div class="producto-info"><p class="producto-categoria">Accesorios · Entrenamiento</p><h3>Cuerda de salto Speed</h3><p class="precio">$11,50</p><a class="boton boton-ancho" href="carrito.html">Añadir al carrito</a></div>
+        </article>
+        <article class="producto">
+          <div class="producto-imagen imagen-accesorios"><span class="etiqueta-producto">ACCESORIOS</span><span class="icono-pesa" aria-hidden="true">＋</span></div>
+          <div class="producto-info"><p class="producto-categoria">Accesorios · Hidratación</p><h3>Shaker deportivo 700 ml</h3><p class="precio">$10,90</p><a class="boton boton-ancho" href="carrito.html">Añadir al carrito</a></div>
+        </article>
+        <article class="producto">
+          <div class="producto-imagen imagen-accesorios"><span class="etiqueta-producto">ACCESORIOS</span><span class="icono-pesa" aria-hidden="true">＋</span></div>
+          <div class="producto-info"><p class="producto-categoria">Accesorios · Entrenamiento</p><h3>Toalla deportiva Dry</h3><p class="precio">$12,90</p><a class="boton boton-ancho" href="carrito.html">Añadir al carrito</a></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="llamada">
+      <div><p class="sobrelinea">¿LISTO PARA EL SIGUIENTE RETO?</p><h2>Elige tu equipo.<br>Sal a jugar.</h2></div>
+      <a class="boton boton-claro" href="#productos">Ver productos <span aria-hidden="true">→</span></a>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <a class="marca marca-pie" href="index.html"><span class="marca-icono" aria-hidden="true">A</span><span>APEX <strong>SPORTS</strong></span></a>
+    <p>Encuentra tu juego.</p>
+    <p class="pie-final">© 2026 Apex Sports <span>·</span> Tu deporte, tu cancha.</p>
+  </footer>
+  <script src="catalogo.js" defer></script>
+  <script src="favoritos.js" defer></script>
+  <script src="paginacion.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Método de pago | Apex Sports</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <a class="salto" href="#contenido">Saltar al contenido</a>
+  <header class="encabezado encabezado-simple">
+    <div class="barra-superior"><a class="marca" href="index.html"><span class="marca-icono" aria-hidden="true">A</span><span>APEX <strong>SPORTS</strong></span></a><a class="enlace-texto" href="entrega.html">← Volver a la entrega</a></div>
+  </header>
+  <main class="checkout" id="contenido">
+    <nav class="pasos" aria-label="Progreso de compra">
+      <a class="paso paso-completado" href="carrito.html"><b>✓</b> Carrito</a><span aria-hidden="true">—</span><a class="paso paso-completado" href="entrega.html"><b>✓</b> Entrega</a><span aria-hidden="true">—</span><span class="paso paso-activo"><b>3</b> Pago</span>
+    </nav>
+    <div class="checkout-titulo"><p class="sobrelinea">PASO 3 DE 3</p><h1>Elige cómo pagar</h1><p>Selecciona tarjeta de crédito o débito, o transferencia bancaria.</p></div>
+    <form action="pedido-confirmado.html" method="get">
+      <div class="checkout-grid">
+        <section class="panel">
+          <h2>Método de pago</h2>
+          <fieldset class="metodos-pago">
+            <legend class="solo-lectores">Selecciona un método de pago</legend>
+            <label class="opcion opcion-pago">
+              <input type="radio" name="metodo" value="tarjeta" required checked>
+              <span><strong>Tarjeta de crédito o débito</strong><small>Visa · Mastercard · Otras tarjetas</small></span>
+              <span class="simbolo-pago" aria-hidden="true">▰</span>
+            </label>
+            <details class="detalles-pago">
+              <summary>Datos de tarjeta (solo demostración)</summary>
+              <div class="campos campos-tarjeta">
+                <div class="campo"><label for="titular">Nombre en la tarjeta</label><input id="titular" autocomplete="cc-name" placeholder="Nombre del titular"></div>
+                <div class="campo"><label for="numero">Número de tarjeta</label><input id="numero" inputmode="numeric" autocomplete="cc-number" placeholder="0000 0000 0000 0000"></div>
+                <div class="campo"><label for="vencimiento">Vencimiento</label><input id="vencimiento" autocomplete="cc-exp" placeholder="MM/AA"></div>
+                <div class="campo"><label for="seguridad">Código de seguridad</label><input id="seguridad" inputmode="numeric" autocomplete="cc-csc" placeholder="3 dígitos"></div>
+              </div>
+            </details>
+            <label class="opcion opcion-pago">
+              <input type="radio" name="metodo" value="transferencia">
+              <span><strong>Transferencia bancaria</strong><small>Consulta los pasos de demostración</small></span>
+              <span class="simbolo-pago simbolo-transferencia" aria-hidden="true">⇄</span>
+            </label>
+            <details class="detalles-pago">
+              <summary>¿Cómo funciona la transferencia?</summary>
+              <p class="ayuda-detalle">En una compra real, tu banco te daría las instrucciones de transferencia. Esta demostración no muestra datos bancarios ni envía dinero.</p>
+            </details>
+          </fieldset>
+          <p class="aviso aviso-seguridad"><strong>Simulación:</strong> este prototipo no procesa pagos. No ingreses datos reales de tarjeta ni realices transferencias.</p>
+        </section>
+        <aside class="panel resumen">
+          <h2>Resumen del pedido</h2>
+          <p><span>Balón Pro Match × 1</span><strong>$34,90</strong></p>
+          <p><span>Envío elegido</span><strong>$4,00–$8,00</strong></p>
+          <hr>
+          <p class="total"><span>Total estimado</span><strong>$38,90–$42,90</strong></p>
+          <button class="boton boton-ancho" type="submit">Confirmar pedido</button>
+          <a class="enlace-volver" href="entrega.html">← Revisar datos de entrega</a>
+        </aside>
+      </div>
+    </form>
+  </main>
+  <footer class="pie pie-simple"><p>© 2026 Apex Sports</p><a href="index.html">Volver a la tienda</a></footer>
+</body>
+</html>
