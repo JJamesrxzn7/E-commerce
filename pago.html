@@ -24,12 +24,12 @@
             <legend class="solo-lectores">Selecciona un método de pago</legend>
             <label class="opcion opcion-pago">
               <input type="radio" name="metodo" value="tarjeta" required checked>
-              <span><strong>Tarjeta de crédito o débito</strong><small>Validación de demostración; no se procesa ningún cobro.</small></span>
+              <span><strong>Tarjeta de crédito o débito</strong><small>Visa · Mastercard · Otras tarjetas</small></span>
               <span class="simbolo-pago" aria-hidden="true">▰</span>
             </label>
             <section class="panel-pago" id="panel-tarjeta" aria-labelledby="titulo-datos-tarjeta">
-              <h3 id="titulo-datos-tarjeta">Datos de tarjeta (solo demostración)</h3>
-              <p class="ayuda-detalle">Usa únicamente datos de prueba: número 4111 1111 1111 1111, una fecha futura y código 123. No ingreses datos de una tarjeta real.</p>
+              <h3 id="titulo-datos-tarjeta">Datos de tarjeta</h3>
+              <p class="ayuda-detalle">Completa los datos tal como aparecen en tu tarjeta.</p>
               <div class="campos campos-tarjeta">
                 <div class="campo">
                   <label for="titular">Nombre en la tarjeta</label>
@@ -40,37 +40,40 @@
                 <div class="campo">
                   <label for="numero">Número de tarjeta</label>
                   <input id="numero" type="text" inputmode="numeric" autocomplete="off" placeholder="4111 1111 1111 1111" aria-describedby="numero-ayuda numero-error" required>
-                  <small class="ayuda-campo" id="numero-ayuda">Ingresa entre 13 y 19 dígitos; se valida el formato y el dígito de control.</small>
+                  <small class="ayuda-campo" id="numero-ayuda">Ingresa entre 13 y 19 dígitos.</small>
                   <small class="error-campo" id="numero-error" role="alert" hidden></small>
                 </div>
                 <div class="campo">
                   <label for="vencimiento">Vencimiento</label>
                   <input id="vencimiento" type="text" inputmode="numeric" autocomplete="off" placeholder="MM/AA" aria-describedby="vencimiento-ayuda vencimiento-error" required>
-                  <small class="ayuda-campo" id="vencimiento-ayuda">Formato MM/AA y fecha actual o futura.</small>
+                  <small class="ayuda-campo" id="vencimiento-ayuda">Formato MM/AA.</small>
                   <small class="error-campo" id="vencimiento-error" role="alert" hidden></small>
                 </div>
                 <div class="campo">
                   <label for="seguridad">Código de seguridad</label>
                   <input id="seguridad" type="text" inputmode="numeric" autocomplete="off" placeholder="123" aria-describedby="seguridad-ayuda seguridad-error" required>
-                  <small class="ayuda-campo" id="seguridad-ayuda">Ingresa 3 o 4 dígitos de prueba.</small>
+                  <small class="ayuda-campo" id="seguridad-ayuda">Ingresa el código de seguridad de 3 o 4 dígitos.</small>
                   <small class="error-campo" id="seguridad-error" role="alert" hidden></small>
                 </div>
               </div>
             </section>
             <label class="opcion opcion-pago">
               <input type="radio" name="metodo" value="transferencia">
-              <span><strong>Transferencia bancaria</strong><small>Guía y cuenta ficticia de demostración</small></span>
+              <span><strong>Transferencia bancaria</strong><small>Banco Pichincha · Transferencia directa</small></span>
               <span class="simbolo-pago simbolo-transferencia" aria-hidden="true">⇄</span>
             </label>
             <section class="panel-pago" id="panel-transferencia" aria-labelledby="titulo-transferencia" hidden>
               <h3 id="titulo-transferencia">Guía para transferencia</h3>
               <ol class="guia-pago">
-                <li>En una compra real, realiza la transferencia desde la aplicación oficial de tu banco.</li>
-                <li>La cuenta que aparece aquí es un dato ficticio para la interfaz; no hagas depósitos ni envíes comprobantes.</li>
-                <li>Para este prototipo no es necesario realizar ninguna operación bancaria.</li>
+                <li>Abre la aplicación de tu banco y selecciona una transferencia a otra institución.</li>
+                <li>Ingresa los datos de la cuenta y el monto total de tu pedido.</li>
+                <li>Escribe el número de pedido en el concepto y conserva el comprobante.</li>
               </ol>
-              <p><strong>Banco:</strong> Banco Pichincha (referencia de demostración)</p>
-              <p><strong>Cuenta ficticia:</strong> 0000000000 · No válida para depósitos</p>
+              <p><strong>Banco:</strong> Banco Pichincha</p>
+              <p><strong>Tipo de cuenta:</strong> Cuenta de ahorros</p>
+              <p><strong>Beneficiario:</strong> Apex Sports</p>
+              <p><strong>Número de cuenta:</strong> 0000000000</p>
+              <p><strong>Concepto:</strong> Pedido Apex Sports</p>
             </section>
             <label class="opcion opcion-pago">
               <input type="radio" name="metodo" value="local">
@@ -80,15 +83,15 @@
             <section class="panel-pago" id="panel-local" aria-labelledby="titulo-local" hidden>
               <h3 id="titulo-local">Pago y retiro en el local</h3>
               <ol class="guia-pago">
-                <li>Confirma el pedido en esta simulación; no se realizará un cobro.</li>
-                <li>En una compra real, espera la confirmación de disponibilidad antes de visitar el local.</li>
-                <li>Acude con tu identificación y el número de pedido para retirar la compra.</li>
+                <li>Selecciona pago en el local y confirma tu pedido.</li>
+                <li>Acude al punto de retiro con tu número de pedido e identificación.</li>
+                <li>Paga en caja al retirar tus productos.</li>
               </ol>
-              <p><strong>Ubicación ficticia:</strong> Av. de la Demostración 123 y Calle Ejemplo, Quito.</p>
-              <p class="aviso-seguridad">Esta dirección es inventada para el prototipo y no corresponde a un establecimiento real.</p>
+              <p><strong>Dirección:</strong> Av. de la Demostración 123 y Calle Ejemplo, Quito.</p>
+              <p><strong>Horario:</strong> Lunes a sábado, de 09:00 a 18:00.</p>
             </section>
           </fieldset>
-          <p class="aviso aviso-seguridad"><strong>Simulación:</strong> no se procesan pagos ni transferencias. Usa solo los datos ficticios indicados y no ingreses información financiera real.</p>
+          <p class="aviso aviso-seguridad"><strong>Simulación:</strong> no se realizará ningún cobro ni transferencia. No ingreses datos financieros reales; la cuenta bancaria y la dirección del local son de ejemplo.</p>
           <p id="pago-error-general" class="error-campo" role="alert" hidden></p>
         </section>
         <aside class="panel resumen">

@@ -5,9 +5,9 @@
   const totalSummary = document.getElementById("confirmacion-total");
   const instructions = document.getElementById("confirmacion-instrucciones");
   const methods = {
-    tarjeta: "Tarjeta de prueba (sin cobro)",
-    transferencia: "Transferencia de demostración",
-    local: "Pago simulado y retiro en local"
+    tarjeta: "Tarjeta de crédito o débito",
+    transferencia: "Transferencia bancaria",
+    local: "Pago en local y retiro"
   };
 
   function formatMoney(cents) {
@@ -31,21 +31,21 @@
     productSummary.textContent = cart.length
       ? cart.map((item) => `${item.name} × ${item.quantity}`).join(", ")
       : "No hay productos guardados en el carrito.";
-    paymentSummary.textContent = methods[method] || "Método de demostración no identificado";
+    paymentSummary.textContent = methods[method] || "No indicado";
 
     if (method === "local") {
       shippingSummary.textContent = "$0,00 · Retiro en local";
       totalSummary.textContent = formatMoney(subtotal);
-      instructions.textContent = "Retiro: en una tienda real, espera la confirmación de disponibilidad. La dirección mostrada durante el pago es ficticia; este prototipo no corresponde a un local real.";
+      instructions.textContent = "Puedes retirar tu pedido en el punto seleccionado. Presenta tu número de pedido e identificación al llegar.";
     } else {
       shippingSummary.textContent = "Estimado: $4,00–$8,00";
       totalSummary.textContent = `${formatMoney(subtotal + 400)}–${formatMoney(subtotal + 800)}`;
       instructions.textContent = method === "transferencia"
-        ? "No realices transferencias. Los datos bancarios vistos en la pantalla anterior son ficticios y solo ilustran el diseño."
-        : "El plazo y el envío son referenciales. No ingresaste ni se guardó información de tarjeta.";
+        ? "Realiza la transferencia con el número de pedido en el concepto y conserva el comprobante."
+        : "El pago fue aprobado. Conserva el número de pedido para consultar el estado de tu compra.";
     }
   } catch (error) {
-    instructions.textContent = `No se pudo cargar el resumen del pedido: ${error.message}`;
+    instructions.textContent = `No se pudo cargar el resumen del pedido. ${error.message}`;
     console.error("Error al mostrar el resumen de confirmación.", error);
   }
 })();

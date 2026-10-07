@@ -53,23 +53,23 @@
     } else if (id === "numero") {
       const digits = value.replace(/[ -]/g, "");
       if (!/^\d{13,19}$/.test(digits) || !luhnIsValid(digits)) {
-        message = "Ingresa un número de prueba válido de 13 a 19 dígitos.";
+        message = "Revisa el número de tarjeta e inténtalo de nuevo.";
       }
     } else if (id === "vencimiento") {
       const match = value.match(/^(0[1-9]|1[0-2])\/(\d{2}|\d{4})$/);
       if (!match) {
-        message = "Usa el formato MM/AA y una fecha actual o futura.";
+        message = "Ingresa una fecha de vencimiento válida en formato MM/AA.";
       } else {
         const month = Number(match[1]);
         const yearValue = Number(match[2]);
         const year = match[2].length === 2 ? 2000 + yearValue : yearValue;
         const now = new Date();
         if (year < now.getFullYear() || (year === now.getFullYear() && month < now.getMonth() + 1)) {
-          message = "La tarjeta de prueba no puede estar vencida.";
+          message = "La tarjeta está vencida. Revisa la fecha e inténtalo de nuevo.";
         }
       }
     } else if (id === "seguridad" && !/^\d{3,4}$/.test(value)) {
-      message = "Ingresa un código ficticio de 3 o 4 dígitos.";
+      message = "Ingresa un código de seguridad de 3 o 4 dígitos.";
     }
 
     field.input.setAttribute("aria-invalid", String(Boolean(message)));
@@ -134,7 +134,7 @@
     if (selected.value === "tarjeta") {
       const invalidFields = cardFields.filter((field) => !validateCardField(field));
       if (invalidFields.length) {
-        generalError.textContent = "Revisa los cuatro campos de la tarjeta de demostración.";
+        generalError.textContent = "Revisa los datos de la tarjeta e inténtalo de nuevo.";
         generalError.hidden = false;
         invalidFields[0].input.focus();
         return;

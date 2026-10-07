@@ -39,7 +39,7 @@ Cada artículo tiene su propia ilustración vectorial SVG, generada para represe
 
 ## Alcance de la demostración
 
-El catálogo, carrito, entrega y pago son una simulación de interfaz. No hay base de datos, inicio de sesión, control de acceso real, envío de pedidos ni procesamiento de pagos. La pantalla de tarjeta usa validación de formato y un número de prueba; nunca escribas datos financieros reales. La cuenta de Banco Pichincha y la ubicación del retiro son ficticias y no deben usarse para depósitos ni visitas. Los favoritos se guardan localmente en el navegador; al borrar sus datos o usar otro dispositivo, no se sincronizan.
+El catálogo, carrito, entrega y pago son una simulación de interfaz. No hay base de datos, inicio de sesión, control de acceso real, envío de pedidos ni procesamiento de pagos. La pantalla de tarjeta valida formato y dígito de control en el navegador, pero no transmite ni conserva esos campos. La cuenta de Banco Pichincha y la ubicación del retiro son de ejemplo y se identifican en el aviso de simulación. Los favoritos se guardan localmente en el navegador; al borrar sus datos o usar otro dispositivo, no se sincronizan.
 
 ## Publicación
 
