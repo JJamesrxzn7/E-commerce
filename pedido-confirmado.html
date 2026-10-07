@@ -15,17 +15,20 @@
     <div class="confirmacion-icono" aria-hidden="true">✓</div>
     <p class="sobrelinea">¡LISTO PARA JUGAR!</p>
     <h1>Tu pedido está confirmado</h1>
-    <p class="texto-confirmacion">El pedido quedó confirmado en esta demostración. Consulta aquí el resumen y el plazo estimado de entrega.</p>
+    <p class="texto-confirmacion">El pedido quedó confirmado en esta demostración. No se realizó ningún cobro ni envío.</p>
     <section class="panel detalle-confirmacion" aria-labelledby="detalle-pedido">
       <h2 id="detalle-pedido">Resumen de tu pedido</h2>
       <p><span>Número de pedido</span><strong>CN-2048</strong></p>
-      <p><span>Producto</span><strong>Balón Pro Match × 1</strong></p>
-      <p><span>Entrega estimada</span><strong>1 a 5 días laborables</strong></p>
-      <p><span>Total estimado</span><strong>$38,90–$42,90</strong></p>
+      <p><span>Productos</span><strong id="confirmacion-productos">Resumen de demostración</strong></p>
+      <p><span>Método de pago</span><strong id="confirmacion-metodo">No indicado</strong></p>
+      <p><span>Envío</span><strong id="confirmacion-envio">Según opción de entrega</strong></p>
+      <p><span>Total estimado</span><strong id="confirmacion-total">No disponible</strong></p>
     </section>
+    <p id="confirmacion-instrucciones" class="aviso aviso-seguridad" role="status" aria-live="polite"></p>
     <p class="aviso aviso-seguridad"><strong>Pago simulado:</strong> no se realizó ningún cobro ni transferencia.</p>
     <a class="boton" href="index.html">Volver a la tienda</a>
   </main>
   <footer class="pie pie-simple"><p>© 2026 Apex Sports</p></footer>
+  <script src="confirmacion.js" defer></script>
 </body>
 </html>

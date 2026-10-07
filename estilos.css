@@ -255,11 +255,15 @@ body.busqueda-activa main > #resultados-busqueda { display: block; }
 .metodos-pago > .opcion { margin-bottom: 0; }
 .simbolo-pago { font-size: 20px; color: var(--azul); }
 .simbolo-transferencia { font-size: 25px; }
-.detalles-pago { margin: 0 0 14px 31px; }
-.detalles-pago summary { width: fit-content; padding: 8px 0; color: var(--azul); font-size: 12px; text-decoration: underline; cursor: pointer; }
-.campos-tarjeta { margin: 6px 0 14px; }
-.ayuda-detalle { max-width: 450px; margin: 4px 0 12px; color: var(--gris); font-size: 12px; line-height: 1.6; }
+.panel-pago { padding: 16px; margin: 0 0 14px 30px; border-left: 3px solid var(--marfil); background: #faf9f5; }
+.panel-pago h3 { margin: 0 0 10px; font-size: 14px; }
+.panel-pago > p { margin: 8px 0; font-size: 12px; line-height: 1.6; }
+.panel-pago[hidden] { display: none; }
+.campos-tarjeta { margin: 10px 0 0; }
+.guia-pago { padding-left: 20px; margin: 0 0 12px; color: var(--azul); font-size: 12px; line-height: 1.65; }
+.guia-pago li + li { margin-top: 5px; }
 .aviso-seguridad { padding: 12px 14px; border-left: 3px solid var(--coral); background: var(--marfil); color: var(--azul); }
+.ayuda-detalle { max-width: 450px; margin: 4px 0 12px; color: var(--gris); font-size: 12px; line-height: 1.6; }
 .enlace-volver { display: block; margin-top: 15px; text-align: center; color: var(--azul); font-size: 12px; font-weight: 650; text-decoration: none; }
 .pie-simple { min-height: 75px; padding-top: 18px; padding-bottom: 18px; }
 .pie-simple a { color: var(--azul); text-decoration: none; font-size: 12px; font-weight: 650; }

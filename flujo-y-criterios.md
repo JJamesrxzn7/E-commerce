@@ -9,8 +9,8 @@ Esta guía documenta el diseño; no forma parte de las pantallas de la tienda.
 - La tienda y sus imágenes usan diseños fluidos: tarjetas que se adaptan al ancho disponible, imágenes con recorte `object-fit: cover` y controles con un mínimo táctil de 44 × 44 px.
 - Paleta limitada a cinco colores: azul profundo `#17324D` (dominante), marfil `#F4F1E8` y terracota `#A84328` (secundarios), gris `#667581` y blanco `#FFFFFF` (complementarios).
 - La compra recorre cuatro clics principales: añadir producto, continuar desde el carrito, continuar desde entrega y confirmar pedido.
-- El pago y la entrega son simulaciones visuales. No hay cobro, transferencia ni persistencia de pedido real. Los formularios HTML validan campos obligatorios y la selección de entrega y pago. Los totales finales muestran ambos costos posibles porque HTML/CSS sin lógica no conservan ni recalculan la selección entre páginas.
-- Para completar el recorrido en cuatro acciones principales, el envío estándar y la tarjeta aparecen preseleccionados; se pueden cambiar por envío express o transferencia.
+- El pago y la entrega son simulaciones visuales. No hay cobro, transferencia ni persistencia de pedido real. Los cuatro campos de tarjeta se validan solo en el navegador con datos de prueba; no se guardan ni se envían. Transferencia y retiro local muestran guías ficticias. El retiro local elimina la tarifa de envío y calcula el total como el subtotal.
+- Para completar el recorrido en cuatro acciones principales, el envío estándar y la tarjeta aparecen preseleccionados; se pueden cambiar por envío express, transferencia o pago y retiro local.
 - Al seleccionar la imagen o los datos de un artículo se abre una ficha propia con imagen, descripción, precio, selector de cantidad, acción para añadir al carrito y productos relacionados. La cantidad elegida se suma al carrito y puede ajustarse allí; los controles de cantidad son accesibles por teclado y cumplen el mínimo táctil de 44 px.
 - Cualquier persona puede guardar artículos en favoritos con el control de corazón y compararlos después desde «Favoritos». La lista se conserva en `localStorage` del mismo navegador y dispositivo; no exige cuenta para esta demostración.
 - La lista local se puede perder si se borran los datos del navegador, se usa otro navegador/dispositivo o se cambia el origen del sitio. Una cuenta no es necesaria para guardar en el mismo dispositivo; para recuperar/sincronizar la lista entre dispositivos sí se requiere autenticación y un servicio/backend que la almacene. Eso queda fuera de este prototipo.
@@ -74,9 +74,9 @@ stateDiagram-v2
 
 1. **Producto:** el usuario abre la ficha del producto para revisar su imagen y descripción; puede añadirlo desde esa vista o volver a explorar.
 2. **Carrito:** continuar con la compra o volver al catálogo.
-3. **Entrega:** los campos requeridos deben ser válidos y debe seleccionarse envío estándar o express. El navegador informa los campos inválidos.
-4. **Pago:** el usuario selecciona tarjeta o transferencia; HTML exige una selección antes de confirmar. Los paneles `<details>` permiten consultar información de cada alternativa.
-5. **Confirmación:** se informa el resultado simulado y la ventana estimada de entrega (1–5 días) con el rango de costo correspondiente a las modalidades.
+3. **Entrega:** los campos requeridos deben ser válidos y debe seleccionarse envío estándar o express. La interfaz informa los campos inválidos.
+4. **Pago:** el usuario selecciona tarjeta, transferencia o pago y retiro local. Con tarjeta debe completar los cuatro campos de prueba; transferencia muestra una cuenta ficticia de Banco Pichincha y retiro local muestra una dirección ficticia. El retiro local elimina el costo de envío.
+5. **Confirmación:** se muestra el método elegido, los artículos reales del carrito local y un total ilustrativo; retiro local no suma envío. No se procesa dinero ni se crea un pedido real.
 
 ## Secuencia de tareas
 
@@ -86,8 +86,8 @@ stateDiagram-v2
 2. Abrir un producto y revisar su ficha y recomendaciones; elegir una cantidad con el campo o los botones −/+, y activar **Añadir al carrito**. Feedback: el contador y el mensaje de estado confirman las unidades añadidas sin salir de la ficha.
 3. Revisar subtotal y activar **Continuar con la entrega**.
 4. Completar nombre, correo, teléfono, dirección y ciudad; elegir envío estándar (3–5 días) o express (1–2 días). Feedback: validación nativa del navegador si falta un dato.
-5. Activar **Continuar al pago**; revisar total y seleccionar tarjeta o transferencia. Se pueden desplegar detalles informativos de cada método.
-6. Activar **Confirmar pedido**. Feedback: pantalla de confirmación con número demostrativo, producto, plazo estimado y aviso claro de que no hubo cobro.
+5. Activar **Continuar al pago**; seleccionar tarjeta, transferencia o pago y retiro local. Para tarjeta, completar los campos con los datos ficticios de prueba; transferencia y retiro muestran instrucciones de demostración.
+6. Activar **Confirmar pedido**. Feedback: la pantalla presenta el método, artículos y total estimado; aclara que no hubo cobro, transferencia ni envío real.
 
 ### Objetivo: cambiar el método de entrega o pago antes de confirmar
 
@@ -122,7 +122,9 @@ stateDiagram-v2
 | Búsqueda | Envío del término como parámetro de URL; la interfaz no implementa resultados dinámicos. |
 | Envío con campos incompletos | Validación nativa del navegador, foco en el primer control inválido y mensaje asociado. |
 | Selección de entrega | La opción marcada es visible; en el paso de pago se muestra una entrega de demostración con costo y plazo estimados. |
-| Selección de pago | La selección de radio indica el método; se despliega información adicional al activar los detalles. |
+| Selección de tarjeta | Se validan nombre, número de prueba mediante dígito de control, vencimiento y código de seguridad; el primer campo inválido recibe el foco. Los datos no se guardan ni se envían. |
+| Selección de transferencia | Aparece una guía y una cuenta ficticia de Banco Pichincha con aviso de no depositar. |
+| Selección de pago y retiro local | Aparece una guía con ubicación ficticia; el costo de envío pasa a $0,00 y el total queda igual al subtotal. |
 | Añadir al carrito desde la ficha | El contador del carrito se actualiza y el botón confirma la acción; permanece visible la ficha del producto. |
 | Seleccionar cantidad en la ficha | Los controles −/+ y el campo numérico actualizan la cantidad; el carrito recibe las unidades seleccionadas. |
 | Agregar o quitar favorito | El corazón cambia entre seleccionado/no seleccionado, se actualiza el contador y se anuncia el nombre del artículo; en la lista se refleja el cambio. |
@@ -143,7 +145,7 @@ stateDiagram-v2
 2. **Correspondencia con el mundo real:** vocabulario familiar, categorías deportivas, precios, direcciones y plazos cotidianos.
 3. **Control y libertad:** regreso a carrito/entrega y volver a la tienda antes o después de la simulación.
 4. **Consistencia y estándares:** navegación, botones, formularios y progreso consistentes; controles HTML convencionales.
-5. **Prevención de errores (parcial):** campos obligatorios y una selección requerida para envío/pago; el prototipo no valida inventario, cantidades ni datos bancarios.
+5. **Prevención de errores (parcial):** campos obligatorios, elección de método y validación de formato de los datos ficticios de tarjeta; el prototipo no valida inventario ni verifica pagos o cuentas bancarias reales.
 6. **Reconocer en vez de recordar:** categorías visibles, progreso actual, resumen por etapa y lista de favoritos guardada en el navegador.
 7. **Flexibilidad y eficiencia:** acceso por categoría, favoritos para comparar y camino de checkout corto; no hay atajos personalizados.
 8. **Diseño estético y minimalista:** contenido comercial prioritario, pantallas de checkout sin elementos promocionales innecesarios.

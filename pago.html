@@ -15,8 +15,8 @@
     <nav class="pasos" aria-label="Progreso de compra">
       <a class="paso paso-completado" href="carrito.html"><b>✓</b> Carrito</a><span aria-hidden="true">—</span><a class="paso paso-completado" href="entrega.html"><b>✓</b> Entrega</a><span aria-hidden="true">—</span><span class="paso paso-activo"><b>3</b> Pago</span>
     </nav>
-    <div class="checkout-titulo"><p class="sobrelinea">PASO 3 DE 3</p><h1>Elige cómo pagar</h1><p>Selecciona tarjeta de crédito o débito, o transferencia bancaria.</p></div>
-    <form action="pedido-confirmado.html" method="get">
+    <div class="checkout-titulo"><p class="sobrelinea">PASO 3 DE 3</p><h1>Elige cómo pagar</h1><p>Selecciona tarjeta de crédito o débito, transferencia bancaria o pago y retiro en el local.</p></div>
+    <form id="pago-formulario">
       <div class="checkout-grid">
         <section class="panel">
           <h2>Método de pago</h2>
@@ -24,37 +24,80 @@
             <legend class="solo-lectores">Selecciona un método de pago</legend>
             <label class="opcion opcion-pago">
               <input type="radio" name="metodo" value="tarjeta" required checked>
-              <span><strong>Tarjeta de crédito o débito</strong><small>Visa · Mastercard · Otras tarjetas</small></span>
+              <span><strong>Tarjeta de crédito o débito</strong><small>Validación de demostración; no se procesa ningún cobro.</small></span>
               <span class="simbolo-pago" aria-hidden="true">▰</span>
             </label>
-            <details class="detalles-pago">
-              <summary>Datos de tarjeta (solo demostración)</summary>
+            <section class="panel-pago" id="panel-tarjeta" aria-labelledby="titulo-datos-tarjeta">
+              <h3 id="titulo-datos-tarjeta">Datos de tarjeta (solo demostración)</h3>
+              <p class="ayuda-detalle">Usa únicamente datos de prueba: número 4111 1111 1111 1111, una fecha futura y código 123. No ingreses datos de una tarjeta real.</p>
               <div class="campos campos-tarjeta">
-                <div class="campo"><label for="titular">Nombre en la tarjeta</label><input id="titular" autocomplete="cc-name" placeholder="Nombre del titular"></div>
-                <div class="campo"><label for="numero">Número de tarjeta</label><input id="numero" inputmode="numeric" autocomplete="cc-number" placeholder="0000 0000 0000 0000"></div>
-                <div class="campo"><label for="vencimiento">Vencimiento</label><input id="vencimiento" autocomplete="cc-exp" placeholder="MM/AA"></div>
-                <div class="campo"><label for="seguridad">Código de seguridad</label><input id="seguridad" inputmode="numeric" autocomplete="cc-csc" placeholder="3 dígitos"></div>
+                <div class="campo">
+                  <label for="titular">Nombre en la tarjeta</label>
+                  <input id="titular" type="text" autocomplete="off" aria-describedby="titular-ayuda titular-error" required>
+                  <small class="ayuda-campo" id="titular-ayuda">Escribe el nombre del titular, con al menos 2 letras.</small>
+                  <small class="error-campo" id="titular-error" role="alert" hidden></small>
+                </div>
+                <div class="campo">
+                  <label for="numero">Número de tarjeta</label>
+                  <input id="numero" type="text" inputmode="numeric" autocomplete="off" placeholder="4111 1111 1111 1111" aria-describedby="numero-ayuda numero-error" required>
+                  <small class="ayuda-campo" id="numero-ayuda">Ingresa entre 13 y 19 dígitos; se valida el formato y el dígito de control.</small>
+                  <small class="error-campo" id="numero-error" role="alert" hidden></small>
+                </div>
+                <div class="campo">
+                  <label for="vencimiento">Vencimiento</label>
+                  <input id="vencimiento" type="text" inputmode="numeric" autocomplete="off" placeholder="MM/AA" aria-describedby="vencimiento-ayuda vencimiento-error" required>
+                  <small class="ayuda-campo" id="vencimiento-ayuda">Formato MM/AA y fecha actual o futura.</small>
+                  <small class="error-campo" id="vencimiento-error" role="alert" hidden></small>
+                </div>
+                <div class="campo">
+                  <label for="seguridad">Código de seguridad</label>
+                  <input id="seguridad" type="text" inputmode="numeric" autocomplete="off" placeholder="123" aria-describedby="seguridad-ayuda seguridad-error" required>
+                  <small class="ayuda-campo" id="seguridad-ayuda">Ingresa 3 o 4 dígitos de prueba.</small>
+                  <small class="error-campo" id="seguridad-error" role="alert" hidden></small>
+                </div>
               </div>
-            </details>
+            </section>
             <label class="opcion opcion-pago">
               <input type="radio" name="metodo" value="transferencia">
-              <span><strong>Transferencia bancaria</strong><small>Consulta los pasos de demostración</small></span>
+              <span><strong>Transferencia bancaria</strong><small>Guía y cuenta ficticia de demostración</small></span>
               <span class="simbolo-pago simbolo-transferencia" aria-hidden="true">⇄</span>
             </label>
-            <details class="detalles-pago">
-              <summary>¿Cómo funciona la transferencia?</summary>
-              <p class="ayuda-detalle">En una compra real, tu banco te daría las instrucciones de transferencia. Esta demostración no muestra datos bancarios ni envía dinero.</p>
-            </details>
+            <section class="panel-pago" id="panel-transferencia" aria-labelledby="titulo-transferencia" hidden>
+              <h3 id="titulo-transferencia">Guía para transferencia</h3>
+              <ol class="guia-pago">
+                <li>En una compra real, realiza la transferencia desde la aplicación oficial de tu banco.</li>
+                <li>La cuenta que aparece aquí es un dato ficticio para la interfaz; no hagas depósitos ni envíes comprobantes.</li>
+                <li>Para este prototipo no es necesario realizar ninguna operación bancaria.</li>
+              </ol>
+              <p><strong>Banco:</strong> Banco Pichincha (referencia de demostración)</p>
+              <p><strong>Cuenta ficticia:</strong> 0000000000 · No válida para depósitos</p>
+            </section>
+            <label class="opcion opcion-pago">
+              <input type="radio" name="metodo" value="local">
+              <span><strong>Pago en local y retiro</strong><small>Sin tarifa de envío</small></span>
+              <span class="simbolo-pago" aria-hidden="true">⌖</span>
+            </label>
+            <section class="panel-pago" id="panel-local" aria-labelledby="titulo-local" hidden>
+              <h3 id="titulo-local">Pago y retiro en el local</h3>
+              <ol class="guia-pago">
+                <li>Confirma el pedido en esta simulación; no se realizará un cobro.</li>
+                <li>En una compra real, espera la confirmación de disponibilidad antes de visitar el local.</li>
+                <li>Acude con tu identificación y el número de pedido para retirar la compra.</li>
+              </ol>
+              <p><strong>Ubicación ficticia:</strong> Av. de la Demostración 123 y Calle Ejemplo, Quito.</p>
+              <p class="aviso-seguridad">Esta dirección es inventada para el prototipo y no corresponde a un establecimiento real.</p>
+            </section>
           </fieldset>
-          <p class="aviso aviso-seguridad"><strong>Simulación:</strong> este prototipo no procesa pagos. No ingreses datos reales de tarjeta ni realices transferencias.</p>
+          <p class="aviso aviso-seguridad"><strong>Simulación:</strong> no se procesan pagos ni transferencias. Usa solo los datos ficticios indicados y no ingreses información financiera real.</p>
+          <p id="pago-error-general" class="error-campo" role="alert" hidden></p>
         </section>
         <aside class="panel resumen">
           <h2>Resumen del pedido</h2>
           <div class="resumen-productos" data-cart-items></div>
           <p><span>Subtotal</span><strong data-cart-subtotal>$0,00</strong></p>
-          <p><span>Envío elegido</span><strong>$4,00–$8,00</strong></p>
+          <p data-pago-envio><span>Envío</span><strong>$4,00–$8,00</strong></p>
           <hr>
-          <p class="total"><span>Total estimado</span><strong data-cart-total-range>$4,00–$8,00</strong></p>
+          <p class="total"><span>Total estimado</span><strong data-pago-total>$4,00–$8,00</strong></p>
           <button class="boton boton-ancho" type="submit">Confirmar pedido</button>
           <a class="enlace-volver" href="entrega.html">← Revisar datos de entrega</a>
         </aside>
@@ -63,5 +106,6 @@
   </main>
   <footer class="pie pie-simple"><p>© 2026 Apex Sports</p><a href="index.html">Volver a la tienda</a></footer>
   <script src="carrito.js" defer></script>
+  <script src="pago.js" defer></script>
 </body>
 </html>

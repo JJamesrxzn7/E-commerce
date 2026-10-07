@@ -20,6 +20,8 @@ Para publicarlo, configura GitHub Pages en el repositorio con la rama `main` y l
 - `generar-ilustraciones.js`: genera nuevamente las 120 ilustraciones SVG locales desde el catálogo.
 - `favoritos.js`: permite agregar/quitar favoritos, actualiza los botones y el contador, y guarda la lista en `localStorage` de este navegador.
 - `carrito.js`: agrega productos, conserva cantidades en `localStorage` y actualiza el carrito y los resúmenes del flujo de compra.
+- `pago.js`: valida los cuatro campos de tarjeta de prueba, muestra guías de transferencia/retiro y calcula el envío gratuito para retiro local, sin almacenar datos financieros.
+- `confirmacion.js`: presenta el resumen del carrito y el método elegido, sin incluir información de tarjeta en la URL.
 - `entrega-validacion.js`: valida los datos de entrega al salir de cada campo y al enviar el formulario, con mensajes y guías en español.
 - `paginacion.js`: muestra hasta 15 productos por página en las categorías y favoritos; muestra controles solo si hay más de 15.
 - `carrito.html`, `entrega.html`, `pago.html`, `pedido-confirmado.html`: pantallas de demostración para el flujo de compra.
@@ -37,7 +39,7 @@ Cada artículo tiene su propia ilustración vectorial SVG, generada para represe
 
 ## Alcance de la demostración
 
-El catálogo, carrito, entrega y pago son una simulación de interfaz. No hay base de datos, inicio de sesión, control de acceso real, envío de pedidos ni procesamiento de pagos. Los favoritos se guardan localmente en el navegador; al borrar sus datos o usar otro dispositivo, no se sincronizan.
+El catálogo, carrito, entrega y pago son una simulación de interfaz. No hay base de datos, inicio de sesión, control de acceso real, envío de pedidos ni procesamiento de pagos. La pantalla de tarjeta usa validación de formato y un número de prueba; nunca escribas datos financieros reales. La cuenta de Banco Pichincha y la ubicación del retiro son ficticias y no deben usarse para depósitos ni visitas. Los favoritos se guardan localmente en el navegador; al borrar sus datos o usar otro dispositivo, no se sincronizan.
 
 ## Publicación
 
