@@ -86,13 +86,8 @@
       addButton.dataset.productId = productId;
       addButton.textContent = "Añadir al carrito";
       addButton.classList.remove("producto-anadido");
-      if (document.body.classList.contains("busqueda-activa")) {
-        backLink.href = "#resultados-busqueda";
-        backLink.textContent = "← Volver a resultados";
-      } else {
-        backLink.href = `#${productCard.dataset.categoryId}`;
-        backLink.textContent = `← Volver a ${productCard.querySelector(".producto-categoria").textContent.split(" · ")[0]}`;
-      }
+      backLink.href = "index.html";
+      backLink.textContent = "← Volver al inicio";
       status.textContent = "";
       renderRelatedProducts(productId, productCard.dataset.categoryId);
 
