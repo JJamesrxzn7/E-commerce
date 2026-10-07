@@ -16,26 +16,57 @@
       <a class="paso paso-completado" href="carrito.html"><b>✓</b> Carrito</a><span aria-hidden="true">—</span><span class="paso paso-activo"><b>2</b> Entrega</span><span aria-hidden="true">—</span><span class="paso"><b>3</b> Pago</span>
     </nav>
     <div class="checkout-titulo"><p class="sobrelinea">PASO 2 DE 3</p><h1>¿Dónde lo entregamos?</h1><p>Completa tus datos y elige cómo recibir tu pedido.</p></div>
-    <form action="pago.html" method="get">
+    <form action="pago.html" method="get" novalidate>
       <div class="checkout-grid">
         <section class="panel">
           <h2>Datos de contacto</h2>
           <p class="aviso aviso-seguridad">Simulación de entrega: los datos ingresados no se guardan ni se envían y no se realizará un envío real.</p>
           <div class="campos">
-            <div class="campo"><label for="nombre">Nombre completo</label><input id="nombre" autocomplete="name" required></div>
-            <div class="campo"><label for="correo">Correo electrónico</label><input id="correo" type="email" autocomplete="email" required></div>
-            <div class="campo"><label for="telefono">Teléfono</label><input id="telefono" type="tel" autocomplete="tel" required></div>
-            <div class="campo"><label for="direccion">Dirección de entrega</label><input id="direccion" autocomplete="street-address" required></div>
-            <div class="campo"><label for="ciudad">Ciudad</label><input id="ciudad" autocomplete="address-level2" required></div>
-            <div class="campo"><label for="referencia">Referencia (opcional)</label><input id="referencia" placeholder="Ej.: junto al parque"></div>
+            <div class="campo">
+              <label for="nombre">Nombre completo</label>
+              <input id="nombre" autocomplete="name" aria-describedby="nombre-ayuda nombre-error" required>
+              <small class="ayuda-campo" id="nombre-ayuda">Escribe tu nombre y apellido.</small>
+              <small class="error-campo" id="nombre-error" role="alert" hidden></small>
+            </div>
+            <div class="campo">
+              <label for="correo">Correo electrónico</label>
+              <input id="correo" type="email" autocomplete="email" aria-describedby="correo-ayuda correo-error" required>
+              <small class="ayuda-campo" id="correo-ayuda">Usa el formato nombre@dominio.com.</small>
+              <small class="error-campo" id="correo-error" role="alert" hidden></small>
+            </div>
+            <div class="campo">
+              <label for="telefono">Teléfono</label>
+              <input id="telefono" type="tel" autocomplete="tel" aria-describedby="telefono-ayuda telefono-error" required>
+              <small class="ayuda-campo" id="telefono-ayuda">Ingresa de 7 a 15 dígitos; puedes incluir +, espacios o guiones.</small>
+              <small class="error-campo" id="telefono-error" role="alert" hidden></small>
+            </div>
+            <div class="campo">
+              <label for="direccion">Dirección de entrega</label>
+              <input id="direccion" autocomplete="street-address" aria-describedby="direccion-ayuda direccion-error" required>
+              <small class="ayuda-campo" id="direccion-ayuda">Indica calle y número de tu domicilio.</small>
+              <small class="error-campo" id="direccion-error" role="alert" hidden></small>
+            </div>
+            <div class="campo">
+              <label for="ciudad">Ciudad</label>
+              <input id="ciudad" autocomplete="address-level2" aria-describedby="ciudad-ayuda ciudad-error" required>
+              <small class="ayuda-campo" id="ciudad-ayuda">Escribe la ciudad de entrega.</small>
+              <small class="error-campo" id="ciudad-error" role="alert" hidden></small>
+            </div>
+            <div class="campo">
+              <label for="referencia">Referencia (opcional)</label>
+              <input id="referencia" aria-describedby="referencia-ayuda referencia-error" placeholder="Ej.: junto al parque">
+              <small class="ayuda-campo" id="referencia-ayuda">Añade indicaciones útiles para encontrar tu domicilio.</small>
+              <small class="error-campo" id="referencia-error" role="alert" hidden></small>
+            </div>
           </div>
-          <fieldset class="opciones-entrega">
+          <fieldset class="opciones-entrega" aria-describedby="entrega-error">
             <legend>Elige una opción de entrega</legend>
             <label class="opcion">
               <input type="radio" name="entrega" value="estandar" required checked>
               <span><strong>Envío estándar</strong><small>3 a 5 días laborables · $4,00</small></span>
               <b>$4,00</b>
             </label>
+            <small class="error-campo" id="entrega-error" role="alert" hidden></small>
             <label class="opcion">
               <input type="radio" name="entrega" value="express">
               <span><strong>Envío express</strong><small>1 a 2 días laborables · $8,00</small></span>
@@ -45,10 +76,11 @@
         </section>
         <aside class="panel resumen">
           <h2>Tu pedido</h2>
-          <p><span>Balón Pro Match × 1</span><strong>$34,90</strong></p>
+          <div class="resumen-productos" data-cart-items></div>
+          <p><span>Subtotal</span><strong data-cart-subtotal>$0,00</strong></p>
           <p><span>Envío estándar o express</span><strong>$4,00–$8,00</strong></p>
           <hr>
-          <p class="total"><span>Total estimado</span><strong>$38,90–$42,90</strong></p>
+          <p class="total"><span>Total estimado</span><strong data-cart-total-range>$4,00–$8,00</strong></p>
           <p class="nota-segura">Estándar: 3–5 días. Express: 1–2 días. El costo depende de tu elección.</p>
           <button class="boton boton-ancho" type="submit">Continuar al pago</button>
           <a class="enlace-volver" href="carrito.html">← Volver al carrito</a>
@@ -57,5 +89,7 @@
     </form>
   </main>
   <footer class="pie pie-simple"><p>© 2026 Apex Sports</p><a href="index.html">Volver a la tienda</a></footer>
+  <script src="carrito.js" defer></script>
+  <script src="entrega-validacion.js" defer></script>
 </body>
 </html>

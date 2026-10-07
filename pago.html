@@ -50,10 +50,11 @@
         </section>
         <aside class="panel resumen">
           <h2>Resumen del pedido</h2>
-          <p><span>Balón Pro Match × 1</span><strong>$34,90</strong></p>
+          <div class="resumen-productos" data-cart-items></div>
+          <p><span>Subtotal</span><strong data-cart-subtotal>$0,00</strong></p>
           <p><span>Envío elegido</span><strong>$4,00–$8,00</strong></p>
           <hr>
-          <p class="total"><span>Total estimado</span><strong>$38,90–$42,90</strong></p>
+          <p class="total"><span>Total estimado</span><strong data-cart-total-range>$4,00–$8,00</strong></p>
           <button class="boton boton-ancho" type="submit">Confirmar pedido</button>
           <a class="enlace-volver" href="entrega.html">← Revisar datos de entrega</a>
         </aside>
@@ -61,5 +62,6 @@
     </form>
   </main>
   <footer class="pie pie-simple"><p>© 2026 Apex Sports</p><a href="index.html">Volver a la tienda</a></footer>
+  <script src="carrito.js" defer></script>
 </body>
 </html>

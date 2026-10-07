@@ -21,26 +21,25 @@
     <div class="checkout-titulo"><p class="sobrelinea">TU SELECCIÓN</p><h1><svg class="icono-carrito icono-carrito-titulo" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2.5 3.5h2l2.1 11.1a2 2 0 0 0 2 1.6h8.7a2 2 0 0 0 1.9-1.4l2-7.3H6"></path><circle cx="9" cy="20" r="1.4"></circle><circle cx="18" cy="20" r="1.4"></circle></svg>Tu carrito</h1><p>Revisa tus productos antes de continuar.</p></div>
     <div class="checkout-grid">
       <section class="panel">
-        <h2>Productos <span class="nota-resultados">(1)</span></h2>
-        <article class="linea-carrito">
-          <div class="miniatura imagen-balon" aria-hidden="true"><span>●</span></div>
-          <div class="detalle-carrito"><p class="producto-categoria">Fútbol · Balones</p><h3>Balón Pro Match</h3><p>Talla 5 · Cantidad: 1</p></div>
-          <strong class="precio">$34,90</strong>
-        </article>
+        <h2>Productos <span class="nota-resultados" id="cart-count">(0)</span></h2>
+        <div id="cart-items"></div>
+        <p id="cart-empty">Tu carrito está vacío. Añade productos desde el catálogo.</p>
         <a class="enlace-texto" href="index.html#productos">＋ Añadir otro producto</a>
         <p class="aviso">Los productos y valores son una demostración de compra.</p>
+        <p class="solo-lectores" id="cart-status" role="status" aria-live="polite"></p>
       </section>
       <aside class="panel resumen">
         <h2>Resumen del pedido</h2>
-        <p><span>Subtotal</span><strong>$34,90</strong></p>
+        <p><span>Subtotal</span><strong data-cart-subtotal>$0,00</strong></p>
         <p><span>Envío</span><strong>Se calcula en el siguiente paso</strong></p>
         <hr>
-        <p class="total"><span>Total parcial</span><strong>$34,90</strong></p>
-        <a class="boton boton-ancho" href="entrega.html">Continuar con la entrega</a>
+        <p class="total"><span>Total parcial</span><strong data-cart-subtotal>$0,00</strong></p>
+        <a class="boton boton-ancho" id="checkout-link" href="entrega.html">Continuar con la entrega</a>
         <p class="nota-segura">Pago seguro · Confirmarás tu método en el siguiente paso</p>
       </aside>
     </div>
   </main>
   <footer class="pie pie-simple"><p>© 2026 Apex Sports</p><a href="index.html">Volver a la tienda</a></footer>
+  <script src="carrito.js" defer></script>
 </body>
 </html>

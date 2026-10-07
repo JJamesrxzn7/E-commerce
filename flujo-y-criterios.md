@@ -11,7 +11,7 @@ Esta guía documenta el diseño; no forma parte de las pantallas de la tienda.
 - La compra recorre cuatro clics principales: añadir producto, continuar desde el carrito, continuar desde entrega y confirmar pedido.
 - El pago y la entrega son simulaciones visuales. No hay cobro, transferencia ni persistencia de pedido real. Los formularios HTML validan campos obligatorios y la selección de entrega y pago. Los totales finales muestran ambos costos posibles porque HTML/CSS sin lógica no conservan ni recalculan la selección entre páginas.
 - Para completar el recorrido en cuatro acciones principales, el envío estándar y la tarjeta aparecen preseleccionados; se pueden cambiar por envío express o transferencia.
-- El recorrido demostrativo parte del balón precargado en el carrito. Los enlaces «Añadir al carrito» llevan al mismo carrito de demostración; el prototipo no mantiene cantidades ni selección entre páginas.
+- Al seleccionar la imagen o los datos de un artículo se abre una ficha propia con imagen, descripción, precio, selector de cantidad, acción para añadir al carrito y productos relacionados. La cantidad elegida se suma al carrito y puede ajustarse allí; los controles de cantidad son accesibles por teclado y cumplen el mínimo táctil de 44 px.
 - Cualquier persona puede guardar artículos en favoritos con el control de corazón y compararlos después desde «Favoritos». La lista se conserva en `localStorage` del mismo navegador y dispositivo; no exige cuenta para esta demostración.
 - La lista local se puede perder si se borran los datos del navegador, se usa otro navegador/dispositivo o se cambia el origen del sitio. Una cuenta no es necesaria para guardar en el mismo dispositivo; para recuperar/sincronizar la lista entre dispositivos sí se requiere autenticación y un servicio/backend que la almacene. Eso queda fuera de este prototipo.
 - La paginación muestra hasta 15 productos por página en cada categoría y en favoritos; no se muestran controles si no hay más de 15 productos. Si se agregan más, anterior/siguiente no cambia de categoría, y al abrir otra sección se vuelve a su primera página.
@@ -40,38 +40,13 @@ Sí: la navegación y los controles usan enlaces, botones, campos y radios HTML 
 - El enlace **Saltar al contenido** aparece al recibir foco. El control activo tiene un contorno de foco visible.
 - **Esc** no se necesita para cerrar nada en este prototipo; los detalles de pago se abren y cierran con Enter o Espacio.
 
-La búsqueda es solo visual: permite escribir y enviar el término a la URL, pero no filtra productos. Los botones de añadir llevan al carrito fijo de demostración; no mantienen el artículo seleccionado. En cambio, los botones de corazón guardan y quitan productos de la lista de favoritos local. Las tarjetas de categoría usan iconos SVG dibujados para representar el deporte o equipo relacionado. La portada presenta todas las categorías y sus carruseles horizontales; los botones **Explorar categoría** y la tarjeta final **Ver más** llevan a la misma vista exclusiva. Al entrar en una categoría se oculta el resto de la portada; **Volver a categorías** restaura todas las secciones. La vista exclusiva muestra hasta diez artículos por página y **Anterior/Siguiente** aparece solo si se agregan más de diez; la lista de favoritos también se pagina si supera ese tamaño.
+La búsqueda filtra los artículos del catálogo. Seleccionar la imagen o los datos de un producto abre su ficha, con imagen, descripción, precio, selector de cantidad, acción para añadir al carrito y recomendaciones relacionadas; «Volver a [categoría]» regresa a la sección anterior. Los controles de cantidad permiten definir unidades antes de añadirlas y ajustar el valor desde el carrito. Los controles de añadir y quitar gestionan el carrito de demostración; los botones de corazón guardan y quitan productos de la lista local de favoritos. Las tarjetas de categoría usan iconos SVG dibujados para representar el deporte o equipo relacionado. La portada presenta todas las categorías y sus carruseles horizontales; los botones **Explorar categoría** y la tarjeta final **Ver más** llevan a la misma vista exclusiva. Al entrar en una categoría se oculta el resto de la portada; **Volver a categorías** restaura todas las secciones. La vista exclusiva muestra hasta quince artículos por página y **Anterior/Siguiente** aparece solo si se agregan más de quince; la lista de favoritos también se pagina si supera ese tamaño.
 
-## Cómo agregar fotografías reales
+## Ilustraciones de los productos
 
-1. Crea la carpeta `images/productos/` junto a `index.html`.
-2. Añade fotos propias, con licencia adecuada o autorizadas por el vendedor. Para este diseño conviene usar formato WebP o JPEG, imagen cuadrada (por ejemplo 800 × 800 px), fondo despejado y peso optimizado.
-3. En cada tarjeta, sustituye el dibujo decorativo por una imagen con texto alternativo. Por ejemplo:
+Cada artículo tiene su propia ilustración SVG original: muestra únicamente el producto sobre un fondo liso, sin personas ni escenas. Las 120 ilustraciones se guardan en `images/products/`, usan texto alternativo y tienen licencia CC BY 4.0. Se pueden regenerar ejecutando `node generar-ilustraciones.js` desde la raíz del proyecto. Son ilustraciones referenciales; no son fotografías oficiales de los modelos comerciales ficticios del prototipo.
 
-   ```html
-   <div class="producto-imagen">
-     <img src="images/productos/balon-pro-match.webp"
-          srcset="images/productos/balon-pro-match-400.webp 400w,
-                 images/productos/balon-pro-match-800.webp 800w"
-          sizes="(max-width: 480px) 100vw, (max-width: 760px) 50vw, 360px"
-          alt="Balón de fútbol Pro Match, talla 5">
-   </div>
-   ```
-
-4. Las imágenes de productos ya tienen estilos responsive en `estilos.css`: ocupan el ancho de su tarjeta, mantienen una proporción estable y usan `object-fit: cover`. Para cualquier imagen fuera de las tarjetas puedes aplicar:
-
-   ```css
-   .producto-imagen img {
-     width: 100%;
-     height: 100%;
-     object-fit: cover;
-     display: block;
-   }
-   ```
-
-5. Repite el cambio en el producto correspondiente, actualizando el nombre del archivo y el `alt` para describir el artículo; comprueba que cada ruta y el contraste de etiquetas superpuestas sigan correctos.
-
-Las tarjetas actualmente usan ilustraciones de formas CSS, no fotografías descargadas. Así el prototipo funciona sin depender de imágenes externas; las rutas anteriores sirven de ejemplo para incorporar archivos locales.
+Para cambiar la ilustración de un artículo, modifica su registro en `data/products.json` y la regla correspondiente del archivo `generar-ilustraciones.js`; luego ejecuta el generador. Las imágenes locales responden y se muestran sin depender de un servicio externo.
 
 ## Flujo de navegación: diagrama de estados
 
@@ -97,7 +72,7 @@ stateDiagram-v2
 
 ### Puntos de decisión
 
-1. **Producto:** el usuario elige una categoría/producto o sigue explorando; añadir abre el carrito de demostración.
+1. **Producto:** el usuario abre la ficha del producto para revisar su imagen y descripción; puede añadirlo desde esa vista o volver a explorar.
 2. **Carrito:** continuar con la compra o volver al catálogo.
 3. **Entrega:** los campos requeridos deben ser válidos y debe seleccionarse envío estándar o express. El navegador informa los campos inválidos.
 4. **Pago:** el usuario selecciona tarjeta o transferencia; HTML exige una selección antes de confirmar. Los paneles `<details>` permiten consultar información de cada alternativa.
@@ -108,7 +83,7 @@ stateDiagram-v2
 ### Objetivo: comprar un artículo
 
 1. Explorar el catálogo por deporte o usar búsqueda.
-2. Elegir el producto y activar **Añadir al carrito**. Feedback: se abre el carrito de demostración con el producto, cantidad y precio.
+2. Abrir un producto y revisar su ficha y recomendaciones; elegir una cantidad con el campo o los botones −/+, y activar **Añadir al carrito**. Feedback: el contador y el mensaje de estado confirman las unidades añadidas sin salir de la ficha.
 3. Revisar subtotal y activar **Continuar con la entrega**.
 4. Completar nombre, correo, teléfono, dirección y ciudad; elegir envío estándar (3–5 días) o express (1–2 días). Feedback: validación nativa del navegador si falta un dato.
 5. Activar **Continuar al pago**; revisar total y seleccionar tarjeta o transferencia. Se pueden desplegar detalles informativos de cada método.
@@ -143,12 +118,15 @@ stateDiagram-v2
 
 | Interacción | Feedback |
 |---|---|
-| Enlace de categoría o producto | Desplazamiento a la categoría en el catálogo o apertura del carrito de demostración. |
+| Enlace de categoría o producto | Desplazamiento a la categoría o apertura de la ficha del producto con recomendaciones relacionadas. |
 | Búsqueda | Envío del término como parámetro de URL; la interfaz no implementa resultados dinámicos. |
 | Envío con campos incompletos | Validación nativa del navegador, foco en el primer control inválido y mensaje asociado. |
 | Selección de entrega | La opción marcada es visible; en el paso de pago se muestra una entrega de demostración con costo y plazo estimados. |
 | Selección de pago | La selección de radio indica el método; se despliega información adicional al activar los detalles. |
+| Añadir al carrito desde la ficha | El contador del carrito se actualiza y el botón confirma la acción; permanece visible la ficha del producto. |
+| Seleccionar cantidad en la ficha | Los controles −/+ y el campo numérico actualizan la cantidad; el carrito recibe las unidades seleccionadas. |
 | Agregar o quitar favorito | El corazón cambia entre seleccionado/no seleccionado, se actualiza el contador y se anuncia el nombre del artículo; en la lista se refleja el cambio. |
+| Recomendaciones | La ficha presenta hasta seis productos relacionados; seleccionar uno abre su propia ficha. |
 | Cambiar página | Se muestran hasta quince productos, cambia el indicador de página y se deshabilita el control que ya no aplica. La paginación solo se muestra cuando hay más de quince productos. |
 | Confirmación | Resumen final con identificador de demostración y aclaración de que no se procesó dinero. |
 

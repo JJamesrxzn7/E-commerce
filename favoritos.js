@@ -1,4 +1,5 @@
 (() => {
+  function initializeFavorites() {
   const storageKey = "apex-sports-favoritos-v1";
   const favoritesPanel = document.querySelector("#favoritos");
   const favoritesGrid = favoritesPanel.querySelector(".lista-favoritos");
@@ -87,7 +88,7 @@
     button.dataset.productName = name;
     button.setAttribute("aria-pressed", "false");
     button.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.8 8.7c0 5.1-8.8 11-8.8 11s-8.8-5.9-8.8-11A4.7 4.7 0 0 1 12 6a4.7 4.7 0 0 1 8.8 2.7Z"></path></svg>';
-    product.querySelector(".producto-imagen").append(button);
+    product.querySelector(".producto-acciones").append(button);
   });
 
   document.addEventListener("click", (event) => {
@@ -125,4 +126,8 @@
   });
 
   renderFavorites();
+  }
+
+  if (document.documentElement.dataset.catalogReady === "true") initializeFavorites();
+  else document.addEventListener("catalog:ready", initializeFavorites, { once: true });
 })();

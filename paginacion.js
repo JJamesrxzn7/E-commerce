@@ -1,4 +1,5 @@
 (() => {
+  function initializePagination() {
   const productsPerPage = 15;
   const grids = document.querySelectorAll(".productos-seccion .productos");
 
@@ -73,4 +74,8 @@
   }
 
   grids.forEach(setupPagination);
+  }
+
+  if (document.documentElement.dataset.catalogReady === "true") initializePagination();
+  else document.addEventListener("catalog:ready", initializePagination, { once: true });
 })();
