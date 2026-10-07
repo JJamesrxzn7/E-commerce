@@ -4,6 +4,8 @@
   const shippingSummary = document.getElementById("confirmacion-envio");
   const totalSummary = document.getElementById("confirmacion-total");
   const instructions = document.getElementById("confirmacion-instrucciones");
+  const orderId = document.getElementById("confirmacion-numero");
+  const orderStorageKey = "apex-sports-last-order";
   const methods = {
     tarjeta: "Tarjeta de crédito o débito",
     transferencia: "Transferencia bancaria",
@@ -15,37 +17,51 @@
   }
 
   try {
-    const method = new URLSearchParams(window.location.search).get("metodo");
-    const cart = JSON.parse(localStorage.getItem("apex-sports-cart") || "[]");
-    if (!Array.isArray(cart) || !cart.every((item) =>
-      item && typeof item.name === "string"
+    const rawOrder = sessionStorage.getItem(orderStorageKey);
+    if (!rawOrder) throw new Error("No se encontró un pedido reciente en esta sesión.");
+    const order = JSON.parse(rawOrder);
+    if (!order || typeof order.id !== "string" || !methods[order.method]
+      || !Number.isSafeInteger(order.subtotal) || order.subtotal < 0
+      || !Array.isArray(order.items) || order.items.length === 0 || !order.items.every((item) =>
+      item && typeof item.id === "string"
+      && typeof item.name === "string"
+      && typeof item.category === "string"
       && Number.isSafeInteger(item.price)
       && Number.isSafeInteger(item.quantity)
       && item.price >= 0
       && item.quantity > 0
     )) {
-      throw new Error("Los datos guardados del carrito tienen un formato inválido.");
+      throw new Error("El resumen guardado del pedido tiene un formato inválido.");
     }
 
-    const subtotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-    productSummary.textContent = cart.length
-      ? cart.map((item) => `${item.name} × ${item.quantity}`).join(", ")
-      : "No hay productos guardados en el carrito.";
-    paymentSummary.textContent = methods[method] || "No indicado";
+    const calculatedSubtotal = order.items.reduce((sum, item) => sum + item.price * item.quantity, 0);
+    if (calculatedSubtotal !== order.subtotal) {
+      throw new Error("El subtotal no coincide con los productos guardados.");
+    }
 
-    if (method === "local") {
+    orderId.textContent = order.id;
+    productSummary.textContent = order.items
+      .map((item) => `${item.name} × ${item.quantity}`)
+      .join(", ");
+    paymentSummary.textContent = methods[order.method];
+
+    if (order.method === "local") {
       shippingSummary.textContent = "$0,00 · Retiro en local";
-      totalSummary.textContent = formatMoney(subtotal);
+      totalSummary.textContent = formatMoney(order.subtotal);
       instructions.textContent = "Puedes retirar tu pedido en el punto seleccionado. Presenta tu número de pedido e identificación al llegar.";
     } else {
       shippingSummary.textContent = "Estimado: $4,00–$8,00";
-      totalSummary.textContent = `${formatMoney(subtotal + 400)}–${formatMoney(subtotal + 800)}`;
-      instructions.textContent = method === "transferencia"
+      totalSummary.textContent = `${formatMoney(order.subtotal + 400)}–${formatMoney(order.subtotal + 800)}`;
+      instructions.textContent = order.method === "transferencia"
         ? "Realiza la transferencia con el número de pedido en el concepto y conserva el comprobante."
         : "El pago fue aprobado. Conserva el número de pedido para consultar el estado de tu compra.";
     }
   } catch (error) {
     instructions.textContent = `No se pudo cargar el resumen del pedido. ${error.message}`;
+    productSummary.textContent = "No disponible";
+    paymentSummary.textContent = "No disponible";
+    shippingSummary.textContent = "No disponible";
+    totalSummary.textContent = "No disponible";
     console.error("Error al mostrar el resumen de confirmación.", error);
   }
 })();

@@ -20,8 +20,8 @@ Para publicarlo, configura GitHub Pages en el repositorio con la rama `main` y l
 - `generar-ilustraciones.js`: genera nuevamente las 120 ilustraciones SVG locales desde el catálogo.
 - `favoritos.js`: permite agregar/quitar favoritos, actualiza los botones y el contador, y guarda la lista en `localStorage` de este navegador.
 - `carrito.js`: agrega productos, conserva cantidades en `localStorage` y actualiza el carrito y los resúmenes del flujo de compra.
-- `pago.js`: valida los cuatro campos de tarjeta de prueba, muestra guías de transferencia/retiro y calcula el envío gratuito para retiro local, sin almacenar datos financieros.
-- `confirmacion.js`: presenta el resumen del carrito y el método elegido, sin incluir información de tarjeta en la URL.
+- `pago.js`: valida los cuatro campos de tarjeta, muestra guías de transferencia/retiro, y al confirmar guarda un resumen de pedido en la sesión y vacía el carrito, sin almacenar datos financieros.
+- `confirmacion.js`: presenta el resumen guardado del pedido y el método elegido, aunque el carrito ya esté vacío.
 - `entrega-validacion.js`: valida los datos de entrega al salir de cada campo y al enviar el formulario, con mensajes y guías en español.
 - `paginacion.js`: muestra hasta 15 productos por página en las categorías y favoritos; muestra controles solo si hay más de 15.
 - `carrito.html`, `entrega.html`, `pago.html`, `pedido-confirmado.html`: pantallas de demostración para el flujo de compra.

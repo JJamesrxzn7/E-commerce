@@ -16,6 +16,8 @@
   const total = document.querySelector("[data-pago-total]");
   const generalError = document.getElementById("pago-error-general");
   const moneyPattern = /^\$(\d+),(\d{2})$/;
+  const cartStorageKey = "apex-sports-cart";
+  const orderStorageKey = "apex-sports-last-order";
 
   function readSubtotalCents() {
     const subtotalText = document.querySelector("[data-cart-subtotal]").textContent.trim();
@@ -26,6 +28,34 @@
 
   function formatMoney(cents) {
     return `$${(cents / 100).toFixed(2).replace(".", ",")}`;
+  }
+
+  function saveOrderAndClearCart(method) {
+    const rawCart = localStorage.getItem(cartStorageKey);
+    const items = rawCart ? JSON.parse(rawCart) : [];
+    if (!Array.isArray(items) || items.length === 0 || !items.every((item) =>
+      item && typeof item.id === "string"
+      && typeof item.name === "string"
+      && typeof item.category === "string"
+      && Number.isSafeInteger(item.price)
+      && Number.isSafeInteger(item.quantity)
+      && item.price >= 0
+      && item.quantity > 0
+    )) {
+      throw new Error("El carrito está vacío o contiene datos inválidos.");
+    }
+
+    const subtotal = items.reduce((sum, item) => sum + item.price * item.quantity, 0);
+    const order = {
+      id: `CN-${Date.now()}`,
+      method,
+      items,
+      subtotal,
+      createdAt: new Date().toISOString()
+    };
+
+    sessionStorage.setItem(orderStorageKey, JSON.stringify(order));
+    localStorage.removeItem(cartStorageKey);
   }
 
   function luhnIsValid(digits) {
@@ -141,7 +171,13 @@
       }
     }
 
-    window.location.assign(`pedido-confirmado.html?metodo=${encodeURIComponent(selected.value)}`);
+    try {
+      saveOrderAndClearCart(selected.value);
+      window.location.assign("pedido-confirmado.html");
+    } catch (error) {
+      generalError.textContent = `No se pudo finalizar el pedido. ${error.message}`;
+      generalError.hidden = false;
+    }
   });
 
   updateSelectedMethod();

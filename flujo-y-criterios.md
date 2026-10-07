@@ -9,7 +9,7 @@ Esta guía documenta el diseño; no forma parte de las pantallas de la tienda.
 - La tienda y sus imágenes usan diseños fluidos: tarjetas que se adaptan al ancho disponible, imágenes con recorte `object-fit: cover` y controles con un mínimo táctil de 44 × 44 px.
 - Paleta limitada a cinco colores: azul profundo `#17324D` (dominante), marfil `#F4F1E8` y terracota `#A84328` (secundarios), gris `#667581` y blanco `#FFFFFF` (complementarios).
 - La compra recorre cuatro clics principales: añadir producto, continuar desde el carrito, continuar desde entrega y confirmar pedido.
-- El pago y la entrega son simulaciones visuales. No hay cobro, transferencia ni persistencia de pedido real. Los cuatro campos de tarjeta se validan solo en el navegador; no se guardan ni se envían. Transferencia y retiro local muestran guías y datos de ejemplo, cubiertos por un único aviso de simulación en cada pantalla. El retiro local elimina la tarifa de envío y calcula el total como el subtotal.
+- El pago y la entrega son simulaciones visuales. No hay cobro, transferencia ni persistencia de pedido real. Los cuatro campos de tarjeta se validan solo en el navegador; no se guardan ni se envían. Transferencia y retiro local muestran guías y datos de ejemplo, cubiertos por un único aviso de simulación en cada pantalla. El retiro local elimina la tarifa de envío y calcula el total como el subtotal. Al confirmar, se guarda el resumen del pedido en la sesión y se vacía el carrito; la confirmación sigue mostrando los productos seleccionados.
 - Para completar el recorrido en cuatro acciones principales, el envío estándar y la tarjeta aparecen preseleccionados; se pueden cambiar por envío express, transferencia o pago y retiro local.
 - Al seleccionar la imagen o los datos de un artículo se abre una ficha propia con imagen, descripción, precio, selector de cantidad, acción para añadir al carrito y productos relacionados. La cantidad elegida se suma al carrito y puede ajustarse allí; los controles de cantidad son accesibles por teclado y cumplen el mínimo táctil de 44 px.
 - Cualquier persona puede guardar artículos en favoritos con el control de corazón y compararlos después desde «Favoritos». La lista se conserva en `localStorage` del mismo navegador y dispositivo; no exige cuenta para esta demostración.
@@ -76,7 +76,7 @@ stateDiagram-v2
 2. **Carrito:** continuar con la compra o volver al catálogo.
 3. **Entrega:** los campos requeridos deben ser válidos y debe seleccionarse envío estándar o express. La interfaz informa los campos inválidos.
 4. **Pago:** el usuario selecciona tarjeta, transferencia o pago y retiro local. Con tarjeta debe completar los cuatro campos; transferencia muestra una cuenta de ejemplo de Banco Pichincha y retiro local muestra una dirección de ejemplo. El retiro local elimina el costo de envío.
-5. **Confirmación:** se muestra el método elegido, los artículos reales del carrito local y un total ilustrativo; retiro local no suma envío. No se procesa dinero ni se crea un pedido real.
+5. **Confirmación:** se muestra el método elegido, los artículos seleccionados y un total ilustrativo; retiro local no suma envío. El carrito se vacía al confirmar, mientras el resumen queda disponible durante la sesión. No se procesa dinero ni se crea un pedido real.
 
 ## Secuencia de tareas
 
@@ -130,7 +130,7 @@ stateDiagram-v2
 | Agregar o quitar favorito | El corazón cambia entre seleccionado/no seleccionado, se actualiza el contador y se anuncia el nombre del artículo; en la lista se refleja el cambio. |
 | Recomendaciones | La ficha presenta hasta seis productos relacionados; seleccionar uno abre su propia ficha. |
 | Cambiar página | Se muestran hasta quince productos, cambia el indicador de página y se deshabilita el control que ya no aplica. La paginación solo se muestra cuando hay más de quince productos. |
-| Confirmación | Resumen final con identificador de demostración y aclaración de que no se procesó dinero. |
+| Confirmación | Resumen final con identificador, productos y método seleccionados; el carrito se limpia y el resumen permanece disponible durante la sesión. |
 
 ## WCAG 2.2: cuatro principios
 
