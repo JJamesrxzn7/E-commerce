@@ -34,10 +34,11 @@ El proyecto se identifica correctamente como demostración: no procesa pagos ni 
 
 ### M2. El costo de envío seleccionado no se refleja en el pago
 
+- **Estado:** corregido después de esta auditoría. La entrega y el pago muestran la modalidad elegida, su tarifa exacta y el total; la confirmación conserva ese mismo total.
 - **Impacto:** el total estimado puede no coincidir con la opción que la persona eligió.
-- **Evidencia:** entrega ofrece estándar y express ([entrega.html](./entrega.html#L35)); el resumen posterior continúa mostrando un rango aunque lo titule “Envío elegido” ([pago.html](./pago.html#L56)).
+- **Evidencia original:** entrega ofrece estándar y express ([entrega.html](./entrega.html#L35)); antes de la corrección, el resumen posterior continuaba mostrando un rango aunque lo titulaba “Envío elegido” ([pago.html](./pago.html#L56)).
 - **Riesgo:** quien selecciona una opción no ve con claridad cuál quedó aplicada ni el total resultante.
-- **Recomendación:** conservar la selección al pasar al pago, mostrar la modalidad y su costo exacto, y calcular el total con esa opción. Si el rango es intencional en el prototipo, etiquetarlo como estimación y no como envío elegido.
+- **Corrección aplicada:** se conserva la opción al pasar al pago, se muestra su costo exacto y se calcula el total; la confirmación registra la tarifa y el monto finales.
 
 ## Riesgos bajos
 

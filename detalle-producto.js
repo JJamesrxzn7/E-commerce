@@ -33,13 +33,22 @@
     function updateQuantityControls() {
       const quantity = Number(quantityInput.value);
       decreaseQuantity.disabled = !Number.isSafeInteger(quantity) || quantity <= 1;
-      increaseQuantity.disabled = quantity >= Number.MAX_SAFE_INTEGER;
+      increaseQuantity.disabled = !Number.isSafeInteger(quantity) || quantity < 1 || quantity >= Number.MAX_SAFE_INTEGER;
     }
 
     function adjustQuantity(amount) {
       let quantity = Number(quantityInput.value);
-      if (!Number.isSafeInteger(quantity) || quantity < 1) quantity = 1;
+      if (!Number.isSafeInteger(quantity) || quantity < 1) quantity = 0;
       quantityInput.value = String(Math.min(Number.MAX_SAFE_INTEGER, Math.max(1, quantity + amount)));
+      updateQuantityControls();
+    }
+
+    function sanitizeQuantity() {
+      const digits = quantityInput.value.replace(/\D/g, "");
+      const quantity = Number(digits);
+      quantityInput.value = digits && Number.isSafeInteger(quantity)
+        ? digits
+        : digits ? String(Number.MAX_SAFE_INTEGER) : "";
       updateQuantityControls();
     }
 
@@ -101,7 +110,13 @@
     window.addEventListener("hashchange", renderDetails);
     decreaseQuantity.addEventListener("click", () => adjustQuantity(-1));
     increaseQuantity.addEventListener("click", () => adjustQuantity(1));
-    quantityInput.addEventListener("input", updateQuantityControls);
+    quantityInput.addEventListener("input", sanitizeQuantity);
+    quantityInput.addEventListener("blur", () => {
+      if (!Number.isSafeInteger(Number(quantityInput.value)) || Number(quantityInput.value) < 1) {
+        quantityInput.value = "1";
+        updateQuantityControls();
+      }
+    });
     document.addEventListener("click", (event) => {
       if (event.target instanceof Element && event.target.closest("#detalle-agregar")) {
         window.setTimeout(() => {

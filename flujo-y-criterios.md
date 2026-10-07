@@ -87,7 +87,7 @@ stateDiagram-v2
 3. Revisar subtotal y activar **Continuar con la entrega**.
 4. Completar nombre, correo, teléfono, dirección y ciudad; elegir envío estándar (3–5 días) o express (1–2 días). Feedback: validación nativa del navegador si falta un dato.
 5. Activar **Continuar al pago**; seleccionar tarjeta, transferencia o pago y retiro local. Para tarjeta, completar los campos; transferencia y retiro muestran instrucciones del método elegido.
-6. Activar **Confirmar pedido**. Feedback: la pantalla presenta el método, artículos y total estimado; aclara que no hubo cobro, transferencia ni envío real.
+6. Activar **Confirmar pedido**. Feedback: la pantalla presenta el método, artículos, costo de envío elegido y total exacto; aclara que no hubo cobro, transferencia ni envío real.
 
 ### Objetivo: cambiar el método de entrega o pago antes de confirmar
 
@@ -121,8 +121,8 @@ stateDiagram-v2
 | Enlace de categoría o producto | Desplazamiento a la categoría o apertura de la ficha del producto con recomendaciones relacionadas. |
 | Búsqueda | Envío del término como parámetro de URL; la interfaz no implementa resultados dinámicos. |
 | Envío con campos incompletos | Validación nativa del navegador, foco en el primer control inválido y mensaje asociado. |
-| Selección de entrega | La opción marcada es visible; en el paso de pago se muestra una entrega de demostración con costo y plazo estimados. |
-| Selección de tarjeta | Se validan nombre, número mediante dígito de control, vencimiento y código de seguridad; el primer campo inválido recibe el foco. Los datos no se guardan ni se envían. |
+| Selección de entrega | La opción marcada es visible; el resumen actualiza la tarifa exacta y el total, y los conserva en el paso de pago y la confirmación. |
+| Selección de tarjeta | El número acepta exactamente 16 dígitos; vencimiento y código de seguridad solo aceptan dígitos (MM/AA y 3 dígitos, respectivamente). El nombre también se valida; el primer campo inválido recibe el foco. Los datos no se guardan ni se envían. |
 | Selección de transferencia | Aparece una guía y los datos de cuenta de ejemplo de Banco Pichincha; el aviso de simulación indica que no se deben ingresar datos financieros reales. |
 | Selección de pago y retiro local | Aparece una guía con ubicación de ejemplo; el costo de envío pasa a $0,00 y el total queda igual al subtotal. |
 | Añadir al carrito desde la ficha | El contador del carrito se actualiza y el botón confirma la acción; permanece visible la ficha del producto. |

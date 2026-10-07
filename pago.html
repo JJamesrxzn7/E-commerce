@@ -39,20 +39,20 @@
                 </div>
                 <div class="campo">
                   <label for="numero">Número de tarjeta</label>
-                  <input id="numero" type="text" inputmode="numeric" autocomplete="off" placeholder="4111 1111 1111 1111" aria-describedby="numero-ayuda numero-error" required>
-                  <small class="ayuda-campo" id="numero-ayuda">Ingresa entre 13 y 19 dígitos.</small>
+                  <input id="numero" type="text" inputmode="numeric" autocomplete="off" pattern="[0-9]{16}" placeholder="4111111111111111" aria-describedby="numero-ayuda numero-error" required>
+                  <small class="ayuda-campo" id="numero-ayuda">Ingresa exactamente 16 dígitos.</small>
                   <small class="error-campo" id="numero-error" role="alert" hidden></small>
                 </div>
                 <div class="campo">
                   <label for="vencimiento">Vencimiento</label>
                   <input id="vencimiento" type="text" inputmode="numeric" autocomplete="off" placeholder="MM/AA" aria-describedby="vencimiento-ayuda vencimiento-error" required>
-                  <small class="ayuda-campo" id="vencimiento-ayuda">Formato MM/AA.</small>
+                  <small class="ayuda-campo" id="vencimiento-ayuda">Ingresa 4 dígitos; se mostrará en formato MM/AA.</small>
                   <small class="error-campo" id="vencimiento-error" role="alert" hidden></small>
                 </div>
                 <div class="campo">
                   <label for="seguridad">Código de seguridad</label>
-                  <input id="seguridad" type="text" inputmode="numeric" autocomplete="off" placeholder="123" aria-describedby="seguridad-ayuda seguridad-error" required>
-                  <small class="ayuda-campo" id="seguridad-ayuda">Ingresa el código de seguridad de 3 o 4 dígitos.</small>
+                  <input id="seguridad" type="text" inputmode="numeric" autocomplete="off" pattern="[0-9]{3}" placeholder="123" aria-describedby="seguridad-ayuda seguridad-error" required>
+                  <small class="ayuda-campo" id="seguridad-ayuda">Ingresa exactamente 3 dígitos.</small>
                   <small class="error-campo" id="seguridad-error" role="alert" hidden></small>
                 </div>
               </div>
@@ -98,9 +98,9 @@
           <h2>Resumen del pedido</h2>
           <div class="resumen-productos" data-cart-items></div>
           <p><span>Subtotal</span><strong data-cart-subtotal>$0,00</strong></p>
-          <p data-pago-envio><span>Envío</span><strong>$4,00–$8,00</strong></p>
+          <p data-pago-envio><span>Envío estándar</span><strong>$4,00</strong></p>
           <hr>
-          <p class="total"><span>Total estimado</span><strong data-pago-total>$4,00–$8,00</strong></p>
+          <p class="total"><span>Total</span><strong data-pago-total>$0,00</strong></p>
           <button class="boton boton-ancho" type="submit">Confirmar pedido</button>
           <a class="enlace-volver" href="entrega.html">← Revisar datos de entrega</a>
         </aside>

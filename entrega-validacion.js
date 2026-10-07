@@ -3,8 +3,32 @@
   if (!form) return;
 
   const fields = [...form.querySelectorAll(".campo input")];
+  const deliveryOptions = [...form.querySelectorAll('input[name="entrega"]')];
+  const shippingLabel = document.querySelector("[data-entrega-label]");
+  const shippingCost = document.querySelector("[data-entrega-costo]");
+  const orderTotal = document.querySelector("[data-entrega-total]");
   const touched = new Set();
   const phonePattern = /^\+?[\d\s().-]+$/;
+  const deliveryPrices = { estandar: 400, express: 800 };
+
+  function updateOrderTotal() {
+    const selected = deliveryOptions.find((option) => option.checked);
+    const subtotalText = document.querySelector("[data-cart-subtotal]").textContent.trim();
+    const subtotalMatch = subtotalText.match(/^\$(\d+),(\d{2})$/);
+    if (!selected || !subtotalMatch) {
+      shippingLabel.textContent = "Envío";
+      shippingCost.textContent = "No disponible";
+      orderTotal.textContent = "No disponible";
+      return;
+    }
+
+    const cents = deliveryPrices[selected.value];
+    const subtotal = Number(subtotalMatch[1]) * 100 + Number(subtotalMatch[2]);
+    const formatMoney = (value) => `$${(value / 100).toFixed(2).replace(".", ",")}`;
+    shippingLabel.textContent = selected.value === "express" ? "Envío express" : "Envío estándar";
+    shippingCost.textContent = formatMoney(cents);
+    orderTotal.textContent = formatMoney(subtotal + cents);
+  }
 
   function messageFor(field) {
     const value = field.value.trim();
@@ -45,6 +69,8 @@
       touched.add(field);
       validateField(field);
     });
+    deliveryOptions.forEach((option) => option.addEventListener("change", updateOrderTotal));
+    updateOrderTotal();
     field.addEventListener("input", () => {
       if (touched.has(field)) validateField(field);
     });

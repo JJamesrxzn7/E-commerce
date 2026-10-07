@@ -14,10 +14,19 @@
   const localPanel = document.getElementById("panel-local");
   const shippingRow = document.querySelector("[data-pago-envio]");
   const total = document.querySelector("[data-pago-total]");
+  const confirmButton = form.querySelector('button[type="submit"]');
   const generalError = document.getElementById("pago-error-general");
   const moneyPattern = /^\$(\d+),(\d{2})$/;
   const cartStorageKey = "apex-sports-cart";
   const orderStorageKey = "apex-sports-last-order";
+  const requestedDelivery = new URLSearchParams(window.location.search).get("entrega");
+  const deliveryChoice = requestedDelivery === null || requestedDelivery === "estandar" || requestedDelivery === "express"
+    ? requestedDelivery || "estandar"
+    : null;
+  const deliveryOptions = {
+    estandar: { label: "Envío estándar", cost: 400 },
+    express: { label: "Envío express", cost: 800 }
+  };
 
   function readSubtotalCents() {
     const subtotalText = document.querySelector("[data-cart-subtotal]").textContent.trim();
@@ -46,11 +55,15 @@
     }
 
     const subtotal = items.reduce((sum, item) => sum + item.price * item.quantity, 0);
+    const shippingCost = method === "local" ? 0 : deliveryOptions[deliveryChoice].cost;
     const order = {
       id: `CN-${Date.now()}`,
       method,
+      delivery: method === "local" ? "local" : deliveryChoice,
       items,
       subtotal,
+      shipping: shippingCost,
+      total: subtotal + shippingCost,
       createdAt: new Date().toISOString()
     };
 
@@ -58,19 +71,11 @@
     localStorage.removeItem(cartStorageKey);
   }
 
-  function luhnIsValid(digits) {
-    let sum = 0;
-    let doubleDigit = false;
-    for (let index = digits.length - 1; index >= 0; index -= 1) {
-      let digit = Number(digits[index]);
-      if (doubleDigit) {
-        digit *= 2;
-        if (digit > 9) digit -= 9;
-      }
-      sum += digit;
-      doubleDigit = !doubleDigit;
-    }
-    return sum % 10 === 0;
+  function restrictNumericInput(input) {
+    const digits = input.value.replace(/\D/g, "").slice(0, input.id === "numero" ? 16 : input.id === "seguridad" ? 3 : 4);
+    input.value = input.id === "vencimiento" && digits.length > 2
+      ? `${digits.slice(0, 2)}/${digits.slice(2)}`
+      : digits;
   }
 
   function validateCardField(field) {
@@ -81,9 +86,8 @@
     if (id === "titular" && !/^[\p{L}\p{M}][\p{L}\p{M} .'-]{1,}$/u.test(value)) {
       message = "Escribe el nombre del titular con al menos 2 letras.";
     } else if (id === "numero") {
-      const digits = value.replace(/[ -]/g, "");
-      if (!/^\d{13,19}$/.test(digits) || !luhnIsValid(digits)) {
-        message = "Revisa el número de tarjeta e inténtalo de nuevo.";
+      if (!/^\d{16}$/.test(value)) {
+        message = "Ingresa exactamente 16 dígitos.";
       }
     } else if (id === "vencimiento") {
       const match = value.match(/^(0[1-9]|1[0-2])\/(\d{2}|\d{4})$/);
@@ -98,8 +102,8 @@
           message = "La tarjeta está vencida. Revisa la fecha e inténtalo de nuevo.";
         }
       }
-    } else if (id === "seguridad" && !/^\d{3,4}$/.test(value)) {
-      message = "Ingresa un código de seguridad de 3 o 4 dígitos.";
+    } else if (id === "seguridad" && !/^\d{3}$/.test(value)) {
+      message = "Ingresa exactamente 3 dígitos.";
     }
 
     field.input.setAttribute("aria-invalid", String(Boolean(message)));
@@ -132,11 +136,25 @@
 
     const subtotal = readSubtotalCents();
     if (isLocal) {
+      confirmButton.disabled = false;
+      shippingRow.querySelector("span").textContent = "Entrega";
       shippingRow.querySelector("strong").textContent = "$0,00 · Retiro en local";
       total.textContent = formatMoney(subtotal);
     } else {
-      shippingRow.querySelector("strong").textContent = "$4,00–$8,00";
-      total.textContent = `${formatMoney(subtotal + 400)}–${formatMoney(subtotal + 800)}`;
+      if (!deliveryChoice) {
+        confirmButton.disabled = true;
+        generalError.textContent = "No se pudo identificar el tipo de envío. Vuelve al paso de entrega y selecciónalo de nuevo.";
+        generalError.hidden = false;
+        shippingRow.querySelector("span").textContent = "Envío";
+        shippingRow.querySelector("strong").textContent = "No disponible";
+        total.textContent = "No disponible";
+        return;
+      }
+      confirmButton.disabled = false;
+      const delivery = deliveryOptions[deliveryChoice];
+      shippingRow.querySelector("span").textContent = delivery.label;
+      shippingRow.querySelector("strong").textContent = formatMoney(delivery.cost);
+      total.textContent = formatMoney(subtotal + delivery.cost);
     }
   }
 
@@ -146,6 +164,9 @@
       if (field.input.value.trim()) validateCardField(field);
     });
     field.input.addEventListener("input", () => {
+      if (["numero", "vencimiento", "seguridad"].includes(field.input.id)) {
+        restrictNumericInput(field.input);
+      }
       if (field.input.hasAttribute("aria-invalid")) validateCardField(field);
     });
   });
@@ -169,6 +190,12 @@
         invalidFields[0].input.focus();
         return;
       }
+    }
+
+    if (selected.value !== "local" && !deliveryChoice) {
+      generalError.textContent = "No se pudo identificar el tipo de envío. Vuelve al paso de entrega y selecciónalo de nuevo.";
+      generalError.hidden = false;
+      return;
     }
 
     try {

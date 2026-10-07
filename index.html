@@ -77,7 +77,7 @@
             <label for="detalle-cantidad">Cantidad</label>
             <div class="controles-cantidad">
               <button class="boton-cantidad" id="detalle-cantidad-menos" type="button" aria-label="Reducir cantidad">−</button>
-              <input id="detalle-cantidad" type="number" min="1" step="1" value="1" inputmode="numeric">
+              <input id="detalle-cantidad" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="16" value="1" autocomplete="off">
               <button class="boton-cantidad" id="detalle-cantidad-mas" type="button" aria-label="Aumentar cantidad">+</button>
             </div>
           </div>

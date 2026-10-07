@@ -31,7 +31,7 @@ Para publicarlo, configura GitHub Pages en el repositorio con la rama `main` y l
 
 Las páginas HTML separan las etapas del prototipo (catálogo, carrito y checkout); los scripts JavaScript separan funciones independientes como catálogo, búsqueda, favoritos, paginación y carrito. No es necesario concentrar todo en un único archivo: mantener responsabilidades separadas facilita encontrar y modificar una función sin duplicar datos. El catálogo de productos tiene una sola fuente de datos en `data/products.json`.
 
-Las tarjetas ya no incluyen el botón «Añadir al carrito». Al activar la imagen o el contenido del producto se abre su ficha con la descripción, el precio, selector de cantidad, acción para añadir y recomendaciones relacionadas. La cantidad seleccionada se suma al carrito y puede ajustarse con los controles de 44 px; la dirección de la ficha puede compartirse o recargarse.
+Las tarjetas ya no incluyen el botón «Añadir al carrito». Al activar la imagen o el contenido del producto se abre su ficha con la descripción, el precio, selector de cantidad, acción para añadir y recomendaciones relacionadas. La cantidad se puede escribir con dígitos o ajustar con los botones +/−, sin el incrementador nativo del campo; la dirección de la ficha puede compartirse o recargarse. En entrega y pago se muestra la tarifa que corresponde a la opción elegida y el total exacto del pedido; el retiro local no suma envío.
 
 ## Ilustraciones de producto
 
@@ -39,7 +39,7 @@ Cada artículo tiene su propia ilustración vectorial SVG, generada para represe
 
 ## Alcance de la demostración
 
-El catálogo, carrito, entrega y pago son una simulación de interfaz. No hay base de datos, inicio de sesión, control de acceso real, envío de pedidos ni procesamiento de pagos. La pantalla de tarjeta valida formato y dígito de control en el navegador, pero no transmite ni conserva esos campos. La cuenta de Banco Pichincha y la ubicación del retiro son de ejemplo y se identifican en el aviso de simulación. Los favoritos se guardan localmente en el navegador; al borrar sus datos o usar otro dispositivo, no se sincronizan.
+El catálogo, carrito, entrega y pago son una simulación de interfaz. No hay base de datos, inicio de sesión, control de acceso real, envío de pedidos ni procesamiento de pagos. La pantalla de tarjeta valida el formato de los campos en el navegador, pero no transmite ni conserva esos campos. La cuenta de Banco Pichincha y la ubicación del retiro son de ejemplo y se identifican en el aviso de simulación. Los favoritos se guardan localmente en el navegador; al borrar sus datos o usar otro dispositivo, no se sincronizan.
 
 ## Publicación
 
