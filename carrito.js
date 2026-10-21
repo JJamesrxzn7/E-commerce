@@ -179,11 +179,11 @@
       try {
         const product = addProduct(addLink);
         renderCart();
-        announce(`${product.quantity} ${product.quantity === 1 ? "unidad añadida" : "unidades añadidas"} de ${product.name} al carrito.`);
+        const originalHtml = addLink.innerHTML;
         addLink.textContent = "Añadido ✓";
         addLink.classList.add("producto-anadido");
         window.setTimeout(() => {
-          addLink.textContent = "Añadir al carrito";
+          addLink.innerHTML = originalHtml;
           addLink.classList.remove("producto-anadido");
         }, 1600);
       } catch (error) {

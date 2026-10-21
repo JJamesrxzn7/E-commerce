@@ -19,6 +19,7 @@ Para publicarlo, configura GitHub Pages en el repositorio con la rama `main` y l
 - `images/products/`: ilustraciones originales de cada artículo, aislado sobre un fondo liso.
 - `generar-ilustraciones.js`: genera nuevamente las 120 ilustraciones SVG locales desde el catálogo.
 - `favoritos.js`: permite agregar/quitar favoritos, actualiza los botones y el contador, y guarda la lista en `localStorage` de este navegador.
+- `auth.js`: ofrece una cuenta de demostración local con registro e inicio/cierre de sesión. No sustituye una autenticación con servidor y no sincroniza perfiles o favoritos entre dispositivos.
 - `carrito.js`: agrega productos, conserva cantidades en `localStorage` y actualiza el carrito y los resúmenes del flujo de compra.
 - `pago.js`: valida los cuatro campos de tarjeta, muestra guías de transferencia/retiro, y al confirmar guarda un resumen de pedido en la sesión y vacía el carrito, sin almacenar datos financieros.
 - `confirmacion.js`: presenta el resumen guardado del pedido y el método elegido, aunque el carrito ya esté vacío.
@@ -39,7 +40,7 @@ Cada artículo tiene su propia ilustración vectorial SVG, generada para represe
 
 ## Alcance de la demostración
 
-El catálogo, carrito, entrega y pago son una simulación de interfaz. No hay base de datos, inicio de sesión, control de acceso real, envío de pedidos ni procesamiento de pagos. La pantalla de tarjeta valida el formato de los campos en el navegador, pero no transmite ni conserva esos campos. La cuenta de Banco Pichincha y la ubicación del retiro son de ejemplo y se identifican en el aviso de simulación. Los favoritos se guardan localmente en el navegador; al borrar sus datos o usar otro dispositivo, no se sincronizan.
+El catálogo, carrito, entrega y pago son una simulación de interfaz. El registro y el inicio de sesión guardan las cuentas de demostración y su sesión solo en el almacenamiento de este navegador; las contraseñas se derivan con PBKDF2 y no se guardan en texto plano. Esto no equivale a autenticación segura: no existe servidor, recuperación de contraseña, control de acceso ni sincronización entre dispositivos. Los favoritos también se guardan localmente y todavía no están asociados a una cuenta. Para operar como tienda real se necesita un backend con almacenamiento seguro y gestión de sesiones. La pantalla de tarjeta valida el formato de los campos en el navegador, pero no transmite ni conserva esos campos. La cuenta de Banco Pichincha y la ubicación del retiro son de ejemplo y se identifican en el aviso de simulación.
 
 ## Publicación
 

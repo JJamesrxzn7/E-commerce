@@ -31,8 +31,15 @@
         <svg class="icono-favorito" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.8 8.7c0 5.1-8.8 11-8.8 11s-8.8-5.9-8.8-11A4.7 4.7 0 0 1 12 6a4.7 4.7 0 0 1 8.8 2.7Z"></path></svg>
         <span class="texto-favoritos">Favoritos</span><span class="contador contador-favoritos">0</span>
       </a>
+      <div class="acciones-usuario">
+        <button class="boton boton-sesion" type="button" data-open-auth="login">Iniciar sesión</button>
+        <button class="boton boton-outline" type="button" data-open-auth="register">Registrarse</button>
+        <span class="cuenta-activa" id="cuenta-activa" hidden></span>
+        <button class="boton boton-outline boton-salir" id="cerrar-sesion" type="button" hidden>Cerrar sesión</button>
+      </div>
       <span class="solo-lectores" id="cart-status" role="status" aria-live="polite"></span>
       <span class="solo-lectores" id="estado-favoritos-global" role="status" aria-live="polite"></span>
+      <span class="solo-lectores" id="session-status" role="status" aria-live="polite"></span>
     </div>
   </header>
   <nav class="navegacion" aria-label="Categorías principales">
@@ -46,6 +53,59 @@
     <a href="#fitness">Fitness</a>
     <a href="#outdoor">Outdoor</a>
   </nav>
+
+  <dialog class="auth-dialog" id="modal-auth" aria-labelledby="auth-titulo">
+    <div class="auth-modal">
+      <button class="auth-cerrar" type="button" aria-label="Cerrar">×</button>
+      <div class="auth-brand" aria-hidden="true"><span class="marca-icono">A</span><span>APEX <strong>SPORTS</strong></span></div>
+      <p class="auth-eyebrow">TU CUENTA APEX</p>
+      <h1 class="solo-lectores" id="auth-titulo">Acceso a tu cuenta Apex Sports</h1>
+      <div class="auth-tabs" role="tablist" aria-label="Opciones de acceso">
+        <button class="auth-tab auth-tab-activa" id="login-tab" type="button" role="tab" aria-controls="login-panel" data-auth-mode="login" aria-selected="true">Iniciar sesión</button>
+        <button class="auth-tab" id="register-tab" type="button" role="tab" aria-controls="register-panel" data-auth-mode="register" aria-selected="false">Crear cuenta</button>
+      </div>
+
+      <form class="auth-form" id="login-panel" role="tabpanel" aria-labelledby="login-tab" data-auth-form="login" novalidate>
+        <h2>Qué bueno verte de nuevo</h2>
+        <p class="auth-description">Ingresa tus datos para continuar.</p>
+        <div class="campo">
+          <label for="login-email">Correo electrónico</label>
+          <input id="login-email" name="email" type="email" autocomplete="email" placeholder="nombre@correo.com" required>
+          <small class="error-campo" id="login-email-error" role="alert" hidden></small>
+        </div>
+        <div class="campo">
+          <label for="login-password">Contraseña</label>
+          <input id="login-password" name="password" type="password" autocomplete="current-password" placeholder="Tu contraseña" required>
+          <small class="error-campo" id="login-password-error" role="alert" hidden></small>
+        </div>
+        <button class="boton boton-ancho" type="submit">Iniciar sesión</button>
+        <p class="auth-error" id="login-error" role="alert" hidden></p>
+      </form>
+
+      <form class="auth-form" id="register-panel" role="tabpanel" aria-labelledby="register-tab" data-auth-form="register" novalidate hidden>
+        <h2 id="register-title">Crea tu cuenta</h2>
+        <p class="auth-description">Crea un acceso de demostración en este navegador.</p>
+        <div class="campo">
+          <label for="register-name">Nombre completo</label>
+          <input id="register-name" name="name" type="text" autocomplete="name" placeholder="Tu nombre" required>
+          <small class="error-campo" id="register-name-error" role="alert" hidden></small>
+        </div>
+        <div class="campo">
+          <label for="register-email">Correo electrónico</label>
+          <input id="register-email" name="email" type="email" autocomplete="email" placeholder="nombre@correo.com" required>
+          <small class="error-campo" id="register-email-error" role="alert" hidden></small>
+        </div>
+        <div class="campo">
+          <label for="register-password">Contraseña</label>
+          <input id="register-password" name="password" type="password" autocomplete="new-password" placeholder="Mínimo 8 caracteres" required>
+          <small class="error-campo" id="register-password-error" role="alert" hidden></small>
+        </div>
+        <button class="boton boton-ancho" type="submit">Crear cuenta</button>
+        <p class="auth-error" id="register-error" role="alert" hidden></p>
+      </form>
+      <p class="auth-demo-note">Cuenta de demostración local. No se sincroniza con otros navegadores ni dispositivos y no sustituye una cuenta protegida por servidor.</p>
+    </div>
+  </dialog>
 
   <main id="contenido">
     <section class="seccion-catalogo resultados-busqueda" id="resultados-busqueda" hidden aria-labelledby="titulo-resultados">
@@ -136,7 +196,6 @@
           <p class="sobrelinea">EQUÍPATE PARA LO QUE VIENE</p>
           <h2>Explora por deporte</h2>
         </div>
-        <a class="enlace-texto" href="#productos">Ver categorías <span aria-hidden="true">→</span></a>
       </div>
       <div class="categorias">
         <a href="#futbol"><svg class="categoria-icono" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="18"></circle><path d="m24 14 7 5-3 8h-8l-3-8 7-5Zm0 0V6m7 13 8-3m-11 11 3 9m-15-9-7 5m10-16-8-3m6 27-3-9m15 0 8 3"></path></svg><span>Fútbol</span></a>
@@ -246,5 +305,6 @@
   <script src="carrito.js" defer></script>
   <script src="busqueda.js" defer></script>
   <script src="detalle-producto.js" defer></script>
+  <script src="auth.js" defer></script>
 </body>
 </html>

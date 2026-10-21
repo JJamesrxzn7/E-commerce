@@ -69,7 +69,22 @@
     );
 
     matchingProducts.forEach((product) => {
-      favoritesGrid.append(product.cloneNode(true));
+      const clone = product.cloneNode(true);
+      const actions = clone.querySelector(".producto-acciones");
+      if (actions) {
+        const pName = productName(product);
+        const addBtn = document.createElement("button");
+        addBtn.type = "button";
+        addBtn.className = "boton boton-agregar-favorito";
+        addBtn.dataset.addProduct = "";
+        addBtn.setAttribute("aria-label", `Añadir ${pName} al carrito`);
+        addBtn.innerHTML = `
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2.5 3.5h2l2.1 11.1a2 2 0 0 0 2 1.6h8.7a2 2 0 0 0 1.9-1.4l2-7.3H6"></path><circle cx="9" cy="20" r="1.4"></circle><circle cx="18" cy="20" r="1.4"></circle></svg>
+          <span>Añadir al carrito</span>
+        `;
+        actions.prepend(addBtn);
+      }
+      favoritesGrid.append(clone);
     });
     emptyState.hidden = matchingProducts.length > 0;
     updateControls();
