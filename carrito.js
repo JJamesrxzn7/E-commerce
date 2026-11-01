@@ -179,6 +179,9 @@
       try {
         const product = addProduct(addLink);
         renderCart();
+        announce(product.quantity === 1
+          ? `${product.name} se añadió al carrito.`
+          : `Se añadieron ${product.quantity} unidades de ${product.name} al carrito.`);
         const originalHtml = addLink.innerHTML;
         addLink.textContent = "Añadido ✓";
         addLink.classList.add("producto-anadido");
@@ -226,9 +229,24 @@
       return;
     }
 
-    if (target.closest("#checkout-link") && checkoutLink?.getAttribute("aria-disabled") === "true") {
+    if (target.closest("#checkout-link")) {
+      if (checkoutLink?.getAttribute("aria-disabled") === "true") {
+        event.preventDefault();
+        announce("Añade al menos un producto antes de continuar.");
+        return;
+      }
+
       event.preventDefault();
-      announce("Añade al menos un producto antes de continuar.");
+      if (window.ApexAuth) {
+        window.ApexAuth.requireSession({
+          opener: checkoutLink,
+          message: "Para continuar con la entrega, inicia sesión o crea una cuenta.",
+          onAuthenticated: () => window.location.assign(checkoutLink.href)
+        });
+      } else {
+        console.error("No se pudo abrir la autenticación para continuar con la entrega.");
+        announce("No se pudo comprobar tu sesión. Recarga la página e inténtalo de nuevo.");
+      }
     }
   });
 

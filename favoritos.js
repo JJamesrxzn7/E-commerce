@@ -106,10 +106,7 @@
     product.querySelector(".producto-acciones").append(button);
   });
 
-  document.addEventListener("click", (event) => {
-    const button = event.target.closest(".boton-favorito");
-    if (!button) return;
-
+  function toggleFavorite(button) {
     const fromFavorites = favoritesPanel.contains(button);
     const name = button.dataset.productName;
     const productId = button.dataset.productId;
@@ -137,6 +134,41 @@
     if (fromFavorites) {
       const nextButton = favoritesGrid.querySelector(".boton-favorito");
       (nextButton || favoritesPanel.querySelector("h2")).focus();
+    }
+  }
+
+  document.addEventListener("click", (event) => {
+    const target = event.target;
+    if (!(target instanceof Element)) return;
+
+    const favoritesNavigation = target.closest(".enlace-favoritos");
+    if (favoritesNavigation) {
+      if (window.ApexAuth) {
+        event.preventDefault();
+        window.ApexAuth.requireSession({
+          opener: favoritesNavigation,
+          message: "Para consultar tus favoritos, inicia sesión o crea una cuenta.",
+          onAuthenticated: () => { window.location.hash = "favoritos"; }
+        });
+      } else {
+        console.error("No se pudo abrir la autenticación para consultar favoritos.");
+        announce("No se pudo comprobar tu sesión. Recarga la página e inténtalo de nuevo.");
+      }
+      return;
+    }
+
+    const button = target.closest(".boton-favorito");
+    if (!button) return;
+
+    if (window.ApexAuth) {
+      window.ApexAuth.requireSession({
+        opener: button,
+        message: "Para guardar tus favoritos, inicia sesión o crea una cuenta.",
+        onAuthenticated: () => toggleFavorite(button)
+      });
+    } else {
+      console.error("No se pudo abrir la autenticación para guardar favoritos.");
+      announce("No se pudo comprobar tu sesión. Recarga la página e inténtalo de nuevo.");
     }
   });
 

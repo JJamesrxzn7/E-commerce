@@ -86,6 +86,12 @@ button, a { touch-action: manipulation; }
   font-weight: 800;
   letter-spacing: .14em;
 }
+.auth-context {
+  margin: 0;
+  color: var(--gris);
+  font-size: 14px;
+  line-height: 1.5;
+}
 .auth-cerrar {
   position: absolute;
   top: 20px;
@@ -278,15 +284,10 @@ body.producto-detalle-activo main > :not(#detalle-producto):not(#catalog-status)
 .control-carrusel:hover:not(:disabled) { background: var(--azul); color: var(--blanco); }
 .control-carrusel:disabled { color: var(--gris); border-color: var(--borde); cursor: not-allowed; }
 .carrusel-productos { display: flex; gap: 16px; overflow-x: auto; overscroll-behavior-inline: contain; padding: 3px 3px 18px; scroll-snap-type: x mandatory; scrollbar-color: var(--gris) var(--marfil); scrollbar-width: thin; }
-.carrusel-productos > .producto, .tarjeta-ver-mas { flex: 0 0 clamp(240px, 26vw, 300px); scroll-snap-align: start; }
+.carrusel-productos > .producto { flex: 0 0 clamp(240px, 26vw, 300px); scroll-snap-align: start; }
 .carrusel-productos > .producto { display: flex; flex-direction: column; }
 .carrusel-productos > .producto .producto-info { flex: 1; display: flex; flex-direction: column; align-items: flex-start; }
 .carrusel-productos > .producto .producto-info .boton-ancho { margin-top: auto; }
-.tarjeta-ver-mas { min-height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; padding: 25px; border: 2px dashed var(--gris); border-radius: 3px; background: var(--marfil); color: var(--azul); text-align: center; text-decoration: none; scroll-snap-align: start; }
-.tarjeta-ver-mas:hover { border-color: var(--coral); color: var(--coral); }
-.icono-mas { width: 58px; height: 58px; display: grid; place-items: center; border: 2px solid currentColor; border-radius: 50%; font-size: 38px; font-weight: 400; line-height: 1; }
-.tarjeta-ver-mas strong { font-size: 17px; }
-.tarjeta-ver-mas > span:last-child { color: var(--gris); font-size: 12px; line-height: 1.5; }
 .nota-favoritos { max-width: 680px; margin: -10px 0 24px; color: var(--gris); font-size: 13px; line-height: 1.6; }
 .estado-favoritos { min-height: 1.5em; color: var(--azul); font-size: 13px; }
 .favoritos-vacios { padding: 34px 20px; border: 1px dashed var(--gris); background: var(--marfil); text-align: center; }
@@ -344,11 +345,6 @@ body.busqueda-activa main > #resultados-busqueda { display: block; }
 .descripcion-producto { min-height: 2.8em; margin: 0 0 12px; color: var(--gris); font-size: 12px; line-height: 1.45; }
 .precio { margin: 0 0 15px; font-size: 16px; font-weight: 800; }
 .boton-ancho { width: 100%; }
-.paginacion { display: flex; align-items: center; justify-content: center; gap: 16px; margin-top: 24px; }
-.paginacion button { min-width: 110px; min-height: 44px; padding: 8px 14px; border: 1px solid var(--azul); border-radius: 3px; background: var(--blanco); color: var(--azul); font-weight: 700; cursor: pointer; }
-.paginacion button:hover:not(:disabled) { background: var(--azul); color: var(--blanco); }
-.paginacion button:disabled { border-color: var(--borde); color: var(--gris); cursor: not-allowed; }
-.paginacion [aria-current="page"] { min-width: 96px; color: var(--azul); font-size: 13px; text-align: center; }
 .producto[hidden] { display: none; }
 .llamada { max-width: 1180px; min-height: 190px; margin: 0 auto 65px; padding: 34px 40px; display: flex; align-items: center; justify-content: space-between; gap: 20px; background: var(--coral); color: var(--blanco); }
 .llamada .sobrelinea { color: var(--azul); }
@@ -462,7 +458,7 @@ body.busqueda-activa main > #resultados-busqueda { display: block; }
   .detalle-galeria { max-height: 520px; }
   .detalle-informacion { padding: 0; }
   .productos-relacionados { padding-top: 32px; }
-  .carrusel-productos > .producto, .tarjeta-ver-mas { flex-basis: min(78vw, 300px); }
+  .carrusel-productos > .producto { flex-basis: min(78vw, 300px); }
   .categoria-preview { padding-top: 32px; }
   .llamada { margin: 35px 18px 50px; padding: 28px 22px; }
   .checkout-grid { grid-template-columns: 1fr; }
@@ -497,8 +493,6 @@ body.busqueda-activa main > #resultados-busqueda { display: block; }
   .detalle-informacion > .precio { font-size: 26px; }
   .relacionados-grid { grid-template-columns: 1fr; }
   .controles-carrusel { margin-top: 0; }
-  .paginacion { gap: 8px; }
-  .paginacion button { min-width: 96px; padding-right: 9px; padding-left: 9px; }
   .llamada { align-items: flex-start; flex-direction: column; }
   .pie { padding-left: 18px; padding-right: 18px; }
   .pasos { gap: 7px; font-size: 10px; }

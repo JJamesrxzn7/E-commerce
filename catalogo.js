@@ -21,6 +21,8 @@
     image.className = "imagen-catalogo";
     image.src = product.imageUrl;
     image.alt = product.imageAlt;
+    image.width = 360;
+    image.height = 300;
     image.loading = "lazy";
     image.decoding = "async";
     image.addEventListener("error", () => {
@@ -79,17 +81,6 @@
     const carousel = preview.querySelector(".carrusel-productos");
     products.forEach((product) => carousel.append(product.cloneNode(true)));
 
-    const more = document.createElement("a");
-    more.className = "tarjeta-ver-mas";
-    more.href = `#${categoryId}`;
-    more.setAttribute("aria-label", `Ver todos los productos de ${title}`);
-    more.innerHTML = `
-      <span class="icono-mas" aria-hidden="true">+</span>
-      <strong>Ver más</strong>
-      <span>Explora toda la categoría ${title}</span>
-    `;
-    carousel.append(more);
-
     const previous = preview.querySelector(".control-anterior");
     const next = preview.querySelector(".control-siguiente");
 
@@ -100,7 +91,8 @@
     }
 
     function moveCarousel(direction) {
-      const card = carousel.querySelector(".producto, .tarjeta-ver-mas");
+      const card = carousel.querySelector(".producto");
+      if (!card) return;
       const gap = parseFloat(getComputedStyle(carousel).columnGap) || 16;
       const amount = card.getBoundingClientRect().width + gap;
       carousel.scrollBy({
@@ -149,6 +141,7 @@
           || typeof product.imageUrl !== "string"
           || !/^(?:images\/products\/[a-z0-9-]+\.svg|https:\/\/)/.test(product.imageUrl)
           || typeof product.imageAlt !== "string"
+          || !product.imageAlt.startsWith(`${product.name}. `)
           || typeof product.imageCredit !== "string"
           || typeof product.imageLicense !== "string"
           || typeof product.imageLicenseUrl !== "string"

@@ -9,10 +9,12 @@
   const logoutButton = document.getElementById("cerrar-sesion");
   const accountLabel = document.getElementById("cuenta-activa");
   const sessionStatus = document.getElementById("session-status");
+  const authContext = document.getElementById("auth-context");
   const accountsKey = "apex-sports-demo-accounts-v1";
   const sessionKey = "apex-sports-demo-session-v1";
   const iterations = 310000;
   let previousFocus = null;
+  let pendingAction = null;
 
   function readAccounts() {
     const raw = localStorage.getItem(accountsKey);
@@ -85,6 +87,42 @@
     showMode(mode);
     dialog.showModal();
     dialog.querySelector(`#${mode}-email`)?.focus();
+  }
+
+  function requireSession({
+    mode = "login",
+    opener = document.activeElement,
+    message = "Inicia sesión o crea una cuenta para continuar.",
+    onAuthenticated = () => {},
+    onCancel
+  } = {}) {
+    let session;
+    try {
+      session = readSession();
+    } catch (error) {
+      showStorageError(forms[0], error);
+    }
+
+    if (session) {
+      updateUserState(session);
+      onAuthenticated(session);
+      return true;
+    }
+
+    if (authContext) authContext.textContent = message;
+    pendingAction = { onAuthenticated, onCancel };
+    openDialog(mode, opener instanceof HTMLElement ? opener : null);
+    return false;
+  }
+
+  window.ApexAuth = Object.freeze({ requireSession });
+
+  function completeAuthentication(session) {
+    updateUserState(session);
+    const action = pendingAction;
+    pendingAction = null;
+    dialog.close();
+    action?.onAuthenticated(session);
   }
 
   function clearErrors(form) {
@@ -174,9 +212,8 @@
     accounts.push({ name, email, salt: encodeBase64(salt), passwordHash });
     localStorage.setItem(accountsKey, JSON.stringify(accounts));
     localStorage.setItem(sessionKey, JSON.stringify({ name, email }));
-    updateUserState({ name, email });
     form.reset();
-    dialog.close();
+    completeAuthentication({ name, email });
   }
 
   async function login(form) {
@@ -203,9 +240,8 @@
 
     const session = { name: account.name, email: account.email };
     localStorage.setItem(sessionKey, JSON.stringify(session));
-    updateUserState(session);
     form.reset();
-    dialog.close();
+    completeAuthentication(session);
   }
 
   tabs.forEach((tab) => {
@@ -232,6 +268,9 @@
   dialog.addEventListener("close", () => {
     if (previousFocus?.isConnected && !previousFocus.hidden) previousFocus.focus();
     previousFocus = null;
+    const action = pendingAction;
+    pendingAction = null;
+    action?.onCancel?.();
   });
 
   forms.forEach((form) => {
@@ -274,5 +313,12 @@
   } catch (error) {
     showStorageError(forms[0], error);
     updateUserState(null);
+  }
+
+  if (document.querySelector("[data-require-auth='delivery']")) {
+    requireSession({
+      message: "Para continuar con la entrega, inicia sesión o crea una cuenta.",
+      onCancel: () => window.location.replace("carrito.html")
+    });
   }
 })();

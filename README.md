@@ -12,27 +12,26 @@ Para publicarlo, configura GitHub Pages en el repositorio con la rama `main` y l
 
 - `index.html`: portada, categorías y estructura del catálogo.
 - `estilos.css`: estilos, diseño responsive, foco de teclado y controles táctiles.
-- `catalogo.js`: carga `data/products.json`, construye las tarjetas y genera los carruseles de portada y los enlaces «Ver más».
+- `catalogo.js`: carga `data/products.json`, construye las tarjetas y genera los carruseles de portada.
 - `detalle-producto.js`: abre la ficha accesible de cada artículo y muestra productos relacionados de la misma categoría.
 - `busqueda.js`: busca coincidencias parciales sin distinguir mayúsculas ni tildes en el nombre, categoría y descripción.
-- `data/products.json`: fuente de datos de los 120 productos, con precio, descripción, ilustración única, texto alternativo y licencia.
+- `data/products.json`: fuente de datos de los 120 productos, con precio, descripción, ilustración única, texto alternativo específico para cada producto y licencia.
 - `images/products/`: ilustraciones originales de cada artículo, aislado sobre un fondo liso.
 - `generar-ilustraciones.js`: genera nuevamente las 120 ilustraciones SVG locales desde el catálogo.
-- `favoritos.js`: permite agregar/quitar favoritos, actualiza los botones y el contador, y guarda la lista en `localStorage` de este navegador.
-- `auth.js`: ofrece una cuenta de demostración local con registro e inicio/cierre de sesión. No sustituye una autenticación con servidor y no sincroniza perfiles o favoritos entre dispositivos.
+- `favoritos.js`: solicita iniciar sesión o registrarse al usar favoritos; después permite agregar/quitar artículos y guarda la lista en `localStorage` de este navegador.
+- `auth-modal.js` y `auth.js`: muestran el diálogo compartido de acceso y ofrecen una cuenta de demostración local. No sustituyen una autenticación con servidor ni sincronizan perfiles o favoritos entre dispositivos.
 - `carrito.js`: agrega productos, conserva cantidades en `localStorage` y actualiza el carrito y los resúmenes del flujo de compra.
 - `pago.js`: valida los cuatro campos de tarjeta, muestra guías de transferencia/retiro, y al confirmar guarda un resumen de pedido en la sesión y vacía el carrito, sin almacenar datos financieros.
 - `confirmacion.js`: presenta el resumen guardado del pedido y el método elegido, aunque el carrito ya esté vacío.
 - `entrega-validacion.js`: valida los datos de entrega al salir de cada campo y al enviar el formulario, con mensajes y guías en español.
-- `paginacion.js`: muestra hasta 15 productos por página en las categorías y favoritos; muestra controles solo si hay más de 15.
 - `carrito.html`, `entrega.html`, `pago.html`, `pedido-confirmado.html`: pantallas de demostración para el flujo de compra.
 - `flujo-y-criterios.md`: documentación del flujo, criterios de accesibilidad y decisiones de interfaz.
 
 ## Organización del código
 
-Las páginas HTML separan las etapas del prototipo (catálogo, carrito y checkout); los scripts JavaScript separan funciones independientes como catálogo, búsqueda, favoritos, paginación y carrito. No es necesario concentrar todo en un único archivo: mantener responsabilidades separadas facilita encontrar y modificar una función sin duplicar datos. El catálogo de productos tiene una sola fuente de datos en `data/products.json`.
+Las páginas HTML separan las etapas del prototipo (catálogo, carrito y checkout); los scripts JavaScript separan funciones independientes como catálogo, búsqueda, favoritos y carrito. No es necesario concentrar todo en un único archivo: mantener responsabilidades separadas facilita encontrar y modificar una función sin duplicar datos. El catálogo de productos tiene una sola fuente de datos en `data/products.json`. Las secciones de deportes y favoritos muestran todos sus productos sin paginación. Al usar Favoritos o continuar desde el carrito a Entrega se solicita iniciar sesión o crear una cuenta; la acción continúa tras autenticar y se cancela si se cierra el diálogo.
 
-Las tarjetas ya no incluyen el botón «Añadir al carrito». Al activar la imagen o el contenido del producto se abre su ficha con la descripción, el precio, selector de cantidad, acción para añadir y recomendaciones relacionadas. La cantidad se puede escribir con dígitos o ajustar con los botones +/−, sin el incrementador nativo del campo; la dirección de la ficha puede compartirse o recargarse. En entrega y pago se muestra la tarifa que corresponde a la opción elegida y el total exacto del pedido; el retiro local no suma envío.
+Las imágenes del catálogo y el detalle tienen texto alternativo descriptivo por producto y dimensiones intrínsecas para reservar su espacio mientras cargan. Las tarjetas ya no incluyen el botón «Añadir al carrito». Al activar la imagen o el contenido del producto se abre su ficha con la descripción, el precio, selector de cantidad, acción para añadir y recomendaciones relacionadas. La cantidad se puede escribir con dígitos o ajustar con los botones +/−, sin el incrementador nativo del campo; la dirección de la ficha puede compartirse o recargarse. En entrega y pago se muestra la tarifa que corresponde a la opción elegida y el total exacto del pedido; el retiro local no suma envío.
 
 ## Ilustraciones de producto
 
