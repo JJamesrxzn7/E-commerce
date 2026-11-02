@@ -9,7 +9,6 @@
   const orderTotal = document.querySelector("[data-entrega-total]");
   const touched = new Set();
   const phonePattern = /^\+?[\d\s().-]+$/;
-  const deliveryPrices = { estandar: 400, express: 800 };
 
   function updateOrderTotal() {
     const selected = deliveryOptions.find((option) => option.checked);
@@ -22,12 +21,11 @@
       return;
     }
 
-    const cents = deliveryPrices[selected.value];
     const subtotal = Number(subtotalMatch[1]) * 100 + Number(subtotalMatch[2]);
     const formatMoney = (value) => `$${(value / 100).toFixed(2).replace(".", ",")}`;
     shippingLabel.textContent = selected.value === "express" ? "Envío express" : "Envío estándar";
-    shippingCost.textContent = formatMoney(cents);
-    orderTotal.textContent = formatMoney(subtotal + cents);
+    shippingCost.textContent = "Tarifa no configurada";
+    orderTotal.textContent = formatMoney(subtotal);
   }
 
   function messageFor(field) {
@@ -36,10 +34,6 @@
     if (!value) return "Completa este campo para continuar.";
 
     switch (field.id) {
-      case "nombre":
-        return value.length < 2 ? "Escribe tu nombre completo (mínimo 2 caracteres)." : "";
-      case "correo":
-        return field.validity.typeMismatch ? "Ingresa un correo válido, por ejemplo nombre@dominio.com." : "";
       case "telefono": {
         const digits = value.replace(/\D/g, "");
         return !phonePattern.test(value) || digits.length < 7 || digits.length > 15
@@ -95,6 +89,22 @@
     if (!deliverySelected) {
       event.preventDefault();
       form.querySelector('input[name="entrega"]').focus();
+      return;
+    }
+    const snapshot = {
+      address: document.getElementById("direccion").value.trim(),
+      city: document.getElementById("ciudad").value.trim(),
+      phone: document.getElementById("telefono").value.trim(),
+      reference: document.getElementById("referencia").value.trim(),
+      method: deliverySelected.value
+    };
+    try {
+      sessionStorage.setItem("apex-checkout-delivery-v1", JSON.stringify(snapshot));
+    } catch {
+      event.preventDefault();
+      const error = document.getElementById("direccion-error");
+      error.textContent = "No se pudieron guardar temporalmente los datos de entrega. Habilita el almacenamiento de esta sesión.";
+      error.hidden = false;
     }
   });
 })();

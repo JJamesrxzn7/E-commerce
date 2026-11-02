@@ -1,10 +1,10 @@
 # Apex Sports
 
-Prototipo de interfaz de una tienda deportiva hecho con HTML, CSS y JavaScript vanilla. No necesita instalar dependencias; requiere servirse por HTTP para cargar el catálogo JSON.
+Storefront de una tienda deportiva hecho con HTML, CSS y JavaScript vanilla. No necesita instalar dependencias, pero debe servirse por HTTP y requiere que la API esté disponible para cargar el catálogo y completar autenticación, carrito y checkout.
 
 ## Ejecutar el proyecto
 
-El catálogo se carga desde `data/products.json`, por lo que el sitio debe servirse mediante HTTP y no abrirse directamente como archivo `file://`. En VS Code puedes usar la extensión Live Server; también puedes iniciar Python desde la raíz del proyecto con `python -m http.server 8000` y abrir `http://localhost:8000`.
+El catálogo se carga desde la API, por lo que el sitio y la API deben estar disponibles por HTTP; abrir `index.html` directamente como `file://` no funciona. En VS Code puedes usar Live Server o iniciar Python desde la raíz con `python -m http.server 8000` y abrir `http://localhost:8000`. El cliente usa `http://127.0.0.1:8000/api/v1` por defecto. Para una API distinta, define `window.APEX_API_BASE` antes de cargar `api-client.js`; en GitHub Pages debe apuntar a la URL HTTPS pública de la API. Esa configuración es pública y no debe contener secretos.
 
 Para publicarlo, configura GitHub Pages en el repositorio con la rama `main` y la carpeta raíz (`/`).
 
@@ -12,35 +12,38 @@ Para publicarlo, configura GitHub Pages en el repositorio con la rama `main` y l
 
 - `index.html`: portada, categorías y estructura del catálogo.
 - `estilos.css`: estilos, diseño responsive, foco de teclado y controles táctiles.
-- `catalogo.js`: carga `data/products.json`, construye las tarjetas y genera los carruseles de portada.
+- `catalogo.js`: carga el catálogo paginado desde la API, construye las tarjetas y genera los carruseles de portada.
 - `detalle-producto.js`: abre la ficha accesible de cada artículo y muestra productos relacionados de la misma categoría.
 - `busqueda.js`: busca coincidencias parciales sin distinguir mayúsculas ni tildes en el nombre, categoría y descripción.
-- `data/products.json`: fuente de datos de los 120 productos, con precio, descripción, ilustración única, texto alternativo específico para cada producto y licencia.
+- `data/products.json`: fixture y entrada del generador de ilustraciones; el catálogo visible se obtiene desde la API.
 - `images/products/`: ilustraciones originales de cada artículo, aislado sobre un fondo liso.
 - `generar-ilustraciones.js`: genera nuevamente las 120 ilustraciones SVG locales desde el catálogo.
-- `favoritos.js`: solicita iniciar sesión o registrarse al usar favoritos; después permite agregar/quitar artículos y guarda la lista en `localStorage` de este navegador.
-- `auth-modal.js` y `auth.js`: muestran el diálogo compartido de acceso y ofrecen una cuenta de demostración local. No sustituyen una autenticación con servidor ni sincronizan perfiles o favoritos entre dispositivos.
-- `carrito.js`: agrega productos, conserva cantidades en `localStorage` y actualiza el carrito y los resúmenes del flujo de compra.
-- `pago.js`: valida los cuatro campos de tarjeta, muestra guías de transferencia/retiro, y al confirmar guarda un resumen de pedido en la sesión y vacía el carrito, sin almacenar datos financieros.
-- `confirmacion.js`: presenta el resumen guardado del pedido y el método elegido, aunque el carrito ya esté vacío.
-- `entrega-validacion.js`: valida los datos de entrega al salir de cada campo y al enviar el formulario, con mensajes y guías en español.
+- `api-client.js`: realiza solicitudes a la API; `APEX_API_BASE` debe configurarse con la URL HTTPS publicada antes de cargar el cliente en GitHub Pages.
+- `favoritos.js`: solicita sesión para favoritos; actualmente guarda la lista en `localStorage` y requiere endpoints de API para sincronizarla con la cuenta.
+- `auth-modal.js` y `auth.js`: muestran el diálogo compartido y registran/inician/cerran sesión con la API. El registro pide nombre, correo, cédula/RUC, ciudad y contraseña; el backend debe aceptar el contrato reducido documentado en `PENDIENTES_API_PARA_ECOMMERCE.md`.
+- `carrito.js`: combina el carrito de invitado con el carrito autenticado de la API y permite agregar, quitar y cambiar cantidades.
+- `pago.js`: envía el pedido a la API con idempotencia. El pago es demostrativo: no se cobran ni se transmiten datos financieros.
+- `confirmacion.js`: presenta la respuesta del pedido guardada temporalmente en la pestaña; queda pendiente consultar siempre el registro autoritativo de la API.
+- `entrega-validacion.js`: valida el teléfono y el destino elegidos para cada pedido; no modifica la dirección de perfil.
 - `carrito.html`, `entrega.html`, `pago.html`, `pedido-confirmado.html`: pantallas de demostración para el flujo de compra.
 - `flujo-y-criterios.md`: documentación del flujo, criterios de accesibilidad y decisiones de interfaz.
 
 ## Organización del código
 
-Las páginas HTML separan las etapas del prototipo (catálogo, carrito y checkout); los scripts JavaScript separan funciones independientes como catálogo, búsqueda, favoritos y carrito. No es necesario concentrar todo en un único archivo: mantener responsabilidades separadas facilita encontrar y modificar una función sin duplicar datos. El catálogo de productos tiene una sola fuente de datos en `data/products.json`. Las secciones de deportes y favoritos muestran todos sus productos sin paginación. Al usar Favoritos o continuar desde el carrito a Entrega se solicita iniciar sesión o crear una cuenta; la acción continúa tras autenticar y se cancela si se cierra el diálogo.
+Las páginas HTML separan las etapas de la tienda (catálogo, carrito y checkout); los scripts JavaScript separan funciones como catálogo, búsqueda, favoritos y carrito. El catálogo visible proviene de la API; `data/products.json` se conserva como fixture y entrada del generador de ilustraciones. Las secciones de deportes y favoritos muestran todos sus productos sin paginación. Al usar Favoritos o continuar desde el carrito a Entrega se solicita iniciar sesión o crear una cuenta; la acción continúa tras autenticar y se cancela si se cierra el diálogo.
 
-Las imágenes del catálogo y el detalle tienen texto alternativo descriptivo por producto y dimensiones intrínsecas para reservar su espacio mientras cargan. Las tarjetas ya no incluyen el botón «Añadir al carrito». Al activar la imagen o el contenido del producto se abre su ficha con la descripción, el precio, selector de cantidad, acción para añadir y recomendaciones relacionadas. La cantidad se puede escribir con dígitos o ajustar con los botones +/−, sin el incrementador nativo del campo; la dirección de la ficha puede compartirse o recargarse. En entrega y pago se muestra la tarifa que corresponde a la opción elegida y el total exacto del pedido; el retiro local no suma envío.
+Las imágenes del catálogo y el detalle tienen texto alternativo derivado de los datos de producto y dimensiones intrínsecas. Las tarjetas ya no incluyen el botón «Añadir al carrito». En entrega se piden los datos de contacto y la dirección de ese pedido; la persona puede elegir casa, trabajo u otro lugar. La dirección del pedido no actualiza la dirección del cliente. El backend guarda los datos como snapshot del pedido. Tarifas e impuestos siguen sin estar configurados.
 
 ## Ilustraciones de producto
 
-Cada artículo tiene su propia ilustración vectorial SVG, generada para representar el producto sin escenas, personas ni objetos decorativos. Las ilustraciones son originales de Apex Sports y se ofrecen bajo [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Para regenerarlas después de modificar el catálogo, ejecuta `node generar-ilustraciones.js` desde la raíz del proyecto. No necesitan servicios externos; el catálogo aún requiere servirse por HTTP para cargar el archivo JSON.
+Cada artículo tiene su propia ilustración vectorial SVG, generada para representar el producto sin escenas, personas ni objetos decorativos. Las ilustraciones son originales de Apex Sports y se ofrecen bajo [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Para regenerarlas después de modificar el fixture, ejecuta `node generar-ilustraciones.js` desde la raíz del proyecto. No necesitan servicios externos; para la tienda integrada, la API debe devolver las rutas de imágenes válidas.
 
-## Alcance de la demostración
+## Estado de integración y límites
 
-El catálogo, carrito, entrega y pago son una simulación de interfaz. El registro y el inicio de sesión guardan las cuentas de demostración y su sesión solo en el almacenamiento de este navegador; las contraseñas se derivan con PBKDF2 y no se guardan en texto plano. Esto no equivale a autenticación segura: no existe servidor, recuperación de contraseña, control de acceso ni sincronización entre dispositivos. Los favoritos también se guardan localmente y todavía no están asociados a una cuenta. Para operar como tienda real se necesita un backend con almacenamiento seguro y gestión de sesiones. La pantalla de tarjeta valida el formato de los campos en el navegador, pero no transmite ni conserva esos campos. La cuenta de Banco Pichincha y la ubicación del retiro son de ejemplo y se identifican en el aviso de simulación.
+El storefront consume una API FastAPI para catálogo, autenticación, carrito y checkout; el servicio usa PostgreSQL para sus operaciones implementadas. La URL por defecto de `api-client.js` es sólo local (`127.0.0.1`): para GitHub Pages debe configurarse la URL HTTPS real mediante `window.APEX_API_BASE` antes del script. No se debe publicar `DATABASE_URL` ni otros secretos.
+
+El contrato de registro del frontend ya no pide teléfono ni dirección, pero la API debe actualizarse para aceptar esos campos opcionales y crear `CLIENTES` con nombre/correo/cédula/ciudad. Los favoritos aún se guardan en `localStorage` porque no hay rutas API conectadas. La confirmación del pedido y su historial deben consultar la API para persistir entre sesiones. El checkout conserva teléfono y destino para cada pedido, y no procesa pagos reales; el método es demostrativo, sin tarifa de envío ni impuestos configurados. Consultar `PENDIENTES_API_PARA_ECOMMERCE.md` para coordinar el contrato con el agente de API.
 
 ## Publicación
 
-El sitio puede servirse directamente desde la raíz de la rama `main` con GitHub Pages, sin proceso de compilación.
+El sitio puede servirse desde la raíz de la rama `main` con GitHub Pages, sin proceso de compilación. Para que las funciones API trabajen desde esa publicación, configurar primero la URL HTTPS de la API en `window.APEX_API_BASE` y permitir el origen de GitHub Pages en CORS.

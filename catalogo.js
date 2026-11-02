@@ -9,6 +9,7 @@
     card.dataset.catalogProductId = product.id;
     card.dataset.categoryId = product.categoryId;
     card.dataset.catalogIndex = String(index);
+    card.dataset.inStock = String(product.inStock);
 
     const link = document.createElement("a");
     link.className = "producto-enlace";
@@ -20,7 +21,7 @@
     const image = document.createElement("img");
     image.className = "imagen-catalogo";
     image.src = product.imageUrl;
-    image.alt = product.imageAlt;
+    image.alt = product.imageAlt || `${product.name}. ${product.description}`;
     image.width = 360;
     image.height = 300;
     image.loading = "lazy";
@@ -117,19 +118,40 @@
   async function loadCatalog() {
     const status = document.getElementById("catalog-status");
     try {
-      const response = await fetch("data/products.json");
-      if (!response.ok) throw new Error(`No se pudo cargar data/products.json (${response.status}).`);
-      const data = await response.json();
-      if (!data || data.version !== 1 || !Array.isArray(data.products)) {
-        throw new Error("El archivo data/products.json no tiene el formato esperado.");
+      if (!window.ApexApi) throw new Error("El cliente de la API no está disponible.");
+      const pageSize = 100;
+      const products = [];
+      let total = null;
+      while (total === null || products.length < total) {
+        const offset = products.length;
+        const data = await window.ApexApi.request(`/products?limit=${pageSize}&offset=${offset}`);
+        if (!data || !Array.isArray(data.items) || !Number.isSafeInteger(data.total) || data.total < 0) {
+          throw new Error("La API devolvió un catálogo inválido.");
+        }
+        if (total !== null && total !== data.total) {
+          throw new Error("El catálogo cambió mientras se cargaba. Vuelve a intentarlo.");
+        }
+        total = data.total;
+        if (data.items.length === 0 && products.length < total) {
+          throw new Error("La API no devolvió todos los productos del catálogo.");
+        }
+        products.push(...data.items);
       }
+      if (products.length === 0) {
+        throw new Error("No hay productos activos con una relación de slug público configurada.");
+      }
+      const normalizedProducts = products.map((item) => ({
+        ...item,
+        category: item.categoryLabel,
+        imageAlt: `${item.name}. ${item.description}`
+      }));
 
       const sections = [...document.querySelectorAll(".productos-seccion:not(#favoritos)")];
       const byCategory = new Map(sections.map((section) => [section.id, section]));
       const previews = document.createDocumentFragment();
       const counts = new Map();
 
-      data.products.forEach((product, index) => {
+      normalizedProducts.forEach((product, index) => {
         const section = byCategory.get(product.categoryId);
         if (!section
           || typeof product.id !== "string"
@@ -139,15 +161,6 @@
           || !Number.isSafeInteger(product.priceCents)
           || product.priceCents < 0
           || typeof product.imageUrl !== "string"
-          || !/^(?:images\/products\/[a-z0-9-]+\.svg|https:\/\/)/.test(product.imageUrl)
-          || typeof product.imageAlt !== "string"
-          || !product.imageAlt.startsWith(`${product.name}. `)
-          || typeof product.imageCredit !== "string"
-          || typeof product.imageLicense !== "string"
-          || typeof product.imageLicenseUrl !== "string"
-          || typeof product.imageSourceUrl !== "string"
-          || !/^(?:https:\/\/|#licencias-de-imagenes$)/.test(product.imageLicenseUrl)
-          || !/^(?:https:\/\/|images\/products\/[a-z0-9-]+\.svg$)/.test(product.imageSourceUrl)
         ) {
           throw new Error(`El producto ${index + 1} en data/products.json tiene datos incompletos o inválidos.`);
         }
@@ -166,7 +179,7 @@
     } catch (error) {
       if (status) {
         status.hidden = false;
-        status.textContent = `No se pudo cargar el catálogo. ${error.message} Abre el proyecto mediante un servidor local y vuelve a intentarlo.`;
+        status.textContent = `No se pudo cargar el catálogo desde la API. ${error.message}`;
       }
       console.error("Error al cargar el catálogo de productos.", error);
       signalCatalogReady();

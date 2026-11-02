@@ -2,22 +2,23 @@
 
 ## 1. Propósito
 
-Apex Sports es un prototipo de tienda web deportiva. Permite explorar un catálogo organizado por categorías, buscar productos, consultar sus detalles, guardar favoritos, gestionar un carrito y recorrer una simulación de entrega y pago.
+Apex Sports es una tienda web deportiva estática conectada parcialmente a una API. Permite explorar un catálogo organizado por categorías, buscar productos, consultar sus detalles, guardar favoritos, gestionar un carrito y crear pedidos pendientes de pago.
 
 Este documento sirve como contexto técnico para otra página web, servicio o asistente que necesite comprender el proyecto. Describe la implementación actual, no una arquitectura futura.
 
 ## 2. Resumen para integrar con otra plataforma
 
-> Apex Sports es un storefront demostrativo de equipamiento deportivo implementado como sitio estático con HTML semántico, CSS y JavaScript vanilla. El catálogo se carga desde `data/products.json` y contiene 120 productos en 12 categorías, cada uno con identificador, descripción, precio en centavos, ilustración SVG propia, texto alternativo y metadatos de licencia. La portada permite navegar por categorías, buscar por texto parcial sin distinguir tildes ni mayúsculas, abrir fichas de producto, marcar favoritos y añadir artículos al carrito. El carrito permite cambiar cantidades y calcula subtotales. El checkout incluye validación de entrega, selección de envío, opciones demostrativas de pago y una pantalla de confirmación. El catálogo, carrito, autenticación de demostración y pedido no están conectados a una API: usan `fetch` para el JSON y almacenamiento del navegador (`localStorage`/`sessionStorage`). No hay cuentas compartidas, sincronización entre dispositivos, inventario autoritativo, procesamiento de pagos ni pedidos persistidos en un servidor. Para integrarlo como tienda real se requiere backend y reemplazar los almacenamientos locales por APIs seguras.
+> Apex Sports es un storefront de equipamiento deportivo implementado como sitio estático con HTML semántico, CSS y JavaScript vanilla. El catálogo se obtiene desde una API FastAPI; los productos tienen identificador público, descripción, precio en centavos y una ilustración SVG local. La portada permite navegar por categorías, buscar, abrir fichas, marcar favoritos y gestionar el carrito. Autenticación, catálogo, carrito autenticado y creación del pedido tienen integración API en el código local. Los favoritos aún dependen de `localStorage`, y la confirmación todavía usa datos de la pestaña en lugar de consultar siempre la API. La URL de API publicada debe configurarse antes de `api-client.js`. El pago es demostrativo y no procesa dinero. El registro pide datos mínimos de cuenta más cédula/RUC y ciudad; teléfono y destino se ingresan en cada pedido. Cada orden conserva su propio snapshot de entrega, separado del perfil del cliente.
 
 ## 3. Tecnologías y arquitectura
 
 - **Frontend:** HTML5, CSS3 y JavaScript moderno sin framework.
-- **Formato de datos:** JSON estático para el catálogo.
+- **Datos de catálogo:** API FastAPI; `data/products.json` se conserva como fixture y entrada del generador de imágenes.
+- **API:** FastAPI versionada bajo `/api/v1` para catálogo, autenticación, carrito y checkout.
 - **Recursos de producto:** ilustraciones SVG locales en `images/products/`.
 - **Persistencia del prototipo:** `localStorage` y `sessionStorage` del navegador.
 - **Dependencias de ejecución:** no requiere gestor de paquetes ni proceso de compilación.
-- **Carga local:** requiere HTTP para que `fetch("data/products.json")` funcione; abrir `index.html` directamente mediante `file://` no es el flujo esperado.
+- **Carga local:** requiere HTTP y una API accesible; abrir `index.html` mediante `file://` no es el flujo esperado.
 - **Publicación compatible:** sitio estático, por ejemplo GitHub Pages desde la raíz del repositorio.
 
 La aplicación está dividida por responsabilidad: documentos HTML definen las pantallas, JavaScript implementa el comportamiento y CSS contiene el estilo compartido. Los scripts se cargan con `defer`; en la página principal, `catalogo.js` construye el catálogo y emite el evento `catalog:ready`, que usan los scripts que necesitan las tarjetas ya creadas.
@@ -32,17 +33,18 @@ La aplicación está dividida por responsabilidad: documentos HTML definen las p
 | `pago.html` | Selección del método de pago, validación de demostración y total. |
 | `pedido-confirmado.html` | Presentación del resumen guardado en la sesión actual. |
 | `estilos.css` | Estilos comunes, responsive, estados, componentes y foco visible. |
-| `data/products.json` | Fuente de verdad estática del catálogo de demostración. |
+| `data/products.json` | Catálogo/fixture de desarrollo; el storefront integrado carga productos desde la API. |
 | `images/products/` | Ilustraciones SVG locales para cada producto. |
-| `catalogo.js` | Carga y valida el JSON, construye tarjetas y carruseles. |
+| `catalogo.js` | Obtiene todas las páginas del catálogo de API, valida productos y construye tarjetas/carruseles. |
 | `detalle-producto.js` | Muestra detalles del producto seleccionado y recomendaciones. |
 | `busqueda.js` | Filtra los productos de acuerdo con la consulta en la URL. |
-| `favoritos.js` | Gestiona los botones y la colección de favoritos local. |
-| `carrito.js` | Agrega artículos, actualiza cantidades, elimina y renderiza los resúmenes. |
-| `entrega-validacion.js` | Valida los campos de entrega y actualiza el total de envío. |
-| `pago.js` | Valida los campos de tarjeta de demostración, construye el pedido local y vacía el carrito. |
-| `confirmacion.js` | Valida y presenta el pedido guardado en la sesión del navegador. |
-| `auth.js` | Registro/inicio/cierre de sesión local de demostración mediante el diálogo de acceso. |
+| `api-client.js` | Cliente HTTP autenticado; recibe la base URL desde `window.APEX_API_BASE` o usa localhost para desarrollo. |
+| `favoritos.js` | Gestiona botones/lista; todavía persiste en `localStorage` mientras faltan endpoints de favoritos. |
+| `carrito.js` | Sincroniza carrito autenticado con API y combina carrito de invitado al iniciar sesión. |
+| `entrega-validacion.js` | Valida teléfono y dirección/ciudad elegidas para el pedido actual. |
+| `pago.js` | Envía un checkout de demostración a la API con clave de idempotencia. |
+| `confirmacion.js` | Presenta el pedido; actualmente depende de la respuesta guardada en la sesión del navegador. |
+| `auth.js` | Registro/login/logout vía API y reanudación de acciones que requieren sesión. |
 | `generar-ilustraciones.js` | Genera las ilustraciones SVG locales usando el catálogo como entrada. |
 | `informe-productos-para-imagenes-ia.md` | Checklist de los 120 nombres de producto, distribuidos en 12 categorías, para producir imágenes. |
 | `AUDITORIA.md` | Auditoría de riesgos y limitaciones del prototipo. |
@@ -50,7 +52,7 @@ La aplicación está dividida por responsabilidad: documentos HTML definen las p
 
 ## 5. Catálogo y modelo de datos
 
-El archivo `data/products.json` contiene un objeto raíz con `version` y una lista `products`. El catálogo actual contiene 120 artículos: 10 por cada una de estas 12 categorías: fútbol, basketball, tennis, artes marciales, volleyball, ropa deportiva, running, ciclismo, fitness, natación, outdoor y accesorios.
+El fixture `data/products.json` contiene un objeto raíz con `version` y una lista `products`; sirve para generar ilustraciones y como referencia local. El catálogo que se presenta en la tienda se obtiene desde la API. El fixture actual contiene 120 artículos: 10 por cada una de estas 12 categorías: fútbol, basketball, tennis, artes marciales, volleyball, ropa deportiva, running, ciclismo, fitness, natación, outdoor y accesorios.
 
 Forma representativa de un producto:
 
@@ -84,7 +86,7 @@ Forma representativa de un producto:
 - `imageAlt`: nombre y descripción del artículo, pensado para tecnologías de asistencia.
 - `imageCredit`, `imageLicense`, `imageLicenseUrl`, `imageSourceUrl`, `imageSourceTitle`: crédito y referencia de licencia/origen.
 
-Al añadir productos, hay que actualizar también la sección correspondiente en `index.html`, generar o incluir el archivo de imagen y mantener sus metadatos coherentes.
+Al añadir productos, hay que incorporarlos en la fuente de catálogo del backend y asegurar que la API devuelva categorías y rutas de imagen válidas. Actualiza el fixture local sólo cuando corresponda al flujo de generación de ilustraciones.
 
 ## 6. Interfaz y capacidades
 
@@ -115,57 +117,57 @@ Al añadir productos, hay que actualizar también la sección correspondiente en
 
 - Cada artículo tiene un botón de favorito con nombre accesible dinámico y estado `aria-pressed`.
 - Al activar un corazón o abrir Favoritos sin sesión, se solicita iniciar sesión o crear una cuenta; después de autenticar se completa la acción solicitada.
-- La lista se guarda en el almacenamiento local del navegador.
+- La lista se guarda en `localStorage`; aún no sincroniza con la tabla `FAVORITOS` ni con otros dispositivos.
 - La sección Favoritos muestra los productos seleccionados y permite quitarlos o agregarlos al carrito.
 - Las categorías y la lista de favoritos muestran todos sus productos, sin paginación.
-- La cuenta de demostración no sincroniza favoritos con otros navegadores o dispositivos.
+- La cuenta autenticada aún no sincroniza favoritos con otros navegadores o dispositivos.
 
 ### 6.5 Carrito
 
-- El carrito se conserva en `localStorage` bajo la clave `apex-sports-cart`.
+- El carrito autenticado se consulta y actualiza en la API; el carrito de invitado se conserva en `localStorage` bajo `apex-sports-cart` y se intenta fusionar al iniciar sesión.
 - Agregar un producto actualiza el carrito y el contador, sin forzar navegación.
 - La vista del carrito permite aumentar o reducir unidades (mínimo uno) y quitar productos.
-- Se calculan subtotal y totales usando precios en centavos.
+- El subtotal del carrito autenticado se calcula con los precios devueltos por la API; el backend valida precios, stock y cantidades en checkout.
 - La región de estado anuncia en español adiciones, cambios y errores a tecnologías de asistencia.
 
 ### 6.6 Entrega
 
-- **Continuar con la entrega** desde el carrito requiere una sesión local; al iniciar sesión o crear una cuenta se abre la pantalla de entrega. También se solicita acceso si se abre directamente esa pantalla.
-- Se validan nombre, correo, teléfono, dirección y ciudad cuando el campo pierde foco y al enviar.
+- **Continuar con la entrega** desde el carrito requiere una sesión de API; también se solicita acceso si se abre directamente esa pantalla.
+- Se solicitan teléfono, dirección, ciudad y referencia opcional para cada pedido. No se piden nuevamente nombre/correo, ya asociados a la cuenta.
+- La dirección es elegida para el pedido actual (casa, trabajo u otro lugar); no actualiza `CLIENTES.cli_Direccion`.
+- El formulario valida teléfono, dirección y ciudad al perder foco y al enviar.
 - Se muestran mensajes y orientación de entrada en español.
-- La opción de entrega afecta el costo y total. El envío estándar se calcula en 400 centavos y express en 800 centavos.
-- El formulario pasa el tipo de entrega a la página de pago mediante la URL.
+- El costo se muestra como no configurado; la API actualmente registra tarifa cero.
+- Los datos se guardan temporalmente en sesión y se envían a `POST /api/v1/checkout`, que conserva un snapshot por pedido.
 
 ### 6.7 Pago y confirmación
 
-- Ofrece opciones demostrativas de tarjeta, transferencia bancaria y pago/retiro en local.
-- La opción local no añade costo de envío.
-- Los campos de tarjeta se validan en el navegador; no hay proveedor ni solicitud real de cobro.
-- Al confirmar, `pago.js` construye un resumen, lo escribe en `sessionStorage` bajo `apex-sports-last-order`, borra el carrito y navega a la pantalla de confirmación.
-- `confirmacion.js` comprueba que productos, subtotal, envío y total sean coherentes antes de mostrarlos.
-- El pedido solo existe para la demostración en la sesión del navegador; no se registra en un backend.
+- La opción activa es un pedido de demostración pendiente; no hay proveedor ni cobro real.
+- `pago.js` envía pedido y destino a `POST /api/v1/checkout`, usa `Idempotency-Key` y limpia el carrito tras una respuesta exitosa.
+- La API registra el pedido, líneas, snapshots de dirección, reserva de stock y estado de pago `NOT_PROCESSED`.
+- La confirmación local presenta la respuesta guardada en `sessionStorage`; debería volver a consultar `GET /api/v1/orders/{id}` para que el servidor sea fuente de verdad.
 
-### 6.8 Cuenta de demostración
+### 6.8 Cuenta y autenticación
 
-- El diálogo permite crear cuenta, iniciar sesión y cerrar sesión en este mismo navegador.
+- El diálogo permite registrar cliente, iniciar sesión y cerrar sesión mediante la API.
 - El mismo diálogo se reutiliza en la tienda, el carrito y la entrega; las acciones de favoritos y la continuación del checkout se reanudan tras autenticar.
-- `auth-modal.js` construye el diálogo compartido; `auth.js` gestiona la sesión local y la continuación/cancelación de la acción protegida.
-- Los datos se guardan localmente bajo las claves `apex-sports-demo-accounts-v1` y `apex-sports-demo-session-v1`.
-- La contraseña se deriva en el cliente mediante PBKDF2; esto no convierte el flujo en autenticación de producción.
-- No hay servidor, recuperación de contraseña, cookies de sesión, autorización de recursos, sincronización entre dispositivos ni conexión entre usuarios y favoritos/carrito.
-- No usar esta función para cuentas o contraseñas reales. El sistema real requiere backend, hashing configurado en servidor y sesiones seguras.
+- `auth-modal.js` construye el diálogo compartido; `auth.js` gestiona la sesión API y la continuación/cancelación de la acción protegida.
+- El token bearer y los datos básicos del usuario se guardan en `sessionStorage` por pestaña.
+- El formulario reducido pide nombre, correo, cédula/RUC, ciudad y contraseña; el backend debe permitir omitir teléfono y dirección al registrar.
+- La API usa Argon2id y sesiones opacas con revocación/expiración.
+- Los favoritos aún no se conectan a cuenta; revisar el documento `PENDIENTES_API_PARA_ECOMMERCE.md`.
 
 ## 7. Persistencia actual
 
 | Dato | Ubicación | Alcance y duración |
 |---|---|---|
-| Catálogo | `data/products.json` | Archivo estático compartido por la publicación del sitio. |
-| Carrito | `localStorage` (`apex-sports-cart`) | Mismo navegador y origen; persiste tras cerrar la página hasta que se borre o confirme el pedido. |
-| Favoritos | `localStorage` (`apex-sports-favoritos-v1`) | Mismo navegador y origen; no está asociado a cuenta. |
-| Cuentas de demo | `localStorage` (`apex-sports-demo-accounts-v1`) | Solo en el navegador actual; no constituye almacenamiento seguro de cuentas. |
-| Sesión de demo | `localStorage` (`apex-sports-demo-session-v1`) | Estado local hasta cierre explícito o limpieza de almacenamiento. |
-| Pedido reciente | `sessionStorage` (`apex-sports-last-order`) | Sesión de la pestaña/origen; no es un registro de pedido de servidor. |
-| Datos de tarjeta | No se persisten | Se validan en el cliente como parte de la simulación. |
+| Catálogo | API `/products` (JSON como fixture) | Productos, precio e inventario leídos desde servidor. |
+| Carrito invitado | `localStorage` (`apex-sports-cart`) | Mismo navegador; se intenta fusionar al iniciar sesión. |
+| Carrito autenticado | API `/cart` | Asociado a la cuenta y persistido por servidor. |
+| Favoritos | `localStorage` (`apex-sports-favoritos-v1`) | Aún no asociado a cuenta/API. |
+| Token y usuario | `sessionStorage` (`apex-api-token-v1`, `apex-api-user-v1`) | Sesión de la pestaña; token expira/revoca en el servidor. |
+| Pedido reciente | `sessionStorage` (`apex-sports-last-order`) | Copia temporal de la respuesta; la orden autoritativa está en la API. |
+| Datos de tarjeta | No se recopilan | La opción de tarjeta está deshabilitada; el sitio no solicita ni envía datos financieros. |
 
 Cambiar navegador, dispositivo, perfil, origen o limpiar datos del sitio puede separar o eliminar estos datos locales.
 
@@ -198,24 +200,22 @@ Para regenerar las ilustraciones con Node.js:
 node generar-ilustraciones.js
 ```
 
-## 10. Límites y requisitos para una integración real
+## 10. Límites y pendientes de integración
 
-Este proyecto es un prototipo estático. No ofrece API HTTP de productos, usuarios, favoritos, carrito, inventario, direcciones o pedidos. Tampoco tiene autenticación de servidor, autorización, sincronización multi-dispositivo ni pagos reales.
+La integración de API está en progreso; el archivo `PENDIENTES_API_PARA_ECOMMERCE.md` contiene el contrato detallado para el backend. Para publicar la tienda conectada:
 
-Una integración de producción debe como mínimo:
-
-1. Definir un backend/API y un almacenamiento persistente.
-2. Validar precios, disponibilidad, cantidades, totales y envío en el servidor; el navegador no debe ser autoridad comercial.
-3. Implementar autenticación y sesiones protegidas en el servidor; no tratar las cuentas almacenadas en `localStorage` como identidades verificadas.
-4. Vincular favoritos/carrito a la identidad del usuario cuando corresponda y definir cómo combinar datos locales al iniciar sesión.
-5. Crear pedidos persistentes y estados de pedido en el servidor.
-6. Integrar un proveedor de pagos; nunca afirmar que se cobró o validar tarjetas solo con reglas frontend.
-7. Revisar privacidad, protección de datos, accesibilidad y seguridad antes de publicación comercial.
+1. Configurar `window.APEX_API_BASE` con la URL HTTPS real antes de cargar `api-client.js`; no publicar secretos.
+2. Desplegar la versión de API compatible con registro reducido (sin teléfono/dirección obligatorios).
+3. Implementar favoritos por API y sincronizarlos con `FAVORITOS`.
+4. Leer confirmación e historial desde recursos de pedidos protegidos.
+5. Mantener dirección de entrega como snapshot por orden, nunca como dirección implícita del perfil.
+6. Configurar precios/tarifas/impuestos y pasarela antes de presentar compra real; nunca afirmar que una orden de demo fue pagada.
+7. Validar flujos completos desde GitHub Pages y la URL de API desplegada.
 
 ## 11. Contexto corto reutilizable
 
 Para pasar una descripción compacta a otra herramienta:
 
 ```text
-Estoy trabajando en Apex Sports, un prototipo e-commerce deportivo estático en HTML, CSS y JavaScript vanilla. Se ejecuta sin compilación y requiere HTTP para cargar data/products.json. El catálogo contiene 120 productos en 12 categorías; cada producto incluye id, categoryId, category, name, description, priceCents, imageUrl e imageAlt, además de metadatos de licencia. Las ilustraciones son SVG locales en images/products/. La portada incluye búsqueda parcial tolerante a tildes, categorías y carruseles; las tarjetas abren una ficha con selector de cantidad; el carrito y favoritos se guardan localmente; el checkout simula entrega/pago y el pedido de confirmación solo se guarda en sessionStorage. El registro/inicio de sesión también es solo local y no sincroniza con favoritos. No hay backend, inventario real, API, pedidos persistentes ni procesamiento de pagos. Mantén la arquitectura estática del prototipo salvo que se solicite explícitamente una integración backend, no presentes funciones simuladas como reales y conserva etiquetas, nombres accesibles, textos alternativos, regiones aria-live y comportamiento responsive.
+Estoy trabajando en Apex Sports, un storefront deportivo estático en HTML, CSS y JavaScript vanilla, integrado parcialmente con una API FastAPI. Requiere HTTP y configuración de la URL API. El catálogo se obtiene de la API; data/products.json sirve como fixture/generador de ilustraciones SVG locales. La portada incluye búsqueda, categorías y carruseles; cada ficha permite cambiar cantidad y añadir al carrito. Autenticación, carrito autenticado y creación del pedido usan la API. Favoritos aún se guardan en localStorage y la confirmación depende de sessionStorage. Registro requiere nombre, correo, cédula/RUC, ciudad y contraseña; teléfono y destino se ingresan por pedido y la dirección se conserva en el snapshot de esa orden, no en el perfil. El checkout deja el pedido pendiente y no procesa pagos. Conserva etiquetas, nombres accesibles, texto alternativo, regiones aria-live y diseño responsive; no presentes pagos ni funciones pendientes como reales.
 ```

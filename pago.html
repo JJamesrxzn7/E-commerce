@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Método de pago | Apex Sports</title>
+  <title>Confirmar pedido | Apex Sports</title>
   <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
@@ -11,16 +11,17 @@
   <header class="encabezado encabezado-simple">
     <div class="barra-superior"><a class="marca" href="index.html"><span class="marca-icono" aria-hidden="true">A</span><span>APEX <strong>SPORTS</strong></span></a><a class="enlace-texto" href="entrega.html">← Volver a la entrega</a></div>
   </header>
-  <main class="checkout" id="contenido">
+  <main class="checkout" id="contenido" data-require-auth="delivery">
     <nav class="pasos" aria-label="Progreso de compra">
       <a class="paso paso-completado" href="carrito.html"><b>✓</b> Carrito</a><span aria-hidden="true">—</span><a class="paso paso-completado" href="entrega.html"><b>✓</b> Entrega</a><span aria-hidden="true">—</span><span class="paso paso-activo"><b>3</b> Pago</span>
     </nav>
-    <div class="checkout-titulo"><p class="sobrelinea">PASO 3 DE 3</p><h1>Elige cómo pagar</h1><p>Selecciona tarjeta de crédito o débito, transferencia bancaria o pago y retiro en el local.</p></div>
+    <div class="checkout-titulo"><p class="sobrelinea">PASO 3 DE 3</p><h1>Revisa tu pedido</h1><p>Este prototipo no procesa pagos. Tu pedido quedará pendiente; no ingreses datos de tarjeta ni hagas transferencias.</p></div>
     <form id="pago-formulario">
       <div class="checkout-grid">
         <section class="panel">
-          <h2>Método de pago</h2>
-          <fieldset class="metodos-pago">
+          <h2>Pago de demostración</h2>
+          <p>La API guardará el pedido como pendiente de pago. No se realizará ningún cobro y no se guardan datos financieros.</p>
+          <fieldset class="metodos-pago" hidden disabled>
             <legend class="solo-lectores">Selecciona un método de pago</legend>
             <label class="opcion opcion-pago">
               <input type="radio" name="metodo" value="tarjeta" required checked>
@@ -91,14 +92,19 @@
               <p><strong>Horario:</strong> Lunes a sábado, de 09:00 a 18:00.</p>
             </section>
           </fieldset>
-          <p class="aviso aviso-seguridad"><strong>Simulación:</strong> no se realizará ningún cobro ni transferencia. No ingreses datos financieros reales; la cuenta bancaria y la dirección del local son de ejemplo.</p>
+          <label class="opcion opcion-pago">
+            <input type="radio" name="metodo" value="demo" checked required>
+            <span><strong>Confirmar pedido pendiente</strong><small>Sin cargo y sin procesamiento de pago</small></span>
+            <span class="simbolo-pago" aria-hidden="true">✓</span>
+          </label>
+          <p class="aviso aviso-seguridad"><strong>Importante:</strong> este sitio no está conectado a una pasarela de pago. El pedido no queda pagado ni confirmado para despacho.</p>
           <p id="pago-error-general" class="error-campo" role="alert" hidden></p>
         </section>
         <aside class="panel resumen">
           <h2>Resumen del pedido</h2>
           <div class="resumen-productos" data-cart-items></div>
           <p><span>Subtotal</span><strong data-cart-subtotal>$0,00</strong></p>
-          <p data-pago-envio><span>Envío estándar</span><strong>$4,00</strong></p>
+          <p data-pago-envio><span>Envío estándar</span><strong>Tarifa no configurada</strong></p>
           <hr>
           <p class="total"><span>Total</span><strong data-pago-total>$0,00</strong></p>
           <button class="boton boton-ancho" type="submit">Confirmar pedido</button>
@@ -108,7 +114,10 @@
     </form>
   </main>
   <footer class="pie pie-simple"><p>© 2026 Apex Sports</p><a href="index.html">Volver a la tienda</a></footer>
+  <script src="api-client.js" defer></script>
   <script src="carrito.js" defer></script>
   <script src="pago.js" defer></script>
+  <script src="auth-modal.js" defer></script>
+  <script src="auth.js" defer></script>
 </body>
 </html>

@@ -93,7 +93,8 @@
       quantityInput.value = "1";
       updateQuantityControls();
       addButton.dataset.productId = productId;
-      addButton.textContent = "Añadir al carrito";
+      addButton.disabled = productCard.dataset.inStock === "false";
+      addButton.textContent = addButton.disabled ? "Agotado" : "Añadir al carrito";
       addButton.classList.remove("producto-anadido");
       backLink.href = "index.html";
       backLink.textContent = "← Volver al inicio";
