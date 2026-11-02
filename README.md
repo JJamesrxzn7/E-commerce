@@ -4,7 +4,7 @@ Storefront de una tienda deportiva hecho con HTML, CSS y JavaScript vanilla. No 
 
 ## Ejecutar el proyecto
 
-El catálogo se carga desde la API, por lo que el sitio y la API deben estar disponibles por HTTP; abrir `index.html` directamente como `file://` no funciona. En VS Code puedes usar Live Server o iniciar Python desde la raíz con `python -m http.server 8000` y abrir `http://localhost:8000`. El cliente usa `http://127.0.0.1:8000/api/v1` por defecto. Para una API distinta, define `window.APEX_API_BASE` antes de cargar `api-client.js`; en GitHub Pages debe apuntar a la URL HTTPS pública de la API. Esa configuración es pública y no debe contener secretos.
+El catálogo se carga desde la API, por lo que el sitio y la API deben estar disponibles por HTTP; abrir `index.html` directamente como `file://` no funciona. En VS Code puedes usar Live Server o iniciar Python desde la raíz con `python -m http.server 8000` y abrir `http://localhost:8000`. `api-config.js` define la URL HTTPS pública usada por GitHub Pages antes de cargar el cliente; para desarrollo local puedes cambiarla a `http://127.0.0.1:8000/api/v1`. Esa configuración es pública y no debe contener secretos.
 
 Para publicarlo, configura GitHub Pages en el repositorio con la rama `main` y la carpeta raíz (`/`).
 
@@ -18,7 +18,8 @@ Para publicarlo, configura GitHub Pages en el repositorio con la rama `main` y l
 - `data/products.json`: fixture y entrada del generador de ilustraciones; el catálogo visible se obtiene desde la API.
 - `images/products/`: ilustraciones originales de cada artículo, aislado sobre un fondo liso.
 - `generar-ilustraciones.js`: genera nuevamente las 120 ilustraciones SVG locales desde el catálogo.
-- `api-client.js`: realiza solicitudes a la API; `APEX_API_BASE` debe configurarse con la URL HTTPS publicada antes de cargar el cliente en GitHub Pages.
+- `api-config.js`: define la URL HTTPS pública de la API, cargada antes de `api-client.js` en todas las páginas.
+- `api-client.js`: realiza solicitudes a la API usando la base definida por `api-config.js`.
 - `favoritos.js`: solicita sesión para favoritos; actualmente guarda la lista en `localStorage` y requiere endpoints de API para sincronizarla con la cuenta.
 - `auth-modal.js` y `auth.js`: muestran el diálogo compartido y registran/inician/cerran sesión con la API. El registro pide nombre, correo, cédula/RUC, ciudad y contraseña; el backend debe aceptar el contrato reducido documentado en `PENDIENTES_API_PARA_ECOMMERCE.md`.
 - `carrito.js`: combina el carrito de invitado con el carrito autenticado de la API y permite agregar, quitar y cambiar cantidades.
@@ -40,10 +41,10 @@ Cada artículo tiene su propia ilustración vectorial SVG, generada para represe
 
 ## Estado de integración y límites
 
-El storefront consume una API FastAPI para catálogo, autenticación, carrito y checkout; el servicio usa PostgreSQL para sus operaciones implementadas. La URL por defecto de `api-client.js` es sólo local (`127.0.0.1`): para GitHub Pages debe configurarse la URL HTTPS real mediante `window.APEX_API_BASE` antes del script. No se debe publicar `DATABASE_URL` ni otros secretos.
+El storefront consume una API FastAPI para catálogo, autenticación, carrito y checkout; el servicio usa PostgreSQL para sus operaciones implementadas. `api-config.js` configura la URL HTTPS pública mediante `window.APEX_API_BASE`; no se debe publicar `DATABASE_URL` ni otros secretos.
 
 El contrato de registro del frontend ya no pide teléfono ni dirección, pero la API debe actualizarse para aceptar esos campos opcionales y crear `CLIENTES` con nombre/correo/cédula/ciudad. Los favoritos aún se guardan en `localStorage` porque no hay rutas API conectadas. La confirmación del pedido y su historial deben consultar la API para persistir entre sesiones. El checkout conserva teléfono y destino para cada pedido, y no procesa pagos reales; el método es demostrativo, sin tarifa de envío ni impuestos configurados. Consultar `PENDIENTES_API_PARA_ECOMMERCE.md` para coordinar el contrato con el agente de API.
 
 ## Publicación
 
-El sitio puede servirse desde la raíz de la rama `main` con GitHub Pages, sin proceso de compilación. Para que las funciones API trabajen desde esa publicación, configurar primero la URL HTTPS de la API en `window.APEX_API_BASE` y permitir el origen de GitHub Pages en CORS.
+El sitio puede servirse desde la raíz de la rama `main` con GitHub Pages, sin proceso de compilación. Para que las funciones API trabajen desde esa publicación, mantener `api-config.js` antes de `api-client.js` en cada página y permitir el origen de GitHub Pages en CORS.
