@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Informe técnico | Apex Sports</title>
+  <style>
+    :root {
+      color: #111;
+      background: #fff;
+      font: 11pt/1.38 "Times New Roman", Times, serif;
+      --navy: #17324d;
+      --ivory: #f4f1e8;
+      --terracotta: #a84328;
+      --gray: #555;
+      --line: #b7b7b7;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 { margin-bottom: 10px; font-size: 16pt; line-height: 1.2; text-align: center; }
+    h2 { margin-bottom: 9px; color: #075574; font-size: 15pt; line-height: 1.25; }
+    h3 { margin: 12px 0 6px; color: #075574; font-size: 12pt; }
+    p { margin-bottom: 9px; }
+    a { color: #075574; overflow-wrap: anywhere; }
+    code { font: 9pt "Courier New", monospace; }
+    table { width: 100%; border-collapse: collapse; margin: 9px 0 13px; }
+    th, td { padding: 7px 8px; border: 1px solid var(--line); text-align: left; vertical-align: top; }
+    th { background: #fff; color: #111; font-weight: 700; }
+    ul, ol { margin: 5px 0 9px; padding-left: 20px; }
+    li { margin-bottom: 3px; }
+    .academic-header { margin-bottom: 22px; }
+    .academic-header .institution { margin-bottom: 16px; text-align: center; font-size: 14pt; }
+    .academic-header .metadata { margin-bottom: 5px; }
+    .academic-header h1 { margin: 18px 0 7px; }
+    .academic-header .subtitle { margin-bottom: 12px; text-align: center; }
+    .academic-header .url { margin-bottom: 0; }
+    .page { padding: 0; page-break-after: always; }
+    .page:last-child { page-break-after: auto; }
+    .page-title { margin-bottom: 7px; }
+    .kicker { display: none; }
+    .muted { color: var(--gray); }
+    .callout { margin: 9px 0; padding: 0; border: 0; background: transparent; }
+    .callout strong { color: #111; }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .card { padding: 8px 10px; border: 1px solid var(--line); }
+    .swatch { display: inline-block; width: 14px; height: 14px; margin-right: 5px; border: 1px solid #aeb8bf; vertical-align: -2px; }
+    .status { color: #111; font-weight: 700; }
+    .status.partial, .status.ok, .status.gap { color: #111; }
+    .small { font-size: 9.5pt; }
+    .figure { margin: 10px 0 0; }
+    .figure img { display: block; width: 100%; max-height: 174mm; object-fit: contain; border: 1px solid var(--line); }
+    .figure figcaption { margin-top: 5px; color: var(--gray); font-size: 8.5pt; }
+    .figure.duo { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .figure.duo img { height: 88mm; object-fit: contain; }
+    .figure.duo figcaption { grid-column: 1 / -1; }
+    .figure.mobile img { width: auto; height: 125mm; margin: 8px auto 0; }
+    .flow { width: 100%; height: auto; margin-top: 5px; }
+    .flow text { font-family: "Times New Roman", Times, serif; fill: #111; font-size: 15px; }
+    .flow .small-text { font-size: 12px; }
+    .flow .node { fill: #fff; stroke: #222; stroke-width: 1.5; rx: 2; }
+    .flow .decision { fill: #fff; stroke: #222; stroke-width: 1.5; }
+    .flow .edge { stroke: #444; stroke-width: 1.5; fill: none; marker-end: url(#arrow); }
+    .flow .api { fill: #fff; stroke: #222; }
+    .flow .api-text { fill: #111; }
+    .rule { height: 1px; margin: 10px 0; background: var(--line); }
+    .page-foot { margin-top: 12px; padding-top: 6px; border-top: 1px solid var(--line); color: var(--gray); font-size: 8pt; }
+    @page { size: letter; margin: 22mm 25mm 20mm; }
+    @media screen {
+      body { max-width: 216mm; margin: 18px auto; padding: 22mm 25mm; box-shadow: 0 2px 18px #ccd3d9; }
+      .page { padding: 5mm 0; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="page">
+      <header class="academic-header">
+        <p class="institution">PONTIFICIA UNIVERSIDAD CATÓLICA DEL ECUADOR</p>
+        <p class="metadata"><strong>Nombre:</strong> Jeremy Ramirez</p>
+        <p class="metadata"><strong>Fecha:</strong> 02/11/2026</p>
+        <p class="metadata"><strong>Materia:</strong> Interacción Humano Computador</p>
+        <p class="metadata"><strong>Actividad:</strong> RDA2 – Criterio 1 – Reto 5</p>
+        <h1>Informe técnico del prototipo Apex Sports</h1>
+        <p class="subtitle">Evaluación del estado actual frente a los criterios de la actividad</p>
+        <p class="url"><strong>Versión publicada:</strong> <a href="https://jjamesrxzn7.github.io/E-commerce/">https://jjamesrxzn7.github.io/E-commerce/</a></p>
+      </header>
+      <h2 class="page-title">1. Evaluación del prototipo frente a la rúbrica</h2>
+      <p>Apex Sports es un prototipo de tienda deportiva en español, implementado con HTML, CSS y JavaScript. La versión ampliada separa el inicio, las categorías, las fichas y los favoritos en documentos independientes, además del carrito y el flujo de checkout. En la revisión local, el catálogo y las fichas se cargaron mediante la API configurada en el frontend.</p>
+      <div class="callout">
+        <strong>Requisito de páginas independientes:</strong> el repositorio contiene ocho documentos HTML: <code>index.html</code>, <code>categoria.html</code>, <code>producto.html</code>, <code>favoritos.html</code>, <code>carrito.html</code>, <code>entrega.html</code>, <code>pago.html</code> y <code>pedido-confirmado.html</code>. Categoría y ficha son páginas reales con parámetro <code>?id=</code>, no secciones ancladas.
+      </div>
+      <p class="small muted">No se asigna una calificación estimada. La evaluación formal corresponde al docente y la rúbrica aplica penalizaciones por errores funcionales, de usabilidad o accesibilidad.</p>
+      <h3>Acceso y conectividad observada</h3>
+      <p>La versión local respondió en el navegador y mostró productos obtenidos desde el catálogo de la API. <code>api-config.js</code> configura el endpoint HTTPS; <code>catalogo-compartido.js</code> consulta el recurso de productos. Esto comprueba la conexión del navegador con el servicio de catálogo en esa sesión, pero no sustituye una inspección independiente de PostgreSQL ni demuestra persistencia de cada operación del checkout. Los cambios documentados aún deben publicarse para que aparezcan en la URL remota.</p>
+      <p class="page-foot">Fuentes de implementación: <code>api-config.js</code>, <code>api-client.js</code>, <code>catalogo.js</code>, archivos HTML de la tienda y <code>README.md</code>.</p>
+      <p><strong>Principios de diseño observables:</strong> jerarquía tipográfica y contraste de bloques para guiar la atención; alineación en grillas; espaciado consistente; simplicidad en checkout; affordance mediante botones, enlaces, radios y mensajes de estado. Estas observaciones describen la implementación, no una prueba con usuarios.</p>
+      <p><strong>Nota para la entrega académica:</strong> la consigna limita el texto generado por IA al 5% y la coincidencia al 9%. Este documento es un borrador asistido y no puede certificar esos porcentajes; revisa la política de la asignatura, personaliza la redacción con tus observaciones y verifica el resultado en las herramientas autorizadas por el curso.</p>
+    </section>
+
+    <section class="page">
+      <h2 class="page-title">2. Explicación del modelo mental que sigue la interfaz</h2>
+      <h3>2.1. Flujo de navegación: diagrama de estados</h3>
+      <p>La navegación separa el inicio, la página de categoría, la ficha de producto, favoritos, carrito y las tres etapas de compra. Las acciones de favoritos, entrega y pago requieren sesión; cerrar el diálogo de autenticación cancela la acción pendiente.</p>
+      <svg class="flow" viewBox="0 0 920 650" role="img" aria-labelledby="flow-title flow-desc">
+        <title id="flow-title">Flujo del prototipo Apex Sports</title>
+        <desc id="flow-desc">Desde el catálogo se explora un producto, se añade al carrito, se solicita autenticación antes de la entrega, se validan los datos, se crea una orden pendiente en la API y se muestra la confirmación de la sesión.</desc>
+        <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#667581"></path></marker></defs>
+        <rect class="node" x="300" y="12" width="320" height="55"></rect>
+        <text x="460" y="45" text-anchor="middle">Inicio / catálogo (index.html)</text>
+        <path class="edge" d="M460 67 V95"></path>
+        <rect class="node" x="300" y="98" width="320" height="58"></rect>
+        <text x="460" y="124" text-anchor="middle">Buscar / elegir categoría</text><text x="460" y="144" text-anchor="middle" class="small-text">Abrir ficha del producto</text>
+        <path class="edge" d="M460 156 V185"></path>
+        <rect class="node" x="300" y="188" width="320" height="55"></rect>
+        <text x="460" y="221" text-anchor="middle">Añadir unidades al carrito</text>
+        <path class="edge" d="M460 243 V273"></path>
+        <rect class="node" x="300" y="276" width="320" height="55"></rect>
+        <text x="460" y="309" text-anchor="middle">Carrito · revisar / ajustar</text>
+        <path class="edge" d="M460 331 V359"></path>
+        <polygon class="decision" points="460,360 555,408 460,456 365,408"></polygon>
+        <text x="460" y="404" text-anchor="middle">¿Sesión activa?</text>
+        <path class="edge" d="M365 408 H175 V470"></path>
+        <text x="270" y="397" text-anchor="middle" class="small-text">No</text>
+        <rect class="node" x="38" y="472" width="275" height="62"></rect>
+        <text x="175" y="499" text-anchor="middle">Diálogo de acceso</text><text x="175" y="519" text-anchor="middle" class="small-text">cerrar → vuelve al carrito</text>
+        <path class="edge" d="M175 534 V568 H365"></path>
+        <text x="263" y="558" text-anchor="middle" class="small-text">autenticación correcta</text>
+        <path class="edge" d="M555 408 H740 V470"></path>
+        <text x="650" y="397" text-anchor="middle" class="small-text">Sí</text>
+        <rect class="node" x="605" y="472" width="275" height="62"></rect>
+        <text x="742" y="499" text-anchor="middle">Entrega · validar datos</text><text x="742" y="519" text-anchor="middle" class="small-text">teléfono, dirección, ciudad y opción</text>
+        <path class="edge" d="M742 534 V568 H555"></path>
+        <path class="edge" d="M365 568 H555"></path>
+        <rect class="node" x="300" y="570" width="320" height="60"></rect>
+        <text x="460" y="596" text-anchor="middle">Pago demostrativo → POST /checkout</text><text x="460" y="616" text-anchor="middle" class="small-text">pedido pendiente, sin cobro ni despacho</text>
+        <path class="edge" d="M620 600 H780"></path>
+        <rect class="node api" x="782" y="570" width="125" height="60"></rect>
+        <text class="api-text" x="844" y="596" text-anchor="middle">API</text><text class="api-text small-text" x="844" y="616" text-anchor="middle">respuesta</text>
+      </svg>
+      <div class="grid-2">
+        <div class="card"><h3>Ramas adicionales</h3><p class="small">Favoritos solicita sesión y conserva la lista en la cuenta mediante la API. Desde el catálogo se puede volver de la ficha, cambiar de categoría y seguir explorando.</p></div>
+        <div class="card"><h3>Límite de confirmación</h3><p class="small">La respuesta reciente se conserva en <code>sessionStorage</code>. Si se abre directamente la página de confirmación o se pierde esa sesión, no se muestra el pedido; no se consultó su historial a la API durante esta revisión.</p></div>
+      </div>
+    </section>
+
+    <section class="page">
+      <h2 class="page-title">2.2. Guía de estilo y comportamiento de la interfaz</h2>
+      <table>
+        <thead><tr><th>Elemento</th><th>Definición observada</th><th>Aplicación</th></tr></thead>
+        <tbody>
+          <tr><td>Color principal</td><td><span class="swatch" style="background:#17324d"></span><code>#17324D</code> azul profundo</td><td>Marca, encabezados, botones y hero.</td></tr>
+          <tr><td>Color secundario</td><td><span class="swatch" style="background:#f4f1e8"></span><code>#F4F1E8</code> marfil</td><td>Tarjetas, fondos suaves y estados seleccionados.</td></tr>
+          <tr><td>Acento</td><td><span class="swatch" style="background:#a84328"></span><code>#A84328</code> terracota</td><td>Etiquetas, mensajes importantes y foco visible.</td></tr>
+          <tr><td>Complementarios</td><td><span class="swatch" style="background:#667581"></span><code>#667581</code> gris; <span class="swatch" style="background:#fff"></span><code>#FFFFFF</code> blanco</td><td>Texto secundario, bordes y fondos.</td></tr>
+          <tr><td>Tipografía</td><td>Segoe UI, Arial, sans-serif</td><td>Jerarquía de encabezados, texto y controles.</td></tr>
+          <tr><td>Iconografía e imágenes</td><td>SVG en marca/controles y representaciones de productos; galería de imágenes en el detalle.</td><td>Los iconos decorativos se ocultan a tecnologías de asistencia; los productos tienen texto alternativo.</td></tr>
+        </tbody>
+      </table>
+      <h3>Componentes e interacciones</h3>
+      <table>
+        <thead><tr><th>Componente</th><th>Respuesta esperada del sistema</th></tr></thead>
+        <tbody>
+          <tr><td>Catálogo y búsqueda</td><td>Cargar productos por API; abrir categorías y fichas HTML, y filtrar por búsqueda.</td></tr>
+          <tr><td>Ficha de producto</td><td>Mostrar imágenes, precio, descripción, cantidad, relacionados y acción de agregar.</td></tr>
+          <tr><td>Favoritos</td><td>Solicitar acceso y sincronizar el estado, contador y lista con la API asociada a la cuenta.</td></tr>
+          <tr><td>Carrito</td><td>Mostrar productos, cantidades, subtotal, quitar y continuar.</td></tr>
+          <tr><td>Entrega</td><td>Validar teléfono/dirección/ciudad y conservar la opción elegida para el checkout.</td></tr>
+          <tr><td>Pago/orden</td><td>Confirmar la orden y mostrar su estado pendiente sin procesar cobros reales.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="page">
+      <h2 class="page-title">3. Aplicación de principios de usabilidad y accesibilidad</h2>
+      <h3>3.1. Fundamentos WCAG 2.2 y heurísticas de Nielsen</h3>
+      <p>Se ejecutaron comprobaciones automatizadas en navegador sobre las ocho páginas, en viewports de 1440 × 1000 y 390 × 844 px: un <code>&lt;main&gt;</code> por documento, ausencia de identificadores duplicados, texto alternativo en imágenes, nombres accesibles en controles, etiquetas en campos de formulario y desbordamiento horizontal. No se encontraron fallos en esas comprobaciones. Una revisión programática de contraste de texto visible tampoco detectó ratios inferiores a 4,5:1 para texto normal o 3:1 para texto grande; se ajustaron el acento de la llamada principal y las pestañas no seleccionadas del diálogo.</p>
+      <p>La revisión manual por teclado confirmó el foco visible en “Saltar al contenido”, el primer tramo de tabulación en la ficha y el acceso con Tab/Enter al botón de cierre del diálogo. Las capturas y la comprobación responsive abarcan escritorio y un viewport móvil de 390 × 844 px. No hay un escáner axe/Lighthouse disponible en el entorno y no se probaron lector de pantalla, zoom al 200/400 %, todos los criterios WCAG 2.2 ni otros navegadores. Por ello, estos resultados no certifican conformidad WCAG 2.2 AA.</p>
+      <h3>Heurísticas de Nielsen documentadas</h3>
+      <p>La guía del proyecto considera aplicadas las heurísticas 1–4 y 6–8; prevención de errores (5) es parcial; recuperación de errores (9) y ayuda/documentación contextual (10) se reconocen como no implementadas. La guía actualizada coincide con la interfaz: una sola opción de confirmación pendiente, sin datos de tarjeta.</p>
+      <h3>Restricciones de la demostración</h3>
+      <ul>
+        <li>No procesa pagos ni habilita despacho; las tarifas de envío no están configuradas.</li>
+        <li>El checkout está protegido por autenticación y no se usó una cuenta real ni se creó un pedido de prueba.</li>
+        <li>La URL de confirmación abierta sin un pedido reciente informa que no hay resumen disponible.</li>
+        <li>Los favoritos se consultan y actualizan mediante la API autenticada; no se verificó el flujo con una cuenta de prueba.</li>
+        <li>La revisión no equivale a una auditoría exhaustiva WCAG, prueba de penetración ni validación de persistencia en PostgreSQL.</li>
+      </ul>
+    </section>
+
+    <section class="page">
+      <h2 class="page-title">4. Frames finales del prototipo</h2>
+      <h3>4.1. Página HTML 1 de 8: inicio</h3>
+      <p><code>index.html</code> presenta la portada, categorías destacadas, carruseles y búsqueda. Los enlaces de categoría, ficha y favoritos conducen a documentos HTML independientes.</p>
+      <figure class="figure">
+        <img src="capturas/inicio-desktop.png" alt="Captura de Apex Sports en escritorio: cabecera, navegación, hero y categorías">
+        <figcaption>Captura de la versión local a 1440 × 1000 px; el catálogo se obtuvo desde la API configurada.</figcaption>
+      </figure>
+    </section>
+
+    <section class="page">
+      <h2 class="page-title">4.2. Prueba responsive</h2>
+      <p>Las ocho páginas se comprobaron en un viewport móvil de 390 × 844 px. No se observó desbordamiento horizontal en ninguno de los documentos. Las siguientes capturas muestran el inicio y las páginas de categoría, producto y favoritos; la misma comprobación de ancho se repitió para carrito, entrega, pago y confirmación.</p>
+      <figure class="figure duo">
+        <img src="capturas/inicio-movil-verificado.png" alt="Portada en viewport móvil de 390 píxeles">
+        <img src="capturas/categoria-futbol-movil.png" alt="Categoría de fútbol en viewport móvil de 390 píxeles">
+        <figcaption>Vistas móviles de inicio y categoría. Ancho de documento medido: 375 px; sin desbordamiento.</figcaption>
+      </figure>
+      <figure class="figure duo">
+        <img src="capturas/producto-detalle-movil.png" alt="Ficha de producto en viewport móvil de 390 píxeles">
+        <img src="capturas/favoritos-movil.png" alt="Página de favoritos en viewport móvil de 390 píxeles con acceso requerido">
+        <figcaption>Vistas móviles de ficha y favoritos. La página de favoritos muestra el acceso porque no se utilizaron credenciales de prueba.</figcaption>
+      </figure>
+    </section>
+
+    <section class="page">
+      <h2 class="page-title">4.3. Página HTML 2 de 8: categoría</h2>
+      <p><code>categoria.html?id=futbol</code> es una página independiente que muestra los diez productos disponibles de Fútbol. Se comprobó el enlace desde la portada, la carga de productos y el acceso a cada ficha.</p>
+      <figure class="figure">
+        <img src="capturas/categoria-futbol.png" alt="Página independiente de la categoría Fútbol con productos en tarjetas">
+        <figcaption>Captura local a 1440 × 1000 px; diez productos cargados desde la API.</figcaption>
+      </figure>
+    </section>
+
+    <section class="page">
+      <h2 class="page-title">4.4. Página HTML 3 de 8: ficha de producto</h2>
+      <p><code>producto.html?id=futbol-balon-pro-match</code> presenta galería, descripción, precio, selector de cantidad y tres productos relacionados. Se probó añadir dos unidades al carrito y se verificó el identificador, la cantidad y el mensaje de confirmación; los datos locales de prueba se retiraron después.</p>
+      <figure class="figure">
+        <img src="capturas/producto-detalle.png" alt="Página independiente del Balón Pro Match con galería y selector de cantidad">
+        <figcaption>Captura local de la ficha a 1440 × 1000 px.</figcaption>
+      </figure>
+    </section>
+
+    <section class="page">
+      <h2 class="page-title">4.5. Página HTML 4 de 8: favoritos</h2>
+      <p><code>favoritos.html</code> solicita autenticación y carga la lista asociada a la cuenta desde la API. La captura documenta el estado de acceso sin iniciar sesión ni crear una cuenta; por ello, no se registró una prueba de sincronización entre dispositivos.</p>
+      <figure class="figure">
+        <img src="capturas/favoritos.png" alt="Página independiente de favoritos cubierta por el diálogo de iniciar sesión">
+        <figcaption>Estado reproducible sin credenciales: diálogo de acceso abierto y mensaje que explica el requisito de sesión.</figcaption>
+      </figure>
+    </section>
+
+    <section class="page">
+      <h2 class="page-title">4.6. Página HTML 5 de 8: carrito</h2>
+      <p><code>carrito.html</code> muestra el estado vacío en una sesión nueva. El enlace para continuar aparece deshabilitado hasta que se agregan productos.</p>
+      <figure class="figure">
+        <img src="capturas/carrito.png" alt="Página del carrito vacía con resumen del pedido y progreso del checkout">
+        <figcaption>Captura local del carrito vacío.</figcaption>
+      </figure>
+    </section>
+
+    <section class="page">
+      <h2 class="page-title">4.7. Página HTML 6 de 8: entrega</h2>
+      <p><code>entrega.html</code> presenta datos del pedido y opciones de entrega. Al abrir la ruta sin sesión se muestra primero el diálogo de autenticación.</p>
+      <figure class="figure">
+        <img src="capturas/entrega.png" alt="Página de entrega cubierta por el diálogo de iniciar sesión">
+        <figcaption>Estado observado sin sesión: acceso requerido antes de continuar con la entrega.</figcaption>
+      </figure>
+    </section>
+
+    <section class="page">
+      <h2 class="page-title">4.8. Página HTML 7 de 8: pago</h2>
+      <p><code>pago.html</code> permite confirmar una orden pendiente y no procesa pagos. Para completar el flujo se necesita una sesión autenticada y datos de entrega válidos.</p>
+      <figure class="figure">
+        <img src="capturas/pago.png" alt="Página de pago cubierta por el diálogo de iniciar sesión">
+        <figcaption>Estado observado sin sesión; no se ingresaron credenciales ni se generó una orden.</figcaption>
+      </figure>
+    </section>
+
+    <section class="page">
+      <h2 class="page-title">4.9. Página HTML 8 de 8: confirmación</h2>
+      <p><code>pedido-confirmado.html</code> requiere un resumen reciente almacenado en la sesión. Al abrir la URL directamente no encuentra un pedido y muestra los campos como no disponibles; no es una confirmación de compra válida.</p>
+      <figure class="figure">
+        <img src="capturas/confirmacion.png" alt="Página de confirmación abierta sin pedido reciente, con resumen no disponible">
+        <figcaption>Estado reproducible al abrir la página sin completar checkout: “No se encontró un pedido reciente en esta sesión”.</figcaption>
+      </figure>
+      <p class="page-foot">No se usó cuenta de prueba ni se creó un pedido real. No se efectuaron cobros.</p>
+    </section>
+
+    <section class="page">
+      <h2 class="page-title">5. Conclusiones</h2>
+      <ol>
+        <li>La versión local alcanza ocho páginas HTML independientes y los flujos principales de categoría, ficha y carrito funcionan contra el catálogo de la API. La URL publicada aún requiere actualizarse para incluir estos cambios.</li>
+        <li>La evidencia visual cubre las ocho páginas y la comprobación responsive encontró cero desbordamientos horizontales a 390 × 844 px; no sustituye pruebas en más dispositivos y navegadores.</li>
+        <li>El flujo de compra está diseñado como simulación: exige sesión para entrega y pago, registra pedidos pendientes según el código frontend y no procesa dinero. La confirmación depende del almacenamiento de sesión y no se pudo validar una compra completa sin credenciales de prueba.</li>
+        <li>Las comprobaciones automáticas y manuales realizadas no encontraron los problemas básicos evaluados, pero no permiten declarar conformidad WCAG 2.2 AA: faltan un escáner especializado, lector de pantalla, ampliación y validación completa de criterios.</li>
+      </ol>
+    </section>
+  </main>
+</body>
+</html>

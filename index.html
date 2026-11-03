@@ -27,7 +27,7 @@
         </svg>
         <span class="texto-carrito">Carrito</span><span class="contador">0</span>
       </a>
-      <a class="enlace-favoritos" href="#favoritos" aria-label="Ver favoritos, 0 artículos">
+      <a class="enlace-favoritos" href="favoritos.html" aria-label="Ver favoritos, 0 artículos">
         <svg class="icono-favorito" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.8 8.7c0 5.1-8.8 11-8.8 11s-8.8-5.9-8.8-11A4.7 4.7 0 0 1 12 6a4.7 4.7 0 0 1 8.8 2.7Z"></path></svg>
         <span class="texto-favoritos">Favoritos</span><span class="contador contador-favoritos">0</span>
       </a>
@@ -43,15 +43,10 @@
     </div>
   </header>
   <nav class="navegacion" aria-label="Categorías principales">
-    <a href="#futbol">Fútbol</a>
-    <a href="#basketball">Basketball</a>
-    <a href="#tennis">Tennis</a>
-    <a href="#mma">Artes marciales</a>
-    <a href="#volleyball">Volleyball</a>
-    <a href="#ropa">Ropa y calzado</a>
-    <a href="#running">Running</a>
-    <a href="#fitness">Fitness</a>
-    <a href="#outdoor">Outdoor</a>
+    <a href="categoria.html?id=futbol">Fútbol</a>
+    <a href="categoria.html?id=basketball">Basketball</a>
+    <a href="categoria.html?id=tennis">Tennis</a>
+    <a href="categoria.html?id=mma">Artes marciales</a>
   </nav>
 
   <main id="contenido">
@@ -120,8 +115,8 @@
     </section>
 
     <section class="beneficios" aria-label="Beneficios de compra">
-      <div><span aria-hidden="true">01</span><p><strong>Envío a domicilio</strong><br>Seguimiento de tu pedido</p></div>
-      <div><span aria-hidden="true">02</span><p><strong>Pago flexible</strong><br>Tarjeta, transferencia o retiro en local</p></div>
+      <div><span aria-hidden="true">01</span><p><strong>Envío a domicilio</strong><br>Entrega por coordinar</p></div>
+      <div><span aria-hidden="true">02</span><p><strong>Pedido pendiente</strong><br>Sin cobros ni datos financieros</p></div>
       <div><span aria-hidden="true">03</span><p><strong>Compra sencilla</strong><br>Todo tu equipo en un lugar</p></div>
     </section>
 
@@ -130,7 +125,7 @@
         <div><p class="sobrelinea">GUARDA PARA DESPUÉS</p><h2 tabindex="-1">Mis favoritos</h2></div>
         <a class="enlace-texto" href="#productos">← Volver al catálogo</a>
       </div>
-      <p class="nota-favoritos">Se guardan en este navegador. Para tenerlos en otros dispositivos, Apex Sports necesitaría una cuenta y sincronización.</p>
+      <p class="nota-favoritos">Tus favoritos se sincronizan con tu cuenta para que puedas consultarlos desde otros dispositivos.</p>
       <p class="estado-favoritos" aria-hidden="true"></p>
       <div class="productos lista-favoritos"></div>
       <div class="favoritos-vacios">
@@ -148,18 +143,10 @@
         </div>
       </div>
       <div class="categorias">
-        <a href="#futbol"><svg class="categoria-icono" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="18"></circle><path d="m24 14 7 5-3 8h-8l-3-8 7-5Zm0 0V6m7 13 8-3m-11 11 3 9m-15-9-7 5m10-16-8-3m6 27-3-9m15 0 8 3"></path></svg><span>Fútbol</span></a>
-        <a href="#basketball"><svg class="categoria-icono" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="18"></circle><path d="M6 24h36M24 6v36M11 11c9 7 17 19 26 26M37 11C28 18 20 30 11 37"></path></svg><span>Basketball</span></a>
-        <a href="#tennis"><svg class="categoria-icono" viewBox="0 0 48 48" aria-hidden="true"><ellipse cx="21" cy="18" rx="12" ry="16" transform="rotate(35 21 18)"></ellipse><path d="m29 29 12 12M12 10l18 17m-9-25L9 26m2-11 17 8m-11-15 17 8"></path></svg><span>Tennis</span></a>
-        <a href="#mma"><svg class="categoria-icono" viewBox="0 0 48 48" aria-hidden="true"><path d="M15 24v-9a3 3 0 0 1 6 0v5-9a3 3 0 0 1 6 0v9-7a3 3 0 0 1 6 0v9l2-4a3 3 0 0 1 5 3l-5 14a8 8 0 0 1-8 5h-5a9 9 0 0 1-8-5l-6-9a3 3 0 0 1 5-4l2 3Z"></path><path d="M17 34h15"></path></svg><span>Artes marciales</span></a>
-        <a href="#volleyball"><svg class="categoria-icono" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="18"></circle><path d="M13 9c8 6 13 17 13 33M39 15c-10 1-20 7-29 17m30-1c-8-6-20-8-33-5"></path></svg><span>Volleyball</span></a>
-        <a href="#ropa"><svg class="categoria-icono" viewBox="0 0 48 48" aria-hidden="true"><path d="m16 8 8 4 8-4 12 7-6 10-6-3v20H16V22l-6 3-6-10 12-7Z"></path><path d="M18 9a6 6 0 0 0 12 0"></path></svg><span>Ropa deportiva</span></a>
-        <a href="#running"><svg class="categoria-icono" viewBox="0 0 48 48" aria-hidden="true"><path d="M6 31c7 0 11-4 15-13l5 3 7 8 9 3a4 4 0 0 1-1 8H9a5 5 0 0 1-3-9Z"></path><path d="m20 22 7 4m-12 11h25"></path></svg><span>Running</span></a>
-        <a href="#ciclismo"><svg class="categoria-icono" viewBox="0 0 48 48" aria-hidden="true"><circle cx="11" cy="33" r="8"></circle><circle cx="37" cy="33" r="8"></circle><path d="m11 33 9-15 8 15H11Zm9-15h9m-1 0 9 15M17 15h6"></path></svg><span>Ciclismo</span></a>
-        <a href="#fitness"><svg class="categoria-icono" viewBox="0 0 48 48" aria-hidden="true"><path d="M18 17v14m12-14v14M12 20v8m24-8v8M18 24h12M8 20v8m32-8v8"></path></svg><span>Fitness</span></a>
-        <a href="#natacion"><svg class="categoria-icono" viewBox="0 0 48 48" aria-hidden="true"><path d="M5 17h12l4 4h6l4-4h12v9H30l-3 4h-6l-4-4H5v-9Zm-1 19c4-4 8 4 12 0s8 4 12 0 8 4 12 0"></path><circle cx="12" cy="21" r="3"></circle><circle cx="36" cy="21" r="3"></circle></svg><span>Natación</span></a>
-        <a href="#outdoor"><svg class="categoria-icono" viewBox="0 0 48 48" aria-hidden="true"><path d="m4 39 15-26 9 15 5-8 11 19H4Z"></path><path d="m15 20 4 4 4-2m5 6 4 2 3-2"></path></svg><span>Outdoor</span></a>
-        <a href="#accesorios"><svg class="categoria-icono" viewBox="0 0 48 48" aria-hidden="true"><path d="M13 9c0 10 22 20 22 30M35 9C35 19 13 29 13 39"></path><circle cx="13" cy="9" r="3"></circle><circle cx="35" cy="9" r="3"></circle><circle cx="13" cy="39" r="3"></circle><circle cx="35" cy="39" r="3"></circle></svg><span>Accesorios</span></a>
+        <a href="categoria.html?id=futbol"><svg class="categoria-icono" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="18"></circle><path d="m24 14 7 5-3 8h-8l-3-8 7-5Zm0 0V6m7 13 8-3m-11 11 3 9m-15-9-7 5m10-16-8-3m6 27-3-9m15 0 8 3"></path></svg><span>Fútbol</span></a>
+        <a href="categoria.html?id=basketball"><svg class="categoria-icono" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="18"></circle><path d="M6 24h36M24 6v36M11 11c9 7 17 19 26 26M37 11C28 18 20 30 11 37"></path></svg><span>Basketball</span></a>
+        <a href="categoria.html?id=tennis"><svg class="categoria-icono" viewBox="0 0 48 48" aria-hidden="true"><ellipse cx="21" cy="18" rx="12" ry="16" transform="rotate(35 21 18)"></ellipse><path d="m29 29 12 12M12 10l18 17m-9-25L9 26m2-11 17 8m-11-15 17 8"></path></svg><span>Tennis</span></a>
+        <a href="categoria.html?id=mma"><svg class="categoria-icono" viewBox="0 0 48 48" aria-hidden="true"><path d="M15 24v-9a3 3 0 0 1 6 0v5-9a3 3 0 0 1 6 0v9-7a3 3 0 0 1 6 0v9l2-4a3 3 0 0 1 5 3l-5 14a8 8 0 0 1-8 5h-5a9 9 0 0 1-8-5l-6-9a3 3 0 0 1 5-4l2 3Z"></path><path d="M17 34h15"></path></svg><span>Artes marciales</span></a>
       </div>
     </section>
 
@@ -190,54 +177,6 @@
         </div>
     </section>
 
-    <section class="seccion-catalogo productos-seccion" id="volleyball">
-      <div class="titulo-seccion"><div><p class="sobrelinea">EQUIPO PARA LA RED</p><h2>Volleyball</h2></div><a class="enlace-texto" href="#productos">↑ Volver a categorías</a></div>
-      <div class="productos">
-        </div>
-    </section>
-
-    <section class="seccion-catalogo productos-seccion" id="ropa">
-      <div class="titulo-seccion"><div><p class="sobrelinea">VÍSTETE PARA MOVERTE</p><h2>Ropa deportiva</h2></div><a class="enlace-texto" href="#productos">↑ Volver a categorías</a></div>
-      <div class="productos">
-        </div>
-    </section>
-
-    <section class="seccion-catalogo productos-seccion" id="running">
-      <div class="titulo-seccion"><div><p class="sobrelinea">SAL A TU RITMO</p><h2>Running</h2></div><a class="enlace-texto" href="#productos">↑ Volver a categorías</a></div>
-      <div class="productos">
-        </div>
-    </section>
-
-    <section class="seccion-catalogo productos-seccion" id="ciclismo">
-      <div class="titulo-seccion"><div><p class="sobrelinea">LISTO PARA RODAR</p><h2>Ciclismo</h2></div><a class="enlace-texto" href="#productos">↑ Volver a categorías</a></div>
-      <div class="productos">
-        </div>
-    </section>
-
-    <section class="seccion-catalogo productos-seccion" id="fitness">
-      <div class="titulo-seccion"><div><p class="sobrelinea">FUERZA Y MOVIMIENTO</p><h2>Fitness</h2></div><a class="enlace-texto" href="#productos">↑ Volver a categorías</a></div>
-      <div class="productos">
-        </div>
-    </section>
-
-    <section class="seccion-catalogo productos-seccion" id="natacion">
-      <div class="titulo-seccion"><div><p class="sobrelinea">ENTRENA EN EL AGUA</p><h2>Natación</h2></div><a class="enlace-texto" href="#productos">↑ Volver a categorías</a></div>
-      <div class="productos">
-        </div>
-    </section>
-
-    <section class="seccion-catalogo productos-seccion" id="outdoor">
-      <div class="titulo-seccion"><div><p class="sobrelinea">EXPLORA MÁS LEJOS</p><h2>Outdoor</h2></div><a class="enlace-texto" href="#productos">↑ Volver a categorías</a></div>
-      <div class="productos">
-        </div>
-    </section>
-
-    <section class="seccion-catalogo productos-seccion" id="accesorios">
-      <div class="titulo-seccion"><div><p class="sobrelinea">DETALLES QUE SUMAN</p><h2>Accesorios</h2></div><a class="enlace-texto" href="#productos">↑ Volver a categorías</a></div>
-      <div class="productos">
-        </div>
-    </section>
-
     <section class="llamada">
       <div><p class="sobrelinea">¿LISTO PARA EL SIGUIENTE RETO?</p><h2>Elige tu equipo.<br>Sal a jugar.</h2></div>
       <a class="boton boton-claro" href="#productos">Ver productos <span aria-hidden="true">→</span></a>
@@ -251,6 +190,7 @@
   </footer>
   <script src="api-config.js" defer></script>
   <script src="api-client.js" defer></script>
+  <script src="catalogo-compartido.js" defer></script>
   <script src="catalogo.js" defer></script>
   <script src="favoritos.js" defer></script>
   <script src="carrito.js" defer></script>

@@ -8,14 +8,14 @@ Este documento sirve como contexto técnico para otra página web, servicio o as
 
 ## 2. Resumen para integrar con otra plataforma
 
-> Apex Sports es un storefront de equipamiento deportivo implementado como sitio estático con HTML semántico, CSS y JavaScript vanilla. El catálogo se obtiene desde una API FastAPI; los productos tienen identificador público, descripción, precio en centavos y una ilustración SVG local. La portada permite navegar por categorías, buscar, abrir fichas, marcar favoritos y gestionar el carrito. Autenticación, catálogo, carrito autenticado y creación del pedido tienen integración API en el código local. Los favoritos aún dependen de `localStorage`, y la confirmación todavía usa datos de la pestaña en lugar de consultar siempre la API. La URL de API publicada debe configurarse antes de `api-client.js`. El pago es demostrativo y no procesa dinero. El registro pide datos mínimos de cuenta más cédula/RUC y ciudad; teléfono y destino se ingresan en cada pedido. Cada orden conserva su propio snapshot de entrega, separado del perfil del cliente.
+> Apex Sports es un storefront de equipamiento deportivo implementado como sitio estático con HTML semántico, CSS y JavaScript vanilla. El catálogo se obtiene desde una API FastAPI; los productos tienen identificador público, descripción, precio en centavos y una ruta de imagen local WebP o SVG. La portada permite navegar por categorías, buscar, abrir fichas, marcar favoritos y gestionar el carrito. Autenticación, catálogo, carrito, favoritos por cuenta y creación del pedido tienen integración API en el código local. La confirmación todavía usa datos de la pestaña en lugar de consultar siempre la API. La URL de API publicada debe configurarse antes de `api-client.js`. El pago es demostrativo y no procesa dinero. El registro pide datos mínimos de cuenta más cédula/RUC y ciudad; teléfono y destino se ingresan en cada pedido. Cada orden conserva su propio snapshot de entrega, separado del perfil del cliente.
 
 ## 3. Tecnologías y arquitectura
 
 - **Frontend:** HTML5, CSS3 y JavaScript moderno sin framework.
 - **Datos de catálogo:** API FastAPI; `data/products.json` se conserva como fixture y entrada del generador de imágenes.
 - **API:** FastAPI versionada bajo `/api/v1` para catálogo, autenticación, carrito y checkout.
-- **Recursos de producto:** ilustraciones SVG locales en `images/products/`.
+- **Recursos de producto:** fotografías WebP e ilustraciones SVG locales en `images/` e `images/products/`.
 - **Persistencia del prototipo:** `localStorage` y `sessionStorage` del navegador.
 - **Dependencias de ejecución:** no requiere gestor de paquetes ni proceso de compilación.
 - **Carga local:** requiere HTTP y una API accesible; abrir `index.html` mediante `file://` no es el flujo esperado.
@@ -33,45 +33,44 @@ La aplicación está dividida por responsabilidad: documentos HTML definen las p
 | `pago.html` | Selección del método de pago, validación de demostración y total. |
 | `pedido-confirmado.html` | Presentación del resumen guardado en la sesión actual. |
 | `estilos.css` | Estilos comunes, responsive, estados, componentes y foco visible. |
-| `data/products.json` | Catálogo/fixture de desarrollo; el storefront integrado carga productos desde la API. |
-| `images/products/` | Ilustraciones SVG locales para cada producto. |
+| `data/products.json` | Catálogo/fixture de desarrollo y fuente de rutas locales para las fotografías autorizadas. |
+| `images/products/` | Fotografías WebP de productos visibles e ilustraciones SVG locales para el resto del catálogo. |
 | `catalogo.js` | Obtiene todas las páginas del catálogo de API, valida productos y construye tarjetas/carruseles. |
 | `detalle-producto.js` | Muestra detalles del producto seleccionado y recomendaciones. |
 | `busqueda.js` | Filtra los productos de acuerdo con la consulta en la URL. |
 | `api-client.js` | Cliente HTTP autenticado; recibe la base URL desde `window.APEX_API_BASE` o usa localhost para desarrollo. |
-| `favoritos.js` | Gestiona botones/lista; todavía persiste en `localStorage` mientras faltan endpoints de favoritos. |
+| `favoritos.js` | Sincroniza los botones y la lista de favoritos de la portada con la API para la cuenta iniciada. |
 | `carrito.js` | Sincroniza carrito autenticado con API y combina carrito de invitado al iniciar sesión. |
 | `entrega-validacion.js` | Valida teléfono y dirección/ciudad elegidas para el pedido actual. |
 | `pago.js` | Envía un checkout de demostración a la API con clave de idempotencia. |
 | `confirmacion.js` | Presenta el pedido; actualmente depende de la respuesta guardada en la sesión del navegador. |
 | `auth.js` | Registro/login/logout vía API y reanudación de acciones que requieren sesión. |
-| `generar-ilustraciones.js` | Genera las ilustraciones SVG locales usando el catálogo como entrada. |
+| `generar-ilustraciones.js` | Genera las ilustraciones SVG locales y conserva las fotografías aportadas usando el catálogo como entrada. |
 | `informe-productos-para-imagenes-ia.md` | Checklist de los 120 nombres de producto, distribuidos en 12 categorías, para producir imágenes. |
 | `AUDITORIA.md` | Auditoría de riesgos y limitaciones del prototipo. |
 | `flujo-y-criterios.md` | Decisiones de interacción, accesibilidad y flujo de compra. |
 
 ## 5. Catálogo y modelo de datos
 
-El fixture `data/products.json` contiene un objeto raíz con `version` y una lista `products`; sirve para generar ilustraciones y como referencia local. El catálogo que se presenta en la tienda se obtiene desde la API. El fixture actual contiene 120 artículos: 10 por cada una de estas 12 categorías: fútbol, basketball, tennis, artes marciales, volleyball, ropa deportiva, running, ciclismo, fitness, natación, outdoor y accesorios.
+El fixture `data/products.json` contiene un objeto raíz con `version` y una lista `products`; sirve para generar ilustraciones y como referencia local de imágenes. La API y el fixture conservan 120 artículos en 12 categorías. Para la interfaz, `catalogo-compartido.js` limita la oferta a las primeras cuatro categorías (Fútbol, Basketball, Tennis y Artes marciales) y a los primeros diez artículos de cada una; también aplica las fotografías locales autorizadas por ID sin modificar la API ni sus datos.
 
-Forma representativa de un producto:
+Forma representativa de un producto con fotografía aportada:
 
 ```json
 {
-  "categoryId": "futbol",
-  "categoryLabel": "Fútbol",
-  "category": "Fútbol · Balones",
-  "name": "Balón Pro Match",
-  "description": "Balón de fútbol talla 5 para partidos y entrenamientos.",
-  "priceCents": 3490,
-  "id": "futbol-balon-pro-match",
-  "imageUrl": "images/products/futbol-balon-pro-match.svg",
-  "imageAlt": "Balón Pro Match. Balón de fútbol talla 5 para partidos y entrenamientos.",
-  "imageCredit": "Apex Sports",
-  "imageLicense": "CC BY 4.0",
-  "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
-  "imageSourceUrl": "images/products/futbol-balon-pro-match.svg",
-  "imageSourceTitle": "Ilustración original Apex Sports"
+  "categoryId": "basketball",
+  "categoryLabel": "Basketball",
+  "category": "Basketball · Balones",
+  "name": "Balón Court One",
+  "description": "Balón de basketball para partidos y prácticas en cancha.",
+  "priceCents": 2950,
+  "id": "basketball-balon-court-one",
+  "imageUrl": "images/products/basketball-balon-court-one.webp",
+  "imageAlt": "Balón Court One, fotografía de producto",
+  "imageCredit": "Usuario (autorización de uso confirmada)",
+  "imageLicense": "Autorización de uso confirmada por el usuario",
+  "imageSourceUrl": "images/products/basketball-balon-court-one.webp",
+  "imageSourceTitle": "Fotografía de producto aportada por el usuario"
 }
 ```
 
@@ -82,7 +81,7 @@ Forma representativa de un producto:
 - `categoryLabel` y `category`: nombre de categoría general y clasificación visible del artículo.
 - `name` y `description`: texto mostrado y contenido que usa la búsqueda.
 - `priceCents`: precio entero en centavos; evita usar números decimales como fuente de cálculo.
-- `imageUrl`: ubicación de la ilustración.
+- `imageUrl`: ubicación de la fotografía o ilustración.
 - `imageAlt`: nombre y descripción del artículo, pensado para tecnologías de asistencia.
 - `imageCredit`, `imageLicense`, `imageLicenseUrl`, `imageSourceUrl`, `imageSourceTitle`: crédito y referencia de licencia/origen.
 
@@ -117,10 +116,10 @@ Al añadir productos, hay que incorporarlos en la fuente de catálogo del backen
 
 - Cada artículo tiene un botón de favorito con nombre accesible dinámico y estado `aria-pressed`.
 - Al activar un corazón o abrir Favoritos sin sesión, se solicita iniciar sesión o crear una cuenta; después de autenticar se completa la acción solicitada.
-- La lista se guarda en `localStorage`; aún no sincroniza con la tabla `FAVORITOS` ni con otros dispositivos.
+- La lista se consulta y actualiza en la API autenticada; los favoritos quedan asociados a la cuenta y se pueden consultar desde otros dispositivos.
 - La sección Favoritos muestra los productos seleccionados y permite quitarlos o agregarlos al carrito.
-- Las categorías y la lista de favoritos muestran todos sus productos, sin paginación.
-- La cuenta autenticada aún no sincroniza favoritos con otros navegadores o dispositivos.
+- Las páginas de categoría muestran hasta diez productos; la interfaz solo ofrece las primeras cuatro categorías del catálogo.
+- La lista de favoritos muestra los productos guardados que pertenecen a esas categorías visibles.
 
 ### 6.5 Carrito
 
@@ -155,7 +154,7 @@ Al añadir productos, hay que incorporarlos en la fuente de catálogo del backen
 - El token bearer y los datos básicos del usuario se guardan en `sessionStorage` por pestaña.
 - El formulario reducido pide nombre, correo, cédula/RUC, ciudad y contraseña; el backend debe permitir omitir teléfono y dirección al registrar.
 - La API usa Argon2id y sesiones opacas con revocación/expiración.
-- Los favoritos aún no se conectan a cuenta; revisar el documento `PENDIENTES_API_PARA_ECOMMERCE.md`.
+- Los favoritos se consultan y actualizan mediante `/favorites` y quedan asociados a la cuenta autenticada.
 
 ## 7. Persistencia actual
 
@@ -164,12 +163,12 @@ Al añadir productos, hay que incorporarlos en la fuente de catálogo del backen
 | Catálogo | API `/products` (JSON como fixture) | Productos, precio e inventario leídos desde servidor. |
 | Carrito invitado | `localStorage` (`apex-sports-cart`) | Mismo navegador; se intenta fusionar al iniciar sesión. |
 | Carrito autenticado | API `/cart` | Asociado a la cuenta y persistido por servidor. |
-| Favoritos | `localStorage` (`apex-sports-favoritos-v1`) | Aún no asociado a cuenta/API. |
+| Favoritos | API (`GET`, `PUT` y `DELETE /favorites`) | Persistidos en el servidor por cuenta; se vuelven a consultar al iniciar sesión. |
 | Token y usuario | `sessionStorage` (`apex-api-token-v1`, `apex-api-user-v1`) | Sesión de la pestaña; token expira/revoca en el servidor. |
 | Pedido reciente | `sessionStorage` (`apex-sports-last-order`) | Copia temporal de la respuesta; la orden autoritativa está en la API. |
 | Datos de tarjeta | No se recopilan | La opción de tarjeta está deshabilitada; el sitio no solicita ni envía datos financieros. |
 
-Cambiar navegador, dispositivo, perfil, origen o limpiar datos del sitio puede separar o eliminar estos datos locales.
+Cambiar navegador, dispositivo, perfil u origen separa los datos de sesión local, pero no la lista de favoritos asociada a la cuenta.
 
 ## 8. Accesibilidad y adaptación
 
@@ -206,7 +205,7 @@ La integración de API está en progreso; el archivo `PENDIENTES_API_PARA_ECOMME
 
 1. Configurar `window.APEX_API_BASE` con la URL HTTPS real antes de cargar `api-client.js`; no publicar secretos.
 2. Desplegar la versión de API compatible con registro reducido (sin teléfono/dirección obligatorios).
-3. Implementar favoritos por API y sincronizarlos con `FAVORITOS`.
+3. Mantener la versión de API que expone las rutas autenticadas de favoritos y validar la sincronización con una cuenta de prueba.
 4. Leer confirmación e historial desde recursos de pedidos protegidos.
 5. Mantener dirección de entrega como snapshot por orden, nunca como dirección implícita del perfil.
 6. Configurar precios/tarifas/impuestos y pasarela antes de presentar compra real; nunca afirmar que una orden de demo fue pagada.
@@ -217,5 +216,5 @@ La integración de API está en progreso; el archivo `PENDIENTES_API_PARA_ECOMME
 Para pasar una descripción compacta a otra herramienta:
 
 ```text
-Estoy trabajando en Apex Sports, un storefront deportivo estático en HTML, CSS y JavaScript vanilla, integrado parcialmente con una API FastAPI. Requiere HTTP y configuración de la URL API. El catálogo se obtiene de la API; data/products.json sirve como fixture/generador de ilustraciones SVG locales. La portada incluye búsqueda, categorías y carruseles; cada ficha permite cambiar cantidad y añadir al carrito. Autenticación, carrito autenticado y creación del pedido usan la API. Favoritos aún se guardan en localStorage y la confirmación depende de sessionStorage. Registro requiere nombre, correo, cédula/RUC, ciudad y contraseña; teléfono y destino se ingresan por pedido y la dirección se conserva en el snapshot de esa orden, no en el perfil. El checkout deja el pedido pendiente y no procesa pagos. Conserva etiquetas, nombres accesibles, texto alternativo, regiones aria-live y diseño responsive; no presentes pagos ni funciones pendientes como reales.
+Estoy trabajando en Apex Sports, un storefront deportivo estático en HTML, CSS y JavaScript vanilla, integrado parcialmente con una API FastAPI. Requiere HTTP y configuración de la URL API. El catálogo se obtiene de la API; data/products.json sirve como fixture/generador de ilustraciones SVG locales. La portada incluye búsqueda, categorías y carruseles; cada ficha permite cambiar cantidad y añadir al carrito. Autenticación, carrito autenticado, favoritos asociados a la cuenta y creación del pedido usan la API. La confirmación depende de sessionStorage. Registro requiere nombre, correo, cédula/RUC, ciudad y contraseña; teléfono y destino se ingresan por pedido y la dirección se conserva en el snapshot de esa orden, no en el perfil. El checkout deja el pedido pendiente y no procesa pagos. Conserva etiquetas, nombres accesibles, texto alternativo, regiones aria-live y diseño responsive; no presentes pagos ni funciones pendientes como reales.
 ```

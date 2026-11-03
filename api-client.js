@@ -75,6 +75,26 @@
     }
   }
 
+  function favoriteItems(result) {
+    if (!result || !Array.isArray(result.items)
+      || !result.items.every((item) => item && typeof item.id === "string")) {
+      throw new Error("La API devolvió una lista de favoritos inválida.");
+    }
+    return result.items;
+  }
+
+  async function listFavorites() {
+    return favoriteItems(await request("/favorites"));
+  }
+
+  async function addFavorite(productSlug) {
+    return favoriteItems(await request(`/favorites/${encodeURIComponent(productSlug)}`, { method: "PUT" }));
+  }
+
+  async function removeFavorite(productSlug) {
+    return favoriteItems(await request(`/favorites/${encodeURIComponent(productSlug)}`, { method: "DELETE" }));
+  }
+
   window.ApexApi = Object.freeze({
     base: apiBase,
     request,
@@ -82,6 +102,9 @@
     register,
     logout,
     currentUser,
+    listFavorites,
+    addFavorite,
+    removeFavorite,
     getUser,
     getToken,
     clearSession

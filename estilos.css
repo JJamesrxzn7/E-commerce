@@ -124,7 +124,7 @@ button, a { touch-action: manipulation; }
   border: 0;
   border-radius: 5px;
   background: transparent;
-  color: var(--gris);
+  color: var(--azul);
   cursor: pointer;
   font-size: 13px;
   font-weight: 700;
@@ -307,13 +307,14 @@ body.producto-detalle-activo main > :not(#detalle-producto):not(#catalog-status)
 .producto-enlace:focus-visible { outline-offset: -4px; }
 .producto-imagen { width: 100%; aspect-ratio: 4 / 3; position: relative; display: grid; place-items: center; overflow: hidden; text-decoration: none; background: var(--marfil); }
 .producto-imagen img { position: absolute; inset: 0; width: 100%; height: 100%; padding: 10px; object-fit: contain; }
-.producto-imagen[data-image-error="true"]::after { content: "No se pudo cargar la ilustración del producto"; max-width: 22ch; padding: 12px; color: var(--azul); font-size: 13px; line-height: 1.5; text-align: center; }
+.producto-imagen[data-image-error="true"]::after { content: "No se pudo cargar la imagen del producto"; max-width: 22ch; padding: 12px; color: var(--azul); font-size: 13px; line-height: 1.5; text-align: center; }
 .resultados-busqueda .productos { margin-top: 20px; }
 .aviso-catalogo { max-width: 1180px; padding-right: 24px; padding-left: 24px; margin: 20px auto; }
 body.busqueda-activa main > :not(.resultados-busqueda):not(#catalog-status):not(#detalle-producto) { display: none; }
 body.busqueda-activa main > #resultados-busqueda { display: block; }
 .boton-favorito { flex: 0 0 44px; width: 44px; height: 44px; display: grid; place-items: center; padding: 0; border: 1px solid var(--borde); border-radius: 50%; background: var(--blanco); color: var(--azul); cursor: pointer; }
 .producto-acciones { display: flex; justify-content: flex-end; padding: 0 12px 12px; }
+.pagina-catalogo .producto-acciones { align-items: center; justify-content: space-between; gap: 10px; }
 .lista-favoritos .producto-acciones { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 0 14px 14px; }
 .boton-agregar-favorito { flex: 1; min-height: 44px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 10px 14px; border: 2px solid var(--azul); border-radius: 4px; background: var(--azul); color: var(--blanco); font-size: 13px; font-weight: 700; cursor: pointer; text-decoration: none; transition: background .15s ease, border-color .15s ease, transform .1s ease; }
 .boton-agregar-favorito:hover { background: #0f2235; border-color: #0f2235; text-decoration: none; }
@@ -353,7 +354,7 @@ body.busqueda-activa main > #resultados-busqueda { display: block; }
 .boton-ancho { width: 100%; }
 .producto[hidden] { display: none; }
 .llamada { max-width: 1180px; min-height: 190px; margin: 0 auto 65px; padding: 34px 40px; display: flex; align-items: center; justify-content: space-between; gap: 20px; background: var(--coral); color: var(--blanco); }
-.llamada .sobrelinea { color: var(--azul); }
+.llamada .sobrelinea { color: var(--blanco); }
 .llamada h2 { margin: 0; font-size: 30px; line-height: 1.12; }
 .pie { min-height: 120px; padding: 24px max(24px, calc((100% - 1132px) / 2)); border-top: 1px solid var(--borde); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px 24px; }
 .pie > p { margin: 0; color: var(--gris); font-size: 12px; }
@@ -433,6 +434,7 @@ body.busqueda-activa main > #resultados-busqueda { display: block; }
 .pie-simple a { color: var(--azul); text-decoration: none; font-size: 12px; font-weight: 650; }
 .confirmacion { max-width: 660px; min-height: calc(100vh - 150px); margin: 0 auto; padding: 70px 24px 80px; text-align: center; }
 .confirmacion-icono { width: 58px; height: 58px; display: grid; place-items: center; margin: 0 auto 22px; border-radius: 50%; background: var(--marfil); color: var(--azul); font-size: 28px; font-weight: 800; }
+.confirmacion-icono[hidden] { display: none; }
 .confirmacion .sobrelinea { margin-bottom: 8px; }
 .texto-confirmacion { max-width: 500px; margin: 12px auto 28px; color: var(--gris); font-size: 14px; line-height: 1.7; }
 .detalle-confirmacion { margin: 0 0 18px; text-align: left; }
@@ -473,7 +475,7 @@ body.busqueda-activa main > #resultados-busqueda { display: block; }
 }
 @media (max-width: 480px) {
   .acciones-usuario { gap: 5px; }
-  .acciones-usuario .boton { min-height: 40px; padding: 8px 9px; font-size: 11px; }
+  .acciones-usuario .boton { min-height: 44px; padding: 8px 9px; font-size: 11px; }
   .cuenta-activa { max-width: 92px; font-size: 11px; }
   .auth-modal { padding: 24px 20px 18px; }
   .auth-brand { margin-bottom: 22px; }

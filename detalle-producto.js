@@ -140,6 +140,7 @@
       detailSection.focus({ preventScroll: true });
 
       const requestedHash = window.location.hash;
+      if (productCard.dataset.localImageOverride === "true") return;
       window.ApexApi.request(`/products/${encodeURIComponent(productId)}`)
         .then((product) => {
           if (window.location.hash !== requestedHash) return;

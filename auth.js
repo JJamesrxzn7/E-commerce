@@ -24,6 +24,7 @@
     if (sessionStatus) sessionStatus.textContent = user
       ? `Sesión iniciada para ${user.name}.`
       : "Sesión cerrada.";
+    document.dispatchEvent(new CustomEvent("apex:session-state", { detail: { user } }));
   }
 
   function showMode(mode) {
@@ -199,7 +200,8 @@
       await api.logout();
       updateUserState(null);
     } catch {
-      sessionStatus.textContent = "No se pudo cerrar la sesión. Inténtalo otra vez.";
+      updateUserState(null);
+      if (sessionStatus) sessionStatus.textContent = "No se pudo confirmar el cierre en el servidor; la sesión local se cerró.";
     }
   });
 

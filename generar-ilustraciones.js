@@ -255,6 +255,7 @@
 
   fs.mkdirSync(imagesDirectory, { recursive: true });
   const ids = new Set();
+  let retainedUserPhotos = 0;
   catalog.products.forEach((product) => {
     if (!/^[a-z0-9-]+$/.test(product.id) || ids.has(product.id)) {
       throw new Error(`El ID de producto «${product.id}» no es válido o está duplicado.`);
@@ -291,7 +292,18 @@
     });
     fs.writeFileSync(imagePath, `${draw(type, color, accent)}\n`, "utf8");
     const sourcePhotos = providedPhotos[product.id];
-    if (sourcePhotos) {
+    const userProvidedPhoto = product.imageSourceTitle === "Fotografía de producto aportada por el usuario";
+    if (userProvidedPhoto) {
+      const expectedImageUrl = `images/products/${product.id}.webp`;
+      if (product.imageUrl !== expectedImageUrl
+        || !Array.isArray(product.imageUrls)
+        || product.imageUrls.length !== 1
+        || product.imageUrls[0] !== expectedImageUrl
+        || !fs.existsSync(path.join(__dirname, expectedImageUrl))) {
+        throw new Error(`No se encontró la fotografía autorizada de producto «${expectedImageUrl}».`);
+      }
+      retainedUserPhotos += 1;
+    } else if (sourcePhotos) {
       product.imageUrls = sourcePhotos.map((source) => {
         const webpSource = source.replace(/\.png$/i, ".webp");
         if (!fs.existsSync(path.join(__dirname, "images", webpSource))) {
@@ -308,18 +320,25 @@
       product.imageAlt = `${product.name}, ilustración del producto aislado sobre fondo liso`;
       product.imageSourceTitle = "Ilustración original Apex Sports";
     }
-    product.imageCredit = "Apex Sports";
-    if (sourcePhotos) {
-      product.imageLicense = "Not specified";
+    if (userProvidedPhoto) {
+      product.imageAlt = `${product.name}, fotografía de producto`;
+      product.imageCredit = "Usuario (autorización de uso confirmada)";
+      product.imageLicense = "Autorización de uso confirmada por el usuario";
       delete product.imageLicenseUrl;
     } else {
-      product.imageLicense = "CC BY 4.0";
-      product.imageLicenseUrl = "https://creativecommons.org/licenses/by/4.0/";
+      product.imageCredit = "Apex Sports";
+      if (sourcePhotos) {
+        product.imageLicense = "Not specified";
+        delete product.imageLicenseUrl;
+      } else {
+        product.imageLicense = "CC BY 4.0";
+        product.imageLicenseUrl = "https://creativecommons.org/licenses/by/4.0/";
+      }
     }
     product.imageSourceUrl = product.imageUrl;
   });
   fs.writeFileSync(catalogPath, `${JSON.stringify(catalog, null, 2)}\n`, "utf8");
   console.log(
-    `Ilustraciones SVG generadas: ${catalog.products.length}; galerías WebP asignadas: ${Object.keys(providedPhotos).length}.`
+    `Ilustraciones SVG generadas: ${catalog.products.length}; fotos WebP de fútbol asignadas: ${Object.keys(providedPhotos).length}; fotos aportadas conservadas: ${retainedUserPhotos}.`
   );
 })();

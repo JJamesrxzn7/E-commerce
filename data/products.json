@@ -69,17 +69,14 @@
       "description": "Balón de basketball para partidos y prácticas en cancha.",
       "priceCents": 2950,
       "id": "basketball-balon-court-one",
-      "imageUrl": "images/products/basketball-balon-court-one.svg",
-      "imageAlt": "Balón Court One, ilustración del producto aislado sobre fondo liso",
-      "imageCredit": "Apex Sports",
-      "imageLicense": "CC BY 4.0",
-      "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
-      "imageSourceUrl": "images/products/basketball-balon-court-one.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrl": "images/products/basketball-balon-court-one.webp",
+      "imageAlt": "Balón Court One, fotografía de producto",
+      "imageCredit": "Usuario (autorización de uso confirmada)",
+      "imageLicense": "Autorización de uso confirmada por el usuario",
+      "imageSourceUrl": "images/products/basketball-balon-court-one.webp",
+      "imageSourceTitle": "Fotografía de producto aportada por el usuario",
       "imageUrls": [
-        "images/products/basketball-balon-court-one.svg",
-        "images/products/basketball-balon-court-one-2.svg",
-        "images/products/basketball-balon-court-one-3.svg"
+        "images/products/basketball-balon-court-one.webp"
       ]
     },
     {
@@ -90,17 +87,14 @@
       "description": "Muñequera deportiva para entrenar y jugar con comodidad.",
       "priceCents": 990,
       "id": "basketball-munequera-court",
-      "imageUrl": "images/products/basketball-munequera-court.svg",
-      "imageAlt": "Muñequera Court, ilustración del producto aislado sobre fondo liso",
-      "imageCredit": "Apex Sports",
-      "imageLicense": "CC BY 4.0",
-      "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
-      "imageSourceUrl": "images/products/basketball-munequera-court.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrl": "images/products/basketball-munequera-court.webp",
+      "imageAlt": "Muñequera Court, fotografía de producto",
+      "imageCredit": "Usuario (autorización de uso confirmada)",
+      "imageLicense": "Autorización de uso confirmada por el usuario",
+      "imageSourceUrl": "images/products/basketball-munequera-court.webp",
+      "imageSourceTitle": "Fotografía de producto aportada por el usuario",
       "imageUrls": [
-        "images/products/basketball-munequera-court.svg",
-        "images/products/basketball-munequera-court-2.svg",
-        "images/products/basketball-munequera-court-3.svg"
+        "images/products/basketball-munequera-court.webp"
       ]
     },
     {
@@ -111,17 +105,14 @@
       "description": "Red de recambio resistente para aro de basketball.",
       "priceCents": 1250,
       "id": "basketball-red-de-aro-reforzada",
-      "imageUrl": "images/products/basketball-red-de-aro-reforzada.svg",
-      "imageAlt": "Red de aro reforzada, ilustración del producto aislado sobre fondo liso",
-      "imageCredit": "Apex Sports",
-      "imageLicense": "CC BY 4.0",
-      "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
-      "imageSourceUrl": "images/products/basketball-red-de-aro-reforzada.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrl": "images/products/basketball-red-de-aro-reforzada.webp",
+      "imageAlt": "Red de aro reforzada, fotografía de producto",
+      "imageCredit": "Usuario (autorización de uso confirmada)",
+      "imageLicense": "Autorización de uso confirmada por el usuario",
+      "imageSourceUrl": "images/products/basketball-red-de-aro-reforzada.webp",
+      "imageSourceTitle": "Fotografía de producto aportada por el usuario",
       "imageUrls": [
-        "images/products/basketball-red-de-aro-reforzada.svg",
-        "images/products/basketball-red-de-aro-reforzada-2.svg",
-        "images/products/basketball-red-de-aro-reforzada-3.svg"
+        "images/products/basketball-red-de-aro-reforzada.webp"
       ]
     },
     {
@@ -132,17 +123,14 @@
       "description": "Raqueta de tennis liviana para entrenar y jugar.",
       "priceCents": 6800,
       "id": "tennis-raqueta-ace-100",
-      "imageUrl": "images/products/tennis-raqueta-ace-100.svg",
-      "imageAlt": "Raqueta Ace 100, ilustración del producto aislado sobre fondo liso",
-      "imageCredit": "Apex Sports",
-      "imageLicense": "CC BY 4.0",
-      "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
-      "imageSourceUrl": "images/products/tennis-raqueta-ace-100.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrl": "images/products/tennis-raqueta-ace-100.webp",
+      "imageAlt": "Raqueta Ace 100, fotografía de producto",
+      "imageCredit": "Usuario (autorización de uso confirmada)",
+      "imageLicense": "Autorización de uso confirmada por el usuario",
+      "imageSourceUrl": "images/products/tennis-raqueta-ace-100.webp",
+      "imageSourceTitle": "Fotografía de producto aportada por el usuario",
       "imageUrls": [
-        "images/products/tennis-raqueta-ace-100.svg",
-        "images/products/tennis-raqueta-ace-100-2.svg",
-        "images/products/tennis-raqueta-ace-100-3.svg"
+        "images/products/tennis-raqueta-ace-100.webp"
       ]
     },
     {
@@ -153,17 +141,14 @@
       "description": "Paquete de tres pelotas para práctica recreativa.",
       "priceCents": 1225,
       "id": "tennis-pelotas-de-tennis-3",
-      "imageUrl": "images/products/tennis-pelotas-de-tennis-3.svg",
-      "imageAlt": "Pelotas de tennis (3), ilustración del producto aislado sobre fondo liso",
-      "imageCredit": "Apex Sports",
-      "imageLicense": "CC BY 4.0",
-      "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
-      "imageSourceUrl": "images/products/tennis-pelotas-de-tennis-3.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrl": "images/products/tennis-pelotas-de-tennis-3.webp",
+      "imageAlt": "Pelotas de tennis (3), fotografía de producto",
+      "imageCredit": "Usuario (autorización de uso confirmada)",
+      "imageLicense": "Autorización de uso confirmada por el usuario",
+      "imageSourceUrl": "images/products/tennis-pelotas-de-tennis-3.webp",
+      "imageSourceTitle": "Fotografía de producto aportada por el usuario",
       "imageUrls": [
-        "images/products/tennis-pelotas-de-tennis-3.svg",
-        "images/products/tennis-pelotas-de-tennis-3-2.svg",
-        "images/products/tennis-pelotas-de-tennis-3-3.svg"
+        "images/products/tennis-pelotas-de-tennis-3.webp"
       ]
     },
     {
@@ -174,17 +159,14 @@
       "description": "Cintas de agarre de recambio para raquetas.",
       "priceCents": 850,
       "id": "tennis-overgrip-comfort-3",
-      "imageUrl": "images/products/tennis-overgrip-comfort-3.svg",
-      "imageAlt": "Overgrip Comfort (3), ilustración del producto aislado sobre fondo liso",
-      "imageCredit": "Apex Sports",
-      "imageLicense": "CC BY 4.0",
-      "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
-      "imageSourceUrl": "images/products/tennis-overgrip-comfort-3.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrl": "images/products/tennis-overgrip-comfort-3.webp",
+      "imageAlt": "Overgrip Comfort (3), fotografía de producto",
+      "imageCredit": "Usuario (autorización de uso confirmada)",
+      "imageLicense": "Autorización de uso confirmada por el usuario",
+      "imageSourceUrl": "images/products/tennis-overgrip-comfort-3.webp",
+      "imageSourceTitle": "Fotografía de producto aportada por el usuario",
       "imageUrls": [
-        "images/products/tennis-overgrip-comfort-3.svg",
-        "images/products/tennis-overgrip-comfort-3-2.svg",
-        "images/products/tennis-overgrip-comfort-3-3.svg"
+        "images/products/tennis-overgrip-comfort-3.webp"
       ]
     },
     {
@@ -195,17 +177,14 @@
       "description": "Guantes acolchados para sesiones de artes marciales.",
       "priceCents": 4200,
       "id": "mma-guantes-de-entrenamiento",
-      "imageUrl": "images/products/mma-guantes-de-entrenamiento.svg",
-      "imageAlt": "Guantes de entrenamiento, ilustración del producto aislado sobre fondo liso",
-      "imageCredit": "Apex Sports",
-      "imageLicense": "CC BY 4.0",
-      "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
-      "imageSourceUrl": "images/products/mma-guantes-de-entrenamiento.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrl": "images/products/mma-guantes-de-entrenamiento.webp",
+      "imageAlt": "Guantes de entrenamiento, fotografía de producto",
+      "imageCredit": "Usuario (autorización de uso confirmada)",
+      "imageLicense": "Autorización de uso confirmada por el usuario",
+      "imageSourceUrl": "images/products/mma-guantes-de-entrenamiento.webp",
+      "imageSourceTitle": "Fotografía de producto aportada por el usuario",
       "imageUrls": [
-        "images/products/mma-guantes-de-entrenamiento.svg",
-        "images/products/mma-guantes-de-entrenamiento-2.svg",
-        "images/products/mma-guantes-de-entrenamiento-3.svg"
+        "images/products/mma-guantes-de-entrenamiento.webp"
       ]
     },
     {
@@ -216,17 +195,14 @@
       "description": "Vendas para brindar soporte durante el entrenamiento.",
       "priceCents": 1400,
       "id": "mma-vendas-para-boxeo",
-      "imageUrl": "images/products/mma-vendas-para-boxeo.svg",
-      "imageAlt": "Vendas para boxeo, ilustración del producto aislado sobre fondo liso",
-      "imageCredit": "Apex Sports",
-      "imageLicense": "CC BY 4.0",
-      "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
-      "imageSourceUrl": "images/products/mma-vendas-para-boxeo.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrl": "images/products/mma-vendas-para-boxeo.webp",
+      "imageAlt": "Vendas para boxeo, fotografía de producto",
+      "imageCredit": "Usuario (autorización de uso confirmada)",
+      "imageLicense": "Autorización de uso confirmada por el usuario",
+      "imageSourceUrl": "images/products/mma-vendas-para-boxeo.webp",
+      "imageSourceTitle": "Fotografía de producto aportada por el usuario",
       "imageUrls": [
-        "images/products/mma-vendas-para-boxeo.svg",
-        "images/products/mma-vendas-para-boxeo-2.svg",
-        "images/products/mma-vendas-para-boxeo-3.svg"
+        "images/products/mma-vendas-para-boxeo.webp"
       ]
     },
     {
@@ -237,17 +213,14 @@
       "description": "Protector moldeable para entrenamiento de contacto.",
       "priceCents": 1190,
       "id": "mma-protector-bucal",
-      "imageUrl": "images/products/mma-protector-bucal.svg",
-      "imageAlt": "Protector bucal, ilustración del producto aislado sobre fondo liso",
-      "imageCredit": "Apex Sports",
-      "imageLicense": "CC BY 4.0",
-      "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
-      "imageSourceUrl": "images/products/mma-protector-bucal.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrl": "images/products/mma-protector-bucal.webp",
+      "imageAlt": "Protector bucal, fotografía de producto",
+      "imageCredit": "Usuario (autorización de uso confirmada)",
+      "imageLicense": "Autorización de uso confirmada por el usuario",
+      "imageSourceUrl": "images/products/mma-protector-bucal.webp",
+      "imageSourceTitle": "Fotografía de producto aportada por el usuario",
       "imageUrls": [
-        "images/products/mma-protector-bucal.svg",
-        "images/products/mma-protector-bucal-2.svg",
-        "images/products/mma-protector-bucal-3.svg"
+        "images/products/mma-protector-bucal.webp"
       ]
     },
     {
@@ -258,17 +231,14 @@
       "description": "Balón de volleyball para prácticas y partidos.",
       "priceCents": 2675,
       "id": "volleyball-balon-set-point",
-      "imageUrl": "images/products/volleyball-balon-set-point.svg",
-      "imageAlt": "Balón Set Point, ilustración del producto aislado sobre fondo liso",
-      "imageCredit": "Apex Sports",
-      "imageLicense": "CC BY 4.0",
-      "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
-      "imageSourceUrl": "images/products/volleyball-balon-set-point.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrl": "images/products/volleyball-balon-set-point.webp",
+      "imageAlt": "Balón Set Point, fotografía de producto",
+      "imageCredit": "Usuario (autorización de uso confirmada)",
+      "imageLicense": "Autorización de uso confirmada por el usuario",
+      "imageSourceUrl": "images/products/volleyball-balon-set-point.webp",
+      "imageSourceTitle": "Fotografía de producto aportada por el usuario",
       "imageUrls": [
-        "images/products/volleyball-balon-set-point.svg",
-        "images/products/volleyball-balon-set-point-2.svg",
-        "images/products/volleyball-balon-set-point-3.svg"
+        "images/products/volleyball-balon-set-point.webp"
       ]
     },
     {
@@ -889,9 +859,7 @@
       "imageSourceUrl": "images/products/futbol-balon-training.svg",
       "imageSourceTitle": "Ilustración original Apex Sports",
       "imageUrls": [
-        "images/products/futbol-balon-training.svg",
-        "images/products/futbol-balon-training-2.svg",
-        "images/products/futbol-balon-training-3.svg"
+        "images/products/futbol-balon-training.svg"
       ]
     },
     {
@@ -902,17 +870,14 @@
       "description": "Suela con tracción para movimientos rápidos.",
       "priceCents": 7200,
       "id": "basketball-zapatillas-court-jump",
-      "imageUrl": "images/products/basketball-zapatillas-court-jump.svg",
-      "imageAlt": "Zapatillas Court Jump, ilustración del producto aislado sobre fondo liso",
-      "imageCredit": "Apex Sports",
-      "imageLicense": "CC BY 4.0",
-      "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
-      "imageSourceUrl": "images/products/basketball-zapatillas-court-jump.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrl": "images/products/basketball-zapatillas-court-jump.webp",
+      "imageAlt": "Zapatillas Court Jump, fotografía de producto",
+      "imageCredit": "Usuario (autorización de uso confirmada)",
+      "imageLicense": "Autorización de uso confirmada por el usuario",
+      "imageSourceUrl": "images/products/basketball-zapatillas-court-jump.webp",
+      "imageSourceTitle": "Fotografía de producto aportada por el usuario",
       "imageUrls": [
-        "images/products/basketball-zapatillas-court-jump.svg",
-        "images/products/basketball-zapatillas-court-jump-2.svg",
-        "images/products/basketball-zapatillas-court-jump-3.svg"
+        "images/products/basketball-zapatillas-court-jump.webp"
       ]
     },
     {
@@ -923,17 +888,14 @@
       "description": "Superficie de agarre para juego en interiores.",
       "priceCents": 3450,
       "id": "basketball-balon-indoor-pro",
-      "imageUrl": "images/products/basketball-balon-indoor-pro.svg",
-      "imageAlt": "Balón Indoor Pro, ilustración del producto aislado sobre fondo liso",
-      "imageCredit": "Apex Sports",
-      "imageLicense": "CC BY 4.0",
-      "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
-      "imageSourceUrl": "images/products/basketball-balon-indoor-pro.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrl": "images/products/basketball-balon-indoor-pro.webp",
+      "imageAlt": "Balón Indoor Pro, fotografía de producto",
+      "imageCredit": "Usuario (autorización de uso confirmada)",
+      "imageLicense": "Autorización de uso confirmada por el usuario",
+      "imageSourceUrl": "images/products/basketball-balon-indoor-pro.webp",
+      "imageSourceTitle": "Fotografía de producto aportada por el usuario",
       "imageUrls": [
-        "images/products/basketball-balon-indoor-pro.svg",
-        "images/products/basketball-balon-indoor-pro-2.svg",
-        "images/products/basketball-balon-indoor-pro-3.svg"
+        "images/products/basketball-balon-indoor-pro.webp"
       ]
     },
     {
@@ -944,17 +906,14 @@
       "description": "Prenda ligera de corte deportivo.",
       "priceCents": 2990,
       "id": "basketball-camiseta-basket-team",
-      "imageUrl": "images/products/basketball-camiseta-basket-team.svg",
-      "imageAlt": "Camiseta Basket Team, ilustración del producto aislado sobre fondo liso",
-      "imageCredit": "Apex Sports",
-      "imageLicense": "CC BY 4.0",
-      "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
-      "imageSourceUrl": "images/products/basketball-camiseta-basket-team.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrl": "images/products/basketball-camiseta-basket-team.webp",
+      "imageAlt": "Camiseta Basket Team, fotografía de producto",
+      "imageCredit": "Usuario (autorización de uso confirmada)",
+      "imageLicense": "Autorización de uso confirmada por el usuario",
+      "imageSourceUrl": "images/products/basketball-camiseta-basket-team.webp",
+      "imageSourceTitle": "Fotografía de producto aportada por el usuario",
       "imageUrls": [
-        "images/products/basketball-camiseta-basket-team.svg",
-        "images/products/basketball-camiseta-basket-team-2.svg",
-        "images/products/basketball-camiseta-basket-team-3.svg"
+        "images/products/basketball-camiseta-basket-team.webp"
       ]
     },
     {
@@ -965,17 +924,14 @@
       "description": "Ajuste elástico para entrenar con comodidad.",
       "priceCents": 1500,
       "id": "basketball-manga-de-compresion",
-      "imageUrl": "images/products/basketball-manga-de-compresion.svg",
-      "imageAlt": "Manga de compresión, ilustración del producto aislado sobre fondo liso",
-      "imageCredit": "Apex Sports",
-      "imageLicense": "CC BY 4.0",
-      "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
-      "imageSourceUrl": "images/products/basketball-manga-de-compresion.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrl": "images/products/basketball-manga-de-compresion.webp",
+      "imageAlt": "Manga de compresión, fotografía de producto",
+      "imageCredit": "Usuario (autorización de uso confirmada)",
+      "imageLicense": "Autorización de uso confirmada por el usuario",
+      "imageSourceUrl": "images/products/basketball-manga-de-compresion.webp",
+      "imageSourceTitle": "Fotografía de producto aportada por el usuario",
       "imageUrls": [
-        "images/products/basketball-manga-de-compresion.svg",
-        "images/products/basketball-manga-de-compresion-2.svg",
-        "images/products/basketball-manga-de-compresion-3.svg"
+        "images/products/basketball-manga-de-compresion.webp"
       ]
     },
     {
@@ -986,17 +942,14 @@
       "description": "Tejido suave para mantener el ajuste durante el juego.",
       "priceCents": 850,
       "id": "basketball-banda-para-la-cabeza",
-      "imageUrl": "images/products/basketball-banda-para-la-cabeza.svg",
-      "imageAlt": "Banda para la cabeza, ilustración del producto aislado sobre fondo liso",
-      "imageCredit": "Apex Sports",
-      "imageLicense": "CC BY 4.0",
-      "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
-      "imageSourceUrl": "images/products/basketball-banda-para-la-cabeza.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrl": "images/products/basketball-banda-para-la-cabeza.webp",
+      "imageAlt": "Banda para la cabeza, fotografía de producto",
+      "imageCredit": "Usuario (autorización de uso confirmada)",
+      "imageLicense": "Autorización de uso confirmada por el usuario",
+      "imageSourceUrl": "images/products/basketball-banda-para-la-cabeza.webp",
+      "imageSourceTitle": "Fotografía de producto aportada por el usuario",
       "imageUrls": [
-        "images/products/basketball-banda-para-la-cabeza.svg",
-        "images/products/basketball-banda-para-la-cabeza-2.svg",
-        "images/products/basketball-banda-para-la-cabeza-3.svg"
+        "images/products/basketball-banda-para-la-cabeza.webp"
       ]
     },
     {
@@ -1007,17 +960,14 @@
       "description": "Formato compacto para llevar a la cancha.",
       "priceCents": 925,
       "id": "basketball-bomba-para-balon",
-      "imageUrl": "images/products/basketball-bomba-para-balon.svg",
-      "imageAlt": "Bomba para balón, ilustración del producto aislado sobre fondo liso",
-      "imageCredit": "Apex Sports",
-      "imageLicense": "CC BY 4.0",
-      "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
-      "imageSourceUrl": "images/products/basketball-bomba-para-balon.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrl": "images/products/basketball-bomba-para-balon.webp",
+      "imageAlt": "Bomba para balón, fotografía de producto",
+      "imageCredit": "Usuario (autorización de uso confirmada)",
+      "imageLicense": "Autorización de uso confirmada por el usuario",
+      "imageSourceUrl": "images/products/basketball-bomba-para-balon.webp",
+      "imageSourceTitle": "Fotografía de producto aportada por el usuario",
       "imageUrls": [
-        "images/products/basketball-bomba-para-balon.svg",
-        "images/products/basketball-bomba-para-balon-2.svg",
-        "images/products/basketball-bomba-para-balon-3.svg"
+        "images/products/basketball-bomba-para-balon.webp"
       ]
     },
     {
@@ -1028,17 +978,14 @@
       "description": "Cubierta resistente para jugar al aire libre.",
       "priceCents": 2790,
       "id": "basketball-balon-outdoor",
-      "imageUrl": "images/products/basketball-balon-outdoor.svg",
-      "imageAlt": "Balón Outdoor, ilustración del producto aislado sobre fondo liso",
-      "imageCredit": "Apex Sports",
-      "imageLicense": "CC BY 4.0",
-      "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
-      "imageSourceUrl": "images/products/basketball-balon-outdoor.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrl": "images/products/basketball-balon-outdoor.webp",
+      "imageAlt": "Balón Outdoor, fotografía de producto",
+      "imageCredit": "Usuario (autorización de uso confirmada)",
+      "imageLicense": "Autorización de uso confirmada por el usuario",
+      "imageSourceUrl": "images/products/basketball-balon-outdoor.webp",
+      "imageSourceTitle": "Fotografía de producto aportada por el usuario",
       "imageUrls": [
-        "images/products/basketball-balon-outdoor.svg",
-        "images/products/basketball-balon-outdoor-2.svg",
-        "images/products/basketball-balon-outdoor-3.svg"
+        "images/products/basketball-balon-outdoor.webp"
       ]
     },
     {
@@ -1049,17 +996,14 @@
       "description": "Marco liviano para golpes con buen control.",
       "priceCents": 7900,
       "id": "tennis-raqueta-control-98",
-      "imageUrl": "images/products/tennis-raqueta-control-98.svg",
-      "imageAlt": "Raqueta Control 98, ilustración del producto aislado sobre fondo liso",
-      "imageCredit": "Apex Sports",
-      "imageLicense": "CC BY 4.0",
-      "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
-      "imageSourceUrl": "images/products/tennis-raqueta-control-98.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrl": "images/products/tennis-raqueta-control-98.webp",
+      "imageAlt": "Raqueta Control 98, fotografía de producto",
+      "imageCredit": "Usuario (autorización de uso confirmada)",
+      "imageLicense": "Autorización de uso confirmada por el usuario",
+      "imageSourceUrl": "images/products/tennis-raqueta-control-98.webp",
+      "imageSourceTitle": "Fotografía de producto aportada por el usuario",
       "imageUrls": [
-        "images/products/tennis-raqueta-control-98.svg",
-        "images/products/tennis-raqueta-control-98-2.svg",
-        "images/products/tennis-raqueta-control-98-3.svg"
+        "images/products/tennis-raqueta-control-98.webp"
       ]
     },
     {
@@ -1070,17 +1014,14 @@
       "description": "Compartimentos para transportar equipo de juego.",
       "priceCents": 4490,
       "id": "tennis-bolso-para-raquetas",
-      "imageUrl": "images/products/tennis-bolso-para-raquetas.svg",
-      "imageAlt": "Bolso para raquetas, ilustración del producto aislado sobre fondo liso",
-      "imageCredit": "Apex Sports",
-      "imageLicense": "CC BY 4.0",
-      "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
-      "imageSourceUrl": "images/products/tennis-bolso-para-raquetas.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrl": "images/products/tennis-bolso-para-raquetas.webp",
+      "imageAlt": "Bolso para raquetas, fotografía de producto",
+      "imageCredit": "Usuario (autorización de uso confirmada)",
+      "imageLicense": "Autorización de uso confirmada por el usuario",
+      "imageSourceUrl": "images/products/tennis-bolso-para-raquetas.webp",
+      "imageSourceTitle": "Fotografía de producto aportada por el usuario",
       "imageUrls": [
-        "images/products/tennis-bolso-para-raquetas.svg",
-        "images/products/tennis-bolso-para-raquetas-2.svg",
-        "images/products/tennis-bolso-para-raquetas-3.svg"
+        "images/products/tennis-bolso-para-raquetas.webp"
       ]
     },
     {
@@ -1091,17 +1032,14 @@
       "description": "Cinta de recambio para mejorar el agarre.",
       "priceCents": 750,
       "id": "tennis-grip-antideslizante",
-      "imageUrl": "images/products/tennis-grip-antideslizante.svg",
-      "imageAlt": "Grip antideslizante, ilustración del producto aislado sobre fondo liso",
-      "imageCredit": "Apex Sports",
-      "imageLicense": "CC BY 4.0",
-      "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
-      "imageSourceUrl": "images/products/tennis-grip-antideslizante.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrl": "images/products/tennis-grip-antideslizante.webp",
+      "imageAlt": "Grip antideslizante, fotografía de producto",
+      "imageCredit": "Usuario (autorización de uso confirmada)",
+      "imageLicense": "Autorización de uso confirmada por el usuario",
+      "imageSourceUrl": "images/products/tennis-grip-antideslizante.webp",
+      "imageSourceTitle": "Fotografía de producto aportada por el usuario",
       "imageUrls": [
-        "images/products/tennis-grip-antideslizante.svg",
-        "images/products/tennis-grip-antideslizante-2.svg",
-        "images/products/tennis-grip-antideslizante-3.svg"
+        "images/products/tennis-grip-antideslizante.webp"
       ]
     },
     {
@@ -1112,17 +1050,14 @@
       "description": "Tejido suave para acompañar el entrenamiento.",
       "priceCents": 800,
       "id": "tennis-munequera-absorbente",
-      "imageUrl": "images/products/tennis-munequera-absorbente.svg",
-      "imageAlt": "Muñequera absorbente, ilustración del producto aislado sobre fondo liso",
-      "imageCredit": "Apex Sports",
-      "imageLicense": "CC BY 4.0",
-      "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
-      "imageSourceUrl": "images/products/tennis-munequera-absorbente.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrl": "images/products/tennis-munequera-absorbente.webp",
+      "imageAlt": "Muñequera absorbente, fotografía de producto",
+      "imageCredit": "Usuario (autorización de uso confirmada)",
+      "imageLicense": "Autorización de uso confirmada por el usuario",
+      "imageSourceUrl": "images/products/tennis-munequera-absorbente.webp",
+      "imageSourceTitle": "Fotografía de producto aportada por el usuario",
       "imageUrls": [
-        "images/products/tennis-munequera-absorbente.svg",
-        "images/products/tennis-munequera-absorbente-2.svg",
-        "images/products/tennis-munequera-absorbente-3.svg"
+        "images/products/tennis-munequera-absorbente.webp"
       ]
     },
     {
@@ -1133,17 +1068,14 @@
       "description": "Visera ajustable para jugar al aire libre.",
       "priceCents": 1690,
       "id": "tennis-visera-court",
-      "imageUrl": "images/products/tennis-visera-court.svg",
-      "imageAlt": "Visera Court, ilustración del producto aislado sobre fondo liso",
-      "imageCredit": "Apex Sports",
-      "imageLicense": "CC BY 4.0",
-      "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
-      "imageSourceUrl": "images/products/tennis-visera-court.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrl": "images/products/tennis-visera-court.webp",
+      "imageAlt": "Visera Court, fotografía de producto",
+      "imageCredit": "Usuario (autorización de uso confirmada)",
+      "imageLicense": "Autorización de uso confirmada por el usuario",
+      "imageSourceUrl": "images/products/tennis-visera-court.webp",
+      "imageSourceTitle": "Fotografía de producto aportada por el usuario",
       "imageUrls": [
-        "images/products/tennis-visera-court.svg",
-        "images/products/tennis-visera-court-2.svg",
-        "images/products/tennis-visera-court-3.svg"
+        "images/products/tennis-visera-court.webp"
       ]
     },
     {
@@ -1162,9 +1094,7 @@
       "imageSourceUrl": "images/products/tennis-pelotas-match-3.svg",
       "imageSourceTitle": "Ilustración original Apex Sports",
       "imageUrls": [
-        "images/products/tennis-pelotas-match-3.svg",
-        "images/products/tennis-pelotas-match-3-2.svg",
-        "images/products/tennis-pelotas-match-3-3.svg"
+        "images/products/tennis-pelotas-match-3.svg"
       ]
     },
     {
@@ -1175,17 +1105,14 @@
       "description": "Accesorio pequeño para el encordado.",
       "priceCents": 590,
       "id": "tennis-antivibrador-para-raqueta",
-      "imageUrl": "images/products/tennis-antivibrador-para-raqueta.svg",
-      "imageAlt": "Antivibrador para raqueta, ilustración del producto aislado sobre fondo liso",
-      "imageCredit": "Apex Sports",
-      "imageLicense": "CC BY 4.0",
-      "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
-      "imageSourceUrl": "images/products/tennis-antivibrador-para-raqueta.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrl": "images/products/tennis-antivibrador-para-raqueta.webp",
+      "imageAlt": "Antivibrador para raqueta, fotografía de producto",
+      "imageCredit": "Usuario (autorización de uso confirmada)",
+      "imageLicense": "Autorización de uso confirmada por el usuario",
+      "imageSourceUrl": "images/products/tennis-antivibrador-para-raqueta.webp",
+      "imageSourceTitle": "Fotografía de producto aportada por el usuario",
       "imageUrls": [
-        "images/products/tennis-antivibrador-para-raqueta.svg",
-        "images/products/tennis-antivibrador-para-raqueta-2.svg",
-        "images/products/tennis-antivibrador-para-raqueta-3.svg"
+        "images/products/tennis-antivibrador-para-raqueta.webp"
       ]
     },
     {
@@ -1196,17 +1123,14 @@
       "description": "Acolchado para entrenamiento controlado.",
       "priceCents": 4800,
       "id": "mma-guantes-mma-sparring",
-      "imageUrl": "images/products/mma-guantes-mma-sparring.svg",
-      "imageAlt": "Guantes MMA Sparring, ilustración del producto aislado sobre fondo liso",
-      "imageCredit": "Apex Sports",
-      "imageLicense": "CC BY 4.0",
-      "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
-      "imageSourceUrl": "images/products/mma-guantes-mma-sparring.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrl": "images/products/mma-guantes-mma-sparring.webp",
+      "imageAlt": "Guantes MMA Sparring, fotografía de producto",
+      "imageCredit": "Usuario (autorización de uso confirmada)",
+      "imageLicense": "Autorización de uso confirmada por el usuario",
+      "imageSourceUrl": "images/products/mma-guantes-mma-sparring.webp",
+      "imageSourceTitle": "Fotografía de producto aportada por el usuario",
       "imageUrls": [
-        "images/products/mma-guantes-mma-sparring.svg",
-        "images/products/mma-guantes-mma-sparring-2.svg",
-        "images/products/mma-guantes-mma-sparring-3.svg"
+        "images/products/mma-guantes-mma-sparring.webp"
       ]
     },
     {
@@ -1217,17 +1141,14 @@
       "description": "Soporte ajustable para sesiones de práctica.",
       "priceCents": 1250,
       "id": "mma-vendas-elasticas",
-      "imageUrl": "images/products/mma-vendas-elasticas.svg",
-      "imageAlt": "Vendas elásticas, ilustración del producto aislado sobre fondo liso",
-      "imageCredit": "Apex Sports",
-      "imageLicense": "CC BY 4.0",
-      "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
-      "imageSourceUrl": "images/products/mma-vendas-elasticas.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrl": "images/products/mma-vendas-elasticas.webp",
+      "imageAlt": "Vendas elásticas, fotografía de producto",
+      "imageCredit": "Usuario (autorización de uso confirmada)",
+      "imageLicense": "Autorización de uso confirmada por el usuario",
+      "imageSourceUrl": "images/products/mma-vendas-elasticas.webp",
+      "imageSourceTitle": "Fotografía de producto aportada por el usuario",
       "imageUrls": [
-        "images/products/mma-vendas-elasticas.svg",
-        "images/products/mma-vendas-elasticas-2.svg",
-        "images/products/mma-vendas-elasticas-3.svg"
+        "images/products/mma-vendas-elasticas.webp"
       ]
     },
     {
@@ -1238,17 +1159,14 @@
       "description": "Corte flexible para entrenamientos de contacto.",
       "priceCents": 3490,
       "id": "mma-short-de-combate",
-      "imageUrl": "images/products/mma-short-de-combate.svg",
-      "imageAlt": "Short de combate, ilustración del producto aislado sobre fondo liso",
-      "imageCredit": "Apex Sports",
-      "imageLicense": "CC BY 4.0",
-      "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
-      "imageSourceUrl": "images/products/mma-short-de-combate.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrl": "images/products/mma-short-de-combate.webp",
+      "imageAlt": "Short de combate, fotografía de producto",
+      "imageCredit": "Usuario (autorización de uso confirmada)",
+      "imageLicense": "Autorización de uso confirmada por el usuario",
+      "imageSourceUrl": "images/products/mma-short-de-combate.webp",
+      "imageSourceTitle": "Fotografía de producto aportada por el usuario",
       "imageUrls": [
-        "images/products/mma-short-de-combate.svg",
-        "images/products/mma-short-de-combate-2.svg",
-        "images/products/mma-short-de-combate-3.svg"
+        "images/products/mma-short-de-combate.webp"
       ]
     },
     {
@@ -1259,17 +1177,14 @@
       "description": "Protección acolchada para entrenamiento.",
       "priceCents": 3900,
       "id": "mma-espinilleras-mma",
-      "imageUrl": "images/products/mma-espinilleras-mma.svg",
-      "imageAlt": "Espinilleras MMA, ilustración del producto aislado sobre fondo liso",
-      "imageCredit": "Apex Sports",
-      "imageLicense": "CC BY 4.0",
-      "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
-      "imageSourceUrl": "images/products/mma-espinilleras-mma.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrl": "images/products/mma-espinilleras-mma.webp",
+      "imageAlt": "Espinilleras MMA, fotografía de producto",
+      "imageCredit": "Usuario (autorización de uso confirmada)",
+      "imageLicense": "Autorización de uso confirmada por el usuario",
+      "imageSourceUrl": "images/products/mma-espinilleras-mma.webp",
+      "imageSourceTitle": "Fotografía de producto aportada por el usuario",
       "imageUrls": [
-        "images/products/mma-espinilleras-mma.svg",
-        "images/products/mma-espinilleras-mma-2.svg",
-        "images/products/mma-espinilleras-mma-3.svg"
+        "images/products/mma-espinilleras-mma.webp"
       ]
     },
     {
@@ -1280,17 +1195,14 @@
       "description": "Mangos cómodos para calentamiento y cardio.",
       "priceCents": 1590,
       "id": "mma-cuerda-de-saltar-pro",
-      "imageUrl": "images/products/mma-cuerda-de-saltar-pro.svg",
-      "imageAlt": "Cuerda de saltar Pro, ilustración del producto aislado sobre fondo liso",
-      "imageCredit": "Apex Sports",
-      "imageLicense": "CC BY 4.0",
-      "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
-      "imageSourceUrl": "images/products/mma-cuerda-de-saltar-pro.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrl": "images/products/mma-cuerda-de-saltar-pro.webp",
+      "imageAlt": "Cuerda de saltar Pro, fotografía de producto",
+      "imageCredit": "Usuario (autorización de uso confirmada)",
+      "imageLicense": "Autorización de uso confirmada por el usuario",
+      "imageSourceUrl": "images/products/mma-cuerda-de-saltar-pro.webp",
+      "imageSourceTitle": "Fotografía de producto aportada por el usuario",
       "imageUrls": [
-        "images/products/mma-cuerda-de-saltar-pro.svg",
-        "images/products/mma-cuerda-de-saltar-pro-2.svg",
-        "images/products/mma-cuerda-de-saltar-pro-3.svg"
+        "images/products/mma-cuerda-de-saltar-pro.webp"
       ]
     },
     {
@@ -1301,17 +1213,14 @@
       "description": "Equipo de práctica para entrenar combinaciones.",
       "priceCents": 8900,
       "id": "mma-saco-de-golpeo",
-      "imageUrl": "images/products/mma-saco-de-golpeo.svg",
-      "imageAlt": "Saco de golpeo, ilustración del producto aislado sobre fondo liso",
-      "imageCredit": "Apex Sports",
-      "imageLicense": "CC BY 4.0",
-      "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
-      "imageSourceUrl": "images/products/mma-saco-de-golpeo.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrl": "images/products/mma-saco-de-golpeo.webp",
+      "imageAlt": "Saco de golpeo, fotografía de producto",
+      "imageCredit": "Usuario (autorización de uso confirmada)",
+      "imageLicense": "Autorización de uso confirmada por el usuario",
+      "imageSourceUrl": "images/products/mma-saco-de-golpeo.webp",
+      "imageSourceTitle": "Fotografía de producto aportada por el usuario",
       "imageUrls": [
-        "images/products/mma-saco-de-golpeo.svg",
-        "images/products/mma-saco-de-golpeo-2.svg",
-        "images/products/mma-saco-de-golpeo-3.svg"
+        "images/products/mma-saco-de-golpeo.webp"
       ]
     },
     {
@@ -1322,17 +1231,14 @@
       "description": "Protección con ajuste elástico.",
       "priceCents": 1800,
       "id": "mma-coquilla-deportiva",
-      "imageUrl": "images/products/mma-coquilla-deportiva.svg",
-      "imageAlt": "Coquilla deportiva, ilustración del producto aislado sobre fondo liso",
-      "imageCredit": "Apex Sports",
-      "imageLicense": "CC BY 4.0",
-      "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
-      "imageSourceUrl": "images/products/mma-coquilla-deportiva.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrl": "images/products/mma-coquilla-deportiva.webp",
+      "imageAlt": "Coquilla deportiva, fotografía de producto",
+      "imageCredit": "Usuario (autorización de uso confirmada)",
+      "imageLicense": "Autorización de uso confirmada por el usuario",
+      "imageSourceUrl": "images/products/mma-coquilla-deportiva.webp",
+      "imageSourceTitle": "Fotografía de producto aportada por el usuario",
       "imageUrls": [
-        "images/products/mma-coquilla-deportiva.svg",
-        "images/products/mma-coquilla-deportiva-2.svg",
-        "images/products/mma-coquilla-deportiva-3.svg"
+        "images/products/mma-coquilla-deportiva.webp"
       ]
     },
     {

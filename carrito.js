@@ -270,10 +270,10 @@
   }
 
   async function addProduct(link) {
-    const card = link.closest(".producto, #detalle-producto");
-    const name = card && card.querySelector("#detalle-nombre, h3");
-    const category = card && card.querySelector(".producto-categoria");
-    const priceText = card && card.querySelector(".precio");
+    const card = link.closest(".producto, #detalle-producto, #product-detail");
+    const name = card && card.querySelector("#detalle-nombre, #product-name, h3");
+    const category = card && card.querySelector("#product-category, .producto-categoria");
+    const priceText = card && card.querySelector("#product-price, .precio");
     if (!name || !category || !priceText) {
       throw new Error("No se pudieron leer los datos del producto seleccionado.");
     }
@@ -285,7 +285,7 @@
     const productCategory = category.textContent.trim();
     const id = card.dataset.catalogProductId || card.dataset.productId;
     if (!id) throw new Error("No se pudo identificar el producto en el catálogo de la API.");
-    const quantityInput = card.querySelector("#detalle-cantidad");
+    const quantityInput = card.querySelector("#detalle-cantidad, #product-quantity");
     const quantity = quantityInput ? Number(quantityInput.value) : 1;
     if (!Number.isSafeInteger(quantity) || quantity < 1 || quantity > 99) {
       throw new Error("Selecciona una cantidad entera entre 1 y 99.");

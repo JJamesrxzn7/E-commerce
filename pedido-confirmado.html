@@ -12,19 +12,19 @@
     <div class="barra-superior"><a class="marca" href="index.html"><span class="marca-icono" aria-hidden="true">A</span><span>APEX <strong>SPORTS</strong></span></a></div>
   </header>
   <main class="confirmacion" id="contenido">
-    <div class="confirmacion-icono" aria-hidden="true">✓</div>
-    <p class="sobrelinea">¡LISTO PARA JUGAR!</p>
-    <h1>Registramos tu pedido</h1>
-    <p class="texto-confirmacion">Gracias por tu compra. Aquí tienes el resumen de tu pedido.</p>
-    <section class="panel detalle-confirmacion" aria-labelledby="detalle-pedido">
+    <div class="confirmacion-icono" id="confirmacion-icono" aria-hidden="true" hidden>✓</div>
+    <p class="sobrelinea" id="confirmacion-etiqueta">PEDIDO NO DISPONIBLE</p>
+    <h1 id="confirmacion-titulo">No hay un pedido reciente</h1>
+    <p class="texto-confirmacion" id="confirmacion-descripcion">Esta página mostrará el resumen cuando completes el proceso de compra en esta sesión.</p>
+    <section class="panel detalle-confirmacion" id="confirmacion-resumen" aria-labelledby="detalle-pedido" hidden>
       <h2 id="detalle-pedido">Resumen de tu pedido</h2>
-      <p><span>Número de pedido</span><strong id="confirmacion-numero">Cargando…</strong></p>
-      <p><span>Productos</span><strong id="confirmacion-productos">Cargando pedido…</strong></p>
-      <p><span>Método de pago</span><strong id="confirmacion-metodo">Cargando…</strong></p>
-      <p><span>Envío</span><strong id="confirmacion-envio">Según opción de entrega</strong></p>
-      <p><span>Total</span><strong id="confirmacion-total">No disponible</strong></p>
+      <p><span>Número de pedido</span><strong id="confirmacion-numero"></strong></p>
+      <p><span>Productos</span><strong id="confirmacion-productos"></strong></p>
+      <p><span>Método de pago</span><strong id="confirmacion-metodo"></strong></p>
+      <p><span>Envío</span><strong id="confirmacion-envio"></strong></p>
+      <p><span>Total</span><strong id="confirmacion-total"></strong></p>
     </section>
-    <p id="confirmacion-instrucciones" class="texto-confirmacion" role="status" aria-live="polite"></p>
+    <p id="confirmacion-instrucciones" class="texto-confirmacion" role="status" aria-live="polite">No se encontró un pedido reciente asociado a esta sesión.</p>
     <p class="aviso aviso-seguridad"><strong>Simulación:</strong> no se realizará ningún cobro ni transferencia. No ingreses datos financieros reales; la cuenta bancaria y la dirección del local son de ejemplo.</p>
     <a class="boton" href="index.html">Volver a la tienda</a>
   </main>

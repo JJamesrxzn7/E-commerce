@@ -3,9 +3,11 @@
 **Alcance:** comparación de la interfaz actual del e-commerce, su modelo JSON y documentación técnica con los documentos de alineación, administración, guía de API y scripts SQL entregados.  
 **Objetivo:** identificar qué datos y operaciones pueden mapearse directamente, qué no coincide y qué debe definirse antes de conectar la interfaz con PostgreSQL/Supabase.
 
+> Actualización: este informe conserva el diagnóstico de la revisión original. Desde entonces, la API y el storefront incorporaron favoritos autenticados asociados a `FAVORITOS`; las afirmaciones históricas de este documento no describen el estado actual.
+
 ## 1. Conclusión ejecutiva
 
-**La interfaz no está actualmente conectada ni alineada operacionalmente con la base de datos.** El e-commerce es una demostración que carga un catálogo JSON y mantiene carrito, favoritos, cuenta y pedido en el navegador. La guía de API propone FastAPI y consultas SQL, pero no define contratos completos para las pantallas ni hay evidencia de una API desplegada o conectada.
+**Diagnóstico de la revisión original:** la interfaz aún no estaba conectada ni alineada operacionalmente con la base de datos. En ese momento, el e-commerce mantenía carrito, favoritos, cuenta y pedido en el navegador; la guía de API no definía contratos completos para las pantallas.
 
 Las entidades del SQL sí dan una base para catálogo, usuario, cliente, carrito, compras, facturas, entregas e inventario. Aun así, los modelos no tienen correspondencia directa en campos e identificadores. En particular:
 
@@ -23,7 +25,7 @@ Las entidades del SQL sí dan una base para catálogo, usuario, cliente, carrito
 
 | Componente | Estado actual descrito | Alineación con SQL/API |
 |---|---|---|
-| Catálogo público | 120 registros en `data/products.json`, imágenes SVG y precios en centavos. | Parcial en concepto; IDs, categorías, moneda y campos no tienen contrato de mapeo. No se validó que existan las mismas filas en PostgreSQL. |
+| Catálogo público | 120 registros en `data/products.json`, imágenes WebP/SVG y precios en centavos. | Parcial en concepto; IDs, categorías, moneda y campos no tienen contrato de mapeo. No se validó que existan las mismas filas en PostgreSQL. |
 | Detalle de producto | Se consulta desde el JSON ya cargado y abre por slug. | Requiere que API exponga el identificador canónico y sus campos de detalle. |
 | Carrito | `localStorage`; el precio y nombre se guardan en el navegador. | No coincide con el carrito SQL por cuenta ni usa FK válidas de producto. |
 | Favoritos | `localStorage`, sin relación a una cuenta ni tabla SQL. | No sincronizable entre dispositivos; no hay entidad en el esquema. |
@@ -139,12 +141,7 @@ La tabla `CARRITO` está ligada obligatoriamente a `USUARIOS` y `uk_carrito_usua
 
 ### 5.2 Favoritos
 
-La interfaz guarda favoritos localmente y la DB no tiene tabla de favoritos. El esquema actual no puede cumplir una promesa de favoritos persistentes entre navegadores/dispositivos.
-
-**Qué modificar/decidir:**
-
-- Si deben sincronizarse, agregar tabla `FAVORITOS` con FK de usuario/producto, unicidad `(id_Usuario, id_Producto)` y fecha de creación, más endpoints protegidos.
-- Si no se requieren sincronizados, conservar almacenamiento local y presentar claramente esa limitación.
+El storefront usa los endpoints autenticados de favoritos de la API para consultar y modificar la tabla `FAVORITOS`. La API resuelve el slug público por medio de `apex_product_catalog` y asocia cada registro con el usuario del token. La implementación actual permite persistir la lista por cuenta y consultarla desde otros dispositivos; el flujo de cuenta aún requiere validación con credenciales de prueba autorizadas.
 
 ## 6. Entrega, pedido, factura y pago
 

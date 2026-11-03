@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Consulta los productos que guardaste en Apex Sports.">
+  <title>Mis favoritos | Apex Sports</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body data-catalog-page="favorites">
+  <a class="salto" href="#contenido">Saltar al contenido</a>
+  <header class="encabezado">
+    <div class="barra-superior barra-con-busqueda">
+      <a class="marca" href="index.html" aria-label="Apex Sports, inicio"><span class="marca-icono" aria-hidden="true">A</span><span>APEX <strong>SPORTS</strong></span></a>
+      <form class="busqueda" action="index.html" method="get" role="search">
+        <label class="solo-lectores" for="buscar">Buscar productos deportivos</label>
+        <input id="buscar" type="search" name="q" placeholder="Busca tu próximo entrenamiento">
+        <button type="submit">Buscar</button>
+      </form>
+      <a class="enlace-carrito" href="carrito.html" aria-label="Ver carrito, 0 artículos"><span aria-hidden="true">♧</span><span class="texto-carrito">Carrito</span><span class="contador">0</span></a>
+      <a class="enlace-favoritos" href="favoritos.html" aria-label="Ver favoritos, 0 artículos"><span aria-hidden="true">♡</span><span class="texto-favoritos">Favoritos</span><span class="contador contador-favoritos">0</span></a>
+      <div class="acciones-usuario">
+        <button class="boton boton-sesion" type="button" data-open-auth="login">Iniciar sesión</button>
+        <button class="boton boton-outline" type="button" data-open-auth="register">Registrarse</button>
+        <span class="cuenta-activa" id="cuenta-activa" hidden></span>
+        <button class="boton boton-outline boton-salir" id="cerrar-sesion" type="button" hidden>Cerrar sesión</button>
+      </div>
+      <span class="solo-lectores" id="cart-status" role="status" aria-live="polite"></span>
+      <span class="solo-lectores" id="estado-favoritos-global" role="status" aria-live="polite"></span>
+      <span class="solo-lectores" id="session-status" role="status" aria-live="polite"></span>
+    </div>
+  </header>
+  <nav class="navegacion" aria-label="Categorías principales">
+    <a href="categoria.html?id=futbol">Fútbol</a><a href="categoria.html?id=basketball">Basketball</a>
+    <a href="categoria.html?id=tennis">Tennis</a><a href="categoria.html?id=mma">Artes marciales</a>
+  </nav>
+  <main id="contenido" class="pagina-catalogo">
+    <section class="seccion-catalogo" id="favorites-panel" aria-labelledby="favorites-title">
+      <div class="titulo-seccion"><div><p class="sobrelinea">GUARDA PARA DESPUÉS</p><h1 id="favorites-title">Mis favoritos</h1></div><a class="enlace-texto" href="index.html#productos">← Seguir explorando</a></div>
+      <p class="nota-favoritos">Tu lista está asociada a tu cuenta y disponible al iniciar sesión en otros dispositivos.</p>
+      <p class="estado-favoritos" id="favorites-status" role="status" aria-live="polite">Comprobando tu sesión…</p>
+      <div class="productos lista-favoritos" id="favorite-products"></div>
+      <div class="favoritos-vacios" id="favorites-empty" hidden><p>Aún no guardaste productos.</p><a class="boton" href="index.html#productos">Explorar productos</a></div>
+    </section>
+  </main>
+  <footer class="pie pie-simple"><p>© 2026 Apex Sports</p><a href="index.html">Volver a la tienda</a></footer>
+  <script src="api-config.js" defer></script>
+  <script src="api-client.js" defer></script>
+  <script src="catalogo-compartido.js" defer></script>
+  <script src="carrito.js" defer></script>
+  <script src="auth-modal.js" defer></script>
+  <script src="auth.js" defer></script>
+  <script src="catalogo-paginas.js" defer></script>
+</body>
+</html>

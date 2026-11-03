@@ -8,7 +8,7 @@
 La tienda ya contiene un cliente HTTP y consume endpoints de autenticación, catálogo, carrito y checkout. La API implementa esos recursos y persiste usuarios, carrito y pedidos. Sin embargo, la integración aún tiene brechas concretas:
 
 1. El formulario de registro fue reducido a nombre, correo, contraseña, cédula/RUC y ciudad, pero `RegisterRequest` de la API todavía exige teléfono y dirección.
-2. El esquema SQL ya incluye `FAVORITOS`, pero no hay endpoints de favoritos; la tienda todavía persiste esa lista en `localStorage`.
+2. Favoritos ya cuenta con rutas autenticadas en la API y el storefront ahora las consume; falta validar el flujo con una cuenta de prueba autorizada.
 3. La configuración de publicación del frontend debe apuntar a la URL HTTPS real de la API; el cliente conserva `http://127.0.0.1:8000/api/v1` como valor por defecto.
 4. El checkout conserva dirección/teléfono/ciudad por pedido, como se necesita; asegurar que estos campos nunca actualicen la dirección fija del perfil del cliente.
 5. La tienda muestra la confirmación desde `sessionStorage` aunque ya existe un endpoint de consulta de pedidos. Debe recuperar la confirmación desde la API para no tratar el almacenamiento del navegador como registro autoritativo.
@@ -113,16 +113,17 @@ La migración `001_api_sessions_catalog_orders.sql` ya tiene columnas `delivery_
 
 ## 3. Favoritos sincronizados con la tabla `FAVORITOS`
 
-### Estado observado
+### Estado implementado; validar con cuenta de prueba
 
 - `Scripts/Script-Creacion-Tablas.sql` incluye `FAVORITOS` con PK compuesta `(id_Usuario, id_Producto)`, fecha por defecto y FKs hacia `USUARIOS` y `PRODUCTOS`.
 - La tabla tiene clave de producto SQL `CHAR(10)`, mientras el storefront opera con slugs públicos (por ejemplo, `futbol-balon-pro-match`) guardados en `apex_product_catalog`.
-- `API-ApexSports/app/main.py` no monta router de favoritos y no hay rutas de favoritos en OpenAPI.
-- `E-commerce/favoritos.js` mantiene los IDs en `localStorage`; iniciar sesión no sincroniza ni carga favoritos del servidor.
+- `API-ApexSports/app/main.py` monta el router autenticado de favoritos, y OpenAPI expone las rutas descritas abajo.
+- La API resuelve el slug público mediante `apex_product_catalog` y persiste la clave relacional de producto; las pruebas cubren aislamiento por usuario e idempotencia.
+- El cliente del storefront carga, agrega y elimina favoritos desde la API, sin copia en `localStorage`.
 
-### Implementación solicitada
+### Contrato que debe conservarse
 
-Crear endpoints autenticados con el usuario derivado exclusivamente del token vigente; nunca aceptar `user_id` en el body:
+Los endpoints existentes deben mantener el usuario derivado exclusivamente del token vigente; nunca aceptar `user_id` en el body:
 
 - `GET /api/v1/favorites`: lista de favoritos del usuario autenticado, representando cada producto con su slug público canónico y la metadata necesaria para renderizarlo.
 - `PUT /api/v1/favorites/{product_slug}` (o un `POST` idempotente equivalente): agrega el producto; duplicar la misma operación no debe crear duplicados.
@@ -130,7 +131,7 @@ Crear endpoints autenticados con el usuario derivado exclusivamente del token vi
 
 Resolver el slug mediante `apex_product_catalog` y persistir `product_id` relacional en `FAVORITOS`; nunca intentar truncar/incluir un slug en `CHAR(10)`. Validar que el producto siga siendo válido/visible; devolver códigos claros para sesión ausente, producto no encontrado y conflicto. Restringir consultas y mutaciones al principal autenticado.
 
-Preparar migración idempotente/versionada para la base ya existente si la tabla aún no fue creada. El hecho de que `CREATE TABLE FAVORITOS` aparezca en el script inicial no garantiza que exista en una instancia ya migrada; comprobar esquema objetivo de forma segura, sin volver a ejecutar todo el script base.
+La migración idempotente/versionada está en `API-ApexSports/migrations/002_favorites.sql`. Antes de modificar una base desplegada, comprobar el esquema objetivo de forma segura; no volver a ejecutar el script base completo.
 
 Añadir pruebas:
 
@@ -140,7 +141,7 @@ Añadir pruebas:
 4. Usuario A no puede leer, agregar ni quitar favoritos de usuario B.
 5. El mapping usa la PK DB por slug y no trunca el slug.
 
-La capa frontend correspondiente deberá reemplazar `localStorage` por estas rutas, hidratar botones/contador/lista desde API tras validar la sesión, y sincronizar el favorito tras login. Reportar errores de red/API sin escribir una copia local que aparenta persistencia compartida.
+El storefront hidrata botones/contador/lista desde API tras validar la sesión y sincroniza los cambios tras login. Reporta errores de red/API sin escribir una copia local que aparente persistencia compartida. Pendiente: verificar lectura y escritura con una cuenta de prueba autorizada y revisar los registros en la base de datos del entorno de prueba.
 
 ## 4. Configuración de URL pública y CORS
 
