@@ -851,15 +851,14 @@
       "description": "Balón resistente para prácticas frecuentes.",
       "priceCents": 2290,
       "id": "futbol-balon-training",
-      "imageUrl": "images/products/futbol-balon-training.svg",
-      "imageAlt": "Balón Training, ilustración del producto aislado sobre fondo liso",
-      "imageCredit": "Apex Sports",
-      "imageLicense": "CC BY 4.0",
-      "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
-      "imageSourceUrl": "images/products/futbol-balon-training.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrl": "images/products/futbol-balon-training.webp",
+      "imageAlt": "Balón Training, fotografía de producto",
+      "imageCredit": "Usuario (autorización de uso confirmada)",
+      "imageLicense": "Autorización de uso confirmada por el usuario",
+      "imageSourceUrl": "images/products/futbol-balon-training.webp",
+      "imageSourceTitle": "Fotografía de producto aportada por el usuario",
       "imageUrls": [
-        "images/products/futbol-balon-training.svg"
+        "images/products/futbol-balon-training.webp"
       ]
     },
     {
