@@ -226,6 +226,8 @@
         thumb.alt = "";
         thumb.width = 76;
         thumb.height = 76;
+        thumb.loading = "lazy";
+        thumb.decoding = "async";
         button.append(thumb);
         button.addEventListener("click", () => renderImage(url, index));
         return button;

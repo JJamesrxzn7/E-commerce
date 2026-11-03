@@ -73,6 +73,8 @@
         thumbnail.alt = "";
         thumbnail.width = 76;
         thumbnail.height = 76;
+        thumbnail.loading = "lazy";
+        thumbnail.decoding = "async";
         button.append(thumbnail);
         button.addEventListener("click", () => {
           mainImage.src = url;
