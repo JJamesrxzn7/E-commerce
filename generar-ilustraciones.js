@@ -6,6 +6,52 @@
   const catalog = JSON.parse(fs.readFileSync(catalogPath, "utf8"));
   const palette = ["#1d3851", "#c65336", "#57846d", "#d2933a", "#6c7894", "#795b70"];
   const usedVariations = new Set();
+  const providedPhotos = {
+    "futbol-balon-pro-match": [
+      "Balón de fútbol Pro Match.png",
+      "Balón de fútbol moderno en blanco y lima.png",
+      "Balón de fútbol Pro Match neón.png"
+    ],
+    "futbol-conos-de-agilidad-10": [
+      "Conos deportivos apilables multicolor.png",
+      "Conos de entrenamiento multicolor apilados.png",
+      "Set de conos deportivos multicolor.png"
+    ],
+    "futbol-petos-de-entrenamiento-5": [
+      "Peto deportivo multicolor en capas.png",
+      "Chalecos deportivos de malla coloridos.png",
+      "Pechos deportivos de malla coloridos.png"
+    ],
+    "futbol-espinilleras-shield": [
+      "Espinilleras negras con detalles neón.png",
+      "Espinilleras deportivas negro neón.png",
+      "Protecciones de fútbol negras con detalles neón.png"
+    ],
+    "futbol-botines-striker": [
+      "Botines de fútbol negros con detalles neón.png",
+      "Tacos de fútbol negros con detalles neón.png",
+      "Collage de Botines Negros Neón.png"
+    ],
+    "futbol-medias-match": [
+      "Medias deportivas negras con detalles neón.png",
+      "Calcetines deportivos negros con detalles neón.png",
+      "Calcetines deportivos negros con detalles neón (1).png"
+    ],
+    "futbol-bomba-de-aire-compact": [
+      "Bomba deportiva Apex Sports portátil.png",
+      "Bomba de aire APEX SPORTS.png",
+      "Bomba de aire Apex Sports con accesorios.png"
+    ],
+    "futbol-guantes-de-arquero-grip": [
+      "Guantes de arquero Apex Sports.png",
+      "Guantes de portero Apex Sports.png",
+      "Guantes Apex_ rendimiento máximo.png"
+    ],
+    "futbol-camiseta-de-entrenamiento": [
+      "Camiseta deportiva Apex en neón.png",
+      "Mockup de camiseta deportiva Apex Sports.png"
+    ]
+  };
 
   function hash(value) {
     return [...value].reduce((result, character) =>
@@ -90,7 +136,7 @@
     throw new Error(`Falta una ilustración de producto para «${product.name}» (${product.id}).`);
   }
 
-  function draw(type, color, accent) {
+  function draw(type, color, accent, view = 0) {
     const ball = (segments, stroke) => `
       <circle cx="180" cy="145" r="72" fill="${color}" stroke="${stroke}" stroke-width="9"/>
       ${segments}
@@ -197,7 +243,14 @@
       "running-belt": `<path d="M71 111q109-55 218 0v66q-109 55-218 0Z" fill="${color}" stroke="#17324d" stroke-width="8"/><rect x="151" y="125" width="58" height="38" rx="8" fill="${accent}" stroke="#17324d" stroke-width="6"/><path d="M71 139H44m276 0h-27" stroke="#17324d" stroke-width="9"/>`
     };
 
-    return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 300" role="img"><rect width="360" height="300" fill="#f4f1e8"/><g>${templates[type] || ""}</g></svg>`;
+    const artwork = templates[type] || "";
+    if (view === 1) {
+      return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 300" role="img"><rect width="360" height="300" fill="#eef2f4"/><circle cx="180" cy="148" r="115" fill="#fff"/><ellipse cx="180" cy="267" rx="91" ry="10" fill="#17324d" opacity=".12"/><g transform="translate(16 8) rotate(-8 180 150) scale(.92)">${artwork}</g><path d="M37 45h56M267 255h56" stroke="${accent}" stroke-width="5" stroke-linecap="round"/></svg>`;
+    }
+    if (view === 2) {
+      return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 300" role="img"><rect width="360" height="300" fill="#e8e2d6"/><path d="M0 238 360 90v210H0Z" fill="${color}" opacity=".12"/><rect x="17" y="17" width="326" height="266" rx="22" fill="#fff" opacity=".72"/><g transform="translate(-20 -17) rotate(7 180 150) scale(1.1)">${artwork}</g><circle cx="304" cy="55" r="12" fill="${accent}"/></svg>`;
+    }
+    return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 300" role="img"><rect width="360" height="300" fill="#f4f1e8"/><g>${artwork}</g></svg>`;
   }
 
   fs.mkdirSync(imagesDirectory, { recursive: true });
@@ -224,17 +277,49 @@
     }
     const color = palette[colorIndex];
     const accent = palette[accentIndex];
-    const artwork = draw(type, color, accent);
     const imagePath = path.join(imagesDirectory, `${product.id}.svg`);
-    fs.writeFileSync(imagePath, `${artwork}\n`, "utf8");
-    product.imageUrl = `images/products/${product.id}.svg`;
-    product.imageAlt = `${product.name}, ilustración del producto aislado sobre fondo liso`;
+    const alternateImagePaths = [1, 2].map((view) => {
+      const filename = `${product.id}-${view + 1}.svg`;
+      const viewColor = palette[(colorIndex + view * 2) % palette.length];
+      const viewAccent = palette[(accentIndex + view * 3 + 1) % palette.length];
+      fs.writeFileSync(
+        path.join(imagesDirectory, filename),
+        `${draw(type, viewColor, viewAccent, view)}\n`,
+        "utf8"
+      );
+      return `images/products/${filename}`;
+    });
+    fs.writeFileSync(imagePath, `${draw(type, color, accent)}\n`, "utf8");
+    const sourcePhotos = providedPhotos[product.id];
+    if (sourcePhotos) {
+      product.imageUrls = sourcePhotos.map((source) => {
+        const webpSource = source.replace(/\.png$/i, ".webp");
+        if (!fs.existsSync(path.join(__dirname, "images", webpSource))) {
+          throw new Error(`No se encontró la fotografía WebP de producto «${webpSource}».`);
+        }
+        return `images/${encodeURIComponent(webpSource)}`;
+      });
+      product.imageUrl = product.imageUrls[0];
+      product.imageAlt = `${product.name}, imagen de producto Apex Sports`;
+      product.imageSourceTitle = "Imagen de producto Apex Sports";
+    } else {
+      product.imageUrl = `images/products/${product.id}.svg`;
+      product.imageUrls = [product.imageUrl, ...alternateImagePaths];
+      product.imageAlt = `${product.name}, ilustración del producto aislado sobre fondo liso`;
+      product.imageSourceTitle = "Ilustración original Apex Sports";
+    }
     product.imageCredit = "Apex Sports";
-    product.imageLicense = "CC BY 4.0";
-    product.imageLicenseUrl = "https://creativecommons.org/licenses/by/4.0/";
+    if (sourcePhotos) {
+      product.imageLicense = "Not specified";
+      delete product.imageLicenseUrl;
+    } else {
+      product.imageLicense = "CC BY 4.0";
+      product.imageLicenseUrl = "https://creativecommons.org/licenses/by/4.0/";
+    }
     product.imageSourceUrl = product.imageUrl;
-    product.imageSourceTitle = "Ilustración original Apex Sports";
   });
   fs.writeFileSync(catalogPath, `${JSON.stringify(catalog, null, 2)}\n`, "utf8");
-  console.log(`Ilustraciones originales generadas: ${catalog.products.length}.`);
+  console.log(
+    `Ilustraciones SVG generadas: ${catalog.products.length}; galerías WebP asignadas: ${Object.keys(providedPhotos).length}.`
+  );
 })();

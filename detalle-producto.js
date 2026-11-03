@@ -1,6 +1,8 @@
 (() => {
   function initializeProductDetails() {
     const detailSection = document.getElementById("detalle-producto");
+    const mainImage = document.getElementById("detalle-imagen");
+    const thumbnails = document.getElementById("detalle-miniaturas");
     const relatedGrid = document.getElementById("productos-relacionados");
     const backLink = document.getElementById("detalle-volver");
     const addButton = document.getElementById("detalle-agregar");
@@ -52,6 +54,37 @@
       updateQuantityControls();
     }
 
+    function renderGallery(images, productName) {
+      const uniqueImages = [...new Set(images.filter((url) => typeof url === "string" && url.trim()))];
+      if (!uniqueImages.length) return;
+
+      mainImage.src = uniqueImages[0];
+      mainImage.alt = `${productName}, vista 1`;
+      thumbnails.hidden = uniqueImages.length < 2;
+      thumbnails.replaceChildren(...uniqueImages.map((url, index) => {
+        const button = document.createElement("button");
+        button.className = "detalle-miniatura";
+        button.type = "button";
+        button.setAttribute("aria-label", `Ver imagen ${index + 1} de ${productName}`);
+        button.setAttribute("aria-pressed", String(index === 0));
+
+        const thumbnail = document.createElement("img");
+        thumbnail.src = url;
+        thumbnail.alt = "";
+        thumbnail.width = 76;
+        thumbnail.height = 76;
+        button.append(thumbnail);
+        button.addEventListener("click", () => {
+          mainImage.src = url;
+          mainImage.alt = `${productName}, vista ${index + 1}`;
+          thumbnails.querySelectorAll("button").forEach((item) => {
+            item.setAttribute("aria-pressed", String(item === button));
+          });
+        });
+        return button;
+      }));
+    }
+
     function renderDetails() {
       const match = window.location.hash.match(/^#producto\/(.+)$/);
       if (!match) {
@@ -84,8 +117,7 @@
         throw new Error(`La ficha de ${productId} tiene datos incompletos.`);
       }
 
-      document.getElementById("detalle-imagen").src = image.src;
-      document.getElementById("detalle-imagen").alt = image.alt;
+      renderGallery([image.src], name);
       document.getElementById("detalle-nombre").textContent = name;
       document.getElementById("detalle-categoria").textContent = category;
       document.getElementById("detalle-descripcion").textContent = description;
@@ -106,6 +138,21 @@
       document.title = `${name} | Apex Sports`;
       detailSection.scrollIntoView({ block: "start" });
       detailSection.focus({ preventScroll: true });
+
+      const requestedHash = window.location.hash;
+      window.ApexApi.request(`/products/${encodeURIComponent(productId)}`)
+        .then((product) => {
+          if (window.location.hash !== requestedHash) return;
+          const urls = Array.isArray(product.images)
+            ? product.images.map((item) => item?.url)
+            : [];
+          renderGallery([product.imageUrl || image.src, ...urls], name);
+        })
+        .catch((error) => {
+          if (window.location.hash !== requestedHash) return;
+          console.error(`No se pudieron cargar las imágenes de ${productId}.`, error);
+          status.textContent = "No se pudieron cargar las imágenes adicionales; se muestra la portada.";
+        });
     }
 
     window.addEventListener("hashchange", renderDetails);

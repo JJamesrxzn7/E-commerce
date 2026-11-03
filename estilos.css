@@ -261,8 +261,14 @@ body.producto-detalle-activo main > :not(#detalle-producto):not(#catalog-status)
 .detalle-producto { max-width: 1180px; min-height: 70vh; padding: 32px 24px 72px; margin: 0 auto; scroll-margin-top: 104px; }
 .detalle-volver { min-height: 44px; display: inline-flex; align-items: center; margin-bottom: 20px; }
 .detalle-principal { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(300px, .95fr); gap: clamp(28px, 5vw, 68px); align-items: start; }
-.detalle-galeria { min-width: 0; aspect-ratio: 1 / 1; display: grid; place-items: center; overflow: hidden; border: 1px solid var(--borde); border-radius: 4px; background: var(--marfil); }
+.detalle-galeria { min-width: 0; display: grid; align-content: start; gap: 12px; }
+.detalle-imagen-marco { min-width: 0; aspect-ratio: 1 / 1; display: grid; place-items: center; overflow: hidden; border: 1px solid var(--borde); border-radius: 4px; background: var(--marfil); }
 .detalle-imagen { width: 100%; height: 100%; padding: clamp(16px, 4vw, 42px); object-fit: contain; }
+.detalle-miniaturas { display: flex; flex-wrap: wrap; gap: 10px; }
+.detalle-miniatura { width: 76px; height: 76px; padding: 4px; overflow: hidden; border: 1px solid var(--borde); border-radius: 4px; background: var(--marfil); cursor: pointer; }
+.detalle-miniatura[aria-pressed="true"] { border: 2px solid var(--azul); }
+.detalle-miniatura:focus-visible { outline: 3px solid var(--coral); outline-offset: 2px; }
+.detalle-miniatura img { width: 100%; height: 100%; object-fit: contain; }
 .detalle-informacion { padding: 12px 0; }
 .detalle-informacion .sobrelinea { margin-bottom: 8px; }
 .detalle-informacion > h1 { margin: 8px 0 14px; font-size: clamp(30px, 4vw, 44px); line-height: 1.12; letter-spacing: -.035em; }
@@ -455,7 +461,7 @@ body.busqueda-activa main > #resultados-busqueda { display: block; }
   .producto-imagen { height: auto; aspect-ratio: 4 / 3; }
   .detalle-producto { padding: 22px 18px 52px; }
   .detalle-principal { grid-template-columns: 1fr; gap: 20px; }
-  .detalle-galeria { max-height: 520px; }
+  .detalle-imagen-marco { max-height: 520px; }
   .detalle-informacion { padding: 0; }
   .productos-relacionados { padding-top: 32px; }
   .carrusel-productos > .producto { flex-basis: min(78vw, 300px); }

@@ -13,11 +13,12 @@ Para publicarlo, configura GitHub Pages en el repositorio con la rama `main` y l
 - `index.html`: portada, categorías y estructura del catálogo.
 - `estilos.css`: estilos, diseño responsive, foco de teclado y controles táctiles.
 - `catalogo.js`: carga el catálogo paginado desde la API, construye las tarjetas y genera los carruseles de portada.
-- `detalle-producto.js`: abre la ficha accesible de cada artículo y muestra productos relacionados de la misma categoría.
+- `detalle-producto.js`: abre la ficha accesible de cada artículo, carga su galería desde la API y muestra productos relacionados de la misma categoría.
 - `busqueda.js`: busca coincidencias parciales sin distinguir mayúsculas ni tildes en el nombre, categoría y descripción.
 - `data/products.json`: fixture y entrada del generador de ilustraciones; el catálogo visible se obtiene desde la API.
-- `images/products/`: ilustraciones originales de cada artículo, aislado sobre un fondo liso.
-- `generar-ilustraciones.js`: genera nuevamente las 120 ilustraciones SVG locales desde el catálogo.
+- `images/`: fotos WebP optimizadas para los primeros nueve productos de fútbol.
+- `images/products/`: ilustraciones SVG por producto; el catálogo usa las fotos WebP suministradas para los nueve productos de fútbol y SVG para los demás.
+- `generar-ilustraciones.js`: regenera las ilustraciones SVG y asigna las fotos WebP disponibles a los primeros nueve productos de fútbol.
 - `api-config.js`: define la URL HTTPS pública de la API, cargada antes de `api-client.js` en todas las páginas.
 - `api-client.js`: realiza solicitudes a la API usando la base definida por `api-config.js`.
 - `favoritos.js`: solicita sesión para favoritos; actualmente guarda la lista en `localStorage` y requiere endpoints de API para sincronizarla con la cuenta.

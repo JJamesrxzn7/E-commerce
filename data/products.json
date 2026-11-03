@@ -9,13 +9,17 @@
       "description": "Balón de fútbol talla 5 para partidos y entrenamientos.",
       "priceCents": 3490,
       "id": "futbol-balon-pro-match",
-      "imageUrl": "images/products/futbol-balon-pro-match.svg",
-      "imageAlt": "Balón Pro Match. Balón de fútbol talla 5 para partidos y entrenamientos.",
+      "imageUrl": "images/Bal%C3%B3n%20de%20f%C3%BAtbol%20Pro%20Match.webp",
+      "imageAlt": "Balón Pro Match, imagen de producto Apex Sports",
       "imageCredit": "Apex Sports",
-      "imageLicense": "CC BY 4.0",
-      "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
-      "imageSourceUrl": "images/products/futbol-balon-pro-match.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageLicense": "Not specified",
+      "imageSourceUrl": "images/Bal%C3%B3n%20de%20f%C3%BAtbol%20Pro%20Match.webp",
+      "imageSourceTitle": "Imagen de producto Apex Sports",
+      "imageUrls": [
+        "images/Bal%C3%B3n%20de%20f%C3%BAtbol%20Pro%20Match.webp",
+        "images/Bal%C3%B3n%20de%20f%C3%BAtbol%20moderno%20en%20blanco%20y%20lima.webp",
+        "images/Bal%C3%B3n%20de%20f%C3%BAtbol%20Pro%20Match%20ne%C3%B3n.webp"
+      ]
     },
     {
       "categoryId": "futbol",
@@ -25,13 +29,17 @@
       "description": "Conjunto de conos para ejercicios de coordinación y velocidad.",
       "priceCents": 1650,
       "id": "futbol-conos-de-agilidad-10",
-      "imageUrl": "images/products/futbol-conos-de-agilidad-10.svg",
-      "imageAlt": "Conos de agilidad (10). Conjunto de conos para ejercicios de coordinación y velocidad.",
+      "imageUrl": "images/Conos%20deportivos%20apilables%20multicolor.webp",
+      "imageAlt": "Conos de agilidad (10), imagen de producto Apex Sports",
       "imageCredit": "Apex Sports",
-      "imageLicense": "CC BY 4.0",
-      "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
-      "imageSourceUrl": "images/products/futbol-conos-de-agilidad-10.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageLicense": "Not specified",
+      "imageSourceUrl": "images/Conos%20deportivos%20apilables%20multicolor.webp",
+      "imageSourceTitle": "Imagen de producto Apex Sports",
+      "imageUrls": [
+        "images/Conos%20deportivos%20apilables%20multicolor.webp",
+        "images/Conos%20de%20entrenamiento%20multicolor%20apilados.webp",
+        "images/Set%20de%20conos%20deportivos%20multicolor.webp"
+      ]
     },
     {
       "categoryId": "futbol",
@@ -41,13 +49,17 @@
       "description": "Petos ligeros para distinguir equipos durante la práctica.",
       "priceCents": 2200,
       "id": "futbol-petos-de-entrenamiento-5",
-      "imageUrl": "images/products/futbol-petos-de-entrenamiento-5.svg",
-      "imageAlt": "Petos de entrenamiento (5). Petos ligeros para distinguir equipos durante la práctica.",
+      "imageUrl": "images/Peto%20deportivo%20multicolor%20en%20capas.webp",
+      "imageAlt": "Petos de entrenamiento (5), imagen de producto Apex Sports",
       "imageCredit": "Apex Sports",
-      "imageLicense": "CC BY 4.0",
-      "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
-      "imageSourceUrl": "images/products/futbol-petos-de-entrenamiento-5.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageLicense": "Not specified",
+      "imageSourceUrl": "images/Peto%20deportivo%20multicolor%20en%20capas.webp",
+      "imageSourceTitle": "Imagen de producto Apex Sports",
+      "imageUrls": [
+        "images/Peto%20deportivo%20multicolor%20en%20capas.webp",
+        "images/Chalecos%20deportivos%20de%20malla%20coloridos.webp",
+        "images/Pechos%20deportivos%20de%20malla%20coloridos.webp"
+      ]
     },
     {
       "categoryId": "basketball",
@@ -58,12 +70,17 @@
       "priceCents": 2950,
       "id": "basketball-balon-court-one",
       "imageUrl": "images/products/basketball-balon-court-one.svg",
-      "imageAlt": "Balón Court One. Balón de basketball para partidos y prácticas en cancha.",
+      "imageAlt": "Balón Court One, ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/basketball-balon-court-one.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/basketball-balon-court-one.svg",
+        "images/products/basketball-balon-court-one-2.svg",
+        "images/products/basketball-balon-court-one-3.svg"
+      ]
     },
     {
       "categoryId": "basketball",
@@ -74,12 +91,17 @@
       "priceCents": 990,
       "id": "basketball-munequera-court",
       "imageUrl": "images/products/basketball-munequera-court.svg",
-      "imageAlt": "Muñequera Court. Muñequera deportiva para entrenar y jugar con comodidad.",
+      "imageAlt": "Muñequera Court, ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/basketball-munequera-court.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/basketball-munequera-court.svg",
+        "images/products/basketball-munequera-court-2.svg",
+        "images/products/basketball-munequera-court-3.svg"
+      ]
     },
     {
       "categoryId": "basketball",
@@ -90,12 +112,17 @@
       "priceCents": 1250,
       "id": "basketball-red-de-aro-reforzada",
       "imageUrl": "images/products/basketball-red-de-aro-reforzada.svg",
-      "imageAlt": "Red de aro reforzada. Red de recambio resistente para aro de basketball.",
+      "imageAlt": "Red de aro reforzada, ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/basketball-red-de-aro-reforzada.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/basketball-red-de-aro-reforzada.svg",
+        "images/products/basketball-red-de-aro-reforzada-2.svg",
+        "images/products/basketball-red-de-aro-reforzada-3.svg"
+      ]
     },
     {
       "categoryId": "tennis",
@@ -106,12 +133,17 @@
       "priceCents": 6800,
       "id": "tennis-raqueta-ace-100",
       "imageUrl": "images/products/tennis-raqueta-ace-100.svg",
-      "imageAlt": "Raqueta Ace 100. Raqueta de tennis liviana para entrenar y jugar.",
+      "imageAlt": "Raqueta Ace 100, ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/tennis-raqueta-ace-100.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/tennis-raqueta-ace-100.svg",
+        "images/products/tennis-raqueta-ace-100-2.svg",
+        "images/products/tennis-raqueta-ace-100-3.svg"
+      ]
     },
     {
       "categoryId": "tennis",
@@ -122,12 +154,17 @@
       "priceCents": 1225,
       "id": "tennis-pelotas-de-tennis-3",
       "imageUrl": "images/products/tennis-pelotas-de-tennis-3.svg",
-      "imageAlt": "Pelotas de tennis (3). Paquete de tres pelotas para práctica recreativa.",
+      "imageAlt": "Pelotas de tennis (3), ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/tennis-pelotas-de-tennis-3.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/tennis-pelotas-de-tennis-3.svg",
+        "images/products/tennis-pelotas-de-tennis-3-2.svg",
+        "images/products/tennis-pelotas-de-tennis-3-3.svg"
+      ]
     },
     {
       "categoryId": "tennis",
@@ -138,12 +175,17 @@
       "priceCents": 850,
       "id": "tennis-overgrip-comfort-3",
       "imageUrl": "images/products/tennis-overgrip-comfort-3.svg",
-      "imageAlt": "Overgrip Comfort (3). Cintas de agarre de recambio para raquetas.",
+      "imageAlt": "Overgrip Comfort (3), ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/tennis-overgrip-comfort-3.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/tennis-overgrip-comfort-3.svg",
+        "images/products/tennis-overgrip-comfort-3-2.svg",
+        "images/products/tennis-overgrip-comfort-3-3.svg"
+      ]
     },
     {
       "categoryId": "mma",
@@ -154,12 +196,17 @@
       "priceCents": 4200,
       "id": "mma-guantes-de-entrenamiento",
       "imageUrl": "images/products/mma-guantes-de-entrenamiento.svg",
-      "imageAlt": "Guantes de entrenamiento. Guantes acolchados para sesiones de artes marciales.",
+      "imageAlt": "Guantes de entrenamiento, ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/mma-guantes-de-entrenamiento.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/mma-guantes-de-entrenamiento.svg",
+        "images/products/mma-guantes-de-entrenamiento-2.svg",
+        "images/products/mma-guantes-de-entrenamiento-3.svg"
+      ]
     },
     {
       "categoryId": "mma",
@@ -170,12 +217,17 @@
       "priceCents": 1400,
       "id": "mma-vendas-para-boxeo",
       "imageUrl": "images/products/mma-vendas-para-boxeo.svg",
-      "imageAlt": "Vendas para boxeo. Vendas para brindar soporte durante el entrenamiento.",
+      "imageAlt": "Vendas para boxeo, ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/mma-vendas-para-boxeo.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/mma-vendas-para-boxeo.svg",
+        "images/products/mma-vendas-para-boxeo-2.svg",
+        "images/products/mma-vendas-para-boxeo-3.svg"
+      ]
     },
     {
       "categoryId": "mma",
@@ -186,12 +238,17 @@
       "priceCents": 1190,
       "id": "mma-protector-bucal",
       "imageUrl": "images/products/mma-protector-bucal.svg",
-      "imageAlt": "Protector bucal. Protector moldeable para entrenamiento de contacto.",
+      "imageAlt": "Protector bucal, ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/mma-protector-bucal.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/mma-protector-bucal.svg",
+        "images/products/mma-protector-bucal-2.svg",
+        "images/products/mma-protector-bucal-3.svg"
+      ]
     },
     {
       "categoryId": "volleyball",
@@ -202,12 +259,17 @@
       "priceCents": 2675,
       "id": "volleyball-balon-set-point",
       "imageUrl": "images/products/volleyball-balon-set-point.svg",
-      "imageAlt": "Balón Set Point. Balón de volleyball para prácticas y partidos.",
+      "imageAlt": "Balón Set Point, ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/volleyball-balon-set-point.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/volleyball-balon-set-point.svg",
+        "images/products/volleyball-balon-set-point-2.svg",
+        "images/products/volleyball-balon-set-point-3.svg"
+      ]
     },
     {
       "categoryId": "volleyball",
@@ -218,12 +280,17 @@
       "priceCents": 1975,
       "id": "volleyball-rodilleras-flex",
       "imageUrl": "images/products/volleyball-rodilleras-flex.svg",
-      "imageAlt": "Rodilleras Flex. Rodilleras acolchadas para protegerte al jugar.",
+      "imageAlt": "Rodilleras Flex, ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/volleyball-rodilleras-flex.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/volleyball-rodilleras-flex.svg",
+        "images/products/volleyball-rodilleras-flex-2.svg",
+        "images/products/volleyball-rodilleras-flex-3.svg"
+      ]
     },
     {
       "categoryId": "volleyball",
@@ -234,12 +301,17 @@
       "priceCents": 1050,
       "id": "volleyball-munequeras-de-soporte",
       "imageUrl": "images/products/volleyball-munequeras-de-soporte.svg",
-      "imageAlt": "Muñequeras de soporte. Muñequeras elásticas para acompañar el entrenamiento.",
+      "imageAlt": "Muñequeras de soporte, ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/volleyball-munequeras-de-soporte.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/volleyball-munequeras-de-soporte.svg",
+        "images/products/volleyball-munequeras-de-soporte-2.svg",
+        "images/products/volleyball-munequeras-de-soporte-3.svg"
+      ]
     },
     {
       "categoryId": "ropa",
@@ -250,12 +322,17 @@
       "priceCents": 2400,
       "id": "ropa-camiseta-move",
       "imageUrl": "images/products/ropa-camiseta-move.svg",
-      "imageAlt": "Camiseta Move. Camiseta ligera de manga corta para actividad física.",
+      "imageAlt": "Camiseta Move, ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/ropa-camiseta-move.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/ropa-camiseta-move.svg",
+        "images/products/ropa-camiseta-move-2.svg",
+        "images/products/ropa-camiseta-move-3.svg"
+      ]
     },
     {
       "categoryId": "ropa",
@@ -266,12 +343,17 @@
       "priceCents": 3990,
       "id": "ropa-sudadera-warm-up",
       "imageUrl": "images/products/ropa-sudadera-warm-up.svg",
-      "imageAlt": "Sudadera Warm Up. Sudadera cómoda para calentamiento y uso diario.",
+      "imageAlt": "Sudadera Warm Up, ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/ropa-sudadera-warm-up.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/ropa-sudadera-warm-up.svg",
+        "images/products/ropa-sudadera-warm-up-2.svg",
+        "images/products/ropa-sudadera-warm-up-3.svg"
+      ]
     },
     {
       "categoryId": "ropa",
@@ -282,12 +364,17 @@
       "priceCents": 3150,
       "id": "ropa-pantalon-training-flex",
       "imageUrl": "images/products/ropa-pantalon-training-flex.svg",
-      "imageAlt": "Pantalón Training Flex. Pantalón flexible para entrenamientos y movilidad.",
+      "imageAlt": "Pantalón Training Flex, ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/ropa-pantalon-training-flex.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/ropa-pantalon-training-flex.svg",
+        "images/products/ropa-pantalon-training-flex-2.svg",
+        "images/products/ropa-pantalon-training-flex-3.svg"
+      ]
     },
     {
       "categoryId": "running",
@@ -298,12 +385,17 @@
       "priceCents": 7490,
       "id": "running-zapatillas-pace-run",
       "imageUrl": "images/products/running-zapatillas-pace-run.svg",
-      "imageAlt": "Zapatillas Pace Run. Zapatillas para correr con diseño ligero.",
+      "imageAlt": "Zapatillas Pace Run, ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/running-zapatillas-pace-run.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/running-zapatillas-pace-run.svg",
+        "images/products/running-zapatillas-pace-run-2.svg",
+        "images/products/running-zapatillas-pace-run-3.svg"
+      ]
     },
     {
       "categoryId": "running",
@@ -314,12 +406,17 @@
       "priceCents": 1350,
       "id": "running-botella-trail-600-ml",
       "imageUrl": "images/products/running-botella-trail-600-ml.svg",
-      "imageAlt": "Botella Trail 600 ml. Botella reutilizable para llevar agua durante la carrera.",
+      "imageAlt": "Botella Trail 600 ml, ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/running-botella-trail-600-ml.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/running-botella-trail-600-ml.svg",
+        "images/products/running-botella-trail-600-ml-2.svg",
+        "images/products/running-botella-trail-600-ml-3.svg"
+      ]
     },
     {
       "categoryId": "running",
@@ -330,12 +427,17 @@
       "priceCents": 1700,
       "id": "running-cinturon-para-correr",
       "imageUrl": "images/products/running-cinturon-para-correr.svg",
-      "imageAlt": "Cinturón para correr. Cinturón ajustable para llevar objetos pequeños al correr.",
+      "imageAlt": "Cinturón para correr, ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/running-cinturon-para-correr.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/running-cinturon-para-correr.svg",
+        "images/products/running-cinturon-para-correr-2.svg",
+        "images/products/running-cinturon-para-correr-3.svg"
+      ]
     },
     {
       "categoryId": "ciclismo",
@@ -346,12 +448,17 @@
       "priceCents": 4900,
       "id": "ciclismo-casco-urban-ride",
       "imageUrl": "images/products/ciclismo-casco-urban-ride.svg",
-      "imageAlt": "Casco Urban Ride. Casco ajustable para protegerte en recorridos urbanos.",
+      "imageAlt": "Casco Urban Ride, ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/ciclismo-casco-urban-ride.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/ciclismo-casco-urban-ride.svg",
+        "images/products/ciclismo-casco-urban-ride-2.svg",
+        "images/products/ciclismo-casco-urban-ride-3.svg"
+      ]
     },
     {
       "categoryId": "ciclismo",
@@ -362,12 +469,17 @@
       "priceCents": 1200,
       "id": "ciclismo-portabotella-road",
       "imageUrl": "images/products/ciclismo-portabotella-road.svg",
-      "imageAlt": "Portabotella Road. Soporte para mantener la botella al alcance en bicicleta.",
+      "imageAlt": "Portabotella Road, ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/ciclismo-portabotella-road.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/ciclismo-portabotella-road.svg",
+        "images/products/ciclismo-portabotella-road-2.svg",
+        "images/products/ciclismo-portabotella-road-3.svg"
+      ]
     },
     {
       "categoryId": "ciclismo",
@@ -378,12 +490,17 @@
       "priceCents": 2390,
       "id": "ciclismo-luces-recargables-2",
       "imageUrl": "images/products/ciclismo-luces-recargables-2.svg",
-      "imageAlt": "Luces recargables (2). Juego de luces recargables para mejorar la visibilidad.",
+      "imageAlt": "Luces recargables (2), ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/ciclismo-luces-recargables-2.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/ciclismo-luces-recargables-2.svg",
+        "images/products/ciclismo-luces-recargables-2-2.svg",
+        "images/products/ciclismo-luces-recargables-2-3.svg"
+      ]
     },
     {
       "categoryId": "fitness",
@@ -394,12 +511,17 @@
       "priceCents": 3200,
       "id": "fitness-mancuernas-2-3-kg",
       "imageUrl": "images/products/fitness-mancuernas-2-3-kg.svg",
-      "imageAlt": "Mancuernas (2 × 3 kg). Par de mancuernas de 3 kg para ejercicios de fuerza.",
+      "imageAlt": "Mancuernas (2 × 3 kg), ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/fitness-mancuernas-2-3-kg.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/fitness-mancuernas-2-3-kg.svg",
+        "images/products/fitness-mancuernas-2-3-kg-2.svg",
+        "images/products/fitness-mancuernas-2-3-kg-3.svg"
+      ]
     },
     {
       "categoryId": "fitness",
@@ -410,12 +532,17 @@
       "priceCents": 2750,
       "id": "fitness-mat-de-yoga-comfort",
       "imageUrl": "images/products/fitness-mat-de-yoga-comfort.svg",
-      "imageAlt": "Mat de yoga Comfort. Mat acolchado para yoga, estiramientos y movilidad.",
+      "imageAlt": "Mat de yoga Comfort, ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/fitness-mat-de-yoga-comfort.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/fitness-mat-de-yoga-comfort.svg",
+        "images/products/fitness-mat-de-yoga-comfort-2.svg",
+        "images/products/fitness-mat-de-yoga-comfort-3.svg"
+      ]
     },
     {
       "categoryId": "fitness",
@@ -426,12 +553,17 @@
       "priceCents": 1590,
       "id": "fitness-bandas-elasticas-3",
       "imageUrl": "images/products/fitness-bandas-elasticas-3.svg",
-      "imageAlt": "Bandas elásticas (3). Juego de bandas de resistencia para rutinas variadas.",
+      "imageAlt": "Bandas elásticas (3), ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/fitness-bandas-elasticas-3.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/fitness-bandas-elasticas-3.svg",
+        "images/products/fitness-bandas-elasticas-3-2.svg",
+        "images/products/fitness-bandas-elasticas-3-3.svg"
+      ]
     },
     {
       "categoryId": "natacion",
@@ -442,12 +574,17 @@
       "priceCents": 1890,
       "id": "natacion-gafas-aqua-fit",
       "imageUrl": "images/products/natacion-gafas-aqua-fit.svg",
-      "imageAlt": "Gafas Aqua Fit. Gafas ajustables para entrenar en piscina.",
+      "imageAlt": "Gafas Aqua Fit, ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/natacion-gafas-aqua-fit.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/natacion-gafas-aqua-fit.svg",
+        "images/products/natacion-gafas-aqua-fit-2.svg",
+        "images/products/natacion-gafas-aqua-fit-3.svg"
+      ]
     },
     {
       "categoryId": "natacion",
@@ -458,12 +595,17 @@
       "priceCents": 875,
       "id": "natacion-gorro-de-natacion",
       "imageUrl": "images/products/natacion-gorro-de-natacion.svg",
-      "imageAlt": "Gorro de natación. Gorro elástico para sesiones de natación.",
+      "imageAlt": "Gorro de natación, ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/natacion-gorro-de-natacion.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/natacion-gorro-de-natacion.svg",
+        "images/products/natacion-gorro-de-natacion-2.svg",
+        "images/products/natacion-gorro-de-natacion-3.svg"
+      ]
     },
     {
       "categoryId": "natacion",
@@ -474,12 +616,17 @@
       "priceCents": 1600,
       "id": "natacion-pull-buoy-de-entrenamiento",
       "imageUrl": "images/products/natacion-pull-buoy-de-entrenamiento.svg",
-      "imageAlt": "Pull buoy de entrenamiento. Flotador de entrenamiento para ejercicios de técnica.",
+      "imageAlt": "Pull buoy de entrenamiento, ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/natacion-pull-buoy-de-entrenamiento.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/natacion-pull-buoy-de-entrenamiento.svg",
+        "images/products/natacion-pull-buoy-de-entrenamiento-2.svg",
+        "images/products/natacion-pull-buoy-de-entrenamiento-3.svg"
+      ]
     },
     {
       "categoryId": "outdoor",
@@ -490,12 +637,17 @@
       "priceCents": 5800,
       "id": "outdoor-mochila-summit-20-l",
       "imageUrl": "images/products/outdoor-mochila-summit-20-l.svg",
-      "imageAlt": "Mochila Summit 20 L. Mochila de 20 litros para caminatas y excursiones.",
+      "imageAlt": "Mochila Summit 20 L, ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/outdoor-mochila-summit-20-l.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/outdoor-mochila-summit-20-l.svg",
+        "images/products/outdoor-mochila-summit-20-l-2.svg",
+        "images/products/outdoor-mochila-summit-20-l-3.svg"
+      ]
     },
     {
       "categoryId": "outdoor",
@@ -506,12 +658,17 @@
       "priceCents": 2190,
       "id": "outdoor-linterna-trail-mini",
       "imageUrl": "images/products/outdoor-linterna-trail-mini.svg",
-      "imageAlt": "Linterna Trail Mini. Linterna compacta para recorridos al aire libre.",
+      "imageAlt": "Linterna Trail Mini, ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/outdoor-linterna-trail-mini.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/outdoor-linterna-trail-mini.svg",
+        "images/products/outdoor-linterna-trail-mini-2.svg",
+        "images/products/outdoor-linterna-trail-mini-3.svg"
+      ]
     },
     {
       "categoryId": "outdoor",
@@ -522,12 +679,17 @@
       "priceCents": 1950,
       "id": "outdoor-botella-termica-trek",
       "imageUrl": "images/products/outdoor-botella-termica-trek.svg",
-      "imageAlt": "Botella térmica Trek. Botella térmica para llevar bebidas en excursiones.",
+      "imageAlt": "Botella térmica Trek, ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/outdoor-botella-termica-trek.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/outdoor-botella-termica-trek.svg",
+        "images/products/outdoor-botella-termica-trek-2.svg",
+        "images/products/outdoor-botella-termica-trek-3.svg"
+      ]
     },
     {
       "categoryId": "accesorios",
@@ -538,12 +700,17 @@
       "priceCents": 1150,
       "id": "accesorios-cuerda-de-salto-speed",
       "imageUrl": "images/products/accesorios-cuerda-de-salto-speed.svg",
-      "imageAlt": "Cuerda de salto Speed. Cuerda ajustable para calentamiento y ejercicio cardiovascular.",
+      "imageAlt": "Cuerda de salto Speed, ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/accesorios-cuerda-de-salto-speed.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/accesorios-cuerda-de-salto-speed.svg",
+        "images/products/accesorios-cuerda-de-salto-speed-2.svg",
+        "images/products/accesorios-cuerda-de-salto-speed-3.svg"
+      ]
     },
     {
       "categoryId": "accesorios",
@@ -554,12 +721,17 @@
       "priceCents": 1090,
       "id": "accesorios-shaker-deportivo-700-ml",
       "imageUrl": "images/products/accesorios-shaker-deportivo-700-ml.svg",
-      "imageAlt": "Shaker deportivo 700 ml. Vaso mezclador reutilizable de 700 ml.",
+      "imageAlt": "Shaker deportivo 700 ml, ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/accesorios-shaker-deportivo-700-ml.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/accesorios-shaker-deportivo-700-ml.svg",
+        "images/products/accesorios-shaker-deportivo-700-ml-2.svg",
+        "images/products/accesorios-shaker-deportivo-700-ml-3.svg"
+      ]
     },
     {
       "categoryId": "accesorios",
@@ -570,12 +742,17 @@
       "priceCents": 1290,
       "id": "accesorios-toalla-deportiva-dry",
       "imageUrl": "images/products/accesorios-toalla-deportiva-dry.svg",
-      "imageAlt": "Toalla deportiva Dry. Toalla compacta para gimnasio y entrenamiento.",
+      "imageAlt": "Toalla deportiva Dry, ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/accesorios-toalla-deportiva-dry.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/accesorios-toalla-deportiva-dry.svg",
+        "images/products/accesorios-toalla-deportiva-dry-2.svg",
+        "images/products/accesorios-toalla-deportiva-dry-3.svg"
+      ]
     },
     {
       "categoryId": "futbol",
@@ -585,13 +762,17 @@
       "description": "Protección ligera para entrenamientos y partidos.",
       "priceCents": 1850,
       "id": "futbol-espinilleras-shield",
-      "imageUrl": "images/products/futbol-espinilleras-shield.svg",
-      "imageAlt": "Espinilleras Shield. Protección ligera para entrenamientos y partidos.",
+      "imageUrl": "images/Espinilleras%20negras%20con%20detalles%20ne%C3%B3n.webp",
+      "imageAlt": "Espinilleras Shield, imagen de producto Apex Sports",
       "imageCredit": "Apex Sports",
-      "imageLicense": "CC BY 4.0",
-      "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
-      "imageSourceUrl": "images/products/futbol-espinilleras-shield.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageLicense": "Not specified",
+      "imageSourceUrl": "images/Espinilleras%20negras%20con%20detalles%20ne%C3%B3n.webp",
+      "imageSourceTitle": "Imagen de producto Apex Sports",
+      "imageUrls": [
+        "images/Espinilleras%20negras%20con%20detalles%20ne%C3%B3n.webp",
+        "images/Espinilleras%20deportivas%20negro%20ne%C3%B3n.webp",
+        "images/Protecciones%20de%20f%C3%BAtbol%20negras%20con%20detalles%20ne%C3%B3n.webp"
+      ]
     },
     {
       "categoryId": "futbol",
@@ -601,13 +782,17 @@
       "description": "Suela con tacos para mejorar el agarre en cancha.",
       "priceCents": 5990,
       "id": "futbol-botines-striker",
-      "imageUrl": "images/products/futbol-botines-striker.svg",
-      "imageAlt": "Botines Striker. Suela con tacos para mejorar el agarre en cancha.",
+      "imageUrl": "images/Botines%20de%20f%C3%BAtbol%20negros%20con%20detalles%20ne%C3%B3n.webp",
+      "imageAlt": "Botines Striker, imagen de producto Apex Sports",
       "imageCredit": "Apex Sports",
-      "imageLicense": "CC BY 4.0",
-      "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
-      "imageSourceUrl": "images/products/futbol-botines-striker.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageLicense": "Not specified",
+      "imageSourceUrl": "images/Botines%20de%20f%C3%BAtbol%20negros%20con%20detalles%20ne%C3%B3n.webp",
+      "imageSourceTitle": "Imagen de producto Apex Sports",
+      "imageUrls": [
+        "images/Botines%20de%20f%C3%BAtbol%20negros%20con%20detalles%20ne%C3%B3n.webp",
+        "images/Tacos%20de%20f%C3%BAtbol%20negros%20con%20detalles%20ne%C3%B3n.webp",
+        "images/Collage%20de%20Botines%20Negros%20Ne%C3%B3n.webp"
+      ]
     },
     {
       "categoryId": "futbol",
@@ -617,13 +802,17 @@
       "description": "Tejido elástico y ajuste cómodo para jugar.",
       "priceCents": 975,
       "id": "futbol-medias-match",
-      "imageUrl": "images/products/futbol-medias-match.svg",
-      "imageAlt": "Medias Match. Tejido elástico y ajuste cómodo para jugar.",
+      "imageUrl": "images/Medias%20deportivas%20negras%20con%20detalles%20ne%C3%B3n.webp",
+      "imageAlt": "Medias Match, imagen de producto Apex Sports",
       "imageCredit": "Apex Sports",
-      "imageLicense": "CC BY 4.0",
-      "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
-      "imageSourceUrl": "images/products/futbol-medias-match.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageLicense": "Not specified",
+      "imageSourceUrl": "images/Medias%20deportivas%20negras%20con%20detalles%20ne%C3%B3n.webp",
+      "imageSourceTitle": "Imagen de producto Apex Sports",
+      "imageUrls": [
+        "images/Medias%20deportivas%20negras%20con%20detalles%20ne%C3%B3n.webp",
+        "images/Calcetines%20deportivos%20negros%20con%20detalles%20ne%C3%B3n.webp",
+        "images/Calcetines%20deportivos%20negros%20con%20detalles%20ne%C3%B3n%20(1).webp"
+      ]
     },
     {
       "categoryId": "futbol",
@@ -633,13 +822,17 @@
       "description": "Incluye aguja para inflar balones deportivos.",
       "priceCents": 890,
       "id": "futbol-bomba-de-aire-compact",
-      "imageUrl": "images/products/futbol-bomba-de-aire-compact.svg",
-      "imageAlt": "Bomba de aire Compact. Incluye aguja para inflar balones deportivos.",
+      "imageUrl": "images/Bomba%20deportiva%20Apex%20Sports%20port%C3%A1til.webp",
+      "imageAlt": "Bomba de aire Compact, imagen de producto Apex Sports",
       "imageCredit": "Apex Sports",
-      "imageLicense": "CC BY 4.0",
-      "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
-      "imageSourceUrl": "images/products/futbol-bomba-de-aire-compact.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageLicense": "Not specified",
+      "imageSourceUrl": "images/Bomba%20deportiva%20Apex%20Sports%20port%C3%A1til.webp",
+      "imageSourceTitle": "Imagen de producto Apex Sports",
+      "imageUrls": [
+        "images/Bomba%20deportiva%20Apex%20Sports%20port%C3%A1til.webp",
+        "images/Bomba%20de%20aire%20APEX%20SPORTS.webp",
+        "images/Bomba%20de%20aire%20Apex%20Sports%20con%20accesorios.webp"
+      ]
     },
     {
       "categoryId": "futbol",
@@ -649,13 +842,17 @@
       "description": "Palma adherente y ajuste seguro en la muñeca.",
       "priceCents": 3200,
       "id": "futbol-guantes-de-arquero-grip",
-      "imageUrl": "images/products/futbol-guantes-de-arquero-grip.svg",
-      "imageAlt": "Guantes de arquero Grip. Palma adherente y ajuste seguro en la muñeca.",
+      "imageUrl": "images/Guantes%20de%20arquero%20Apex%20Sports.webp",
+      "imageAlt": "Guantes de arquero Grip, imagen de producto Apex Sports",
       "imageCredit": "Apex Sports",
-      "imageLicense": "CC BY 4.0",
-      "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
-      "imageSourceUrl": "images/products/futbol-guantes-de-arquero-grip.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageLicense": "Not specified",
+      "imageSourceUrl": "images/Guantes%20de%20arquero%20Apex%20Sports.webp",
+      "imageSourceTitle": "Imagen de producto Apex Sports",
+      "imageUrls": [
+        "images/Guantes%20de%20arquero%20Apex%20Sports.webp",
+        "images/Guantes%20de%20portero%20Apex%20Sports.webp",
+        "images/Guantes%20Apex_%20rendimiento%20m%C3%A1ximo.webp"
+      ]
     },
     {
       "categoryId": "futbol",
@@ -665,13 +862,16 @@
       "description": "Tela liviana para practicar con comodidad.",
       "priceCents": 2750,
       "id": "futbol-camiseta-de-entrenamiento",
-      "imageUrl": "images/products/futbol-camiseta-de-entrenamiento.svg",
-      "imageAlt": "Camiseta de entrenamiento. Tela liviana para practicar con comodidad.",
+      "imageUrl": "images/Camiseta%20deportiva%20Apex%20en%20ne%C3%B3n.webp",
+      "imageAlt": "Camiseta de entrenamiento, imagen de producto Apex Sports",
       "imageCredit": "Apex Sports",
-      "imageLicense": "CC BY 4.0",
-      "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
-      "imageSourceUrl": "images/products/futbol-camiseta-de-entrenamiento.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageLicense": "Not specified",
+      "imageSourceUrl": "images/Camiseta%20deportiva%20Apex%20en%20ne%C3%B3n.webp",
+      "imageSourceTitle": "Imagen de producto Apex Sports",
+      "imageUrls": [
+        "images/Camiseta%20deportiva%20Apex%20en%20ne%C3%B3n.webp",
+        "images/Mockup%20de%20camiseta%20deportiva%20Apex%20Sports.webp"
+      ]
     },
     {
       "categoryId": "futbol",
@@ -682,12 +882,17 @@
       "priceCents": 2290,
       "id": "futbol-balon-training",
       "imageUrl": "images/products/futbol-balon-training.svg",
-      "imageAlt": "Balón Training. Balón resistente para prácticas frecuentes.",
+      "imageAlt": "Balón Training, ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/futbol-balon-training.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/futbol-balon-training.svg",
+        "images/products/futbol-balon-training-2.svg",
+        "images/products/futbol-balon-training-3.svg"
+      ]
     },
     {
       "categoryId": "basketball",
@@ -698,12 +903,17 @@
       "priceCents": 7200,
       "id": "basketball-zapatillas-court-jump",
       "imageUrl": "images/products/basketball-zapatillas-court-jump.svg",
-      "imageAlt": "Zapatillas Court Jump. Suela con tracción para movimientos rápidos.",
+      "imageAlt": "Zapatillas Court Jump, ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/basketball-zapatillas-court-jump.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/basketball-zapatillas-court-jump.svg",
+        "images/products/basketball-zapatillas-court-jump-2.svg",
+        "images/products/basketball-zapatillas-court-jump-3.svg"
+      ]
     },
     {
       "categoryId": "basketball",
@@ -714,12 +924,17 @@
       "priceCents": 3450,
       "id": "basketball-balon-indoor-pro",
       "imageUrl": "images/products/basketball-balon-indoor-pro.svg",
-      "imageAlt": "Balón Indoor Pro. Superficie de agarre para juego en interiores.",
+      "imageAlt": "Balón Indoor Pro, ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/basketball-balon-indoor-pro.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/basketball-balon-indoor-pro.svg",
+        "images/products/basketball-balon-indoor-pro-2.svg",
+        "images/products/basketball-balon-indoor-pro-3.svg"
+      ]
     },
     {
       "categoryId": "basketball",
@@ -730,12 +945,17 @@
       "priceCents": 2990,
       "id": "basketball-camiseta-basket-team",
       "imageUrl": "images/products/basketball-camiseta-basket-team.svg",
-      "imageAlt": "Camiseta Basket Team. Prenda ligera de corte deportivo.",
+      "imageAlt": "Camiseta Basket Team, ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/basketball-camiseta-basket-team.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/basketball-camiseta-basket-team.svg",
+        "images/products/basketball-camiseta-basket-team-2.svg",
+        "images/products/basketball-camiseta-basket-team-3.svg"
+      ]
     },
     {
       "categoryId": "basketball",
@@ -746,12 +966,17 @@
       "priceCents": 1500,
       "id": "basketball-manga-de-compresion",
       "imageUrl": "images/products/basketball-manga-de-compresion.svg",
-      "imageAlt": "Manga de compresión. Ajuste elástico para entrenar con comodidad.",
+      "imageAlt": "Manga de compresión, ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/basketball-manga-de-compresion.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/basketball-manga-de-compresion.svg",
+        "images/products/basketball-manga-de-compresion-2.svg",
+        "images/products/basketball-manga-de-compresion-3.svg"
+      ]
     },
     {
       "categoryId": "basketball",
@@ -762,12 +987,17 @@
       "priceCents": 850,
       "id": "basketball-banda-para-la-cabeza",
       "imageUrl": "images/products/basketball-banda-para-la-cabeza.svg",
-      "imageAlt": "Banda para la cabeza. Tejido suave para mantener el ajuste durante el juego.",
+      "imageAlt": "Banda para la cabeza, ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/basketball-banda-para-la-cabeza.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/basketball-banda-para-la-cabeza.svg",
+        "images/products/basketball-banda-para-la-cabeza-2.svg",
+        "images/products/basketball-banda-para-la-cabeza-3.svg"
+      ]
     },
     {
       "categoryId": "basketball",
@@ -778,12 +1008,17 @@
       "priceCents": 925,
       "id": "basketball-bomba-para-balon",
       "imageUrl": "images/products/basketball-bomba-para-balon.svg",
-      "imageAlt": "Bomba para balón. Formato compacto para llevar a la cancha.",
+      "imageAlt": "Bomba para balón, ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/basketball-bomba-para-balon.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/basketball-bomba-para-balon.svg",
+        "images/products/basketball-bomba-para-balon-2.svg",
+        "images/products/basketball-bomba-para-balon-3.svg"
+      ]
     },
     {
       "categoryId": "basketball",
@@ -794,12 +1029,17 @@
       "priceCents": 2790,
       "id": "basketball-balon-outdoor",
       "imageUrl": "images/products/basketball-balon-outdoor.svg",
-      "imageAlt": "Balón Outdoor. Cubierta resistente para jugar al aire libre.",
+      "imageAlt": "Balón Outdoor, ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/basketball-balon-outdoor.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/basketball-balon-outdoor.svg",
+        "images/products/basketball-balon-outdoor-2.svg",
+        "images/products/basketball-balon-outdoor-3.svg"
+      ]
     },
     {
       "categoryId": "tennis",
@@ -810,12 +1050,17 @@
       "priceCents": 7900,
       "id": "tennis-raqueta-control-98",
       "imageUrl": "images/products/tennis-raqueta-control-98.svg",
-      "imageAlt": "Raqueta Control 98. Marco liviano para golpes con buen control.",
+      "imageAlt": "Raqueta Control 98, ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/tennis-raqueta-control-98.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/tennis-raqueta-control-98.svg",
+        "images/products/tennis-raqueta-control-98-2.svg",
+        "images/products/tennis-raqueta-control-98-3.svg"
+      ]
     },
     {
       "categoryId": "tennis",
@@ -826,12 +1071,17 @@
       "priceCents": 4490,
       "id": "tennis-bolso-para-raquetas",
       "imageUrl": "images/products/tennis-bolso-para-raquetas.svg",
-      "imageAlt": "Bolso para raquetas. Compartimentos para transportar equipo de juego.",
+      "imageAlt": "Bolso para raquetas, ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/tennis-bolso-para-raquetas.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/tennis-bolso-para-raquetas.svg",
+        "images/products/tennis-bolso-para-raquetas-2.svg",
+        "images/products/tennis-bolso-para-raquetas-3.svg"
+      ]
     },
     {
       "categoryId": "tennis",
@@ -842,12 +1092,17 @@
       "priceCents": 750,
       "id": "tennis-grip-antideslizante",
       "imageUrl": "images/products/tennis-grip-antideslizante.svg",
-      "imageAlt": "Grip antideslizante. Cinta de recambio para mejorar el agarre.",
+      "imageAlt": "Grip antideslizante, ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/tennis-grip-antideslizante.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/tennis-grip-antideslizante.svg",
+        "images/products/tennis-grip-antideslizante-2.svg",
+        "images/products/tennis-grip-antideslizante-3.svg"
+      ]
     },
     {
       "categoryId": "tennis",
@@ -858,12 +1113,17 @@
       "priceCents": 800,
       "id": "tennis-munequera-absorbente",
       "imageUrl": "images/products/tennis-munequera-absorbente.svg",
-      "imageAlt": "Muñequera absorbente. Tejido suave para acompañar el entrenamiento.",
+      "imageAlt": "Muñequera absorbente, ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/tennis-munequera-absorbente.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/tennis-munequera-absorbente.svg",
+        "images/products/tennis-munequera-absorbente-2.svg",
+        "images/products/tennis-munequera-absorbente-3.svg"
+      ]
     },
     {
       "categoryId": "tennis",
@@ -874,12 +1134,17 @@
       "priceCents": 1690,
       "id": "tennis-visera-court",
       "imageUrl": "images/products/tennis-visera-court.svg",
-      "imageAlt": "Visera Court. Visera ajustable para jugar al aire libre.",
+      "imageAlt": "Visera Court, ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/tennis-visera-court.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/tennis-visera-court.svg",
+        "images/products/tennis-visera-court-2.svg",
+        "images/products/tennis-visera-court-3.svg"
+      ]
     },
     {
       "categoryId": "tennis",
@@ -890,12 +1155,17 @@
       "priceCents": 1450,
       "id": "tennis-pelotas-match-3",
       "imageUrl": "images/products/tennis-pelotas-match-3.svg",
-      "imageAlt": "Pelotas Match (3). Pelotas para práctica y partidos recreativos.",
+      "imageAlt": "Pelotas Match (3), ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/tennis-pelotas-match-3.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/tennis-pelotas-match-3.svg",
+        "images/products/tennis-pelotas-match-3-2.svg",
+        "images/products/tennis-pelotas-match-3-3.svg"
+      ]
     },
     {
       "categoryId": "tennis",
@@ -906,12 +1176,17 @@
       "priceCents": 590,
       "id": "tennis-antivibrador-para-raqueta",
       "imageUrl": "images/products/tennis-antivibrador-para-raqueta.svg",
-      "imageAlt": "Antivibrador para raqueta. Accesorio pequeño para el encordado.",
+      "imageAlt": "Antivibrador para raqueta, ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/tennis-antivibrador-para-raqueta.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/tennis-antivibrador-para-raqueta.svg",
+        "images/products/tennis-antivibrador-para-raqueta-2.svg",
+        "images/products/tennis-antivibrador-para-raqueta-3.svg"
+      ]
     },
     {
       "categoryId": "mma",
@@ -922,12 +1197,17 @@
       "priceCents": 4800,
       "id": "mma-guantes-mma-sparring",
       "imageUrl": "images/products/mma-guantes-mma-sparring.svg",
-      "imageAlt": "Guantes MMA Sparring. Acolchado para entrenamiento controlado.",
+      "imageAlt": "Guantes MMA Sparring, ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/mma-guantes-mma-sparring.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/mma-guantes-mma-sparring.svg",
+        "images/products/mma-guantes-mma-sparring-2.svg",
+        "images/products/mma-guantes-mma-sparring-3.svg"
+      ]
     },
     {
       "categoryId": "mma",
@@ -938,12 +1218,17 @@
       "priceCents": 1250,
       "id": "mma-vendas-elasticas",
       "imageUrl": "images/products/mma-vendas-elasticas.svg",
-      "imageAlt": "Vendas elásticas. Soporte ajustable para sesiones de práctica.",
+      "imageAlt": "Vendas elásticas, ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/mma-vendas-elasticas.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/mma-vendas-elasticas.svg",
+        "images/products/mma-vendas-elasticas-2.svg",
+        "images/products/mma-vendas-elasticas-3.svg"
+      ]
     },
     {
       "categoryId": "mma",
@@ -954,12 +1239,17 @@
       "priceCents": 3490,
       "id": "mma-short-de-combate",
       "imageUrl": "images/products/mma-short-de-combate.svg",
-      "imageAlt": "Short de combate. Corte flexible para entrenamientos de contacto.",
+      "imageAlt": "Short de combate, ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/mma-short-de-combate.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/mma-short-de-combate.svg",
+        "images/products/mma-short-de-combate-2.svg",
+        "images/products/mma-short-de-combate-3.svg"
+      ]
     },
     {
       "categoryId": "mma",
@@ -970,12 +1260,17 @@
       "priceCents": 3900,
       "id": "mma-espinilleras-mma",
       "imageUrl": "images/products/mma-espinilleras-mma.svg",
-      "imageAlt": "Espinilleras MMA. Protección acolchada para entrenamiento.",
+      "imageAlt": "Espinilleras MMA, ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/mma-espinilleras-mma.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/mma-espinilleras-mma.svg",
+        "images/products/mma-espinilleras-mma-2.svg",
+        "images/products/mma-espinilleras-mma-3.svg"
+      ]
     },
     {
       "categoryId": "mma",
@@ -986,12 +1281,17 @@
       "priceCents": 1590,
       "id": "mma-cuerda-de-saltar-pro",
       "imageUrl": "images/products/mma-cuerda-de-saltar-pro.svg",
-      "imageAlt": "Cuerda de saltar Pro. Mangos cómodos para calentamiento y cardio.",
+      "imageAlt": "Cuerda de saltar Pro, ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/mma-cuerda-de-saltar-pro.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/mma-cuerda-de-saltar-pro.svg",
+        "images/products/mma-cuerda-de-saltar-pro-2.svg",
+        "images/products/mma-cuerda-de-saltar-pro-3.svg"
+      ]
     },
     {
       "categoryId": "mma",
@@ -1002,12 +1302,17 @@
       "priceCents": 8900,
       "id": "mma-saco-de-golpeo",
       "imageUrl": "images/products/mma-saco-de-golpeo.svg",
-      "imageAlt": "Saco de golpeo. Equipo de práctica para entrenar combinaciones.",
+      "imageAlt": "Saco de golpeo, ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/mma-saco-de-golpeo.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/mma-saco-de-golpeo.svg",
+        "images/products/mma-saco-de-golpeo-2.svg",
+        "images/products/mma-saco-de-golpeo-3.svg"
+      ]
     },
     {
       "categoryId": "mma",
@@ -1018,12 +1323,17 @@
       "priceCents": 1800,
       "id": "mma-coquilla-deportiva",
       "imageUrl": "images/products/mma-coquilla-deportiva.svg",
-      "imageAlt": "Coquilla deportiva. Protección con ajuste elástico.",
+      "imageAlt": "Coquilla deportiva, ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/mma-coquilla-deportiva.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/mma-coquilla-deportiva.svg",
+        "images/products/mma-coquilla-deportiva-2.svg",
+        "images/products/mma-coquilla-deportiva-3.svg"
+      ]
     },
     {
       "categoryId": "volleyball",
@@ -1034,12 +1344,17 @@
       "priceCents": 3200,
       "id": "volleyball-balon-indoor-match",
       "imageUrl": "images/products/volleyball-balon-indoor-match.svg",
-      "imageAlt": "Balón Indoor Match. Balón suave al contacto para juego en cancha.",
+      "imageAlt": "Balón Indoor Match, ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/volleyball-balon-indoor-match.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/volleyball-balon-indoor-match.svg",
+        "images/products/volleyball-balon-indoor-match-2.svg",
+        "images/products/volleyball-balon-indoor-match-3.svg"
+      ]
     },
     {
       "categoryId": "volleyball",
@@ -1050,12 +1365,17 @@
       "priceCents": 5490,
       "id": "volleyball-red-portatil",
       "imageUrl": "images/products/volleyball-red-portatil.svg",
-      "imageAlt": "Red portátil. Red ajustable para prácticas recreativas.",
+      "imageAlt": "Red portátil, ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/volleyball-red-portatil.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/volleyball-red-portatil.svg",
+        "images/products/volleyball-red-portatil-2.svg",
+        "images/products/volleyball-red-portatil-3.svg"
+      ]
     },
     {
       "categoryId": "volleyball",
@@ -1066,12 +1386,17 @@
       "priceCents": 2250,
       "id": "volleyball-short-de-volleyball",
       "imageUrl": "images/products/volleyball-short-de-volleyball.svg",
-      "imageAlt": "Short de volleyball. Prenda ligera con libertad de movimiento.",
+      "imageAlt": "Short de volleyball, ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/volleyball-short-de-volleyball.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/volleyball-short-de-volleyball.svg",
+        "images/products/volleyball-short-de-volleyball-2.svg",
+        "images/products/volleyball-short-de-volleyball-3.svg"
+      ]
     },
     {
       "categoryId": "volleyball",
@@ -1082,12 +1407,17 @@
       "priceCents": 1600,
       "id": "volleyball-manguitos-deportivos",
       "imageUrl": "images/products/volleyball-manguitos-deportivos.svg",
-      "imageAlt": "Manguitos deportivos. Mangas elásticas para entrenar y jugar.",
+      "imageAlt": "Manguitos deportivos, ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/volleyball-manguitos-deportivos.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/volleyball-manguitos-deportivos.svg",
+        "images/products/volleyball-manguitos-deportivos-2.svg",
+        "images/products/volleyball-manguitos-deportivos-3.svg"
+      ]
     },
     {
       "categoryId": "volleyball",
@@ -1098,12 +1428,17 @@
       "priceCents": 2990,
       "id": "volleyball-balon-beach",
       "imageUrl": "images/products/volleyball-balon-beach.svg",
-      "imageAlt": "Balón Beach. Balón para jugar en arena y exteriores.",
+      "imageAlt": "Balón Beach, ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/volleyball-balon-beach.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/volleyball-balon-beach.svg",
+        "images/products/volleyball-balon-beach-2.svg",
+        "images/products/volleyball-balon-beach-3.svg"
+      ]
     },
     {
       "categoryId": "volleyball",
@@ -1114,12 +1449,17 @@
       "priceCents": 650,
       "id": "volleyball-cinta-para-dedos",
       "imageUrl": "images/products/volleyball-cinta-para-dedos.svg",
-      "imageAlt": "Cinta para dedos. Soporte adhesivo para entrenamientos.",
+      "imageAlt": "Cinta para dedos, ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/volleyball-cinta-para-dedos.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/volleyball-cinta-para-dedos.svg",
+        "images/products/volleyball-cinta-para-dedos-2.svg",
+        "images/products/volleyball-cinta-para-dedos-3.svg"
+      ]
     },
     {
       "categoryId": "volleyball",
@@ -1130,12 +1470,17 @@
       "priceCents": 3500,
       "id": "volleyball-bolso-deportivo-team",
       "imageUrl": "images/products/volleyball-bolso-deportivo-team.svg",
-      "imageAlt": "Bolso deportivo Team. Espacio para guardar ropa y accesorios.",
+      "imageAlt": "Bolso deportivo Team, ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/volleyball-bolso-deportivo-team.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/volleyball-bolso-deportivo-team.svg",
+        "images/products/volleyball-bolso-deportivo-team-2.svg",
+        "images/products/volleyball-bolso-deportivo-team-3.svg"
+      ]
     },
     {
       "categoryId": "ropa",
@@ -1146,12 +1491,17 @@
       "priceCents": 3490,
       "id": "ropa-leggings-active",
       "imageUrl": "images/products/ropa-leggings-active.svg",
-      "imageAlt": "Leggings Active. Tejido elástico para entrenar con comodidad.",
+      "imageAlt": "Leggings Active, ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/ropa-leggings-active.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/ropa-leggings-active.svg",
+        "images/products/ropa-leggings-active-2.svg",
+        "images/products/ropa-leggings-active-3.svg"
+      ]
     },
     {
       "categoryId": "ropa",
@@ -1162,12 +1512,17 @@
       "priceCents": 2200,
       "id": "ropa-short-deportivo-move",
       "imageUrl": "images/products/ropa-short-deportivo-move.svg",
-      "imageAlt": "Short deportivo Move. Corte cómodo para correr o entrenar.",
+      "imageAlt": "Short deportivo Move, ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/ropa-short-deportivo-move.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/ropa-short-deportivo-move.svg",
+        "images/products/ropa-short-deportivo-move-2.svg",
+        "images/products/ropa-short-deportivo-move-3.svg"
+      ]
     },
     {
       "categoryId": "ropa",
@@ -1178,12 +1533,17 @@
       "priceCents": 2850,
       "id": "ropa-top-deportivo-support",
       "imageUrl": "images/products/ropa-top-deportivo-support.svg",
-      "imageAlt": "Top deportivo Support. Ajuste cómodo para actividades de impacto moderado.",
+      "imageAlt": "Top deportivo Support, ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/ropa-top-deportivo-support.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/ropa-top-deportivo-support.svg",
+        "images/products/ropa-top-deportivo-support-2.svg",
+        "images/products/ropa-top-deportivo-support-3.svg"
+      ]
     },
     {
       "categoryId": "ropa",
@@ -1194,12 +1554,17 @@
       "priceCents": 4600,
       "id": "ropa-chaqueta-ligera-wind",
       "imageUrl": "images/products/ropa-chaqueta-ligera-wind.svg",
-      "imageAlt": "Chaqueta ligera Wind. Capa liviana para actividades al aire libre.",
+      "imageAlt": "Chaqueta ligera Wind, ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/ropa-chaqueta-ligera-wind.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/ropa-chaqueta-ligera-wind.svg",
+        "images/products/ropa-chaqueta-ligera-wind-2.svg",
+        "images/products/ropa-chaqueta-ligera-wind-3.svg"
+      ]
     },
     {
       "categoryId": "ropa",
@@ -1210,12 +1575,17 @@
       "priceCents": 2590,
       "id": "ropa-polo-dry-fit",
       "imageUrl": "images/products/ropa-polo-dry-fit.svg",
-      "imageAlt": "Polo Dry Fit. Tela ligera para sesiones de entrenamiento.",
+      "imageAlt": "Polo Dry Fit, ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/ropa-polo-dry-fit.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/ropa-polo-dry-fit.svg",
+        "images/products/ropa-polo-dry-fit-2.svg",
+        "images/products/ropa-polo-dry-fit-3.svg"
+      ]
     },
     {
       "categoryId": "ropa",
@@ -1226,12 +1596,17 @@
       "priceCents": 1200,
       "id": "ropa-medias-deportivas-3",
       "imageUrl": "images/products/ropa-medias-deportivas-3.svg",
-      "imageAlt": "Medias deportivas (3). Paquete de medias con ajuste elástico.",
+      "imageAlt": "Medias deportivas (3), ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/ropa-medias-deportivas-3.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/ropa-medias-deportivas-3.svg",
+        "images/products/ropa-medias-deportivas-3-2.svg",
+        "images/products/ropa-medias-deportivas-3-3.svg"
+      ]
     },
     {
       "categoryId": "ropa",
@@ -1242,12 +1617,17 @@
       "priceCents": 1750,
       "id": "ropa-gorra-deportiva",
       "imageUrl": "images/products/ropa-gorra-deportiva.svg",
-      "imageAlt": "Gorra deportiva. Visera curva y ajuste posterior.",
+      "imageAlt": "Gorra deportiva, ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/ropa-gorra-deportiva.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/ropa-gorra-deportiva.svg",
+        "images/products/ropa-gorra-deportiva-2.svg",
+        "images/products/ropa-gorra-deportiva-3.svg"
+      ]
     },
     {
       "categoryId": "running",
@@ -1258,12 +1638,17 @@
       "priceCents": 8200,
       "id": "running-zapatillas-road-pace",
       "imageUrl": "images/products/running-zapatillas-road-pace.svg",
-      "imageAlt": "Zapatillas Road Pace. Amortiguación ligera para recorridos diarios.",
+      "imageAlt": "Zapatillas Road Pace, ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/running-zapatillas-road-pace.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/running-zapatillas-road-pace.svg",
+        "images/products/running-zapatillas-road-pace-2.svg",
+        "images/products/running-zapatillas-road-pace-3.svg"
+      ]
     },
     {
       "categoryId": "running",
@@ -1274,12 +1659,17 @@
       "priceCents": 3800,
       "id": "running-reloj-deportivo-basico",
       "imageUrl": "images/products/running-reloj-deportivo-basico.svg",
-      "imageAlt": "Reloj deportivo básico. Cronómetro y registro de tiempo para entrenar.",
+      "imageAlt": "Reloj deportivo básico, ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/running-reloj-deportivo-basico.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/running-reloj-deportivo-basico.svg",
+        "images/products/running-reloj-deportivo-basico-2.svg",
+        "images/products/running-reloj-deportivo-basico-3.svg"
+      ]
     },
     {
       "categoryId": "running",
@@ -1290,12 +1680,17 @@
       "priceCents": 1390,
       "id": "running-medias-run-2-pares",
       "imageUrl": "images/products/running-medias-run-2-pares.svg",
-      "imageAlt": "Medias Run (2 pares). Ajuste cómodo para recorridos de entrenamiento.",
+      "imageAlt": "Medias Run (2 pares), ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/running-medias-run-2-pares.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/running-medias-run-2-pares.svg",
+        "images/products/running-medias-run-2-pares-2.svg",
+        "images/products/running-medias-run-2-pares-3.svg"
+      ]
     },
     {
       "categoryId": "running",
@@ -1306,12 +1701,17 @@
       "priceCents": 1800,
       "id": "running-gorra-run-mesh",
       "imageUrl": "images/products/running-gorra-run-mesh.svg",
-      "imageAlt": "Gorra Run Mesh. Paneles ligeros para actividades al aire libre.",
+      "imageAlt": "Gorra Run Mesh, ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/running-gorra-run-mesh.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/running-gorra-run-mesh.svg",
+        "images/products/running-gorra-run-mesh-2.svg",
+        "images/products/running-gorra-run-mesh-3.svg"
+      ]
     },
     {
       "categoryId": "running",
@@ -1322,12 +1722,17 @@
       "priceCents": 1450,
       "id": "running-luz-para-corredor",
       "imageUrl": "images/products/running-luz-para-corredor.svg",
-      "imageAlt": "Luz para corredor. Luz compacta para mejorar la visibilidad.",
+      "imageAlt": "Luz para corredor, ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/running-luz-para-corredor.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/running-luz-para-corredor.svg",
+        "images/products/running-luz-para-corredor-2.svg",
+        "images/products/running-luz-para-corredor-3.svg"
+      ]
     },
     {
       "categoryId": "running",
@@ -1338,12 +1743,17 @@
       "priceCents": 2600,
       "id": "running-camiseta-tecnica-run",
       "imageUrl": "images/products/running-camiseta-tecnica-run.svg",
-      "imageAlt": "Camiseta técnica Run. Tejido ligero para correr.",
+      "imageAlt": "Camiseta técnica Run, ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/running-camiseta-tecnica-run.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/running-camiseta-tecnica-run.svg",
+        "images/products/running-camiseta-tecnica-run-2.svg",
+        "images/products/running-camiseta-tecnica-run-3.svg"
+      ]
     },
     {
       "categoryId": "running",
@@ -1354,12 +1764,17 @@
       "priceCents": 950,
       "id": "running-banda-reflectiva",
       "imageUrl": "images/products/running-banda-reflectiva.svg",
-      "imageAlt": "Banda reflectiva. Accesorio ajustable para recorridos nocturnos.",
+      "imageAlt": "Banda reflectiva, ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/running-banda-reflectiva.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/running-banda-reflectiva.svg",
+        "images/products/running-banda-reflectiva-2.svg",
+        "images/products/running-banda-reflectiva-3.svg"
+      ]
     },
     {
       "categoryId": "ciclismo",
@@ -1370,12 +1785,17 @@
       "priceCents": 2100,
       "id": "ciclismo-guantes-road-grip",
       "imageUrl": "images/products/ciclismo-guantes-road-grip.svg",
-      "imageAlt": "Guantes Road Grip. Palma acolchada para sujetar el manubrio.",
+      "imageAlt": "Guantes Road Grip, ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/ciclismo-guantes-road-grip.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/ciclismo-guantes-road-grip.svg",
+        "images/products/ciclismo-guantes-road-grip-2.svg",
+        "images/products/ciclismo-guantes-road-grip-3.svg"
+      ]
     },
     {
       "categoryId": "ciclismo",
@@ -1386,12 +1806,17 @@
       "priceCents": 1150,
       "id": "ciclismo-botella-para-bicicleta",
       "imageUrl": "images/products/ciclismo-botella-para-bicicleta.svg",
-      "imageAlt": "Botella para bicicleta. Botella deportiva compatible con portabotella.",
+      "imageAlt": "Botella para bicicleta, ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/ciclismo-botella-para-bicicleta.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/ciclismo-botella-para-bicicleta.svg",
+        "images/products/ciclismo-botella-para-bicicleta-2.svg",
+        "images/products/ciclismo-botella-para-bicicleta-3.svg"
+      ]
     },
     {
       "categoryId": "ciclismo",
@@ -1402,12 +1827,17 @@
       "priceCents": 1900,
       "id": "ciclismo-bomba-portatil-mini",
       "imageUrl": "images/products/ciclismo-bomba-portatil-mini.svg",
-      "imageAlt": "Bomba portátil Mini. Bomba compacta para llevar en la bicicleta.",
+      "imageAlt": "Bomba portátil Mini, ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/ciclismo-bomba-portatil-mini.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/ciclismo-bomba-portatil-mini.svg",
+        "images/products/ciclismo-bomba-portatil-mini-2.svg",
+        "images/products/ciclismo-bomba-portatil-mini-3.svg"
+      ]
     },
     {
       "categoryId": "ciclismo",
@@ -1418,12 +1848,17 @@
       "priceCents": 1350,
       "id": "ciclismo-kit-de-reparacion",
       "imageUrl": "images/products/ciclismo-kit-de-reparacion.svg",
-      "imageAlt": "Kit de reparación. Accesorios básicos para reparaciones de emergencia.",
+      "imageAlt": "Kit de reparación, ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/ciclismo-kit-de-reparacion.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/ciclismo-kit-de-reparacion.svg",
+        "images/products/ciclismo-kit-de-reparacion-2.svg",
+        "images/products/ciclismo-kit-de-reparacion-3.svg"
+      ]
     },
     {
       "categoryId": "ciclismo",
@@ -1434,12 +1869,17 @@
       "priceCents": 2800,
       "id": "ciclismo-lentes-road",
       "imageUrl": "images/products/ciclismo-lentes-road.svg",
-      "imageAlt": "Lentes Road. Lentes deportivos para salidas en bicicleta.",
+      "imageAlt": "Lentes Road, ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/ciclismo-lentes-road.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/ciclismo-lentes-road.svg",
+        "images/products/ciclismo-lentes-road-2.svg",
+        "images/products/ciclismo-lentes-road-3.svg"
+      ]
     },
     {
       "categoryId": "ciclismo",
@@ -1450,12 +1890,17 @@
       "priceCents": 4200,
       "id": "ciclismo-camiseta-cycling",
       "imageUrl": "images/products/ciclismo-camiseta-cycling.svg",
-      "imageAlt": "Camiseta Cycling. Prenda ligera para recorridos en bicicleta.",
+      "imageAlt": "Camiseta Cycling, ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/ciclismo-camiseta-cycling.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/ciclismo-camiseta-cycling.svg",
+        "images/products/ciclismo-camiseta-cycling-2.svg",
+        "images/products/ciclismo-camiseta-cycling-3.svg"
+      ]
     },
     {
       "categoryId": "ciclismo",
@@ -1466,12 +1911,17 @@
       "priceCents": 2490,
       "id": "ciclismo-candado-para-bicicleta",
       "imageUrl": "images/products/ciclismo-candado-para-bicicleta.svg",
-      "imageAlt": "Candado para bicicleta. Candado compacto para asegurar la bicicleta.",
+      "imageAlt": "Candado para bicicleta, ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/ciclismo-candado-para-bicicleta.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/ciclismo-candado-para-bicicleta.svg",
+        "images/products/ciclismo-candado-para-bicicleta-2.svg",
+        "images/products/ciclismo-candado-para-bicicleta-3.svg"
+      ]
     },
     {
       "categoryId": "fitness",
@@ -1482,12 +1932,17 @@
       "priceCents": 3500,
       "id": "fitness-kettlebell-6-kg",
       "imageUrl": "images/products/fitness-kettlebell-6-kg.svg",
-      "imageAlt": "Kettlebell 6 kg. Peso compacto para rutinas de fuerza.",
+      "imageAlt": "Kettlebell 6 kg, ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/fitness-kettlebell-6-kg.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/fitness-kettlebell-6-kg.svg",
+        "images/products/fitness-kettlebell-6-kg-2.svg",
+        "images/products/fitness-kettlebell-6-kg-3.svg"
+      ]
     },
     {
       "categoryId": "fitness",
@@ -1498,12 +1953,17 @@
       "priceCents": 1400,
       "id": "fitness-cuerda-de-resistencia",
       "imageUrl": "images/products/fitness-cuerda-de-resistencia.svg",
-      "imageAlt": "Cuerda de resistencia. Accesorio elástico para ejercicios variados.",
+      "imageAlt": "Cuerda de resistencia, ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/fitness-cuerda-de-resistencia.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/fitness-cuerda-de-resistencia.svg",
+        "images/products/fitness-cuerda-de-resistencia-2.svg",
+        "images/products/fitness-cuerda-de-resistencia-3.svg"
+      ]
     },
     {
       "categoryId": "fitness",
@@ -1514,12 +1974,17 @@
       "priceCents": 1990,
       "id": "fitness-rodillo-de-masaje",
       "imageUrl": "images/products/fitness-rodillo-de-masaje.svg",
-      "imageAlt": "Rodillo de masaje. Rodillo texturizado para rutinas de recuperación.",
+      "imageAlt": "Rodillo de masaje, ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/fitness-rodillo-de-masaje.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/fitness-rodillo-de-masaje.svg",
+        "images/products/fitness-rodillo-de-masaje-2.svg",
+        "images/products/fitness-rodillo-de-masaje-3.svg"
+      ]
     },
     {
       "categoryId": "fitness",
@@ -1530,12 +1995,17 @@
       "priceCents": 1750,
       "id": "fitness-bloques-de-yoga-2",
       "imageUrl": "images/products/fitness-bloques-de-yoga-2.svg",
-      "imageAlt": "Bloques de yoga (2). Soporte firme para ejercicios de movilidad.",
+      "imageAlt": "Bloques de yoga (2), ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/fitness-bloques-de-yoga-2.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/fitness-bloques-de-yoga-2.svg",
+        "images/products/fitness-bloques-de-yoga-2-2.svg",
+        "images/products/fitness-bloques-de-yoga-2-3.svg"
+      ]
     },
     {
       "categoryId": "fitness",
@@ -1546,12 +2016,17 @@
       "priceCents": 1600,
       "id": "fitness-guantes-de-gimnasio",
       "imageUrl": "images/products/fitness-guantes-de-gimnasio.svg",
-      "imageAlt": "Guantes de gimnasio. Agarre cómodo para ejercicios de fuerza.",
+      "imageAlt": "Guantes de gimnasio, ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/fitness-guantes-de-gimnasio.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/fitness-guantes-de-gimnasio.svg",
+        "images/products/fitness-guantes-de-gimnasio-2.svg",
+        "images/products/fitness-guantes-de-gimnasio-3.svg"
+      ]
     },
     {
       "categoryId": "fitness",
@@ -1562,12 +2037,17 @@
       "priceCents": 2150,
       "id": "fitness-rueda-abdominal",
       "imageUrl": "images/products/fitness-rueda-abdominal.svg",
-      "imageAlt": "Rueda abdominal. Accesorio compacto para ejercicios de core.",
+      "imageAlt": "Rueda abdominal, ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/fitness-rueda-abdominal.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/fitness-rueda-abdominal.svg",
+        "images/products/fitness-rueda-abdominal-2.svg",
+        "images/products/fitness-rueda-abdominal-3.svg"
+      ]
     },
     {
       "categoryId": "fitness",
@@ -1578,12 +2058,17 @@
       "priceCents": 4500,
       "id": "fitness-banda-de-suspension",
       "imageUrl": "images/products/fitness-banda-de-suspension.svg",
-      "imageAlt": "Banda de suspensión. Sistema de correas para ejercicios con peso corporal.",
+      "imageAlt": "Banda de suspensión, ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/fitness-banda-de-suspension.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/fitness-banda-de-suspension.svg",
+        "images/products/fitness-banda-de-suspension-2.svg",
+        "images/products/fitness-banda-de-suspension-3.svg"
+      ]
     },
     {
       "categoryId": "natacion",
@@ -1594,12 +2079,17 @@
       "priceCents": 2990,
       "id": "natacion-aletas-de-entrenamiento",
       "imageUrl": "images/products/natacion-aletas-de-entrenamiento.svg",
-      "imageAlt": "Aletas de entrenamiento. Aletas cortas para ejercicios en piscina.",
+      "imageAlt": "Aletas de entrenamiento, ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/natacion-aletas-de-entrenamiento.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/natacion-aletas-de-entrenamiento.svg",
+        "images/products/natacion-aletas-de-entrenamiento-2.svg",
+        "images/products/natacion-aletas-de-entrenamiento-3.svg"
+      ]
     },
     {
       "categoryId": "natacion",
@@ -1610,12 +2100,17 @@
       "priceCents": 1800,
       "id": "natacion-tabla-de-natacion",
       "imageUrl": "images/products/natacion-tabla-de-natacion.svg",
-      "imageAlt": "Tabla de natación. Apoyo flotante para ejercicios de piernas.",
+      "imageAlt": "Tabla de natación, ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/natacion-tabla-de-natacion.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/natacion-tabla-de-natacion.svg",
+        "images/products/natacion-tabla-de-natacion-2.svg",
+        "images/products/natacion-tabla-de-natacion-3.svg"
+      ]
     },
     {
       "categoryId": "natacion",
@@ -1626,12 +2121,17 @@
       "priceCents": 690,
       "id": "natacion-tapones-para-oidos",
       "imageUrl": "images/products/natacion-tapones-para-oidos.svg",
-      "imageAlt": "Tapones para oídos. Par reutilizable para sesiones de piscina.",
+      "imageAlt": "Tapones para oídos, ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/natacion-tapones-para-oidos.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/natacion-tapones-para-oidos.svg",
+        "images/products/natacion-tapones-para-oidos-2.svg",
+        "images/products/natacion-tapones-para-oidos-3.svg"
+      ]
     },
     {
       "categoryId": "natacion",
@@ -1642,12 +2142,17 @@
       "priceCents": 2400,
       "id": "natacion-bolso-impermeable",
       "imageUrl": "images/products/natacion-bolso-impermeable.svg",
-      "imageAlt": "Bolso impermeable. Bolso para transportar ropa y accesorios húmedos.",
+      "imageAlt": "Bolso impermeable, ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/natacion-bolso-impermeable.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/natacion-bolso-impermeable.svg",
+        "images/products/natacion-bolso-impermeable-2.svg",
+        "images/products/natacion-bolso-impermeable-3.svg"
+      ]
     },
     {
       "categoryId": "natacion",
@@ -1658,12 +2163,17 @@
       "priceCents": 1550,
       "id": "natacion-toalla-de-microfibra",
       "imageUrl": "images/products/natacion-toalla-de-microfibra.svg",
-      "imageAlt": "Toalla de microfibra. Toalla ligera para llevar a la piscina.",
+      "imageAlt": "Toalla de microfibra, ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/natacion-toalla-de-microfibra.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/natacion-toalla-de-microfibra.svg",
+        "images/products/natacion-toalla-de-microfibra-2.svg",
+        "images/products/natacion-toalla-de-microfibra-3.svg"
+      ]
     },
     {
       "categoryId": "natacion",
@@ -1674,12 +2184,17 @@
       "priceCents": 1700,
       "id": "natacion-paletas-de-natacion",
       "imageUrl": "images/products/natacion-paletas-de-natacion.svg",
-      "imageAlt": "Paletas de natación. Accesorio de entrenamiento para técnica de brazada.",
+      "imageAlt": "Paletas de natación, ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/natacion-paletas-de-natacion.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/natacion-paletas-de-natacion.svg",
+        "images/products/natacion-paletas-de-natacion-2.svg",
+        "images/products/natacion-paletas-de-natacion-3.svg"
+      ]
     },
     {
       "categoryId": "natacion",
@@ -1690,12 +2205,17 @@
       "priceCents": 1300,
       "id": "natacion-sandalias-de-piscina",
       "imageUrl": "images/products/natacion-sandalias-de-piscina.svg",
-      "imageAlt": "Sandalias de piscina. Calzado ligero para vestidores y piscina.",
+      "imageAlt": "Sandalias de piscina, ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/natacion-sandalias-de-piscina.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/natacion-sandalias-de-piscina.svg",
+        "images/products/natacion-sandalias-de-piscina-2.svg",
+        "images/products/natacion-sandalias-de-piscina-3.svg"
+      ]
     },
     {
       "categoryId": "outdoor",
@@ -1706,12 +2226,17 @@
       "priceCents": 3990,
       "id": "outdoor-bastones-de-trekking-2",
       "imageUrl": "images/products/outdoor-bastones-de-trekking-2.svg",
-      "imageAlt": "Bastones de trekking (2). Bastones ajustables para caminatas.",
+      "imageAlt": "Bastones de trekking (2), ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/outdoor-bastones-de-trekking-2.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/outdoor-bastones-de-trekking-2.svg",
+        "images/products/outdoor-bastones-de-trekking-2-2.svg",
+        "images/products/outdoor-bastones-de-trekking-2-3.svg"
+      ]
     },
     {
       "categoryId": "outdoor",
@@ -1722,12 +2247,17 @@
       "priceCents": 1900,
       "id": "outdoor-sombrero-trail",
       "imageUrl": "images/products/outdoor-sombrero-trail.svg",
-      "imageAlt": "Sombrero Trail. Ala amplia para actividades al aire libre.",
+      "imageAlt": "Sombrero Trail, ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/outdoor-sombrero-trail.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/outdoor-sombrero-trail.svg",
+        "images/products/outdoor-sombrero-trail-2.svg",
+        "images/products/outdoor-sombrero-trail-3.svg"
+      ]
     },
     {
       "categoryId": "outdoor",
@@ -1738,12 +2268,17 @@
       "priceCents": 1200,
       "id": "outdoor-brujula-de-bolsillo",
       "imageUrl": "images/products/outdoor-brujula-de-bolsillo.svg",
-      "imageAlt": "Brújula de bolsillo. Brújula compacta para orientarse en excursiones.",
+      "imageAlt": "Brújula de bolsillo, ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/outdoor-brujula-de-bolsillo.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/outdoor-brujula-de-bolsillo.svg",
+        "images/products/outdoor-brujula-de-bolsillo-2.svg",
+        "images/products/outdoor-brujula-de-bolsillo-3.svg"
+      ]
     },
     {
       "categoryId": "outdoor",
@@ -1754,12 +2289,17 @@
       "priceCents": 990,
       "id": "outdoor-manta-termica",
       "imageUrl": "images/products/outdoor-manta-termica.svg",
-      "imageAlt": "Manta térmica. Manta compacta para llevar en la mochila.",
+      "imageAlt": "Manta térmica, ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/outdoor-manta-termica.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/outdoor-manta-termica.svg",
+        "images/products/outdoor-manta-termica-2.svg",
+        "images/products/outdoor-manta-termica-3.svg"
+      ]
     },
     {
       "categoryId": "outdoor",
@@ -1770,12 +2310,17 @@
       "priceCents": 2750,
       "id": "outdoor-lampara-frontal",
       "imageUrl": "images/products/outdoor-lampara-frontal.svg",
-      "imageAlt": "Lámpara frontal. Luz ajustable para caminatas y campamento.",
+      "imageAlt": "Lámpara frontal, ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/outdoor-lampara-frontal.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/outdoor-lampara-frontal.svg",
+        "images/products/outdoor-lampara-frontal-2.svg",
+        "images/products/outdoor-lampara-frontal-3.svg"
+      ]
     },
     {
       "categoryId": "outdoor",
@@ -1786,12 +2331,17 @@
       "priceCents": 1650,
       "id": "outdoor-bolsa-seca-10-l",
       "imageUrl": "images/products/outdoor-bolsa-seca-10-l.svg",
-      "imageAlt": "Bolsa seca 10 L. Bolsa enrollable para proteger objetos del agua.",
+      "imageAlt": "Bolsa seca 10 L, ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/outdoor-bolsa-seca-10-l.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/outdoor-bolsa-seca-10-l.svg",
+        "images/products/outdoor-bolsa-seca-10-l-2.svg",
+        "images/products/outdoor-bolsa-seca-10-l-3.svg"
+      ]
     },
     {
       "categoryId": "outdoor",
@@ -1802,12 +2352,17 @@
       "priceCents": 2200,
       "id": "outdoor-kit-de-primeros-auxilios",
       "imageUrl": "images/products/outdoor-kit-de-primeros-auxilios.svg",
-      "imageAlt": "Kit de primeros auxilios. Estuche compacto para llevar en excursiones.",
+      "imageAlt": "Kit de primeros auxilios, ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/outdoor-kit-de-primeros-auxilios.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/outdoor-kit-de-primeros-auxilios.svg",
+        "images/products/outdoor-kit-de-primeros-auxilios-2.svg",
+        "images/products/outdoor-kit-de-primeros-auxilios-3.svg"
+      ]
     },
     {
       "categoryId": "accesorios",
@@ -1818,12 +2373,17 @@
       "priceCents": 3600,
       "id": "accesorios-bolso-deportivo-core",
       "imageUrl": "images/products/accesorios-bolso-deportivo-core.svg",
-      "imageAlt": "Bolso deportivo Core. Compartimento principal para equipo y ropa.",
+      "imageAlt": "Bolso deportivo Core, ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/accesorios-bolso-deportivo-core.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/accesorios-bolso-deportivo-core.svg",
+        "images/products/accesorios-bolso-deportivo-core-2.svg",
+        "images/products/accesorios-bolso-deportivo-core-3.svg"
+      ]
     },
     {
       "categoryId": "accesorios",
@@ -1834,12 +2394,17 @@
       "priceCents": 790,
       "id": "accesorios-cinta-metrica-flexible",
       "imageUrl": "images/products/accesorios-cinta-metrica-flexible.svg",
-      "imageAlt": "Cinta métrica flexible. Cinta retráctil para medidas de entrenamiento.",
+      "imageAlt": "Cinta métrica flexible, ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/accesorios-cinta-metrica-flexible.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/accesorios-cinta-metrica-flexible.svg",
+        "images/products/accesorios-cinta-metrica-flexible-2.svg",
+        "images/products/accesorios-cinta-metrica-flexible-3.svg"
+      ]
     },
     {
       "categoryId": "accesorios",
@@ -1850,12 +2415,17 @@
       "priceCents": 1100,
       "id": "accesorios-toalla-de-entrenamiento",
       "imageUrl": "images/products/accesorios-toalla-de-entrenamiento.svg",
-      "imageAlt": "Toalla de entrenamiento. Toalla compacta para gimnasio y cancha.",
+      "imageAlt": "Toalla de entrenamiento, ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/accesorios-toalla-de-entrenamiento.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/accesorios-toalla-de-entrenamiento.svg",
+        "images/products/accesorios-toalla-de-entrenamiento-2.svg",
+        "images/products/accesorios-toalla-de-entrenamiento-3.svg"
+      ]
     },
     {
       "categoryId": "accesorios",
@@ -1866,12 +2436,17 @@
       "priceCents": 1400,
       "id": "accesorios-botella-deportiva-1-l",
       "imageUrl": "images/products/accesorios-botella-deportiva-1-l.svg",
-      "imageAlt": "Botella deportiva 1 L. Botella reutilizable para hidratarse durante el ejercicio.",
+      "imageAlt": "Botella deportiva 1 L, ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/accesorios-botella-deportiva-1-l.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/accesorios-botella-deportiva-1-l.svg",
+        "images/products/accesorios-botella-deportiva-1-l-2.svg",
+        "images/products/accesorios-botella-deportiva-1-l-3.svg"
+      ]
     },
     {
       "categoryId": "accesorios",
@@ -1882,12 +2457,17 @@
       "priceCents": 1850,
       "id": "accesorios-canguro-deportivo",
       "imageUrl": "images/products/accesorios-canguro-deportivo.svg",
-      "imageAlt": "Canguro deportivo. Bolso compacto para objetos personales.",
+      "imageAlt": "Canguro deportivo, ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/accesorios-canguro-deportivo.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/accesorios-canguro-deportivo.svg",
+        "images/products/accesorios-canguro-deportivo-2.svg",
+        "images/products/accesorios-canguro-deportivo-3.svg"
+      ]
     },
     {
       "categoryId": "accesorios",
@@ -1898,12 +2478,17 @@
       "priceCents": 1000,
       "id": "accesorios-candado-para-casillero",
       "imageUrl": "images/products/accesorios-candado-para-casillero.svg",
-      "imageAlt": "Candado para casillero. Candado de combinación para uso diario.",
+      "imageAlt": "Candado para casillero, ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/accesorios-candado-para-casillero.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/accesorios-candado-para-casillero.svg",
+        "images/products/accesorios-candado-para-casillero-2.svg",
+        "images/products/accesorios-candado-para-casillero-3.svg"
+      ]
     },
     {
       "categoryId": "accesorios",
@@ -1914,12 +2499,17 @@
       "priceCents": 1250,
       "id": "accesorios-organizador-de-equipo",
       "imageUrl": "images/products/accesorios-organizador-de-equipo.svg",
-      "imageAlt": "Organizador de equipo. Bolsa para separar accesorios en el bolso.",
+      "imageAlt": "Organizador de equipo, ilustración del producto aislado sobre fondo liso",
       "imageCredit": "Apex Sports",
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "imageSourceUrl": "images/products/accesorios-organizador-de-equipo.svg",
-      "imageSourceTitle": "Ilustración original Apex Sports"
+      "imageSourceTitle": "Ilustración original Apex Sports",
+      "imageUrls": [
+        "images/products/accesorios-organizador-de-equipo.svg",
+        "images/products/accesorios-organizador-de-equipo-2.svg",
+        "images/products/accesorios-organizador-de-equipo-3.svg"
+      ]
     }
   ]
 }
