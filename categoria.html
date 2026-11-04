@@ -22,7 +22,10 @@
       <div class="acciones-usuario">
         <button class="boton boton-sesion" type="button" data-open-auth="login">Iniciar sesión</button>
         <button class="boton boton-outline" type="button" data-open-auth="register">Registrarse</button>
-        <span class="cuenta-activa" id="cuenta-activa" hidden></span>
+        <button class="boton cuenta-activa" id="cuenta-activa" type="button" data-open-profile aria-haspopup="dialog" aria-controls="modal-profile" hidden>
+          <span class="cuenta-avatar" id="cuenta-avatar" aria-hidden="true"></span>
+          <span id="cuenta-nombre"></span>
+        </button>
         <button class="boton boton-outline boton-salir" id="cerrar-sesion" type="button" hidden>Cerrar sesión</button>
       </div>
       <span class="solo-lectores" id="cart-status" role="status" aria-live="polite"></span>

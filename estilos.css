@@ -193,13 +193,100 @@ button, a { touch-action: manipulation; }
   color: var(--azul);
 }
 .cuenta-activa {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   max-width: 130px;
+  min-height: 42px;
+  padding: 4px 8px 4px 4px;
   overflow: hidden;
+  border: 0;
+  background: transparent;
   color: var(--azul);
   font-size: 13px;
   font-weight: 700;
-  text-overflow: ellipsis;
   white-space: nowrap;
+  cursor: pointer;
+}
+.cuenta-activa:hover { background: var(--marfil); }
+.cuenta-avatar {
+  display: grid;
+  flex: 0 0 34px;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid #c5d0d8;
+  border-radius: 50%;
+  background: var(--azul);
+  color: var(--blanco);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .03em;
+}
+#cuenta-nombre {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.profile-dialog {
+  width: min(460px, calc(100vw - 32px));
+  max-width: 460px;
+  max-height: min(90vh, 760px);
+  padding: 0;
+  overflow: auto;
+  border: 0;
+  border-radius: 14px;
+  color: var(--azul);
+  background: var(--blanco);
+  box-shadow: 0 24px 70px rgba(12, 30, 46, .28);
+}
+.profile-dialog::backdrop { background: rgba(12, 30, 46, .62); }
+.profile-modal { position: relative; padding: 30px 34px 24px; }
+.profile-modal h2 { margin: 0 0 7px; font-size: 28px; letter-spacing: -.035em; }
+.profile-description { margin: 0 0 20px; color: var(--gris); font-size: 14px; }
+.profile-close { top: 16px; right: 16px; }
+.profile-details { margin: 0; }
+.profile-details > div {
+  display: grid;
+  grid-template-columns: minmax(110px, .75fr) minmax(0, 1fr);
+  gap: 14px;
+  padding: 13px 0;
+  border-top: 1px solid #e4e8eb;
+  font-size: 13px;
+}
+.profile-details dt { color: var(--gris); }
+.profile-details dd { margin: 0; font-weight: 700; overflow-wrap: anywhere; }
+.profile-status { color: var(--gris); font-size: 13px; line-height: 1.5; }
+.profile-note { margin: 18px 0 0; color: var(--gris); font-size: 11px; line-height: 1.55; }
+.auth-feedback {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  width: min(440px, calc(100vw - 32px));
+  padding: 15px 16px;
+  border: 1px solid #b6d8c3;
+  border-left: 5px solid #28734e;
+  border-radius: 8px;
+  background: #f0faf3;
+  color: #174b31;
+  box-shadow: 0 8px 28px rgba(12, 30, 46, .18);
+  font-size: 14px;
+  line-height: 1.45;
+}
+.auth-feedback[hidden] { display: none; }
+.auth-feedback button {
+  flex: 0 0 36px;
+  width: 36px;
+  min-height: 36px;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: inherit;
+  font-size: 22px;
+  cursor: pointer;
 }
 .marca { display: inline-flex; align-items: center; gap: 10px; color: var(--azul); text-decoration: none; font-size: 14px; letter-spacing: .08em; white-space: nowrap; }
 .marca-icono { display: grid; place-items: center; width: 38px; height: 38px; background: var(--azul); color: var(--blanco); font-size: 13px; font-weight: 800; letter-spacing: -.04em; }
@@ -476,8 +563,10 @@ body.busqueda-activa main > #resultados-busqueda { display: block; }
 @media (max-width: 480px) {
   .acciones-usuario { gap: 5px; }
   .acciones-usuario .boton { min-height: 44px; padding: 8px 9px; font-size: 11px; }
-  .cuenta-activa { max-width: 92px; font-size: 11px; }
+  .cuenta-activa { max-width: 124px; font-size: 11px; }
+  .cuenta-avatar { flex-basis: 30px; width: 30px; height: 30px; font-size: 11px; }
   .auth-modal { padding: 24px 20px 18px; }
+  .profile-modal { padding: 24px 20px 18px; }
   .auth-brand { margin-bottom: 22px; }
   .marca { font-size: 12px; gap: 7px; }
   .marca-icono { width: 33px; height: 33px; }

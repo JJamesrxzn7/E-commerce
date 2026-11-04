@@ -66,13 +66,17 @@
   async function currentUser() {
     if (!getToken()) return null;
     try {
-      const user = await request("/auth/me");
-      sessionStorage.setItem(userKey, JSON.stringify(user));
-      return user;
+      return await profile();
     } catch {
       clearSession();
       return null;
     }
+  }
+
+  async function profile() {
+    const user = await request("/auth/me");
+    sessionStorage.setItem(userKey, JSON.stringify(user));
+    return user;
   }
 
   function favoriteItems(result) {
@@ -102,6 +106,7 @@
     register,
     logout,
     currentUser,
+    profile,
     listFavorites,
     addFavorite,
     removeFavorite,

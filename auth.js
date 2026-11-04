@@ -6,6 +6,15 @@
   const tabs = [...dialog.querySelectorAll(".auth-tab")];
   const forms = [...dialog.querySelectorAll(".auth-form")];
   const openButtons = [...document.querySelectorAll("[data-open-auth]")];
+  const profileButton = document.getElementById("cuenta-activa");
+  const accountAvatar = document.getElementById("cuenta-avatar");
+  const accountName = document.getElementById("cuenta-nombre");
+  const profileDialog = document.getElementById("modal-profile");
+  const profileStatus = document.getElementById("profile-status");
+  const profileDetails = document.getElementById("profile-details");
+  const feedback = document.getElementById("auth-feedback");
+  const feedbackMessage = document.getElementById("auth-feedback-message");
+  const feedbackClose = feedback?.querySelector("button");
   const closeButton = dialog.querySelector(".auth-cerrar");
   const logoutButton = document.getElementById("cerrar-sesion");
   const accountLabel = document.getElementById("cuenta-activa");
@@ -13,12 +22,18 @@
   const authContext = document.getElementById("auth-context");
   let previousFocus = null;
   let pendingAction = null;
+  let feedbackTimeout;
 
   function updateUserState(user) {
     openButtons.forEach((button) => { button.hidden = Boolean(user); });
+    if (profileButton) profileButton.hidden = !user;
     if (accountLabel) {
       accountLabel.hidden = !user;
-      accountLabel.textContent = user ? `Hola, ${user.name}` : "";
+      const name = user?.name || "";
+      const initials = name.trim().split(/\s+/).slice(0, 2).map((part) => part[0] || "").join("").toLocaleUpperCase("es");
+      accountLabel.setAttribute("aria-label", user ? `Abrir perfil de ${name}` : "Abrir perfil");
+      if (accountAvatar) accountAvatar.textContent = initials;
+      if (accountName) accountName.textContent = user ? `Hola, ${name}` : "";
     }
     if (logoutButton) logoutButton.hidden = !user;
     if (sessionStatus) sessionStatus.textContent = user
@@ -98,6 +113,51 @@
     action?.onAuthenticated(user);
   }
 
+  function showFeedback(message) {
+    if (!feedback || !feedbackMessage) return;
+    window.clearTimeout(feedbackTimeout);
+    feedbackMessage.textContent = message;
+    feedback.hidden = false;
+    feedbackTimeout = window.setTimeout(() => { feedback.hidden = true; }, 6000);
+  }
+
+  function setProfileValue(field, value) {
+    const target = profileDetails?.querySelector(`[data-profile="${field}"]`);
+    if (target) target.textContent = value || "No registrado";
+  }
+
+  async function openProfile() {
+    if (!(profileDialog instanceof HTMLDialogElement)) return;
+    if (profileStatus) {
+      profileStatus.textContent = "Cargando perfil…";
+      profileStatus.hidden = false;
+    }
+    if (profileDetails) profileDetails.hidden = true;
+    profileDialog.showModal();
+    try {
+      const user = await api.profile();
+      setProfileValue("name", user.name);
+      setProfileValue("email", user.email);
+      setProfileValue("identification", user.identification);
+      setProfileValue("city", user.city);
+      setProfileValue("phone", user.phone);
+      setProfileValue("roles", (user.roles || []).map((role) => ({
+        cliente: "Cliente",
+        customer: "Cliente",
+        client: "Cliente",
+        admin: "Administrador",
+        administrador: "Administrador",
+        superadministrador: "Superadministrador"
+      }[role] || role)).join(", "));
+      profileStatus.hidden = true;
+      if (profileDetails) profileDetails.hidden = false;
+      updateUserState(user);
+    } catch (error) {
+      if (!api.getToken()) updateUserState(null);
+      if (profileStatus) profileStatus.textContent = `No se pudo cargar tu perfil: ${error.message}`;
+    }
+  }
+
   async function submitLogin(form) {
     const email = form.querySelector("#login-email").value.trim();
     const password = form.querySelector("#login-password").value;
@@ -111,6 +171,7 @@
       const user = await api.login({ email, password });
       form.reset();
       finish(user);
+      showFeedback(`Iniciaste sesión correctamente. Hola, ${user.name}.`);
     } catch (error) {
       showGeneral(form, error.message);
     } finally {
@@ -149,6 +210,7 @@
       });
       form.reset();
       finish(user);
+      showFeedback(`Tu cuenta se creó correctamente. ¡Bienvenido, ${user.name}!`);
     } catch (error) {
       showGeneral(form, error.message);
     } finally {
@@ -173,6 +235,12 @@
   tabs.forEach((tab) => tab.addEventListener("click", () => showMode(tab.dataset.authMode)));
   openButtons.forEach((button) => button.addEventListener("click", () => openDialog(button.dataset.openAuth, button)));
   closeButton?.addEventListener("click", () => dialog.close());
+  profileButton?.addEventListener("click", openProfile);
+  profileDialog?.querySelector(".profile-close")?.addEventListener("click", () => profileDialog.close());
+  feedbackClose?.addEventListener("click", () => {
+    window.clearTimeout(feedbackTimeout);
+    feedback.hidden = true;
+  });
   dialog.addEventListener("click", (event) => {
     if (event.target === dialog) dialog.close();
   });

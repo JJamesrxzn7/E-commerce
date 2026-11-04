@@ -67,5 +67,27 @@
         <p class="auth-demo-note">El registro crea una cuenta de cliente. El teléfono y la dirección se solicitan al preparar cada pedido; no se guardan como dirección fija del perfil. Los accesos administrativos los provisiona el administrador.</p>
       </div>
     </dialog>
+    <dialog class="profile-dialog" id="modal-profile" aria-labelledby="profile-title">
+      <section class="profile-modal">
+        <button class="auth-cerrar profile-close" type="button" aria-label="Cerrar perfil">×</button>
+        <p class="auth-eyebrow">TU CUENTA APEX</p>
+        <h2 id="profile-title">Mi perfil</h2>
+        <p class="profile-description">Datos asociados a tu cuenta.</p>
+        <p class="profile-status" id="profile-status" role="status" aria-live="polite">Cargando perfil…</p>
+        <dl class="profile-details" id="profile-details" hidden>
+          <div><dt>Nombre</dt><dd data-profile="name"></dd></div>
+          <div><dt>Correo electrónico</dt><dd data-profile="email"></dd></div>
+          <div><dt>Cédula o RUC</dt><dd data-profile="identification"></dd></div>
+          <div><dt>Ciudad</dt><dd data-profile="city"></dd></div>
+          <div><dt>Teléfono</dt><dd data-profile="phone"></dd></div>
+          <div><dt>Tipo de cuenta</dt><dd data-profile="roles"></dd></div>
+        </dl>
+        <p class="profile-note">El teléfono y la dirección de entrega se solicitan para cada pedido; no se guardan como datos fijos del perfil.</p>
+      </section>
+    </dialog>
+    <div class="auth-feedback" id="auth-feedback" role="status" aria-live="polite" hidden>
+      <span id="auth-feedback-message"></span>
+      <button type="button" aria-label="Cerrar notificación">×</button>
+    </div>
   `);
 })();
