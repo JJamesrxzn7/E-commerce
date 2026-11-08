@@ -17,7 +17,13 @@
         <input id="buscar" type="search" name="q" placeholder="Busca tu próximo entrenamiento">
         <button type="submit">Buscar</button>
       </form>
-      <a class="enlace-carrito" href="carrito.html" aria-label="Ver carrito, 0 artículos"><span aria-hidden="true">♧</span><span class="texto-carrito">Carrito</span><span class="contador">0</span></a>
+      <a class="enlace-carrito" href="carrito.html" aria-label="Ver carrito, 0 artículos">
+        <svg class="icono-carrito" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M2.5 3.5h2l2.1 11.1a2 2 0 0 0 2 1.6h8.7a2 2 0 0 0 1.9-1.4l2-7.3H6"></path>
+          <circle cx="9" cy="20" r="1.4"></circle><circle cx="18" cy="20" r="1.4"></circle>
+        </svg>
+        <span class="texto-carrito">Carrito</span><span class="contador">0</span>
+      </a>
       <a class="enlace-favoritos" href="favoritos.html" aria-label="Ver favoritos, 0 artículos"><span aria-hidden="true">♡</span><span class="texto-favoritos">Favoritos</span><span class="contador contador-favoritos">0</span></a>
       <div class="acciones-usuario">
         <button class="boton boton-sesion" type="button" data-open-auth="login">Iniciar sesión</button>
@@ -56,10 +62,9 @@
             <label for="product-quantity">Cantidad</label>
             <div class="controles-cantidad">
               <button class="boton-cantidad" id="quantity-decrease" type="button" aria-label="Reducir cantidad">−</button>
-              <input id="product-quantity" type="number" inputmode="numeric" min="1" max="99" value="1" aria-describedby="quantity-help">
+              <input id="product-quantity" type="number" inputmode="numeric" min="1" max="99" value="1">
               <button class="boton-cantidad" id="quantity-increase" type="button" aria-label="Aumentar cantidad">+</button>
             </div>
-            <small id="quantity-help">Elige de 1 a 99 unidades.</small>
           </div>
           <div class="producto-acciones producto-detalle-acciones">
             <button class="boton boton-ancho" id="product-add" type="button" data-add-product>Añadir al carrito</button>

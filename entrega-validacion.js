@@ -10,23 +10,21 @@
   const touched = new Set();
   const phonePattern = /^\+?[\d\s().-]+$/;
 
-  function updateOrderTotal() {
+  function updateShippingLabel() {
     const selected = deliveryOptions.find((option) => option.checked);
-    const subtotalText = document.querySelector("[data-cart-subtotal]").textContent.trim();
-    const subtotalMatch = subtotalText.match(/^\$(\d+),(\d{2})$/);
-    if (!selected || !subtotalMatch) {
-      shippingLabel.textContent = "Envío";
-      shippingCost.textContent = "No disponible";
-      orderTotal.textContent = "No disponible";
-      return;
-    }
-
-    const subtotal = Number(subtotalMatch[1]) * 100 + Number(subtotalMatch[2]);
-    const formatMoney = (value) => `$${(value / 100).toFixed(2).replace(".", ",")}`;
-    shippingLabel.textContent = selected.value === "express" ? "Envío express" : "Envío estándar";
-    shippingCost.textContent = "Tarifa no configurada";
-    orderTotal.textContent = formatMoney(subtotal);
+    shippingLabel.textContent = !selected ? "Envío"
+      : selected.value === "express" ? "Envío express" : "Envío estándar";
+    const fee = selected && selected.value === "express" ? 600 : 200;
+    const match = document.querySelector("[data-cart-subtotal]").textContent.match(/^\$(\d+),(\d{2})$/);
+    shippingCost.textContent = `$${(fee / 100).toFixed(2).replace(".", ",")}`;
+    orderTotal.textContent = match
+      ? `$${((Number(match[1]) * 100 + Number(match[2]) + fee) / 100).toFixed(2).replace(".", ",")}`
+      : "No disponible";
   }
+
+  document.addEventListener("apex:cart-rendered", updateShippingLabel);
+  deliveryOptions.forEach((option) => option.addEventListener("change", updateShippingLabel));
+  updateShippingLabel();
 
   function messageFor(field) {
     const value = field.value.trim();
@@ -63,8 +61,6 @@
       touched.add(field);
       validateField(field);
     });
-    deliveryOptions.forEach((option) => option.addEventListener("change", updateOrderTotal));
-    updateOrderTotal();
     field.addEventListener("input", () => {
       if (touched.has(field)) validateField(field);
     });

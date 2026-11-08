@@ -19,13 +19,14 @@
     <section class="panel detalle-confirmacion" id="confirmacion-resumen" aria-labelledby="detalle-pedido" hidden>
       <h2 id="detalle-pedido">Resumen de tu pedido</h2>
       <p><span>Número de pedido</span><strong id="confirmacion-numero"></strong></p>
-      <p><span>Productos</span><strong id="confirmacion-productos"></strong></p>
-      <p><span>Método de pago</span><strong id="confirmacion-metodo"></strong></p>
+      <h3 class="confirmacion-productos-titulo">Productos</h3>
+      <ul class="confirmacion-productos" id="confirmacion-productos"></ul>
+      <p><span>Pago</span><strong id="confirmacion-metodo"></strong></p>
       <p><span>Envío</span><strong id="confirmacion-envio"></strong></p>
       <p><span>Total</span><strong id="confirmacion-total"></strong></p>
     </section>
     <p id="confirmacion-instrucciones" class="texto-confirmacion" role="status" aria-live="polite">No se encontró un pedido reciente asociado a esta sesión.</p>
-    <p class="aviso aviso-seguridad"><strong>Simulación:</strong> no se realizará ningún cobro ni transferencia. No ingreses datos financieros reales; la cuenta bancaria y la dirección del local son de ejemplo.</p>
+    <a class="boton" id="confirmacion-whatsapp" href="#" target="_blank" rel="noopener noreferrer" hidden>Enviar comprobante por WhatsApp</a>
     <a class="boton" href="index.html">Volver a la tienda</a>
   </main>
   <footer class="pie pie-simple"><p>© 2026 Apex Sports</p></footer>

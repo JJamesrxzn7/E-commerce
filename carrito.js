@@ -190,6 +190,7 @@
     document.querySelectorAll("[data-cart-subtotal]").forEach((element) => {
       element.textContent = money(subtotal);
     });
+    document.dispatchEvent(new CustomEvent("apex:cart-rendered", { detail: { subtotal } }));
     document.querySelectorAll("[data-cart-total-range]").forEach((element) => {
       element.textContent = `${money(subtotal + 400)}–${money(subtotal + 800)}`;
     });

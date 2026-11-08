@@ -29,7 +29,7 @@
               <small class="error-campo" id="telefono-error" role="alert" hidden></small>
             </div>
             <div class="campo">
-              <label for="direccion">Dirección para este pedido</label>
+              <label for="direccion">Dirección</label>
               <input id="direccion" autocomplete="street-address" aria-describedby="direccion-ayuda direccion-error" required>
               <small class="ayuda-campo" id="direccion-ayuda">Indica calle y número del lugar donde recibirás este pedido.</small>
               <small class="error-campo" id="direccion-error" role="alert" hidden></small>
@@ -51,14 +51,14 @@
             <legend>Elige una opción de entrega</legend>
             <label class="opcion">
               <input type="radio" name="entrega" value="estandar" required checked>
-              <span><strong>Envío estándar</strong><small>Tiempo y tarifa por confirmar</small></span>
-              <b>Por confirmar</b>
+              <span><strong>Envío estándar</strong></span>
+              <b>$2,00</b>
             </label>
             <small class="error-campo" id="entrega-error" role="alert" hidden></small>
             <label class="opcion">
               <input type="radio" name="entrega" value="express">
-              <span><strong>Envío express</strong><small>Tiempo y tarifa por confirmar</small></span>
-              <b>Por confirmar</b>
+              <span><strong>Envío express</strong></span>
+              <b>$6,00</b>
             </label>
           </fieldset>
         </section>
@@ -66,10 +66,10 @@
           <h2>Tu pedido</h2>
           <div class="resumen-productos" data-cart-items></div>
           <p><span>Subtotal</span><strong data-cart-subtotal>$0,00</strong></p>
-          <p><span data-entrega-label>Envío estándar</span><strong data-entrega-costo>Tarifa no configurada</strong></p>
+          <p><span data-entrega-label>Envío estándar</span><strong data-entrega-costo>$2,00</strong></p>
           <hr>
           <p class="total"><span>Total</span><strong data-entrega-total>$0,00</strong></p>
-          <p class="nota-segura">Los tiempos y tarifas de entrega no están configurados para este prototipo.</p>
+          <p class="error-campo" id="cart-status" role="status" aria-live="polite"></p>
           <button class="boton boton-ancho" type="submit">Continuar al pago</button>
           <a class="enlace-volver" href="carrito.html">← Volver al carrito</a>
         </aside>

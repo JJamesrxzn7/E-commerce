@@ -192,7 +192,7 @@ button, a { touch-action: manipulation; }
   border-color: transparent;
   color: var(--azul);
 }
-.cuenta-activa {
+.acciones-usuario .cuenta-activa {
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -208,7 +208,10 @@ button, a { touch-action: manipulation; }
   white-space: nowrap;
   cursor: pointer;
 }
-.cuenta-activa:hover { background: var(--marfil); }
+.acciones-usuario .cuenta-activa:hover {
+  background: transparent;
+  text-decoration: none;
+}
 .cuenta-avatar {
   display: grid;
   flex: 0 0 34px;
@@ -528,6 +531,9 @@ body.busqueda-activa main > #resultados-busqueda { display: block; }
 .detalle-confirmacion h2 { margin-bottom: 16px; }
 .detalle-confirmacion p { display: flex; justify-content: space-between; gap: 16px; margin: 0; padding: 12px 0; border-top: 1px solid var(--borde); color: var(--gris); font-size: 13px; }
 .detalle-confirmacion strong { color: var(--azul); text-align: right; }
+.confirmacion-productos-titulo { margin: 0; padding: 12px 0 0; border-top: 1px solid var(--borde); font-size: 13px; }
+.confirmacion-productos { list-style: none; margin: 0; padding: 0; }
+.confirmacion-productos li { display: flex; justify-content: space-between; gap: 16px; padding: 10px 0; color: var(--gris); font-size: 13px; }
 .confirmacion > .aviso { margin: 0 auto 22px; text-align: left; }
 
 @media (max-width: 760px) {

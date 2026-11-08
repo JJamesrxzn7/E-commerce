@@ -15,48 +15,22 @@
     <nav class="pasos" aria-label="Progreso de compra">
       <a class="paso paso-completado" href="carrito.html"><b>✓</b> Carrito</a><span aria-hidden="true">—</span><a class="paso paso-completado" href="entrega.html"><b>✓</b> Entrega</a><span aria-hidden="true">—</span><span class="paso paso-activo"><b>3</b> Pago</span>
     </nav>
-    <div class="checkout-titulo"><p class="sobrelinea">PASO 3 DE 3</p><h1>Revisa tu pedido</h1><p>Este prototipo no procesa pagos. Tu pedido quedará pendiente; no ingreses datos de tarjeta ni hagas transferencias.</p></div>
+    <div class="checkout-titulo"><p class="sobrelinea">PASO 3 DE 3</p><h1>Revisa tu pedido</h1><p>Comprueba los productos y la entrega antes de confirmar.</p></div>
     <form id="pago-formulario">
       <div class="checkout-grid">
         <section class="panel">
-          <h2>Pago de demostración</h2>
-          <p>La API guardará el pedido como pendiente de pago. No se realizará ningún cobro y no se guardan datos financieros.</p>
-          <fieldset class="metodos-pago" hidden disabled>
+          <h2>Pago</h2>
+          <p>Selecciona cómo deseas completar tu pedido.</p>
+          <fieldset class="metodos-pago">
             <legend class="solo-lectores">Selecciona un método de pago</legend>
             <label class="opcion opcion-pago">
               <input type="radio" name="metodo" value="tarjeta" required checked>
-              <span><strong>Tarjeta de crédito o débito</strong><small>Visa · Mastercard · Otras tarjetas</small></span>
+              <span><strong>Tarjeta de crédito o débito</strong></span>
               <span class="simbolo-pago" aria-hidden="true">▰</span>
             </label>
             <section class="panel-pago" id="panel-tarjeta" aria-labelledby="titulo-datos-tarjeta">
-              <h3 id="titulo-datos-tarjeta">Datos de tarjeta</h3>
-              <p class="ayuda-detalle">Completa los datos tal como aparecen en tu tarjeta.</p>
-              <div class="campos campos-tarjeta">
-                <div class="campo">
-                  <label for="titular">Nombre en la tarjeta</label>
-                  <input id="titular" type="text" autocomplete="off" aria-describedby="titular-ayuda titular-error" required>
-                  <small class="ayuda-campo" id="titular-ayuda">Escribe el nombre del titular, con al menos 2 letras.</small>
-                  <small class="error-campo" id="titular-error" role="alert" hidden></small>
-                </div>
-                <div class="campo">
-                  <label for="numero">Número de tarjeta</label>
-                  <input id="numero" type="text" inputmode="numeric" autocomplete="off" pattern="[0-9]{16}" placeholder="4111111111111111" aria-describedby="numero-ayuda numero-error" required>
-                  <small class="ayuda-campo" id="numero-ayuda">Ingresa exactamente 16 dígitos.</small>
-                  <small class="error-campo" id="numero-error" role="alert" hidden></small>
-                </div>
-                <div class="campo">
-                  <label for="vencimiento">Vencimiento</label>
-                  <input id="vencimiento" type="text" inputmode="numeric" autocomplete="off" placeholder="MM/AA" aria-describedby="vencimiento-ayuda vencimiento-error" required>
-                  <small class="ayuda-campo" id="vencimiento-ayuda">Ingresa 4 dígitos; se mostrará en formato MM/AA.</small>
-                  <small class="error-campo" id="vencimiento-error" role="alert" hidden></small>
-                </div>
-                <div class="campo">
-                  <label for="seguridad">Código de seguridad</label>
-                  <input id="seguridad" type="text" inputmode="numeric" autocomplete="off" pattern="[0-9]{3}" placeholder="123" aria-describedby="seguridad-ayuda seguridad-error" required>
-                  <small class="ayuda-campo" id="seguridad-ayuda">Ingresa exactamente 3 dígitos.</small>
-                  <small class="error-campo" id="seguridad-error" role="alert" hidden></small>
-                </div>
-              </div>
+              <h3 id="titulo-datos-tarjeta">Pago con tarjeta</h3>
+              <p>No ingreses datos de tarjeta. Esta operación es simulada y no realiza cobros.</p>
             </section>
             <label class="opcion opcion-pago">
               <input type="radio" name="metodo" value="transferencia">
@@ -64,49 +38,31 @@
               <span class="simbolo-pago simbolo-transferencia" aria-hidden="true">⇄</span>
             </label>
             <section class="panel-pago" id="panel-transferencia" aria-labelledby="titulo-transferencia" hidden>
-              <h3 id="titulo-transferencia">Guía para transferencia</h3>
-              <ol class="guia-pago">
-                <li>Abre la aplicación de tu banco y selecciona una transferencia a otra institución.</li>
-                <li>Ingresa los datos de la cuenta y el monto total de tu pedido.</li>
-                <li>Escribe el número de pedido en el concepto y conserva el comprobante.</li>
-              </ol>
+              <h3 id="titulo-transferencia">Datos de transferencia</h3>
               <p><strong>Banco:</strong> Banco Pichincha</p>
-              <p><strong>Tipo de cuenta:</strong> Cuenta de ahorros</p>
-              <p><strong>Beneficiario:</strong> Apex Sports</p>
-              <p><strong>Número de cuenta:</strong> 0000000000</p>
-              <p><strong>Concepto:</strong> Pedido Apex Sports</p>
+              <p><strong>Número de cuenta:</strong> 2213268294</p>
+              <p>Al confirmar, podrás abrir WhatsApp y adjuntar el comprobante. La operación es simulada y no verifica transferencias reales.</p>
             </section>
             <label class="opcion opcion-pago">
-              <input type="radio" name="metodo" value="local">
+              <input type="radio" name="metodo" value="retiro">
               <span><strong>Pago en local y retiro</strong><small>Sin tarifa de envío</small></span>
               <span class="simbolo-pago" aria-hidden="true">⌖</span>
             </label>
-            <section class="panel-pago" id="panel-local" aria-labelledby="titulo-local" hidden>
+            <section class="panel-pago" id="panel-retiro" aria-labelledby="titulo-local" hidden>
               <h3 id="titulo-local">Pago y retiro en el local</h3>
-              <ol class="guia-pago">
-                <li>Selecciona pago en el local y confirma tu pedido.</li>
-                <li>Acude al punto de retiro con tu número de pedido e identificación.</li>
-                <li>Paga en caja al retirar tus productos.</li>
-              </ol>
-              <p><strong>Dirección:</strong> Av. de la Demostración 123 y Calle Ejemplo, Quito.</p>
-              <p><strong>Horario:</strong> Lunes a sábado, de 09:00 a 18:00.</p>
+              <p>El pago queda pendiente hasta el retiro. La ubicación se coordina por separado.</p>
             </section>
           </fieldset>
-          <label class="opcion opcion-pago">
-            <input type="radio" name="metodo" value="demo" checked required>
-            <span><strong>Confirmar pedido pendiente</strong><small>Sin cargo y sin procesamiento de pago</small></span>
-            <span class="simbolo-pago" aria-hidden="true">✓</span>
-          </label>
-          <p class="aviso aviso-seguridad"><strong>Importante:</strong> este sitio no está conectado a una pasarela de pago. El pedido no queda pagado ni confirmado para despacho.</p>
           <p id="pago-error-general" class="error-campo" role="alert" hidden></p>
         </section>
         <aside class="panel resumen">
           <h2>Resumen del pedido</h2>
           <div class="resumen-productos" data-cart-items></div>
           <p><span>Subtotal</span><strong data-cart-subtotal>$0,00</strong></p>
-          <p data-pago-envio><span>Envío estándar</span><strong>Tarifa no configurada</strong></p>
+          <p><span data-pago-envio>Envío</span><strong data-pago-costo>No disponible</strong></p>
           <hr>
-          <p class="total"><span>Total</span><strong data-pago-total>$0,00</strong></p>
+          <p class="total"><span>Total</span><strong data-pago-total>No disponible</strong></p>
+          <p class="error-campo" id="cart-status" role="status" aria-live="polite"></p>
           <button class="boton boton-ancho" type="submit">Confirmar pedido</button>
           <a class="enlace-volver" href="entrega.html">← Revisar datos de entrega</a>
         </aside>

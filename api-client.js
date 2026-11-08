@@ -37,7 +37,9 @@
     const result = await response.json().catch(() => ({}));
     if (!response.ok) {
       if (response.status === 401) clearSession();
-      const detail = typeof result.detail === "string" ? result.detail : "No se pudo completar la solicitud.";
+      const detail = response.status >= 500
+        ? "El servicio no está disponible en este momento. Inténtalo de nuevo más tarde."
+        : typeof result.detail === "string" ? result.detail : "No se pudo completar la solicitud.";
       throw new Error(detail);
     }
     return result;

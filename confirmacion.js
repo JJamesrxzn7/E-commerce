@@ -10,6 +10,7 @@
   const description = document.getElementById("confirmacion-descripcion");
   const icon = document.getElementById("confirmacion-icono");
   const summary = document.getElementById("confirmacion-resumen");
+  const whatsapp = document.getElementById("confirmacion-whatsapp");
 
   function formatMoney(cents) {
     return `$${(cents / 100).toFixed(2).replace(".", ",")}`;
@@ -33,18 +34,36 @@
     }
 
     orderId.textContent = order.id;
-    productSummary.textContent = order.items
-      .map((item) => `${item.name} × ${item.quantity}`)
-      .join(", ");
-    paymentSummary.textContent = order.paymentStatus === "NOT_PROCESSED"
-      ? "Demostración: pago no procesado"
-      : "Estado de pago pendiente";
-    shippingSummary.textContent = `${order.delivery.method === "express" ? "Envío express" : "Envío estándar"} · tarifa no configurada`;
+    productSummary.replaceChildren();
+    order.items.forEach((item) => {
+      const line = document.createElement("li");
+      const name = document.createElement("span");
+      const amount = document.createElement("strong");
+      name.textContent = `${item.name} × ${item.quantity}`;
+      amount.textContent = formatMoney(item.priceCents * item.quantity);
+      line.append(name, amount);
+      productSummary.append(line);
+    });
+    const method = order.simulatedMethod;
+    const methodNames = { tarjeta: "Tarjeta", transferencia: "Transferencia", retiro: "Pago al retirar" };
+    paymentSummary.textContent = method === "retiro" ? "Pendiente al retirar"
+      : methodNames[method] ? `${methodNames[method]} · simulado` : "Pendiente de pago";
+    shippingSummary.textContent = method === "retiro" ? "Retiro en tienda · $0,00"
+      : `${order.delivery.method === "express" ? "Envío express" : "Envío estándar"} · ${formatMoney(order.deliveryFeeCents)}`;
     totalSummary.textContent = formatMoney(order.totalCents);
     label.textContent = "PEDIDO REGISTRADO";
-    heading.textContent = "Registramos tu pedido";
+    heading.textContent = method && method !== "retiro" ? "Pago simulado exitoso" : "Registramos tu pedido";
     description.textContent = "Aquí tienes el resumen del pedido creado.";
-    instructions.textContent = "El pedido quedó pendiente. No se realizó ningún cobro; contacta a Apex Sports para acordar el pago y confirmar el despacho.";
+    instructions.textContent = method === "transferencia"
+      ? "La operación es simulada: no se ha verificado ninguna transferencia. Abre WhatsApp, adjunta el comprobante y envía el mensaje."
+      : method === "tarjeta" ? "Pago simulado: no se realizó ningún cobro real."
+      : method === "retiro" ? "El pago queda pendiente hasta retirar el pedido."
+      : "El pedido quedó pendiente. No se realizó ningún cobro.";
+    if (method === "transferencia") {
+      const message = `Hola, comparto el comprobante del pedido ${order.id} por ${formatMoney(order.totalCents)}.`;
+      whatsapp.href = `https://wa.me/593983067670?text=${encodeURIComponent(message)}`;
+      whatsapp.hidden = false;
+    }
     icon.hidden = false;
     summary.hidden = false;
   } catch (error) {
